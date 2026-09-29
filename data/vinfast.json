@@ -1,0 +1,723 @@
+{
+  "domain": "vinfast",
+  "title": "VinFast — hãng xe, hội đồng quản trị và dòng sản phẩm",
+  "crawled_at": "2026-09-28T00:37:38+00:00",
+  "sources": [
+    {
+      "name": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q56660561",
+      "license": "CC0"
+    },
+    {
+      "name": "SEC EDGAR 20-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1913510/000110465926052266/vfs-20251231x20f.htm",
+      "filing_date": "2026-04-30",
+      "license": "public domain"
+    }
+  ],
+  "stats": {
+    "nodes": 32,
+    "edges": 33,
+    "by_label": {
+      "Company": 1,
+      "Organization": 1,
+      "Place": 1,
+      "Person": 8,
+      "CarModel": 21
+    },
+    "by_edge_type": {
+      "SUBSIDIARY_OF": 1,
+      "HEADQUARTERED_IN": 1,
+      "FOUNDED": 1,
+      "BOARD_MEMBER_OF": 7,
+      "CEO_OF": 1,
+      "SAME_AS": 1,
+      "MANUFACTURES": 21
+    }
+  },
+  "nodes": [
+    {
+      "id": "Q104913276_vinfast_theon",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast Theon",
+        "name_en": "VinFast Theon",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Newone_-_VinFast_Theon_black_010.jpg",
+        "description": "VinFast Theon — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q104913276",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q104913276",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q105063842_vinfast_vf31",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast VF31",
+        "name_en": "VinFast VF31",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/2024_VinFast_VFe34%2C_06-14-2024.jpg",
+        "description": "VinFast VF31 — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q105063842",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q105063842",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q105063992_vinfast_vf_8",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast VF 8",
+        "name_en": "VinFast VF 8",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/VinFast_VF_8_DSC_8470.jpg",
+        "description": "VinFast VF 8 — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q105063992",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q105063992",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q105064047_vinfast_vf_9",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast VF 9",
+        "name_en": "VinFast VF 9",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vinfast_VF9_at_NYIAS_2022%2C_front_right.jpg",
+        "description": "VinFast VF 9 — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q105064047",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q105064047",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q106779032_vinfast_feliz",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast Feliz",
+        "name_en": "VinFast Feliz",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Newone_-_VinFast_Theon_%C4%91en.jpg",
+        "description": "VinFast Feliz — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q106779032",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q106779032",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q110998736_vinfast_vento",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast Vento",
+        "name_en": "VinFast Vento",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Newone_-_VinFast_Vento_Times_City_12.jpg",
+        "description": "VinFast Vento — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q110998736",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q110998736",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q111033540_vinfast_tempest",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast Tempest",
+        "name_en": "VinFast Tempest",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Newone-VinFast_Tempest_02.jpg",
+        "description": "VinFast Tempest — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q111033540",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q111033540",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q111784765_vinfast_vf_7",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast VF 7",
+        "name_en": "VinFast VF 7",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vinfast_VF7_at_NYIAS_2022%2C_front_right.jpg",
+        "description": "VinFast VF 7 — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q111784765",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q111784765",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q114396165_vinfast_evo",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast Evo",
+        "name_en": "VinFast Evo",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Newone_-_Yellow_VinFast_Evo_%26_Vento_03.jpg",
+        "description": "VinFast Evo — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q114396165",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q114396165",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q115152621_vinfast_vf_6",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast VF 6",
+        "name_en": "VinFast VF 6",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/VinFast_VF_6_DSC_8468.jpg",
+        "description": "VinFast VF 6 — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q115152621",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q115152621",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q115802472_vinfast_vf_5",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast VF 5",
+        "name_en": "VinFast VF 5",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NewOne-En_Vang_taxi_VinFast_VF_5_03.jpg",
+        "description": "VinFast VF 5 — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q115802472",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q115802472",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q120668902_vinfast_vf_3",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast VF 3",
+        "name_en": "VinFast VF 3",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/VinFast_VF_3_HCMC.jpg",
+        "description": "VinFast VF 3 — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q120668902",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q120668902",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q124246611_vinfast_vf_wild",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast VF Wild",
+        "name_en": "VinFast VF Wild",
+        "description": "VinFast VF Wild — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q124246611",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q124246611",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q134460432_vinfast_ec_van",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast EC Van",
+        "name_en": "VinFast EC Van",
+        "description": "VinFast EC Van — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q134460432",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q134460432",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q56886475_vinfast_lux_a2_0",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast LUX A2.0",
+        "name_en": "VinFast LUX A2.0",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris_Motor_Show_2018%2C_Paris_%281Y7A1560%29.jpg",
+        "description": "VinFast LUX A2.0 — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q56886475",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q56886475",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q57436089_vinfast_lux_sa2_0",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast LUX SA2.0",
+        "name_en": "VinFast LUX SA2.0",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vinfast_Lux_SA_2.0%2C_Paris_Motor_Show_2018%2C_IMG_0369.jpg",
+        "description": "VinFast LUX SA2.0 — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q57436089",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q57436089",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q59202870_vinfast_klara",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast Klara",
+        "name_en": "VinFast Klara",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Newone_-_VinFast_Klara_Times_City.jpg",
+        "description": "VinFast Klara — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q59202870",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q59202870",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q59308572_vinfast_fadil",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast Fadil",
+        "name_en": "VinFast Fadil",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Newone_-_VinFast_Fadil_white.jpg",
+        "description": "VinFast Fadil — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q59308572",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q59308572",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q86012712_vinfast_klara_s",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast Klara S",
+        "name_en": "VinFast Klara S",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Newone_-VinFast_Klara_S_red.jpg",
+        "description": "VinFast Klara S — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q86012712",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q86012712",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q97165384_vinfast_impes",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast Impes",
+        "name_en": "VinFast Impes",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Newone_-_VinFast_IMPES_blue_02.jpg",
+        "description": "VinFast Impes — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q97165384",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q97165384",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q99227873_vinfast_president",
+      "label": "CarModel",
+      "properties": {
+        "name": "VinFast President",
+        "name_en": "VinFast President",
+        "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Newone_-_Black_VinFast_President_13.jpg",
+        "description": "VinFast President — mẫu xe do VinFast sản xuất.",
+        "wikidata_id": "Q99227873",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q99227873",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q56660561_vinfast",
+      "label": "Company",
+      "properties": {
+        "name": "VinFast",
+        "name_en": "VinFast Auto Ltd.",
+        "founded": "06/2017",
+        "founded_year": "2017",
+        "logo_urls": [
+          "https://commons.wikimedia.org/wiki/Special:FilePath/VinFast_logo_%28simple_variant%29.svg",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_of_VinFast_%283D_Banner%29.svg",
+          "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_of_VinFast_%283D%29.svg"
+        ],
+        "website": "https://vinfastauto.com/",
+        "headquarters": "Hải Phòng",
+        "industry": "công nghiệp ô tô",
+        "legal_form": "công ty trách nhiệm hữu hạn",
+        "stock_ticker": "VFS (Nasdaq)",
+        "sec_cik": "0001913510",
+        "description": "VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",
+        "wikidata_id": "Q56660561",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q56660561",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q10831597_vingroup",
+      "label": "Organization",
+      "properties": {
+        "name": "Tập đoàn Vingroup",
+        "description": "Tập đoàn Vingroup — công ty mẹ của VinFast.",
+        "wikidata_id": "Q10831597",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q10831597",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q10806972_phạm_nhật_vượng",
+      "label": "Person",
+      "properties": {
+        "name": "Phạm Nhật Vượng",
+        "name_en": "Phạm Nhật Vượng",
+        "role": "Người sáng lập",
+        "description": "Phạm Nhật Vượng — người sáng lập VinFast.",
+        "wikidata_id": "Q10806972",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q10806972",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "sec_le_thi_thu_thuy",
+      "label": "Person",
+      "properties": {
+        "name": "Le Thi Thu Thuy",
+        "age": 51,
+        "title": "Chairwoman and Director",
+        "bio": "Ms. Le has served as the Chairwoman of our Board since January 2024. Ms. Le has served as a member of our Board since March 2022 and previously served as the Managing Director of our Board and our Global CEO from March 2022 until January 2024. Ms. Le is also the Chairwoman of VinFast Vietnam and the",
+        "is_independent": false,
+        "description": "Le Thi Thu Thuy, 51 tuổi — Chairwoman and Director của VinFast.",
+        "source": "sec_20f",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1913510/000110465926052266/vfs-20251231x20f.htm",
+        "source_filing_date": "2026-04-30",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "sec_ling_chung_yee_roy",
+      "label": "Person",
+      "properties": {
+        "name": "Ling Chung Yee, Roy",
+        "age": 48,
+        "title": "Independent Director",
+        "is_independent": true,
+        "description": "Ling Chung Yee, Roy, 48 tuổi — Independent Director của VinFast.",
+        "source": "sec_20f",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1913510/000110465926052266/vfs-20251231x20f.htm",
+        "source_filing_date": "2026-04-30",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "sec_nguyen_thi_lan_anh",
+      "label": "Person",
+      "properties": {
+        "name": "Nguyen Thi Lan Anh",
+        "age": 39,
+        "title": "Director and Chief Financial Officer (“CFO”)",
+        "bio": "Ms. Nguyen has served as a member of our Board since June 2024 and as our CFO since January 2024. Ms. Nguyen has also served as the chairwoman of V-G High Tech Energy Solutions Company Limited, a joint venture company partially-owned by VinEG, from December 2022 to May 2024. Prior to her appointment in our Company, she held several roles including CFO for VinES from October 2021 to October 2023 and for VinSmart from November 2020 to October 2021. Prior to joining Vingroup, Ms. Nguyen held various senior positions at NEXIA STT Co. Ltd, as Partner and Deputy General Director, and at Heineken Hanoi, as",
+        "is_independent": false,
+        "description": "Nguyen Thi Lan Anh, 39 tuổi — Director and Chief Financial Officer (“CFO”) của VinFast.",
+        "source": "sec_20f",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1913510/000110465926052266/vfs-20251231x20f.htm",
+        "source_filing_date": "2026-04-30",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "sec_nguyen_thi_van_trinh",
+      "label": "Person",
+      "properties": {
+        "name": "Nguyen Thi Van Trinh",
+        "age": 52,
+        "title": "Director",
+        "bio": "Ms. Nguyen has served as a member of our Board since March 2022. Ms. Nguyen has served as the director of Asian Star since March 2006. She is also a director at several companies in Singapore, including Vingroup Global Pte. Ltd. since May 2019, Vingroup Investment Pte. Ltd. since April 2019 and",
+        "is_independent": false,
+        "description": "Nguyen Thi Van Trinh, 52 tuổi — Director của VinFast.",
+        "source": "sec_20f",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1913510/000110465926052266/vfs-20251231x20f.htm",
+        "source_filing_date": "2026-04-30",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "sec_pham_nhat_quan_anh",
+      "label": "Person",
+      "properties": {
+        "name": "Pham Nhat Quan Anh",
+        "age": 33,
+        "title": "Director",
+        "bio": "Mr. Quan Anh has served as our senior officer and a member of our Board since November 2025. Since joining our Company in 2019, he has held several management positions at VinFast Vietnam, including Director of the Planning, Program Coordination and Quality Inspection Division from November 2020 to June 2021, Deputy General Director of Production and Concurrent Deputy General Director for Global Sales, Marketing and Aftersales from July 2023 to March 2024, and Vice Chairman from June 2021 to present. Prior to joining our Company, Mr. Quan Anh served as Deputy General Director and Deputy Chief Operating Officer of Vinpearl",
+        "is_independent": false,
+        "description": "Pham Nhat Quan Anh, 33 tuổi — Director của VinFast.",
+        "source": "sec_20f",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1913510/000110465926052266/vfs-20251231x20f.htm",
+        "source_filing_date": "2026-04-30",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "sec_pham_nhat_vuong",
+      "label": "Person",
+      "properties": {
+        "name": "Pham Nhat Vuong",
+        "age": 57,
+        "title": "Managing Director and CEO",
+        "bio": "Mr. Pham has served as a member of our Board since March 2022 and as our CEO since January 2024. Mr. Pham served as the Chairman of our Board from March 2022 until January 2024. He is also the Chairman of the board of directors of Vingroup. He has a long track record as an entrepreneur both inside and outside Vietnam. He established Vingroup’s core businesses, starting with its two initial brands, Vinpearl and Vincom in 2001 and 2002, respectively. He is also the founder of",
+        "is_independent": false,
+        "description": "Pham Nhat Vuong, 57 tuổi — Managing Director and CEO của VinFast.",
+        "source": "sec_20f",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1913510/000110465926052266/vfs-20251231x20f.htm",
+        "source_filing_date": "2026-04-30",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "sec_tham_chee_soon",
+      "label": "Person",
+      "properties": {
+        "name": "Tham Chee Soon",
+        "age": 61,
+        "title": "Independent Director",
+        "bio": "Mr. Tham has served as a member of our Board since May 2024. He is an independent director of several companies in Asia, including CH Offshore Limited since July 2023 and Tokio",
+        "is_independent": true,
+        "description": "Tham Chee Soon, 61 tuổi — Independent Director của VinFast.",
+        "source": "sec_20f",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1913510/000110465926052266/vfs-20251231x20f.htm",
+        "source_filing_date": "2026-04-30",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    },
+    {
+      "id": "Q72818_hải_phòng",
+      "label": "Place",
+      "properties": {
+        "name": "Hải Phòng",
+        "description": "Hải Phòng — nơi đặt trụ sở VinFast.",
+        "wikidata_id": "Q72818",
+        "source": "wikidata",
+        "source_url": "https://www.wikidata.org/wiki/Q72818",
+        "crawled_at": "2026-09-28T00:37:38+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q10831597_vingroup",
+      "type": "SUBSIDIARY_OF",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q72818_hải_phòng",
+      "type": "HEADQUARTERED_IN",
+      "properties": {}
+    },
+    {
+      "from": "Q10806972_phạm_nhật_vượng",
+      "to": "Q56660561_vinfast",
+      "type": "FOUNDED",
+      "properties": {}
+    },
+    {
+      "from": "sec_pham_nhat_vuong",
+      "to": "Q56660561_vinfast",
+      "type": "BOARD_MEMBER_OF",
+      "properties": {
+        "title": "Managing Director and CEO"
+      }
+    },
+    {
+      "from": "sec_pham_nhat_vuong",
+      "to": "Q56660561_vinfast",
+      "type": "CEO_OF",
+      "properties": {}
+    },
+    {
+      "from": "sec_pham_nhat_vuong",
+      "to": "Q10806972_phạm_nhật_vượng",
+      "type": "SAME_AS",
+      "properties": {
+        "note": "cùng một người, hai nguồn khác nhau"
+      }
+    },
+    {
+      "from": "sec_le_thi_thu_thuy",
+      "to": "Q56660561_vinfast",
+      "type": "BOARD_MEMBER_OF",
+      "properties": {
+        "title": "Chairwoman and Director"
+      }
+    },
+    {
+      "from": "sec_ling_chung_yee_roy",
+      "to": "Q56660561_vinfast",
+      "type": "BOARD_MEMBER_OF",
+      "properties": {
+        "title": "Independent Director"
+      }
+    },
+    {
+      "from": "sec_tham_chee_soon",
+      "to": "Q56660561_vinfast",
+      "type": "BOARD_MEMBER_OF",
+      "properties": {
+        "title": "Independent Director"
+      }
+    },
+    {
+      "from": "sec_nguyen_thi_van_trinh",
+      "to": "Q56660561_vinfast",
+      "type": "BOARD_MEMBER_OF",
+      "properties": {
+        "title": "Director"
+      }
+    },
+    {
+      "from": "sec_nguyen_thi_lan_anh",
+      "to": "Q56660561_vinfast",
+      "type": "BOARD_MEMBER_OF",
+      "properties": {
+        "title": "Director and Chief Financial Officer (“CFO”)"
+      }
+    },
+    {
+      "from": "sec_pham_nhat_quan_anh",
+      "to": "Q56660561_vinfast",
+      "type": "BOARD_MEMBER_OF",
+      "properties": {
+        "title": "Director"
+      }
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q56886475_vinfast_lux_a2_0",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q99227873_vinfast_president",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q59308572_vinfast_fadil",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q59202870_vinfast_klara",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q86012712_vinfast_klara_s",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q105063842_vinfast_vf31",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q105063992_vinfast_vf_8",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q57436089_vinfast_lux_sa2_0",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q97165384_vinfast_impes",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q104913276_vinfast_theon",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q110998736_vinfast_vento",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q111784765_vinfast_vf_7",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q120668902_vinfast_vf_3",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q111033540_vinfast_tempest",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q105064047_vinfast_vf_9",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q134460432_vinfast_ec_van",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q115802472_vinfast_vf_5",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q124246611_vinfast_vf_wild",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q115152621_vinfast_vf_6",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q114396165_vinfast_evo",
+      "type": "MANUFACTURES",
+      "properties": {}
+    },
+    {
+      "from": "Q56660561_vinfast",
+      "to": "Q106779032_vinfast_feliz",
+      "type": "MANUFACTURES",
+      "properties": {}
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+# Bí mật — không bao giờ commit
+.env
+.env.local
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Kết quả benchmark tạm
+results/
+*.log
