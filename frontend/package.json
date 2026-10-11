@@ -13,7 +13,8 @@
   "dependencies": {
     "@iconify/react": "^6.0.2",
     "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "react-dom": "^19.3.0",
+    "react-force-graph-2d": "^1.29.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
