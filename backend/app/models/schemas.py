@@ -6,6 +6,8 @@ answers của TypeSafe System One (xem skills/typesafe-ai/SKILL.md).
 
 from __future__ import annotations
 
+from typing import Any
+
 from pydantic import BaseModel
 
 
@@ -13,6 +15,12 @@ class Node(BaseModel):
     id: str
     label: str
     properties: dict
+
+
+class SearchResult(BaseModel):
+    id: str
+    label: str
+    description: str | None = None
 
 
 class Neighbor(BaseModel):
@@ -23,25 +31,17 @@ class Neighbor(BaseModel):
     target_description: str | None = None
 
 
-class DecideRequest(BaseModel):
-    question: str
-    start_node_id: str
-    model: str  # "jev" | "kev" | tên LLM, ví dụ "openai/gpt-6-sol"
+class ModelRequest(BaseModel):
+    """Request chung cho /model/jev, /model/kev, /model/llm — khớp schema
+    TypeSafe System One (state + questions), xem skills/typesafe-ai/SKILL.md.
+    """
+
+    state: str
+    questions: dict[str, Any]
+    model: str | None = None  # chỉ /model/llm dùng, chọn model LLM cụ thể
 
 
-class DecideResponse(BaseModel):
-    path: list[str]
-    answer: str | None
-    hops: int
+class ModelResponse(BaseModel):
+    answers: dict[str, Any]
+    usage: dict[str, Any] = {}
     latency_ms: float
-    usage: dict
-
-
-class BenchmarkRunRequest(BaseModel):
-    domain: str  # "football_vn" | "vinfast"
-    models: list[str]
-
-
-class BenchmarkRunResult(BaseModel):
-    run_id: str
-    status: str  # "pending" | "running" | "done" | "failed"

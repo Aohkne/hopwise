@@ -4,10 +4,17 @@ from __future__ import annotations
 
 from fastapi import APIRouter, HTTPException
 
-from app.models.schemas import Neighbor, Node
+from app.models.schemas import Neighbor, Node, SearchResult
 from app.services import neo4j_client
 
 router = APIRouter(prefix="/graph", tags=["graph"])
+
+
+@router.get("/search", response_model=list[SearchResult])
+def search(q: str, limit: int = 20) -> list[SearchResult]:
+    if not q.strip():
+        return []
+    return [SearchResult(**row) for row in neo4j_client.search_nodes(q, limit=limit)]
 
 
 @router.get("/nodes/{node_id}", response_model=Node)

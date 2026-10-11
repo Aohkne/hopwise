@@ -8,7 +8,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import benchmark, decisions, graph
+from app.routers import graph, model
 
 app = FastAPI(title="Hopwise API", version="0.1.0")
 
@@ -19,9 +19,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(graph.router, prefix="/api")
-app.include_router(decisions.router, prefix="/api")
-app.include_router(benchmark.router, prefix="/api")
+app.include_router(graph.router, prefix="/api/v1")
+app.include_router(model.router, prefix="/api/v1")
 
 
 @app.get("/health")

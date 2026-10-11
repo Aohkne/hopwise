@@ -58,3 +58,25 @@ def get_neighbors(node_id: str) -> list[dict]:
             id=node_id,
         )
         return [dict(record) for record in records]
+
+
+def search_nodes(q: str, limit: int = 20) -> list[dict]:
+    """Tìm node theo `description` (field mọi node đều có, xem data/README.md).
+
+    Dùng cho ô tìm kiếm ở frontend để chọn node bắt đầu traversal — người
+    dùng không thể tự biết `id` dạng QID để gõ trực tiếp.
+    """
+    settings = get_settings()
+    driver = get_driver(settings)
+    with driver.session(database=settings.neo4j_database) as session:
+        records = session.run(
+            """
+            MATCH (n)
+            WHERE n.description IS NOT NULL AND toLower(n.description) CONTAINS toLower($q)
+            RETURN n.id AS id, labels(n)[0] AS label, n.description AS description
+            LIMIT $limit
+            """,
+            q=q,
+            limit=limit,
+        )
+        return [dict(record) for record in records]
