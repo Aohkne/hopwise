@@ -20,8 +20,10 @@ thông thường (GPT, Claude, Gemini...) trên cùng bài toán — đối chi�
 data/                   Knowledge Graph đã crawl (Wikidata, SEC EDGAR)
 scripts/                Script crawl và kiểm tra dữ liệu
 skills/typesafe-ai/     Tài liệu tham khảo để build với TypeSafe/Jev
-frontend/               React + Tailwind + Iconify, phong cách neo-brutalism — chưa triển khai
-backend/                API phục vụ frontend — chưa triển khai
+frontend/               React + Vite + Tailwind + Iconify, neo-brutalism — khung đã dựng, logic còn TODO
+backend/                FastAPI, gọi Jev/Kev/LLM + Neo4j — khung đã dựng, logic còn TODO
+docker-compose.yml      Neo4j (chạy bằng `docker compose up -d`)
+.github/workflows/      CI: verify data, test backend, test frontend
 .env.example            Mẫu biến môi trường (OpenRouter, TypeSafe, Kev, Neo4j)
 ```
 

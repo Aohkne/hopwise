@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Token cho phong cách neo-brutalism: border rõ nét + box-shadow,
+   nhưng bo góc nhẹ (8px) thay vì vuông hoàn toàn. Dùng qua class
+   rounded-brutal / shadow-brutal / border-brutal ở component trong
+   components/ui/. */
+@theme {
+  --radius-brutal: 8px;
+  --shadow-brutal: 4px 4px 0 0 var(--color-brutal-border);
+  --color-brutal-bg: #fdf6e3;
+  --color-brutal-border: #111111;
+  --color-brutal-accent: #ff6b4a;
+}
+
+body {
+  background-color: var(--color-brutal-bg);
+}
