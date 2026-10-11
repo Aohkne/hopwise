@@ -1,6 +1,15 @@
-import { Dashboard } from "./pages/Dashboard";
+import { useState } from "react";
+import { Navbar, type Tab } from "./components/layout/Navbar";
+import { BenchmarkPage } from "./pages/BenchmarkPage";
+import { GraphPage } from "./pages/GraphPage";
 
 export function App() {
-  // TODO: router giữa Dashboard và BenchmarkResult khi có nhiều benchmark run — xem TODO.md.
-  return <Dashboard />;
+  const [tab, setTab] = useState<Tab>("graph");
+
+  return (
+    <div>
+      <Navbar active={tab} onChange={setTab} />
+      {tab === "graph" ? <GraphPage /> : <BenchmarkPage />}
+    </div>
+  );
 }
