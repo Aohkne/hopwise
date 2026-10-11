@@ -37,6 +37,7 @@ logic quyết định/traversal thật vẫn chưa có — xem [TODO.md](TODO.md
 
 ```bash
 docker compose up -d
+uv run python load_data.py
 ```
 
 **2. Backend** (FastAPI, terminal khác):
