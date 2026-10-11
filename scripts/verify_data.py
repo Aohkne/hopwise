@@ -119,7 +119,13 @@ def check_images(docs: list[dict]) -> None:
     alive = len(sample) - len(dead)
     print(f"   Sống: {alive}/{len(sample)} ({alive * 100 // len(sample)}%)")
     for nid, url in dead:
-        fail(f"URL chết: {nid} -> {url}")
+        # Cảnh báo, không fail(): uptime của Wikimedia Commons nằm ngoài
+        # tầm kiểm soát của repo — một ảnh tạm thời không truy cập được
+        # (rate-limit, CDN) không phải lỗi dữ liệu. Nếu tỉ lệ chết quá cao
+        # (>50%) mới coi là bất thường thật sự cần chặn CI.
+        print(f"  ⚠️  URL có thể chết (không chặn CI): {nid} -> {url}")
+    if len(dead) > len(sample) // 2:
+        fail(f"Hơn nửa mẫu ({len(dead)}/{len(sample)}) không truy cập được — có thể là lỗi dữ liệu thật")
 
 
 def main() -> None:
