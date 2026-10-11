@@ -328,7 +328,7 @@ def main() -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    print(f"\n✅ Ghi {OUT}")
+    print(f"\n Ghi {OUT}")
     print(f"   Nodes: {len(nodes)} {dict(by_label)}")
     print(f"   Edges: {len(edges)} {dict(by_type)}")
 

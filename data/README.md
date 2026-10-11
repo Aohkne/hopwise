@@ -120,11 +120,11 @@ Ghi rõ để không hiểu nhầm chất lượng dữ liệu:
 
 ## Kiểm chứng đã thực hiện
 
-- ✅ Không có node `id` trùng; mọi cạnh đều trỏ tới node tồn tại; không có cạnh trùng lặp.
-- ✅ Mọi node đều có `description` và `source`.
-- ✅ **30/30 link ảnh mẫu ngẫu nhiên trả HTTP 200** (đã sửa bug double-encoding `%2520`).
-- ✅ Đối chiếu thủ công 5 cầu thủ ngẫu nhiên: ngày sinh khớp 100% với Wikidata gốc.
-- ✅ Đối chiếu HĐQT VinFast với bảng gốc trong 20-F: khớp cả 7 người (tên, tuổi, chức danh).
+-  Không có node `id` trùng; mọi cạnh đều trỏ tới node tồn tại; không có cạnh trùng lặp.
+-  Mọi node đều có `description` và `source`.
+-  **30/30 link ảnh mẫu ngẫu nhiên trả HTTP 200** (đã sửa bug double-encoding `%2520`).
+-  Đối chiếu thủ công 5 cầu thủ ngẫu nhiên: ngày sinh khớp 100% với Wikidata gốc.
+-  Đối chiếu HĐQT VinFast với bảng gốc trong 20-F: khớp cả 7 người (tên, tuổi, chức danh).
 
 ## Giấy phép
 

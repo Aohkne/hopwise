@@ -1,57 +1,39 @@
 # Hopwise
 
-Benchmarking typed-decision models (Jev, Kev) against LLMs on knowledge-graph
-traversal — which node to visit, which edge to follow — measured on hand-built
-Vietnamese-domain graphs in Neo4j.
+> Liệu có thể dạy một mô hình quyết định đi đúng đường trên một Knowledge Graph, nhanh và rẻ hơn một LLM thông thường, mà vẫn chính xác không kém?
 
-## Ý tưởng
+**Hopwise** là một thử nghiệm xoay quanh câu hỏi đó. Ý tưởng cốt lõi:
+**Jev** — mô hình "System One" của TypeSafe, trả về quyết định có kiểu kèm xác suất thay vì sinh văn bản — để truy vấn một **Knowledge Graph**. Ở mỗi node, model được hỏi *"cạnh nào nên đi tiếp để tìm thông tin trả lời câu hỏi?"*, và quyết định đó được so sánh với việc giao hẳn câu hỏi cho một LLM
+thông thường (GPT, Claude, Gemini...) trên cùng bài toán — đối chiếu độ chính xác, tốc độ phản hồi và chi phí giữa hai cách tiếp cận.
 
-[TypeSafe's Jev](https://typesafe.ai) là một "System One model": thay vì sinh
-văn bản như LLM thường, nó nhận vào `state` + một tập câu hỏi có kiểu
-(`Choice` / `Score` / `Noul`) và trả về quyết định kèm xác suất đã hiệu chỉnh.
-Project này thử dùng Jev (và [Kev](https://github.com/jaredpalmer/kev) — bản
-mã nguồn mở tương thích API, chạy free) làm "bộ não" quyết định đường đi khi
-truy vấn một Knowledge Graph: ở mỗi node, hỏi model "cạnh nào nên đi tiếp để
-tìm thông tin trả lời câu hỏi?", rồi so sánh độ chính xác/tốc độ/chi phí với
-việc dùng LLM thông thường (GPT, Claude, Gemini...) cho cùng quyết định.
+## Đóng góp
 
-## Cấu trúc
+| Nội dung | Trạng thái |
+|---|---|
+| Bộ dữ liệu Knowledge Graph crawl từ nguồn thật (Wikidata, SEC EDGAR) |  Có sẵn trong `data/` |
+| Biểu đồ benchmark Jev so với các LLM khác (vẽ bằng TikZ, xuất ảnh) |  Chưa triển khai — xem [TODO.md](TODO.md) |
+| Hướng dẫn xây một Knowledge Graph — cách các node quan hệ với nhau |  Chưa có trong bản này — xem [TODO.md](TODO.md) |
+
+## Cấu trúc dự án
 
 ```
-data/                 Dữ liệu đồ thị (node/edge) crawl từ Wikidata + SEC EDGAR
-  football_vn.json      Bóng đá Việt Nam: ĐTQG + V.League 1
-  vinfast.json           VinFast: công ty, HĐQT, model xe
-  README.md              Nguồn, độ phủ field, hạn chế đã biết
-scripts/
-  wikidata_client.py    Helper SPARQL/Commons dùng chung
-  crawl_football.py     Crawl domain bóng đá
-  crawl_vinfast.py      Crawl domain VinFast (+ parse HĐQT từ SEC 20-F)
-  verify_data.py        Kiểm tra toàn vẹn graph + link ảnh sống
-skills/typesafe-ai/     Skill hướng dẫn build với TypeSafe (tài liệu tham khảo)
-.env.example           Biến môi trường cần thiết (OpenRouter, TypeSafe, Kev, Neo4j)
+data/                   Knowledge Graph đã crawl (Wikidata, SEC EDGAR)
+scripts/                Script crawl và kiểm tra dữ liệu
+skills/typesafe-ai/     Tài liệu tham khảo để build với TypeSafe/Jev
+frontend/               React + Tailwind + Iconify, phong cách neo-brutalism — chưa triển khai
+backend/                API phục vụ frontend — chưa triển khai
+.env.example            Mẫu biến môi trường (OpenRouter, TypeSafe, Kev, Neo4j)
 ```
 
-## Bắt đầu
+## Tài liệu
 
-```bash
-cp .env.example .env   # điền OPENROUTER_API_KEY hoặc TYPESAFE_API_KEY
-
-python3 scripts/crawl_football.py
-python3 scripts/crawl_vinfast.py
-python3 scripts/verify_data.py
-```
-
-Xem `data/README.md` để biết chi tiết nguồn dữ liệu, độ phủ từng field, và
-những hạn chế đã biết (ví dụ: logo CLB bóng đá không có sẵn public domain).
-
-## Trạng thái
-
-- [x] Crawl + verify dữ liệu 2 domain (bóng đá VN, VinFast)
-- [ ] Loader Neo4j từ JSON
-- [ ] Bộ test-case ground truth cho traversal
-- [ ] Harness so sánh Jev / Kev / LLM
+| File | Nội dung |
+|---|---|
+| [GUIDE.md](GUIDE.md) | Cách chạy script và chạy toàn bộ project |
+| [VERSION.md](VERSION.md) | Lộ trình các phiên bản |
+| [TODO.md](TODO.md) | Những phần đã lên kế hoạch nhưng chưa có code |
 
 ## License
 
-Mã nguồn trong repo: chưa chọn license chính thức. Dữ liệu trong `data/`:
-xem `data/README.md` (Wikidata CC0, SEC EDGAR public domain).
+Mã nguồn: chưa chọn license chính thức. Dữ liệu trong `data/`: xem
+[`data/README.md`](data/README.md) (Wikidata CC0, SEC EDGAR public domain).
