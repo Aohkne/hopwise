@@ -1,8 +1,8 @@
-"""POST /model/jev, /model/kev, /model/llm — gọi trực tiếp 1 decision model.
+"""POST /model/jev, /model/llm — gọi trực tiếp 1 decision model.
 
 Mỗi endpoint nhận cùng schema {state, questions} (TypeSafe System One, xem
 skills/typesafe-ai/SKILL.md) và trả về cùng shape {answers, usage, latency_ms}
-— để 3 panel Jev/Kev/LLM ở frontend benchmark xử lý giống nhau.
+— để 2 model Jev/LLM ở frontend benchmark xử lý giống nhau.
 """
 
 from __future__ import annotations
@@ -11,7 +11,6 @@ from fastapi import APIRouter, HTTPException
 
 from app.models.schemas import ModelRequest, ModelResponse
 from app.services.decision_models.jev import JevClient
-from app.services.decision_models.kev import KevClient
 from app.services.decision_models.llm import LLMClient
 
 router = APIRouter(prefix="/model", tags=["model"])
@@ -28,11 +27,6 @@ async def _call(client, request: ModelRequest) -> ModelResponse:
 @router.post("/jev", response_model=ModelResponse)
 async def call_jev(request: ModelRequest) -> ModelResponse:
     return await _call(JevClient(), request)
-
-
-@router.post("/kev", response_model=ModelResponse)
-async def call_kev(request: ModelRequest) -> ModelResponse:
-    return await _call(KevClient(), request)
 
 
 @router.post("/llm", response_model=ModelResponse)

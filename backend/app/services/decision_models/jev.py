@@ -13,10 +13,15 @@ import time
 import httpx
 
 from app.config import get_settings
+from app.services.decision_models import CALL_TIMEOUT
 
 
 class JevClient:
     name = "jev"
+
+    @property
+    def model_name(self) -> str:
+        return get_settings().jev_model
 
     async def decide(self, state: str, questions: dict) -> dict:
         settings = get_settings()
@@ -25,7 +30,7 @@ class JevClient:
 
         url = settings.openrouter_base_url + settings.openrouter_decisions_path
         start = time.perf_counter()
-        async with httpx.AsyncClient(timeout=60) as client:
+        async with httpx.AsyncClient(timeout=CALL_TIMEOUT) as client:
             resp = await client.post(
                 url,
                 headers={
@@ -41,4 +46,6 @@ class JevClient:
             "answers": data["answers"],
             "usage": data.get("usage", {}),
             "latency_ms": latency_ms,
+            # phiên bản thật OpenRouter đã route tới, VD "typesafe/jev-1.13-20260917"
+            "model_version": data.get("model"),
         }
