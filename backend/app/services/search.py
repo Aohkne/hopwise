@@ -33,8 +33,8 @@ ANSWER_THRESHOLD = 0.5
 DOMAIN_DESCRIPTIONS = {
     "football_vn": "Bóng đá Việt Nam: đội tuyển quốc gia, V.League 1, cầu thủ, câu lạc bộ, "
     "huấn luyện viên, sân vận động, nơi sinh, danh hiệu",
-    "vinfast": "VinFast: hãng xe ô tô Việt Nam, hội đồng quản trị, người sáng lập, "
-    "công ty mẹ, trụ sở, các mẫu xe",
+    "vinfast": "VinFast: hãng xe ô tô Việt Nam, hội đồng quản trị, cổ đông, công ty con, nhà máy, "
+    "thương hiệu và các mẫu xe, thị trường bán xe, người sáng lập, công ty mẹ Vingroup",
 }
 
 
