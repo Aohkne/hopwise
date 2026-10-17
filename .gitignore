@@ -14,6 +14,7 @@ node_modules/
 dist/
 *.tsbuildinfo
 
-# Kết quả benchmark tạm
+# Kết quả benchmark (CSV) — sinh ra khi chạy
+outputs/
 results/
 *.log

@@ -1,7 +1,7 @@
 [project]
 name = "hopwise-backend"
 version = "0.1.0"
-description = "API phục vụ frontend: truy vấn Neo4j, gọi Jev/Kev/LLM để chạy traversal và benchmark"
+description = "API phục vụ frontend: truy vấn Neo4j, gọi Jev/LLM để chạy traversal và benchmark"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.115",

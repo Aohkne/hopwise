@@ -1,6 +1,6 @@
 # Backend
 
-API cho `frontend/`: truy vấn Neo4j, gọi Jev/Kev/LLM để chạy traversal, trả
+API cho `frontend/`: truy vấn Neo4j, gọi Jev/LLM để chạy traversal, trả
 kết quả benchmark. Khung đã dựng xong (boot được, test pass), logic quyết
 định/traversal thật vẫn là TODO — xem [TODO.md](../TODO.md) ở thư mục gốc.
 
@@ -36,6 +36,6 @@ app/
     neo4j_client.py         Đã triển khai — driver singleton + query cơ bản
     traversal.py              TODO — thuật toán traversal
     decision_models/
-      jev.py, kev.py, llm.py   TODO — gọi Jev/Kev/LLM thật
+      jev.py, llm.py   TODO — gọi Jev/LLM thật
   models/schemas.py        Pydantic schema dùng chung
 ```
