@@ -24,7 +24,7 @@ bên trong vẫn chưa triển khai, liệt kê dưới đây.
   `GET .../neighbors` giờ trả cả cạnh đi vào (`direction`).
 - [ ] **Bộ test-case ground truth** — mỗi test case gồm câu hỏi, node xuất
   phát, đường đi đúng kỳ vọng và đáp án đúng, cho cả hai domain hiện có.
-- [ ] **Tài liệu xây Knowledge Graph** — giải thích cách các node quan hệ
+- [x] **Tài liệu xây Knowledge Graph** — giải thích cách các node quan hệ
   với nhau trong `data/football_vn.json` và `data/vinfast.json`: loại node,
   loại cạnh, và vì sao chọn Wikidata/SEC làm nguồn.
 

@@ -6,13 +6,13 @@ Hai domain tiếng Việt dùng để benchmark khả năng ra quyết định t
 Toàn bộ dữ liệu được **crawl từ API công khai**, không có giá trị nào viết tay.
 Mỗi node đều mang `source`, `source_url`, `crawled_at` để truy vết ngược.
 
-Crawl lần gần nhất: **28/09/2026**.
+Crawl lần gần nhất: **17/10/2026** (vinfast.json).
 
 ## Tạo lại dữ liệu
 
 ```bash
 python3 scripts/crawl_football.py   # ~8 phút (nhiều lô SPARQL, có sleep giữa các lô)
-python3 scripts/crawl_vinfast.py    # ~1 phút
+python3 scripts/crawl_vinfast.py    # ~2 phút (Wikidata + 4 bản 20-F từ SEC)
 python3 scripts/verify_data.py      # kiểm tra chất lượng, exit 1 nếu có lỗi
 ```
 
@@ -68,30 +68,40 @@ V.League 1 (`Q209080`), cùng CLB, HLV, sân vận động, nơi sinh và danh h
 
 ## `vinfast.json` — VinFast
 
-**Nguồn:** Wikidata `Q56660561` (CC0) + **SEC EDGAR 20-F** (public domain, CIK `0001913510`,
-bản nộp ngày **30/04/2026**).
+**Nguồn:** Wikidata (CC0) + **SEC EDGAR** (public domain, CIK `0001913510`): các báo cáo
+thường niên **20-F năm tài chính 2023, 2024, 2025** và Exhibit 8.1 của bản 2025
+(nộp ngày **30/04/2026**).
 
-Wikidata **không có** dữ liệu hội đồng quản trị VinFast (`P3320`, `P169` đều trống),
-nên HĐQT lấy từ mục *"Directors and Senior Management"* trong báo cáo thường niên
-20-F nộp cho SEC — nguồn pháp lý chính thức, chính xác hơn mọi bài báo.
+Wikidata gần như không có dữ liệu doanh nghiệp VinFast (HĐQT `P3320`/`P169` trống, xe
+chỉ có loại xe và ảnh), nên phần lớn graph lấy từ 20-F — nguồn pháp lý chính thức.
 
 | Thống kê | Số lượng |
 |---|---|
-| Node | 32 (Company 1, Person 8, CarModel 21, Organization 1, Place 1) |
-| Cạnh | 33 |
+| Node | 146 (Company 61, CarModel 30, Country 15, Person 10, VehicleClass 8, Place 5, Factory 5, Organization 3, Region 3, Brand 3, ProductLine 3) |
+| Cạnh | 225 |
 
-**Cạnh:** `MANUFACTURES` (21), `BOARD_MEMBER_OF` (7), `SUBSIDIARY_OF`, `HEADQUARTERED_IN`,
-`FOUNDED`, `CEO_OF`, `SAME_AS` (mỗi loại 1).
+**Cạnh:** SUBSIDIARY_OF 35, MANUFACTURES 33, RELATED_PARTY_OF 28, INCORPORATED_IN 24, SOLD_IN 22, IS_A 20, BELONGS_TO_BRAND 16, LOCATED_IN 10, BOARD_MEMBER_OF 7, SHAREHOLDER_OF 6, PRODUCES 6, OPERATES 5, HAS_BRAND 3, FOUNDED 2, FORMER_BOARD_MEMBER_OF 2, BASED_ON 2, HEADQUARTERED_IN 1, CEO_OF 1, SAME_AS 1, CFO_OF 1.
 
-**Dữ liệu công ty:** thành lập 06/2017 · trụ sở Hải Phòng · công ty mẹ Vingroup ·
-website vinfastauto.com · niêm yết Nasdaq mã VFS · **3 link logo SVG** (đã kiểm tra sống).
+| Dữ liệu | Nguồn trong 20-F | Node / cạnh |
+|---|---|---|
+| HĐQT và ban điều hành **qua 3 năm** (có người *từng* là thành viên) | bảng *Directors and Senior Management* của từng bản 20-F | `Person`, `BOARD_MEMBER_OF`, `FORMER_BOARD_MEMBER_OF`, `CEO_OF`, `CFO_OF` |
+| 24 công ty con + nơi đăng ký | Exhibit 8.1 | `Company`, `Country`, `SUBSIDIARY_OF`, `INCORPORATED_IN` |
+| % sở hữu trực tiếp của 2 công ty con | chú thích sơ đồ cơ cấu | thuộc tính `direct_ownership_pct` (kèm `evidence`) |
+| Cổ đông lớn (Vingroup 50,7%, VIG 32,9%, Asian Star 14,3%, ông Phạm Nhật Vượng 97,8%) | bảng *Beneficially Owned* | `SHAREHOLDER_OF` (kèm `shares`, `pct`) |
+| 28 công ty bên liên quan (Vinhomes, Vinpearl, VinAI, V-Green...) | bảng *Related parties* | `RELATED_PARTY_OF` (kèm `relationship`) |
+| 3 thương hiệu VF / Green / Lạc Hồng | đoạn *"three distinct brands"* | `Brand`, `HAS_BRAND`, `BELONGS_TO_BRAND` |
+| Mẫu xe chưa có trên Wikidata (VF MPV 7, VF Wild, Lạc Hồng, dòng Green, EC Van...) + dòng e-bus/e-scooter/e-bike | danh sách gạch đầu dòng `● VF 3 — ...` | `CarModel`, `ProductLine`, `MANUFACTURES` |
+| Thị trường bán từng mẫu xe | câu *"currently offer this model in..."* | `SOLD_IN` (kèm `evidence`) |
+| Herio Green dựa trên VF 5, Nerio Green dựa trên VF e34 | câu *"developed based on..."* | `BASED_ON` (kèm `evidence`) |
+| 5 nhà máy (Hải Phòng, Hà Tĩnh, Subang, Thoothukudi, North Carolina) | mục *Our Properties and Manufacturing Facilities* | `Factory`, `OPERATES`, `LOCATED_IN`, `PRODUCES` |
+| Công ty con khác của Vingroup | Wikidata `P749` / `P355` | `Company`, `SUBSIDIARY_OF` |
+| Loại xe (sedan, hatchback...) | Wikidata `P31` / `P279` | `VehicleClass`, `IS_A` |
 
-**HĐQT (từ 20-F 2026):** Pham Nhat Vuong (Managing Director & CEO), Le Thi Thu Thuy
-(Chairwoman), Ling Chung Yee Roy (Independent), Tham Chee Soon (Independent),
-Nguyen Thi Van Trinh, Nguyen Thi Lan Anh (Director & CFO), Pham Nhat Quan Anh —
-6/7 người có kèm tiểu sử trích từ chính báo cáo.
-
----
+**Hai mức độ tin cậy:**
+- **Từ bảng** (HĐQT, công ty con, cổ đông, bên liên quan, Wikidata): trích trực tiếp.
+- **Từ văn xuôi** (thương hiệu, thị trường, nhà máy, `BASED_ON`): trích bằng mẫu câu cố
+  định, **nguyên văn câu gốc lưu ở thuộc tính `evidence`** để đối chiếu. Mẫu câu không khớp
+  (20-F đổi cách viết) thì crawler **dừng với lỗi**, không tự điền.
 
 ## Hạn chế đã biết
 
@@ -115,7 +125,14 @@ Ghi rõ để không hiểu nhầm chất lượng dữ liệu:
    ngôn ngữ nào cho 2 entity này. Giữ QID làm tên.
 8. **Người vừa là cầu thủ vừa là HLV** được giữ làm 1 node `Player` kèm cờ `also_coach: true`
    thay vì tách đôi.
-9. **Dữ liệu Wikidata do cộng đồng đóng góp** → có thể lỗi thời hoặc thiếu. Mọi node giữ
+9. **VinFast — văn xuôi 20-F có thể mâu thuẫn nhau**: Hải Phòng ghi "khánh thành 2019" ở mục
+   nhà máy nhưng "2018" ở mục tổng quan. Crawler lấy theo mục nhà máy, `evidence` giữ câu gốc.
+10. **VinFast — `VF e34` và `VinFast VF31` có thể là một**: Wikidata đặt tên `VF31` cho
+    entity có ảnh VF e34, còn 20-F gọi là `VF e34`. Chưa gộp vì không có bằng chứng chắc chắn.
+11. **VinFast — Nerio Green, VF e34 chỉ có tên + phân khúc**: 20-F không có mục mô tả riêng.
+12. **VinFast — chỉ 2/24 công ty con có `direct_ownership_pct`**: sơ đồ cơ cấu của 20-F là
+    hình ảnh, chỉ có 2 công ty được nêu % trong chú thích.
+13. **Dữ liệu Wikidata do cộng đồng đóng góp** → có thể lỗi thời hoặc thiếu. Mọi node giữ
    `wikidata_id` để đối chiếu lại.
 
 ## Kiểm chứng đã thực hiện
@@ -125,6 +142,8 @@ Ghi rõ để không hiểu nhầm chất lượng dữ liệu:
 -  **30/30 link ảnh mẫu ngẫu nhiên trả HTTP 200** (đã sửa bug double-encoding `%2520`).
 -  Đối chiếu thủ công 5 cầu thủ ngẫu nhiên: ngày sinh khớp 100% với Wikidata gốc.
 -  Đối chiếu HĐQT VinFast với bảng gốc trong 20-F: khớp cả 7 người (tên, tuổi, chức danh).
+-  Đối chiếu số liệu VinFast mở rộng với 20-F FY2025: tỷ lệ cổ phần 4 cổ đông, công suất nhà máy
+   Hà Tĩnh/Subang/Hải Phòng/Thoothukudi, thị trường của VF 6, % sở hữu 2 công ty con, HĐQT 2023 — khớp.
 
 ## Giấy phép
 
