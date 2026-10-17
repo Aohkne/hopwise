@@ -1,6 +1,16 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { App } from "./App";
+import { mockFetchRoutes } from "./test/fetchMock";
+
+beforeEach(() => {
+  mockFetchRoutes([
+    [/graph\/domains/, () => ({ nodes: [], edges: [] })],
+    [/benchmark\/models/, () => ({ llm: ["google/gemini-3.8-flash"], jev: "typesafe/jev-1.13" })],
+    [/benchmark\/history/, () => []],
+  ]);
+});
+afterEach(() => vi.unstubAllGlobals());
 
 describe("App", () => {
   it("renders without crashing, defaults to Graph tab", () => {
@@ -12,6 +22,6 @@ describe("App", () => {
   it("switches to Benchmark tab on click", () => {
     render(<App />);
     fireEvent.click(screen.getByRole("button", { name: /benchmark/i }));
-    expect(screen.getByLabelText("Câu hỏi / node bắt đầu")).toBeInTheDocument();
+    expect(screen.getByLabelText("Câu hỏi")).toBeInTheDocument();
   });
 });
