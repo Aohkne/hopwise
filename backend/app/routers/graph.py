@@ -4,10 +4,18 @@ from __future__ import annotations
 
 from fastapi import APIRouter, HTTPException
 
-from app.models.schemas import Neighbor, Node, SearchResult
+from app.models.schemas import GraphPayload, Neighbor, Node, SearchResult
 from app.services import neo4j_client
 
 router = APIRouter(prefix="/graph", tags=["graph"])
+
+
+@router.get("/domains/{domain}", response_model=GraphPayload)
+def read_domain_graph(domain: str) -> GraphPayload:
+    payload = neo4j_client.get_domain_graph(domain)
+    if not payload["nodes"]:
+        raise HTTPException(status_code=404, detail=f"Domain '{domain}' không có dữ liệu")
+    return GraphPayload(**payload)
 
 
 @router.get("/search", response_model=list[SearchResult])

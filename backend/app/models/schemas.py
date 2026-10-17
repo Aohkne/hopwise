@@ -23,16 +23,34 @@ class SearchResult(BaseModel):
     description: str | None = None
 
 
+class GraphNode(BaseModel):
+    id: str
+    label: str
+    caption: str | None = None
+
+
+class GraphEdge(BaseModel):
+    source: str
+    target: str
+    kind: str
+
+
+class GraphPayload(BaseModel):
+    nodes: list[GraphNode]
+    edges: list[GraphEdge]
+
+
 class Neighbor(BaseModel):
     edge_type: str
     edge_props: dict
     target_id: str
     target_label: str
     target_description: str | None = None
+    direction: str = "out"  # "out" | "in", xem neo4j_client.get_neighbors
 
 
 class ModelRequest(BaseModel):
-    """Request chung cho /model/jev, /model/kev, /model/llm — khớp schema
+    """Request chung cho /model/jev, /model/llm — khớp schema
     TypeSafe System One (state + questions), xem skills/typesafe-ai/SKILL.md.
     """
 

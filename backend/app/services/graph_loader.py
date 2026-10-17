@@ -37,6 +37,7 @@ def load_file(path: Path) -> dict:
     by_label: dict[str, list[dict]] = collections.defaultdict(list)
     for node in data["nodes"]:
         by_label[node["label"]].append({"id": node["id"], "props": node["properties"]})
+    domain = data["domain"]
 
     by_type: dict[str, list[dict]] = collections.defaultdict(list)
     for edge in data["edges"]:
@@ -51,8 +52,15 @@ def load_file(path: Path) -> dict:
 
         for label, nodes in by_label.items():
             session.run(
-                f"UNWIND $nodes AS node MERGE (n:{label} {{id: node.id}}) SET n += node.props",
+                f"""
+                UNWIND $nodes AS node
+                MERGE (n:{label} {{id: node.id}})
+                SET n += node.props
+                SET n.domains = CASE WHEN $domain IN coalesce(n.domains, [])
+                    THEN n.domains ELSE coalesce(n.domains, []) + [$domain] END
+                """,
                 nodes=nodes,
+                domain=domain,
             )
 
         for etype, edges in by_type.items():
@@ -63,8 +71,11 @@ def load_file(path: Path) -> dict:
                 MATCH (a {{id: edge.from_id}}), (b {{id: edge.to_id}})
                 MERGE (a)-[r:{etype}]->(b)
                 SET r += edge.props
+                SET r.domains = CASE WHEN $domain IN coalesce(r.domains, [])
+                    THEN r.domains ELSE coalesce(r.domains, []) + [$domain] END
                 """,
                 edges=edges,
+                domain=domain,
             )
 
     return {
