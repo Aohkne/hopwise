@@ -8,7 +8,7 @@
 - **Knowledge Graph thô sơ**: các node được nối bằng thuật toán đơn giản —
   mỗi cạnh ánh xạ trực tiếp một quan hệ có sẵn trong nguồn (`PLAYED_FOR`,
   `BOARD_MEMBER_OF`...), chưa có bước suy luận ngữ nghĩa nào giữa các node.
-- **So sánh System 1 và System 2**: đối chiếu Jev/Kev (System 1) với LLM
+- **So sánh System 1 và System 2**: đối chiếu Jev (System 1) với LLM
   thông thường (System 2) trên cùng bài toán traversal.
 - CI/CD
 
