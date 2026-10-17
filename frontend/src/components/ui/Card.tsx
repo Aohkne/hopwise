@@ -1,12 +1,6 @@
 import type { PropsWithChildren } from "react";
 
-/** Primitive neo-brutalism: border rõ nét + box-shadow, bo góc 8px. */
+/** Khối nội dung: viền mảnh 1px, góc vuông nhẹ, không đổ bóng. */
 export function Card({ children, className = "" }: PropsWithChildren<{ className?: string }>) {
-  return (
-    <div
-      className={`rounded-brutal border-2 border-brutal-border bg-white p-4 shadow-brutal ${className}`}
-    >
-      {children}
-    </div>
-  );
+  return <div className={`rounded-sm border border-line bg-white p-4 ${className}`}>{children}</div>;
 }

@@ -14,23 +14,20 @@ const TABS: { id: Tab; label: string; icon: string }[] = [
 
 export function Navbar({ active, onChange }: NavbarProps) {
   return (
-    <nav className="flex items-center gap-2 border-b-2 border-brutal-border bg-white px-4 py-3">
-      <span className="mr-4 flex items-center gap-2 font-bold">
-        <Icon icon="mdi:graph-outline" className="size-6 text-brutal-accent" />
-        Hopwise
-      </span>
+    <nav className="flex w-full items-center gap-3 border-b border-line bg-white px-5 py-3">
+      <span className="pixel-title mr-6 text-2xl">Hopwise</span>
       {TABS.map((tab) => (
         <button
           key={tab.id}
           onClick={() => onChange(tab.id)}
-          className={`flex items-center gap-1.5 rounded-brutal border-2 border-brutal-border
-            px-3 py-1.5 text-sm font-semibold transition-colors ${
+          className={`flex items-center gap-2 rounded-sm border px-3 py-1.5 text-xs font-medium
+            transition-colors ${
               active === tab.id
-                ? "bg-brutal-accent text-white shadow-brutal"
-                : "bg-white hover:bg-neutral-100"
+                ? "border-teal-dark bg-teal text-white"
+                : "border-line bg-white hover:bg-teal-soft"
             }`}
         >
-          <Icon icon={tab.icon} />
+          <Icon icon={tab.icon} className="size-4" />
           {tab.label}
         </button>
       ))}
