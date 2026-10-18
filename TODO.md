@@ -17,13 +17,16 @@ bên trong vẫn chưa triển khai, liệt kê dưới đây.
   - [x] `GET /api/v1/graph/nodes/{id}/neighbors` — lấy mọi cạnh nối với 1 node (cả hai chiều, có `direction`), kèm node ở đầu kia.
 - [x] **Model**
   - [x] `POST /api/v1/model/jev`: gọi Jev qua OpenRouter. Đã test thật, trả lời đúng.
-  - [x] `POST /api/v1/model/llm`: gọi LLM thường (chọn model qua field `model`).
-    Đã test thật với model free trên OpenRouter, trả lời đúng.
+  - [x] `POST /api/v1/model/llm`: gọi LLM thường (field `model` dạng `<nơi>/<model>`, VD `nvidia/openai/gpt-oss-20b`).
+    Chỉ test bằng mock; chưa gọi thật Ollama / NVIDIA (cần `NVIDIA_API_KEY`, Ollama bật).
 - [x] **Vòng lặp tìm kiếm** (`services/search.py`): model tự chọn domain → loại node →
   node bắt đầu (chia lô ≤250) → đi theo cạnh hai chiều, lưu node đã thăm + quay lui.
   `GET .../neighbors` giờ trả cả cạnh đi vào (`direction`).
-- [ ] **Bộ test-case ground truth** — mỗi test case gồm câu hỏi, node xuất
-  phát, đường đi đúng kỳ vọng và đáp án đúng, cho cả hai domain hiện có.
+- [x] **Bộ test-case ground truth** (`benchmarks/`) — 30 câu mỗi domain, sinh từ graph,
+  chỉ chấm theo đáp án, tiếng Việt. Xem `benchmarks/README.md`.
+- [x] **Chấm điểm bằng ground truth** — cột `case_id`, `expected_answers`, `correct` trong CSV;
+  chọn câu mẫu ở trang Benchmark thì mỗi model được chấm đúng/sai.
+- [x] **Chạy hàng loạt cả bộ câu hỏi** (`backend/run_cases.py`) và báo cáo accuracy / thời gian trung vị theo số bước.
 - [x] **Tài liệu xây Knowledge Graph** — giải thích cách các node quan hệ
   với nhau trong `data/football_vn.json` và `data/vinfast.json`: loại node,
   loại cạnh, và vì sao chọn Wikidata/SEC làm nguồn.
@@ -37,10 +40,10 @@ bên trong vẫn chưa triển khai, liệt kê dưới đây.
     phụ thuộc cơ chế tạo cạnh bằng fact (Bản 2.0.0). Lưu ý: loader dùng
     `MERGE (a)-[r:TYPE]->(b)` nên các giai đoạn của cùng một cặp
     cầu thủ-CLB gộp thành 1 cạnh (4526 cạnh vẽ ra so với 4758 trong JSON).
-  - [x] **Benchmark**: câu hỏi → Jev / LLM chạy song song (tối đa 5 phút
+  - [x] **Benchmark**: câu hỏi → Jev / Gemma 4 (Ollama) / gpt-oss-20b (NVIDIA) chạy song song (tối đa 5 phút
     mỗi model, có nút Dừng). Mỗi model 1 hàng: graph node đã đi qua + tab Status /
     Node đã đi qua; tab Lịch sử xem lại. Kết quả ghi `outputs/*.csv`.
-- [ ] **Biểu đồ benchmark** — vẽ bằng TikZ, xuất ảnh, nhúng vào phần "Đóng góp" của README.md.
+- [x] **Biểu đồ benchmark** — vẽ bằng TikZ (`benchmarks/plot_results.py`), xuất ảnh, nhúng vào README.md.
 
 ## Bản 2.0.0
 
@@ -50,4 +53,4 @@ bên trong vẫn chưa triển khai, liệt kê dưới đây.
 
 ## Khác
 
-- [ ] Chọn license chính thức cho mã nguồn.
+- [x] Chọn license chính thức cho mã nguồn (Apache-2.0, xem `LICENSE`).
