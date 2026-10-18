@@ -16,5 +16,5 @@ dist/
 
 # Kết quả benchmark (CSV) — sinh ra khi chạy
 outputs/
-results/
+/results/
 *.log
