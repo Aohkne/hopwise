@@ -20,8 +20,8 @@
 
 | Model | Loại | Môi trường |
 |---|---|---|
-| **Jev 1.13** (`typesafe/jev-1.13-20260917`) | System 1 — quyết định có kiểu + xác suất | TypeSafe, qua OpenRouter |
-| **Gemma 4 12B** (`gemma4-12b-32k`, Q4_K_M) | System 2 — LLM thông thường | Local (Ollama), tắt suy luận |
+| **Jev 1.13** | System 1 — quyết định có kiểu + xác suất | TypeSafe, qua OpenRouter |
+| **Gemma 4 12B** | System 2 — LLM thông thường | Local (Ollama), tắt suy luận |
 | **gpt-oss-20b** | System 2 — LLM thông thường | NVIDIA NIM (cloud) |
 
 ## Đóng góp
