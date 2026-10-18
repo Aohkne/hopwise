@@ -1,0 +1,13 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-200746-0930f6,jev,1,domain,vinfast,,,,,,,1124.5,423,1.7766e-05,
+20261017-200746-0930f6,jev,2,label,Company,,,,,,,696.5,512,2.1504e-05,
+20261017-200746-0930f6,jev,3,pick,sec_vinfast_engineering_australia_pty_ltd,,,,,,,579.5,2501,0.000105042,61
+20261017-200746-0930f6,jev,4,visit,,sec_vinfast_engineering_australia_pty_ltd,Company,"VinFast Engineering Australia Pty Ltd — công ty con của VinFast, đăng ký tại Australia.",,,0.9,642.3,551,2.3142e-05,2
+20261017-200746-0930f6,ollama,1,domain,vinfast,,,,,,,1401.4,324,0.0,
+20261017-200746-0930f6,ollama,2,label,Company,,,,,,,907.2,351,0.0,
+20261017-200746-0930f6,ollama,3,pick,sec_vinfast_engineering_australia_pty_ltd,,,,,,,4362.2,1892,0.0,61
+20261017-200746-0930f6,ollama,4,visit,,sec_vinfast_engineering_australia_pty_ltd,Company,"VinFast Engineering Australia Pty Ltd — công ty con của VinFast, đăng ký tại Australia.",,,1.0,3621.6,443,0.0,2
+20261017-200746-0930f6,nvidia,1,domain,vinfast,,,,,,,3034.5,377,0.0,
+20261017-200746-0930f6,nvidia,2,label,Company,,,,,,,6755.1,399,0.0,
+20261017-200746-0930f6,nvidia,3,pick,sec_vinfast_engineering_australia_pty_ltd,,,,,,,4033.4,1895,0.0,61
+20261017-200746-0930f6,nvidia,4,visit,,sec_vinfast_engineering_australia_pty_ltd,Company,"VinFast Engineering Australia Pty Ltd — công ty con của VinFast, đăng ký tại Australia.",,,1.0,5946.1,495,0.0,2

@@ -1,0 +1,15 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-200355-1b7b91,jev,1,domain,vinfast,,,,,,,1171.9,417,1.7514e-05,
+20261017-200355-1b7b91,jev,2,label,CarModel,,,,,,,606.9,506,2.1252e-05,
+20261017-200355-1b7b91,jev,3,pick,Q56886475_vinfast_lux_a2_0,,,,,,,605.0,1559,6.5478e-05,30
+20261017-200355-1b7b91,jev,4,visit,,Q56886475_vinfast_lux_a2_0,CarModel,VinFast LUX A2.0 — mẫu xe do VinFast sản xuất.,,,0.75,582.2,573,2.4066e-05,3
+20261017-200355-1b7b91,ollama,1,domain,vinfast,,,,,,,1026.0,318,0.0,
+20261017-200355-1b7b91,ollama,2,label,VehicleClass,,,,,,,896.1,345,0.0,
+20261017-200355-1b7b91,ollama,3,pick,Q190578_sedan,,,,,,,913.2,373,0.0,8
+20261017-200355-1b7b91,ollama,4,visit,,Q190578_sedan,VehicleClass,sedan — loại xe (theo phân loại của Wikidata).,,,1.0,1526.1,377,0.0,1
+20261017-200355-1b7b91,nvidia,1,domain,vinfast,,,,,,,2401.0,371,0.0,
+20261017-200355-1b7b91,nvidia,2,label,CarModel,,,,,,,3353.1,393,0.0,
+20261017-200355-1b7b91,nvidia,3,pick,Q59308572_vinfast_fadil,,,,,,,4088.5,1216,0.0,30
+20261017-200355-1b7b91,nvidia,4,visit,Q216762_hatchback,Q59308572_vinfast_fadil,CarModel,VinFast Fadil — mẫu xe do VinFast sản xuất.,,,0.05,9202.5,476,0.0,2
+20261017-200355-1b7b91,nvidia,5,visit,none,Q216762_hatchback,VehicleClass,hatchback — loại xe (theo phân loại của Wikidata).,Q59308572_vinfast_fadil,IS_A (out),0.0,4561.2,405,0.0,0
+20261017-200355-1b7b91,nvidia,6,visit,none,Q59308572_vinfast_fadil,CarModel,VinFast Fadil — mẫu xe do VinFast sản xuất.,Q59308572_vinfast_fadil,backtrack,0.3,5325.5,450,0.0,1

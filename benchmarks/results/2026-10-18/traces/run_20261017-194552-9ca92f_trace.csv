@@ -1,0 +1,45 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-194552-9ca92f,jev,1,domain,football_vn,,,,,,,1181.9,436,1.8312e-05,
+20261017-194552-9ca92f,jev,2,label,Club,,,,,,,585.5,447,1.8774e-05,
+20261017-194552-9ca92f,jev,3,pick,Q12911246_fk_mladost_carev_dvor,,,,,,,779.8,12081,0.000507402,250
+20261017-194552-9ca92f,jev,4,pick,Q2184917_fk_teleoptik,,,,,,,717.4,11585,0.00048657,250
+20261017-194552-9ca92f,jev,5,pick,Q328332_fk_mladá_boleslav,,,,,,,818.3,11400,0.0004788,250
+20261017-194552-9ca92f,jev,6,pick,Q5426241_fk_mladi_obilić,,,,,,,715.7,11699,0.000491358,250
+20261017-194552-9ca92f,jev,7,pick,Q772862_nk_međimurje,,,,,,,716.0,11946,0.000501732,250
+20261017-194552-9ca92f,jev,8,pick,Q94605_fk_spartak_subotica,,,,,,,717.9,1859,7.8078e-05,32
+20261017-194552-9ca92f,jev,9,pick,Q772862_nk_međimurje,,,,,,,613.9,601,2.5242e-05,6
+20261017-194552-9ca92f,jev,10,visit,Q17300049_adrian_valentić,Q772862_nk_međimurje,Club,"NK Međimurje, thành lập năm 2003, thi đấu tại Treća HNL, sân nhà Stadion SRC Mladost.",,,0.07,697.9,548,2.3016e-05,2
+20261017-194552-9ca92f,jev,11,visit,Q1435_zagreb,Q17300049_adrian_valentić,Player,"Adrian Valentić, sinh 10/08/1987, vị trí hậu vệ, quốc tịch Việt Nam.",Q772862_nk_međimurje,PLAYED_FOR (in),0.35,592.8,898,3.7716e-05,8
+20261017-194552-9ca92f,jev,12,visit,none,Q1435_zagreb,Place,Zagreb — địa điểm.,Q17300049_adrian_valentić,BORN_IN (out),0.33,579.6,447,1.8774e-05,0
+20261017-194552-9ca92f,jev,13,visit,none,Q17300049_adrian_valentić,Player,"Adrian Valentić, sinh 10/08/1987, vị trí hậu vệ, quốc tịch Việt Nam.",Q17300049_adrian_valentić,backtrack,0.43,602.3,873,3.6666e-05,7
+20261017-194552-9ca92f,jev,14,visit,none,Q772862_nk_međimurje,Club,"NK Međimurje, thành lập năm 2003, thi đấu tại Treća HNL, sân nhà Stadion SRC Mladost.",Q772862_nk_međimurje,backtrack,0.07,673.9,499,2.0958e-05,1
+20261017-194552-9ca92f,ollama,1,domain,football_vn,,,,,,,1215.4,334,0.0,
+20261017-194552-9ca92f,ollama,2,label,Player,,,,,,,800.0,314,0.0,
+20261017-194552-9ca92f,ollama,3,pick,Q10508636_milorad_janjuš,,,,,,,18952.8,9118,0.0,250
+20261017-194552-9ca92f,ollama,4,pick,Q6107684_sam_ayorinde,,,,,,,21186.0,8972,0.0,250
+20261017-194552-9ca92f,ollama,5,pick,Q8067995_zdravko_dragićević,,,,,,,5534.9,1838,0.0,47
+20261017-194552-9ca92f,ollama,6,pick,Q10508636_milorad_janjuš,,,,,,,4249.4,342,0.0,3
+20261017-194552-9ca92f,ollama,7,visit,Q2505780_fk_proleter_novi_sad,Q10508636_milorad_janjuš,Player,"Milorad Janjuš, sinh 15/07/1982, vị trí tiền đạo, quốc tịch Serbia.",,,0.0,1847.1,791,0.0,9
+20261017-194552-9ca92f,ollama,8,visit,Q1782654_karađorđe_stadium,Q2505780_fk_proleter_novi_sad,Club,"FK Proleter Novi Sad, thành lập năm 1951, thi đấu tại Giải bóng đá hạng nhất quốc gia Serbia, sân nhà Karađorđe Stadium.",Q10508636_milorad_janjuš,PLAYED_FOR (out),0.0,1438.3,408,0.0,1
+20261017-194552-9ca92f,ollama,9,visit,none,Q1782654_karađorđe_stadium,Place,Karađorđe Stadium — địa điểm.,Q2505780_fk_proleter_novi_sad,HOME_VENUE (out),0.0,1289.3,361,0.0,0
+20261017-194552-9ca92f,ollama,10,visit,Q94605_fk_spartak_subotica,Q10508636_milorad_janjuš,Player,"Milorad Janjuš, sinh 15/07/1982, vị trí tiền đạo, quốc tịch Serbia.",Q10508636_milorad_janjuš,backtrack,0.0,1703.4,743,0.0,8
+20261017-194552-9ca92f,ollama,11,visit,Q3435895_subotica_city_stadium,Q94605_fk_spartak_subotica,Club,"FK Spartak Subotica, thành lập năm 1945, thi đấu tại Giải bóng đá vô địch quốc gia Serbia, sân nhà Subotica City Stadium.",Q10508636_milorad_janjuš,PLAYED_FOR (out),0.0,2196.7,405,0.0,1
+20261017-194552-9ca92f,ollama,12,visit,none,Q3435895_subotica_city_stadium,Place,Subotica City Stadium — địa điểm.,Q94605_fk_spartak_subotica,HOME_VENUE (out),0.0,1126.2,360,0.0,0
+20261017-194552-9ca92f,ollama,13,visit,Q2523663_rfk_novi_sad_1921,Q10508636_milorad_janjuš,Player,"Milorad Janjuš, sinh 15/07/1982, vị trí tiền đạo, quốc tịch Serbia.",Q10508636_milorad_janjuš,backtrack,0.0,1717.5,697,0.0,7
+20261017-194552-9ca92f,ollama,14,visit,Q5265659_detelinara_stadium,Q2523663_rfk_novi_sad_1921,Club,"RFK Novi Sad 1921, thành lập năm 1921, thi đấu tại Giải bóng đá hạng nhất quốc gia Serbia, sân nhà Detelinara Stadium.",Q10508636_milorad_janjuš,PLAYED_FOR (out),0.0,1436.5,409,0.0,1
+20261017-194552-9ca92f,ollama,15,visit,none,Q5265659_detelinara_stadium,Place,Detelinara Stadium — địa điểm.,Q2523663_rfk_novi_sad_1921,HOME_VENUE (out),0.0,1159.2,360,0.0,0
+20261017-194552-9ca92f,ollama,16,visit,,Q10508636_milorad_janjuš,Player,"Milorad Janjuš, sinh 15/07/1982, vị trí tiền đạo, quốc tịch Serbia.",Q10508636_milorad_janjuš,backtrack,1.0,1823.9,647,0.0,6
+20261017-194552-9ca92f,nvidia,1,domain,football_vn,,,,,,,4857.7,389,0.0,
+20261017-194552-9ca92f,nvidia,2,label,Club,,,,,,,3582.1,360,0.0,
+20261017-194552-9ca92f,nvidia,3,pick,Q12911246_fk_mladost_carev_dvor,,,,,,,13594.5,9060,0.0,250
+20261017-194552-9ca92f,nvidia,4,pick,Q16007952_borneo_f_c_samarinda,,,,,,,9853.1,8555,0.0,250
+20261017-194552-9ca92f,nvidia,5,pick,Q2662732_fk_kolubara,,,,,,,23197.8,8401,0.0,250
+20261017-194552-9ca92f,nvidia,6,pick,Q462411_n_k_zagreb,,,,,,,12949.1,8665,0.0,250
+20261017-194552-9ca92f,nvidia,7,pick,Q772862_nk_međimurje,,,,,,,6814.8,8868,0.0,250
+20261017-194552-9ca92f,nvidia,8,pick,Q959086_nk_lokomotiva_zagreb,,,,,,,17100.1,1472,0.0,32
+20261017-194552-9ca92f,nvidia,9,pick,Q772862_nk_međimurje,,,,,,,7367.7,527,0.0,6
+20261017-194552-9ca92f,nvidia,10,visit,Q17300049_adrian_valentić,Q772862_nk_međimurje,Club,"NK Međimurje, thành lập năm 2003, thi đấu tại Treća HNL, sân nhà Stadion SRC Mladost.",,,0.0,22199.5,492,0.0,2
+20261017-194552-9ca92f,nvidia,11,visit,Q1435_zagreb,Q17300049_adrian_valentić,Player,"Adrian Valentić, sinh 10/08/1987, vị trí hậu vệ, quốc tịch Việt Nam.",Q772862_nk_međimurje,PLAYED_FOR (in),0.0,16144.8,764,0.0,8
+20261017-194552-9ca92f,nvidia,12,visit,none,Q1435_zagreb,Place,Zagreb — địa điểm.,Q17300049_adrian_valentić,BORN_IN (out),0.2,16768.8,412,0.0,0
+20261017-194552-9ca92f,nvidia,13,visit,none,Q17300049_adrian_valentić,Player,"Adrian Valentić, sinh 10/08/1987, vị trí hậu vệ, quốc tịch Việt Nam.",Q17300049_adrian_valentić,backtrack,0.1,45371.8,748,0.0,7
+20261017-194552-9ca92f,nvidia,14,visit,none,Q772862_nk_međimurje,Club,"NK Međimurje, thành lập năm 2003, thi đấu tại Treća HNL, sân nhà Stadion SRC Mladost.",Q772862_nk_međimurje,backtrack,0.0,7091.6,456,0.0,1

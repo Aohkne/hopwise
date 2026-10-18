@@ -1,0 +1,31 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-185433-d48428,jev,1,domain,football_vn,,,,,,,1153.4,433,1.8186e-05,
+20261017-185433-d48428,jev,2,label,Club,,,,,,,612.8,444,1.8648e-05,
+20261017-185433-d48428,jev,3,pick,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,,,,,,,883.0,12078,0.000507276,250
+20261017-185433-d48428,jev,4,pick,Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng,,,,,,,704.7,11582,0.000486444,250
+20261017-185433-d48428,jev,5,pick,Q342558_câu_lạc_bộ_bóng_đá_đồng_tâm_long_an,,,,,,,834.3,11397,0.000478674,250
+20261017-185433-d48428,jev,6,pick,Q632990_câu_lạc_bộ_bóng_đá_shb_đà_nẵng,,,,,,,718.3,11696,0.000491232,250
+20261017-185433-d48428,jev,7,pick,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,,,,,,,1223.4,11943,0.000501606,250
+20261017-185433-d48428,jev,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,722.3,1856,7.7952e-05,32
+20261017-185433-d48428,jev,9,pick,Q342558_câu_lạc_bộ_bóng_đá_đồng_tâm_long_an,,,,,,,626.1,705,2.961e-05,6
+20261017-185433-d48428,jev,10,visit,,Q342558_câu_lạc_bộ_bóng_đá_đồng_tâm_long_an,Club,"Câu lạc bộ bóng đá Đồng Tâm Long An, thành lập năm 2000, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Long An.",,,0.62,674.8,2442,0.000102564,39
+20261017-185433-d48428,ollama,1,domain,football_vn,,,,,,,1232.8,330,0.0,
+20261017-185433-d48428,ollama,2,label,Club,,,,,,,746.8,310,0.0,
+20261017-185433-d48428,ollama,3,pick,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,,,,,,,19111.3,9635,0.0,250
+20261017-185433-d48428,ollama,4,pick,Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa,,,,,,,19000.7,9125,0.0,250
+20261017-185433-d48428,ollama,5,pick,Q2509547_câu_lạc_bộ_bóng_đá_hòa_phát_hà_nội,,,,,,,20031.3,9047,0.0,250
+20261017-185433-d48428,ollama,6,pick,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,,,,,,,21762.6,9274,0.0,250
+20261017-185433-d48428,ollama,7,pick,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,,,,,,,20887.3,9465,0.0,250
+20261017-185433-d48428,ollama,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,3194.4,1460,0.0,32
+20261017-185433-d48428,ollama,9,pick,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,,,,,,,2471.7,533,0.0,6
+20261017-185433-d48428,ollama,10,visit,,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,Club,"Câu lạc bộ bóng đá Becamex Bình Dương, thành lập năm 1976, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Gò Đậu.",,,1.0,7338.7,3983,0.0,90
+20261017-185433-d48428,nvidia,1,domain,football_vn,,,,,,,2251.1,384,0.0,
+20261017-185433-d48428,nvidia,2,label,Club,,,,,,,4262.8,355,0.0,
+20261017-185433-d48428,nvidia,3,pick,Q1028545_associação_desportiva_recreativa_e_cultu,,,,,,,22716.5,9055,0.0,250
+20261017-185433-d48428,nvidia,4,pick,Q20894528_câu_lạc_bộ_bóng_đá_công_an_hà_nội,,,,,,,18973.9,8550,0.0,250
+20261017-185433-d48428,nvidia,5,pick,Q342558_câu_lạc_bộ_bóng_đá_đồng_tâm_long_an,,,,,,,58697.2,8396,0.0,250
+20261017-185433-d48428,nvidia,6,pick,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,,,,,,,36433.1,8660,0.0,250
+20261017-185433-d48428,nvidia,7,pick,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,,,,,,,4603.5,8863,0.0,250
+20261017-185433-d48428,nvidia,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,30517.8,1467,0.0,32
+20261017-185433-d48428,nvidia,9,pick,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,,,,,,,15476.2,587,0.0,6
+20261017-185433-d48428,nvidia,10,visit,,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,Club,"Câu lạc bộ bóng đá Becamex Bình Dương, thành lập năm 1976, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Gò Đậu.",,,1.0,6499.3,3700,0.0,90

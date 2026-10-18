@@ -1,0 +1,16 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-203255-3b925c,jev,1,domain,vinfast,,,,,,,1194.0,433,1.8186e-05,
+20261017-203255-3b925c,jev,2,label,Company,,,,,,,617.5,522,2.1924e-05,
+20261017-203255-3b925c,jev,3,pick,sec_vinfast_auto_india_private_limited,,,,,,,600.5,2511,0.000105462,61
+20261017-203255-3b925c,jev,4,visit,Q668_country_india,sec_vinfast_auto_india_private_limited,Company,"VinFast Auto India Private Limited — công ty con của VinFast, đăng ký tại India.",,,0.14,609.8,605,2.541e-05,3
+20261017-203255-3b925c,jev,5,visit,sec_place_thoothukudi_tamil_nadu,Q668_country_india,Country,"Ấn Độ — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",sec_vinfast_auto_india_private_limited,INCORPORATED_IN (out),0.32,591.0,609,2.5578e-05,3
+20261017-203255-3b925c,jev,6,visit,sec_factory_thoothukudi,sec_place_thoothukudi_tamil_nadu,Place,"Thoothukudi, Tamil Nadu, India — nơi VinFast đặt nhà máy.",Q668_country_india,LOCATED_IN (in),0.39,808.1,517,2.1714e-05,1
+20261017-203255-3b925c,jev,7,visit,,sec_factory_thoothukudi,Factory,"Nhà máy VinFast tại Thoothukudi, Tamil Nadu, India, khánh thành tháng 8/2025, công suất 50,000 xe/năm.",sec_place_thoothukudi_tamil_nadu,LOCATED_IN (in),0.69,696.2,713,2.9946e-05,4
+20261017-203255-3b925c,ollama,1,domain,vinfast,,,,,,,1163.3,333,0.0,
+20261017-203255-3b925c,ollama,2,label,Factory,,,,,,,912.1,360,0.0,
+20261017-203255-3b925c,ollama,3,pick,sec_factory_thoothukudi,,,,,,,1117.4,445,0.0,5
+20261017-203255-3b925c,ollama,4,visit,,sec_factory_thoothukudi,Factory,"Nhà máy VinFast tại Thoothukudi, Tamil Nadu, India, khánh thành tháng 8/2025, công suất 50,000 xe/năm.",,,1.0,1472.4,613,0.0,5
+20261017-203255-3b925c,nvidia,1,domain,vinfast,,,,,,,193268.7,386,0.0,
+20261017-203255-3b925c,nvidia,2,label,Factory,,,,,,,10730.4,408,0.0,
+20261017-203255-3b925c,nvidia,3,pick,sec_factory_thoothukudi,,,,,,,10518.1,470,0.0,5
+20261017-203255-3b925c,nvidia,4,visit,,sec_factory_thoothukudi,Factory,"Nhà máy VinFast tại Thoothukudi, Tamil Nadu, India, khánh thành tháng 8/2025, công suất 50,000 xe/năm.",,,1.0,19064.1,655,0.0,5

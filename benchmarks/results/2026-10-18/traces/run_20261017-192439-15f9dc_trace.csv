@@ -1,0 +1,25 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-192439-15f9dc,jev,1,domain,football_vn,,,,,,,1078.7,434,1.8228e-05,
+20261017-192439-15f9dc,jev,2,label,Place,,,,,,,699.3,445,1.869e-05,
+20261017-192439-15f9dc,jev,3,pick,Q1366612_mississauga_sports_and_entertainment_cen,,,,,,,746.7,6242,0.000262164,250
+20261017-192439-15f9dc,jev,4,pick,Q20548442_q20548442,,,,,,,647.6,6122,0.000257124,250
+20261017-192439-15f9dc,jev,5,pick,Q4118561_city_stadium,,,,,,,1333.1,6063,0.000254646,250
+20261017-192439-15f9dc,jev,6,pick,Q50816_mississauga,,,,,,,719.2,6157,0.000258594,250
+20261017-192439-15f9dc,jev,7,pick,Q7106581_oshawa_civic_auditorium,,,,,,,712.0,5644,0.000237048,228
+20261017-192439-15f9dc,jev,8,pick,Q7106581_oshawa_civic_auditorium,,,,,,,615.0,430,1.806e-05,5
+20261017-192439-15f9dc,jev,9,visit,Q5316563_durham_storm,Q7106581_oshawa_civic_auditorium,Place,Oshawa Civic Auditorium — địa điểm.,,,0.04,592.3,495,2.079e-05,1
+20261017-192439-15f9dc,jev,10,visit,Q19893993_joevannie_peart,Q5316563_durham_storm,Club,"Durham Storm, thành lập năm 1998, thi đấu tại Canadian Soccer League, sân nhà Oshawa Civic Auditorium.",Q7106581_oshawa_civic_auditorium,HOME_VENUE (in),0.1,691.8,517,2.1714e-05,1
+20261017-192439-15f9dc,jev,11,visit,Q6878961_mississauga_eagles_fc,Q19893993_joevannie_peart,Player,"Joevannie Peart, sinh 14/05/1984, vị trí tiền đạo, quốc tịch Việt Nam.",Q5316563_durham_storm,PLAYED_FOR (in),0.16,594.3,780,3.276e-05,6
+20261017-192439-15f9dc,jev,12,visit,none,Q6878961_mississauga_eagles_fc,Club,"Mississauga Eagles FC, thành lập năm 2010, thi đấu tại Canadian Soccer League, sân nhà Mississauga Sports and Entertainment Centre.",Q19893993_joevannie_peart,PLAYED_FOR (out),0.05,600.1,500,2.1e-05,1
+20261017-192439-15f9dc,jev,13,visit,none,Q19893993_joevannie_peart,Player,"Joevannie Peart, sinh 14/05/1984, vị trí tiền đạo, quốc tịch Việt Nam.",Q19893993_joevannie_peart,backtrack,0.14,685.7,729,3.0618e-05,5
+20261017-192439-15f9dc,ollama,1,domain,football_vn,,,,,,,1202.8,331,0.0,
+20261017-192439-15f9dc,ollama,2,label,Player,,,,,,,995.2,311,0.0,
+20261017-192439-15f9dc,ollama,3,pick,Q1134058_cornell_glen,,,,,,,17624.5,9115,0.0,250
+20261017-192439-15f9dc,ollama,4,pick,Q2757533_teslim_fatusi,,,,,,,21449.1,8969,0.0,250
+20261017-192439-15f9dc,ollama,5,pick,Q8022099_willis_plaza,,,,,,,3808.7,1835,0.0,47
+20261017-192439-15f9dc,ollama,6,pick,Q2757533_teslim_fatusi,,,,,,,3591.9,336,0.0,3
+20261017-192439-15f9dc,ollama,7,visit,none,Q2757533_teslim_fatusi,Player,"Teslim Fatusi, sinh 17/09/1977, vị trí wing half, quốc tịch Nigeria.",,,0.0,2397.2,1124,0.0,18
+20261017-192439-15f9dc,nvidia,1,domain,football_vn,,,,,,,11700.5,385,0.0,
+20261017-192439-15f9dc,nvidia,2,label,Club,,,,,,,4595.8,356,0.0,
+20261017-192439-15f9dc,nvidia,3,pick,Q1022923_gimnasia_y_esgrima_de_jujuy,,,,,,,25364.1,9056,0.0,250
+20261017-192439-15f9dc,nvidia,4,pick,Q164134_đội_tuyển_bóng_đá_quốc_gia_hoa_kỳ,,,,,,,25294.2,8551,0.0,250

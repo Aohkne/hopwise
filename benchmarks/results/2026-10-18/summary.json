@@ -1,0 +1,194 @@
+{
+  "jev": {
+    "model_name": "typesafe/jev-1.13",
+    "model_version": "typesafe/jev-1.13-20260917",
+    "cases": 60,
+    "groups": {
+      "all": {
+        "correct": 26,
+        "wrong": 10,
+        "not_found": 24,
+        "timeout": 0,
+        "stopped": 0,
+        "error": 0
+      },
+      "domain:football_vn": {
+        "correct": 9,
+        "wrong": 3,
+        "not_found": 18,
+        "timeout": 0,
+        "stopped": 0,
+        "error": 0
+      },
+      "hops:1": {
+        "correct": 12,
+        "wrong": 3,
+        "not_found": 5,
+        "timeout": 0,
+        "stopped": 0,
+        "error": 0
+      },
+      "domain:vinfast": {
+        "correct": 17,
+        "wrong": 7,
+        "not_found": 6,
+        "timeout": 0,
+        "stopped": 0,
+        "error": 0
+      },
+      "hops:2": {
+        "correct": 11,
+        "wrong": 3,
+        "not_found": 12,
+        "timeout": 0,
+        "stopped": 0,
+        "error": 0
+      },
+      "hops:3": {
+        "correct": 3,
+        "wrong": 4,
+        "not_found": 7,
+        "timeout": 0,
+        "stopped": 0,
+        "error": 0
+      }
+    },
+    "median_correct_ms": 4215.15,
+    "median_correct_ms_by_hops": {
+      "1": 4971.5,
+      "2": 4060.8,
+      "3": 5197.9
+    },
+    "calls": 634,
+    "tokens": 1686579,
+    "cost": 0.070836
+  },
+  "ollama": {
+    "model_name": "gemma4-12b-32k",
+    "model_version": "gemma4-12b-32k:latest · 11.9B · Q4_K_M",
+    "cases": 60,
+    "groups": {
+      "all": {
+        "correct": 15,
+        "wrong": 22,
+        "not_found": 20,
+        "timeout": 3,
+        "stopped": 0,
+        "error": 0
+      },
+      "domain:football_vn": {
+        "correct": 1,
+        "wrong": 7,
+        "not_found": 19,
+        "timeout": 3,
+        "stopped": 0,
+        "error": 0
+      },
+      "hops:1": {
+        "correct": 6,
+        "wrong": 5,
+        "not_found": 9,
+        "timeout": 0,
+        "stopped": 0,
+        "error": 0
+      },
+      "domain:vinfast": {
+        "correct": 14,
+        "wrong": 15,
+        "not_found": 1,
+        "timeout": 0,
+        "stopped": 0,
+        "error": 0
+      },
+      "hops:2": {
+        "correct": 6,
+        "wrong": 9,
+        "not_found": 10,
+        "timeout": 1,
+        "stopped": 0,
+        "error": 0
+      },
+      "hops:3": {
+        "correct": 3,
+        "wrong": 8,
+        "not_found": 1,
+        "timeout": 2,
+        "stopped": 0,
+        "error": 0
+      }
+    },
+    "median_correct_ms": 5954.4,
+    "median_correct_ms_by_hops": {
+      "1": 10336.1,
+      "2": 5798.0,
+      "3": 4974.0
+    },
+    "calls": 1002,
+    "tokens": 1581335,
+    "cost": 0.0
+  },
+  "nvidia": {
+    "model_name": "openai/gpt-oss-20b",
+    "model_version": null,
+    "cases": 60,
+    "groups": {
+      "all": {
+        "correct": 16,
+        "wrong": 22,
+        "not_found": 17,
+        "timeout": 2,
+        "stopped": 0,
+        "error": 3
+      },
+      "domain:football_vn": {
+        "correct": 2,
+        "wrong": 10,
+        "not_found": 14,
+        "timeout": 1,
+        "stopped": 0,
+        "error": 3
+      },
+      "hops:1": {
+        "correct": 7,
+        "wrong": 5,
+        "not_found": 6,
+        "timeout": 1,
+        "stopped": 0,
+        "error": 1
+      },
+      "domain:vinfast": {
+        "correct": 14,
+        "wrong": 12,
+        "not_found": 3,
+        "timeout": 1,
+        "stopped": 0,
+        "error": 0
+      },
+      "hops:2": {
+        "correct": 7,
+        "wrong": 12,
+        "not_found": 6,
+        "timeout": 0,
+        "stopped": 0,
+        "error": 1
+      },
+      "hops:3": {
+        "correct": 2,
+        "wrong": 5,
+        "not_found": 5,
+        "timeout": 1,
+        "stopped": 0,
+        "error": 1
+      }
+    },
+    "median_correct_ms": 48163.4,
+    "median_correct_ms_by_hops": {
+      "1": 23030.4,
+      "2": 53861.0,
+      "3": 265785.65
+    },
+    "calls": 426,
+    "tokens": 1023465,
+    "cost": 0.0
+  }
+}

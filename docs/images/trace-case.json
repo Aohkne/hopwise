@@ -1,0 +1,11 @@
+{
+  "case_id": "football-026",
+  "question": "Cầu thủ sinh ra ở Phú Thọ từng thi đấu cho câu lạc bộ đã vô địch giải đấu nào?",
+  "run_id": "20261017-193655-1a1107",
+  "visits": {
+    "jev": 21,
+    "ollama": 47,
+    "nvidia": 9
+  },
+  "correct": 0
+}

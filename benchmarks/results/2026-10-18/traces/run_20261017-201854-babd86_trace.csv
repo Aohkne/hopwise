@@ -1,0 +1,15 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-201854-babd86,jev,1,domain,vinfast,,,,,,,1122.6,427,1.7934e-05,
+20261017-201854-babd86,jev,2,label,Factory,,,,,,,612.0,516,2.1672e-05,
+20261017-201854-babd86,jev,3,pick,sec_factory_thoothukudi,,,,,,,601.8,562,2.3604e-05,5
+20261017-201854-babd86,jev,4,visit,sec_place_thoothukudi_tamil_nadu,sec_factory_thoothukudi,Factory,"Nhà máy VinFast tại Thoothukudi, Tamil Nadu, India, khánh thành tháng 8/2025, công suất 50,000 xe/năm.",,,0.43,705.4,744,3.1248e-05,5
+20261017-201854-babd86,jev,5,visit,Q668_country_india,sec_place_thoothukudi_tamil_nadu,Place,"Thoothukudi, Tamil Nadu, India — nơi VinFast đặt nhà máy.",sec_factory_thoothukudi,LOCATED_IN (out),0.25,603.5,491,2.0622e-05,1
+20261017-201854-babd86,jev,6,visit,,Q668_country_india,Country,"Ấn Độ — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",sec_place_thoothukudi_tamil_nadu,LOCATED_IN (out),0.92,620.6,607,2.5494e-05,3
+20261017-201854-babd86,ollama,1,domain,vinfast,,,,,,,1972.0,327,0.0,
+20261017-201854-babd86,ollama,2,label,Country,,,,,,,998.6,354,0.0,
+20261017-201854-babd86,ollama,3,pick,Q668_country_india,,,,,,,1286.2,617,0.0,15
+20261017-201854-babd86,ollama,4,visit,,Q668_country_india,Country,"Ấn Độ — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",,,1.0,1371.8,517,0.0,4
+20261017-201854-babd86,nvidia,1,domain,vinfast,,,,,,,8974.7,381,0.0,
+20261017-201854-babd86,nvidia,2,label,Country,,,,,,,3776.2,403,0.0,
+20261017-201854-babd86,nvidia,3,pick,Q668_country_india,,,,,,,4685.9,672,0.0,15
+20261017-201854-babd86,nvidia,4,visit,,Q668_country_india,Country,"Ấn Độ — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",,,1.0,15855.6,571,0.0,4

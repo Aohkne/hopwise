@@ -1,0 +1,27 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-184410-107368,jev,1,domain,football_vn,,,,,,,1118.1,428,1.7976e-05,
+20261017-184410-107368,jev,2,label,Player,,,,,,,690.1,439,1.8438e-05,
+20261017-184410-107368,jev,3,pick,Q16885642_sim_woon_sub,,,,,,,782.3,11975,0.00050295,250
+20261017-184410-107368,jev,4,pick,Q55616003_kim_jin_seo,,,,,,,668.5,11676,0.000490392,250
+20261017-184410-107368,jev,5,pick,Q7441013_sean_fraser,,,,,,,587.7,2433,0.000102186,47
+20261017-184410-107368,jev,6,pick,Q55616003_kim_jin_seo,,,,,,,1406.5,435,1.827e-05,3
+20261017-184410-107368,jev,7,visit,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Q55616003_kim_jin_seo,Player,"Kim Jin-seo, sinh 19/12/1994, vị trí hậu vệ trung tâm.",,,0.1,682.4,551,2.3142e-05,2
+20261017-184410-107368,jev,8,visit,,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Club,"Câu lạc bộ bóng đá Hoàng Anh Gia Lai, thành lập năm 2001, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Pleiku.",Q55616003_kim_jin_seo,PLAYED_FOR (out),0.51,797.9,5307,0.000222894,93
+20261017-184410-107368,ollama,1,domain,football_vn,,,,,,,1193.4,327,0.0,
+20261017-184410-107368,ollama,2,label,Player,,,,,,,891.0,307,0.0,
+20261017-184410-107368,ollama,3,pick,Q1028482_fikru_teferra_lemessa,,,,,,,17492.4,9111,0.0,250
+20261017-184410-107368,ollama,4,pick,Q55616003_kim_jin_seo,,,,,,,19799.3,8965,0.0,250
+20261017-184410-107368,ollama,5,pick,Q7441013_sean_fraser,,,,,,,5875.5,1831,0.0,47
+20261017-184410-107368,ollama,6,pick,Q55616003_kim_jin_seo,,,,,,,4403.1,331,0.0,3
+20261017-184410-107368,ollama,7,visit,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Q55616003_kim_jin_seo,Player,"Kim Jin-seo, sinh 19/12/1994, vị trí hậu vệ trung tâm.",,,0.0,1416.8,441,0.0,2
+20261017-184410-107368,ollama,8,visit,none,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Club,"Câu lạc bộ bóng đá Hoàng Anh Gia Lai, thành lập năm 2001, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Pleiku.",Q55616003_kim_jin_seo,PLAYED_FOR (out),0.0,7894.4,4201,0.0,93
+20261017-184410-107368,ollama,9,visit,none,Q55616003_kim_jin_seo,Player,"Kim Jin-seo, sinh 19/12/1994, vị trí hậu vệ trung tâm.",Q55616003_kim_jin_seo,backtrack,0.0,1785.5,388,0.0,1
+20261017-184410-107368,nvidia,1,domain,football_vn,,,,,,,3961.6,381,0.0,
+20261017-184410-107368,nvidia,2,label,Player,,,,,,,2849.4,352,0.0,
+20261017-184410-107368,nvidia,3,pick,Q16079973_han_seung_yeop,,,,,,,7141.8,8211,0.0,250
+20261017-184410-107368,nvidia,4,pick,Q55616003_kim_jin_seo,,,,,,,5087.4,8016,0.0,250
+20261017-184410-107368,nvidia,5,pick,Q7441013_sean_fraser,,,,,,,14744.9,1747,0.0,47
+20261017-184410-107368,nvidia,6,pick,Q55616003_kim_jin_seo,,,,,,,1880.3,373,0.0,3
+20261017-184410-107368,nvidia,7,visit,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Q55616003_kim_jin_seo,Player,"Kim Jin-seo, sinh 19/12/1994, vị trí hậu vệ trung tâm.",,,0.0,4990.3,493,0.0,2
+20261017-184410-107368,nvidia,8,visit,none,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Club,"Câu lạc bộ bóng đá Hoàng Anh Gia Lai, thành lập năm 2001, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Pleiku.",Q55616003_kim_jin_seo,PLAYED_FOR (out),0.05,15024.9,3899,0.0,93
+20261017-184410-107368,nvidia,9,visit,none,Q55616003_kim_jin_seo,Player,"Kim Jin-seo, sinh 19/12/1994, vị trí hậu vệ trung tâm.",Q55616003_kim_jin_seo,backtrack,0.0,9831.7,438,0.0,1

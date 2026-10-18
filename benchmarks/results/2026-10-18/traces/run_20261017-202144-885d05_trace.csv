@@ -1,0 +1,15 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-202144-885d05,jev,1,domain,vinfast,,,,,,,666.7,423,1.7766e-05,
+20261017-202144-885d05,jev,2,label,Factory,,,,,,,574.9,512,2.1504e-05,
+20261017-202144-885d05,jev,3,pick,sec_factory_hai_phong,,,,,,,735.0,558,2.3436e-05,5
+20261017-202144-885d05,jev,4,visit,,sec_factory_hai_phong,Factory,"Nhà máy VinFast tại Hai Phong, Vietnam, khánh thành 2019, công suất 300,000 xe/năm.",,,0.53,695.5,556,2.3352e-05,2
+20261017-202144-885d05,ollama,1,domain,vinfast,,,,,,,1684.9,325,0.0,
+20261017-202144-885d05,ollama,2,label,CarModel,,,,,,,1008.7,352,0.0,
+20261017-202144-885d05,ollama,3,pick,Q134460432_vinfast_ec_van,,,,,,,2431.4,1226,0.0,30
+20261017-202144-885d05,ollama,4,visit,sec_factory_ha_tinh,Q134460432_vinfast_ec_van,CarModel,"VinFast EC Van — mẫu xe do VinFast sản xuất. 20-F: our first mini electric van, which signified our move towards green short-distance goods transport.",,,0.0,2074.2,529,0.0,4
+20261017-202144-885d05,ollama,5,visit,,sec_factory_ha_tinh,Factory,"Nhà máy VinFast tại Ha Tinh, Vietnam, khánh thành tháng 6/2025, công suất 200,000 xe/năm.",Q134460432_vinfast_ec_van,PRODUCES (in),1.0,1510.9,546,0.0,4
+20261017-202144-885d05,nvidia,1,domain,vinfast,,,,,,,6545.1,378,0.0,
+20261017-202144-885d05,nvidia,2,label,Factory,,,,,,,3351.8,400,0.0,
+20261017-202144-885d05,nvidia,3,pick,sec_factory_north_carolina,,,,,,,15147.2,462,0.0,5
+20261017-202144-885d05,nvidia,4,visit,sec_place_north_carolina,sec_factory_north_carolina,Factory,"Nhà máy VinFast tại North Carolina, United States, dự kiến sản xuất từ 2028.",,,0.0,18917.4,486,0.0,2
+20261017-202144-885d05,nvidia,5,visit,,sec_place_north_carolina,Place,"North Carolina, United States — nơi VinFast đặt nhà máy.",sec_factory_north_carolina,LOCATED_IN (out),1.0,20254.3,440,0.0,1

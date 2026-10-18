@@ -1,0 +1,889 @@
+{
+  "domain": "vinfast",
+  "graph": {
+    "file": "data/vinfast.json",
+    "crawled_at": "2026-10-17T16:14:39+00:00",
+    "nodes": 146,
+    "edges": 225
+  },
+  "generated_at": "2026-10-17T16:51:26+00:00",
+  "seed": 42,
+  "cases": [
+    {
+      "id": "vinfast-001",
+      "question": "Mẫu xe Herio Green được phát triển dựa trên mẫu xe nào?",
+      "answers": [
+        "Q115802472_vinfast_vf_5"
+      ],
+      "answer_text": "VF 5",
+      "hops": 1,
+      "tags": [],
+      "template": "v_based",
+      "anchors": [
+        "sec_herio_green"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_herio_green",
+          "edge": null
+        },
+        {
+          "node": "Q115802472_vinfast_vf_5",
+          "edge": "BASED_ON (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-002",
+      "question": "Ai là CEO của VinFast?",
+      "answers": [
+        "Q10806972_phạm_nhật_vượng",
+        "sec_pham_nhat_vuong"
+      ],
+      "answer_text": "Pham Nhat Vuong",
+      "hops": 1,
+      "tags": [
+        "incoming-edge",
+        "hub-node"
+      ],
+      "template": "v_ceo",
+      "anchors": [
+        "Q56660561_vinfast"
+      ],
+      "reference_path": [
+        {
+          "node": "Q56660561_vinfast",
+          "edge": null
+        },
+        {
+          "node": "sec_pham_nhat_vuong",
+          "edge": "CEO_OF (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-003",
+      "question": "Mẫu xe Tempest thuộc loại xe nào?",
+      "answers": [
+        "Q193234_xe_tay_ga"
+      ],
+      "answer_text": "Xe tay ga",
+      "hops": 1,
+      "tags": [],
+      "template": "v_class",
+      "anchors": [
+        "Q111033540_vinfast_tempest"
+      ],
+      "reference_path": [
+        {
+          "node": "Q111033540_vinfast_tempest",
+          "edge": null
+        },
+        {
+          "node": "Q193234_xe_tay_ga",
+          "edge": "IS_A (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-004",
+      "question": "Mẫu xe nào là sedan?",
+      "answers": [
+        "Q56886475_vinfast_lux_a2_0"
+      ],
+      "answer_text": "LUX A2.0",
+      "hops": 1,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_class_models",
+      "anchors": [
+        "Q190578_sedan"
+      ],
+      "reference_path": [
+        {
+          "node": "Q190578_sedan",
+          "edge": null
+        },
+        {
+          "node": "Q56886475_vinfast_lux_a2_0",
+          "edge": "IS_A (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-005",
+      "question": "Nhà máy nào của VinFast đặt tại Ha Tinh?",
+      "answers": [
+        "sec_factory_ha_tinh"
+      ],
+      "answer_text": "Nhà máy VinFast Ha Tinh",
+      "hops": 1,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_factory_in_place",
+      "anchors": [
+        "sec_place_ha_tinh"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_place_ha_tinh",
+          "edge": null
+        },
+        {
+          "node": "sec_factory_ha_tinh",
+          "edge": "LOCATED_IN (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-006",
+      "question": "Công ty VinFast Manufacturing US, LLC được đăng ký ở quốc gia nào?",
+      "answers": [
+        "Q30_country_united_states"
+      ],
+      "answer_text": "Hoa Kỳ",
+      "hops": 1,
+      "tags": [],
+      "template": "v_incorp",
+      "anchors": [
+        "sec_vinfast_manufacturing_us_llc"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_vinfast_manufacturing_us_llc",
+          "edge": null
+        },
+        {
+          "node": "Q30_country_united_states",
+          "edge": "INCORPORATED_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-007",
+      "question": "Mẫu xe VF 3 được sản xuất ở nhà máy nào?",
+      "answers": [
+        "sec_factory_ha_tinh"
+      ],
+      "answer_text": "Nhà máy VinFast Ha Tinh",
+      "hops": 1,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_made_at",
+      "anchors": [
+        "Q120668902_vinfast_vf_3"
+      ],
+      "reference_path": [
+        {
+          "node": "Q120668902_vinfast_vf_3",
+          "edge": null
+        },
+        {
+          "node": "sec_factory_ha_tinh",
+          "edge": "PRODUCES (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-008",
+      "question": "Xe VF 8 của công ty nào?",
+      "answers": [
+        "Q56660561_vinfast"
+      ],
+      "answer_text": "VinFast",
+      "hops": 1,
+      "tags": [
+        "incoming-edge",
+        "hub-node"
+      ],
+      "template": "v_maker",
+      "anchors": [
+        "Q105063992_vinfast_vf_8"
+      ],
+      "reference_path": [
+        {
+          "node": "Q105063992_vinfast_vf_8",
+          "edge": null
+        },
+        {
+          "node": "Q56660561_vinfast",
+          "edge": "MANUFACTURES (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-009",
+      "question": "Công ty nào được Vingroup Investment Vietnam JSC sở hữu trực tiếp 48,49% vốn?",
+      "answers": [
+        "sec_vinfast_auto_india_private_limited"
+      ],
+      "answer_text": "VinFast Auto India Private Limited",
+      "hops": 1,
+      "tags": [
+        "incoming-edge",
+        "edge-filter"
+      ],
+      "template": "v_owned_pct",
+      "anchors": [
+        "sec_vingroup_investment_vietnam_jsc"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_vingroup_investment_vietnam_jsc",
+          "edge": null
+        },
+        {
+          "node": "sec_vinfast_auto_india_private_limited",
+          "edge": "SUBSIDIARY_OF (in)"
+        }
+      ],
+      "params": {
+        "pct": 48.49
+      }
+    },
+    {
+      "id": "vinfast-010",
+      "question": "Công ty nào của VinFast được đăng ký ở Úc?",
+      "answers": [
+        "sec_vinfast_engineering_australia_pty_ltd"
+      ],
+      "answer_text": "VinFast Engineering Australia Pty Ltd",
+      "hops": 1,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_sub_in",
+      "anchors": [
+        "Q408_country_australia"
+      ],
+      "reference_path": [
+        {
+          "node": "Q408_country_australia",
+          "edge": null
+        },
+        {
+          "node": "sec_vinfast_engineering_australia_pty_ltd",
+          "edge": "INCORPORATED_IN (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-011",
+      "question": "Mẫu xe mà Nerio Green dựa trên thuộc thương hiệu nào?",
+      "answers": [
+        "sec_brand_vf"
+      ],
+      "answer_text": "VF",
+      "hops": 2,
+      "tags": [],
+      "template": "v_based_brand",
+      "anchors": [
+        "sec_nerio_green"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_nerio_green",
+          "edge": null
+        },
+        {
+          "node": "sec_vf_e34",
+          "edge": "BASED_ON (out)"
+        },
+        {
+          "node": "sec_brand_vf",
+          "edge": "BELONGS_TO_BRAND (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-012",
+      "question": "Mẫu xe thuộc loại minivan được sản xuất ở nhà máy nào?",
+      "answers": [
+        "sec_factory_ha_tinh"
+      ],
+      "answer_text": "Nhà máy VinFast Ha Tinh",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_class_made",
+      "anchors": [
+        "Q223189_minivan"
+      ],
+      "reference_path": [
+        {
+          "node": "Q223189_minivan",
+          "edge": null
+        },
+        {
+          "node": "Q134460432_vinfast_ec_van",
+          "edge": "IS_A (in)"
+        },
+        {
+          "node": "sec_factory_ha_tinh",
+          "edge": "PRODUCES (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-013",
+      "question": "Nhà máy nào của VinFast đặt ở Hoa Kỳ?",
+      "answers": [
+        "sec_factory_north_carolina"
+      ],
+      "answer_text": "Nhà máy VinFast North Carolina",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_country_factory",
+      "anchors": [
+        "Q30_country_united_states"
+      ],
+      "reference_path": [
+        {
+          "node": "Q30_country_united_states",
+          "edge": null
+        },
+        {
+          "node": "sec_place_north_carolina",
+          "edge": "LOCATED_IN (in)"
+        },
+        {
+          "node": "sec_factory_north_carolina",
+          "edge": "LOCATED_IN (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-014",
+      "question": "Nhà máy nào của VinFast đặt ở Ấn Độ?",
+      "answers": [
+        "sec_factory_thoothukudi"
+      ],
+      "answer_text": "Nhà máy VinFast Thoothukudi, Tamil Nadu",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_country_factory",
+      "anchors": [
+        "Q668_country_india"
+      ],
+      "reference_path": [
+        {
+          "node": "Q668_country_india",
+          "edge": null
+        },
+        {
+          "node": "sec_place_thoothukudi_tamil_nadu",
+          "edge": "LOCATED_IN (in)"
+        },
+        {
+          "node": "sec_factory_thoothukudi",
+          "edge": "LOCATED_IN (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-015",
+      "question": "Nhà máy nào của VinFast đặt ở Indonesia?",
+      "answers": [
+        "sec_factory_subang"
+      ],
+      "answer_text": "Nhà máy VinFast Subang, West Java",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_country_factory",
+      "anchors": [
+        "Q252_country_indonesia"
+      ],
+      "reference_path": [
+        {
+          "node": "Q252_country_indonesia",
+          "edge": null
+        },
+        {
+          "node": "sec_place_subang_west_java",
+          "edge": "LOCATED_IN (in)"
+        },
+        {
+          "node": "sec_factory_subang",
+          "edge": "LOCATED_IN (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-016",
+      "question": "Nhà máy VinFast North Carolina thuộc quốc gia nào?",
+      "answers": [
+        "Q30_country_united_states"
+      ],
+      "answer_text": "Hoa Kỳ",
+      "hops": 2,
+      "tags": [],
+      "template": "v_factory_country",
+      "anchors": [
+        "sec_factory_north_carolina"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_factory_north_carolina",
+          "edge": null
+        },
+        {
+          "node": "sec_place_north_carolina",
+          "edge": "LOCATED_IN (out)"
+        },
+        {
+          "node": "Q30_country_united_states",
+          "edge": "LOCATED_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-017",
+      "question": "Nhà máy VinFast Hai Phong thuộc quốc gia nào?",
+      "answers": [
+        "Q881_country_vietnam"
+      ],
+      "answer_text": "Việt Nam",
+      "hops": 2,
+      "tags": [],
+      "template": "v_factory_country",
+      "anchors": [
+        "sec_factory_hai_phong"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_factory_hai_phong",
+          "edge": null
+        },
+        {
+          "node": "Q72818_hải_phòng",
+          "edge": "LOCATED_IN (out)"
+        },
+        {
+          "node": "Q881_country_vietnam",
+          "edge": "LOCATED_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-018",
+      "question": "Nhà máy VinFast Thoothukudi, Tamil Nadu thuộc quốc gia nào?",
+      "answers": [
+        "Q668_country_india"
+      ],
+      "answer_text": "Ấn Độ",
+      "hops": 2,
+      "tags": [],
+      "template": "v_factory_country",
+      "anchors": [
+        "sec_factory_thoothukudi"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_factory_thoothukudi",
+          "edge": null
+        },
+        {
+          "node": "sec_place_thoothukudi_tamil_nadu",
+          "edge": "LOCATED_IN (out)"
+        },
+        {
+          "node": "Q668_country_india",
+          "edge": "LOCATED_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-019",
+      "question": "Nhà máy VinFast Subang, West Java thuộc quốc gia nào?",
+      "answers": [
+        "Q252_country_indonesia"
+      ],
+      "answer_text": "Indonesia",
+      "hops": 2,
+      "tags": [],
+      "template": "v_factory_country",
+      "anchors": [
+        "sec_factory_subang"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_factory_subang",
+          "edge": null
+        },
+        {
+          "node": "sec_place_subang_west_java",
+          "edge": "LOCATED_IN (out)"
+        },
+        {
+          "node": "Q252_country_indonesia",
+          "edge": "LOCATED_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-020",
+      "question": "Công ty đăng ký ở các Tiểu vương quốc Ả Rập Thống nhất là công ty con trực tiếp của công ty nào?",
+      "answers": [
+        "Q56660561_vinfast"
+      ],
+      "answer_text": "VinFast",
+      "hops": 2,
+      "tags": [
+        "incoming-edge",
+        "hub-node"
+      ],
+      "template": "v_incorp_parent",
+      "anchors": [
+        "Q878_country_united_arab_emirates"
+      ],
+      "reference_path": [
+        {
+          "node": "Q878_country_united_arab_emirates",
+          "edge": null
+        },
+        {
+          "node": "sec_vinfast_middle_east_fze",
+          "edge": "INCORPORATED_IN (in)"
+        },
+        {
+          "node": "Q56660561_vinfast",
+          "edge": "SUBSIDIARY_OF (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-021",
+      "question": "Nhà máy VinFast ở nước nơi công ty PT VinFast Trading Indonesia được đăng ký nằm ở địa điểm nào?",
+      "answers": [
+        "sec_place_subang_west_java"
+      ],
+      "answer_text": "Subang, West Java",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_incorp_place",
+      "anchors": [
+        "sec_pt_vinfast_trading_indonesia"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_pt_vinfast_trading_indonesia",
+          "edge": null
+        },
+        {
+          "node": "Q252_country_indonesia",
+          "edge": "INCORPORATED_IN (out)"
+        },
+        {
+          "node": "sec_place_subang_west_java",
+          "edge": "LOCATED_IN (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-022",
+      "question": "Nhà máy VinFast ở nước nơi công ty VinFast Auto, LLC được đăng ký nằm ở địa điểm nào?",
+      "answers": [
+        "sec_place_north_carolina"
+      ],
+      "answer_text": "North Carolina",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_incorp_place",
+      "anchors": [
+        "sec_vinfast_auto_llc"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_vinfast_auto_llc",
+          "edge": null
+        },
+        {
+          "node": "Q30_country_united_states",
+          "edge": "INCORPORATED_IN (out)"
+        },
+        {
+          "node": "sec_place_north_carolina",
+          "edge": "LOCATED_IN (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-023",
+      "question": "Nhà máy sản xuất mẫu xe EC Van đặt ở địa điểm nào?",
+      "answers": [
+        "sec_place_ha_tinh"
+      ],
+      "answer_text": "Ha Tinh",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_made_place",
+      "anchors": [
+        "Q134460432_vinfast_ec_van"
+      ],
+      "reference_path": [
+        {
+          "node": "Q134460432_vinfast_ec_van",
+          "edge": null
+        },
+        {
+          "node": "sec_factory_ha_tinh",
+          "edge": "PRODUCES (in)"
+        },
+        {
+          "node": "sec_place_ha_tinh",
+          "edge": "LOCATED_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-024",
+      "question": "Nhà máy sản xuất mẫu xe VF 7 đặt ở địa điểm nào?",
+      "answers": [
+        "sec_place_thoothukudi_tamil_nadu"
+      ],
+      "answer_text": "Thoothukudi, Tamil Nadu",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_made_place",
+      "anchors": [
+        "Q111784765_vinfast_vf_7"
+      ],
+      "reference_path": [
+        {
+          "node": "Q111784765_vinfast_vf_7",
+          "edge": null
+        },
+        {
+          "node": "sec_factory_thoothukudi",
+          "edge": "PRODUCES (in)"
+        },
+        {
+          "node": "sec_place_thoothukudi_tamil_nadu",
+          "edge": "LOCATED_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-025",
+      "question": "Mẫu xe thuộc loại electric van được sản xuất ở nhà máy đặt tại địa điểm nào?",
+      "answers": [
+        "sec_place_ha_tinh"
+      ],
+      "answer_text": "Ha Tinh",
+      "hops": 3,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_class_place",
+      "anchors": [
+        "Q123945589_electric_van"
+      ],
+      "reference_path": [
+        {
+          "node": "Q123945589_electric_van",
+          "edge": null
+        },
+        {
+          "node": "Q134460432_vinfast_ec_van",
+          "edge": "IS_A (in)"
+        },
+        {
+          "node": "sec_factory_ha_tinh",
+          "edge": "PRODUCES (in)"
+        },
+        {
+          "node": "sec_place_ha_tinh",
+          "edge": "LOCATED_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-026",
+      "question": "Nhà máy VinFast ở nước nơi công ty Vingroup USA, LLC được đăng ký tên là gì?",
+      "answers": [
+        "sec_factory_north_carolina"
+      ],
+      "answer_text": "Nhà máy VinFast North Carolina",
+      "hops": 3,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_incorp_factory",
+      "anchors": [
+        "sec_vingroup_usa_llc"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_vingroup_usa_llc",
+          "edge": null
+        },
+        {
+          "node": "Q30_country_united_states",
+          "edge": "INCORPORATED_IN (out)"
+        },
+        {
+          "node": "sec_place_north_carolina",
+          "edge": "LOCATED_IN (in)"
+        },
+        {
+          "node": "sec_factory_north_carolina",
+          "edge": "LOCATED_IN (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-027",
+      "question": "Nhà máy VinFast ở nước nơi công ty PT VinFast Automobile Indonesia được đăng ký tên là gì?",
+      "answers": [
+        "sec_factory_subang"
+      ],
+      "answer_text": "Nhà máy VinFast Subang, West Java",
+      "hops": 3,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_incorp_factory",
+      "anchors": [
+        "sec_pt_vinfast_automobile_indonesia"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_pt_vinfast_automobile_indonesia",
+          "edge": null
+        },
+        {
+          "node": "Q252_country_indonesia",
+          "edge": "INCORPORATED_IN (out)"
+        },
+        {
+          "node": "sec_place_subang_west_java",
+          "edge": "LOCATED_IN (in)"
+        },
+        {
+          "node": "sec_factory_subang",
+          "edge": "LOCATED_IN (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-028",
+      "question": "Nhà máy VinFast ở nước nơi công ty VinFast Auto India Private Limited được đăng ký tên là gì?",
+      "answers": [
+        "sec_factory_thoothukudi"
+      ],
+      "answer_text": "Nhà máy VinFast Thoothukudi, Tamil Nadu",
+      "hops": 3,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_incorp_factory",
+      "anchors": [
+        "sec_vinfast_auto_india_private_limited"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_vinfast_auto_india_private_limited",
+          "edge": null
+        },
+        {
+          "node": "Q668_country_india",
+          "edge": "INCORPORATED_IN (out)"
+        },
+        {
+          "node": "sec_place_thoothukudi_tamil_nadu",
+          "edge": "LOCATED_IN (in)"
+        },
+        {
+          "node": "sec_factory_thoothukudi",
+          "edge": "LOCATED_IN (in)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-029",
+      "question": "Mẫu xe Minio Green được sản xuất ở nhà máy thuộc quốc gia nào?",
+      "answers": [
+        "Q881_country_vietnam"
+      ],
+      "answer_text": "Việt Nam",
+      "hops": 3,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_made_country",
+      "anchors": [
+        "sec_minio_green"
+      ],
+      "reference_path": [
+        {
+          "node": "sec_minio_green",
+          "edge": null
+        },
+        {
+          "node": "sec_factory_ha_tinh",
+          "edge": "PRODUCES (in)"
+        },
+        {
+          "node": "sec_place_ha_tinh",
+          "edge": "LOCATED_IN (out)"
+        },
+        {
+          "node": "Q881_country_vietnam",
+          "edge": "LOCATED_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "vinfast-030",
+      "question": "Mẫu xe VF 6 được sản xuất ở nhà máy thuộc quốc gia nào?",
+      "answers": [
+        "Q668_country_india"
+      ],
+      "answer_text": "Ấn Độ",
+      "hops": 3,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "v_made_country",
+      "anchors": [
+        "Q115152621_vinfast_vf_6"
+      ],
+      "reference_path": [
+        {
+          "node": "Q115152621_vinfast_vf_6",
+          "edge": null
+        },
+        {
+          "node": "sec_factory_thoothukudi",
+          "edge": "PRODUCES (in)"
+        },
+        {
+          "node": "sec_place_thoothukudi_tamil_nadu",
+          "edge": "LOCATED_IN (out)"
+        },
+        {
+          "node": "Q668_country_india",
+          "edge": "LOCATED_IN (out)"
+        }
+      ]
+    }
+  ]
+}

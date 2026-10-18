@@ -1,0 +1,31 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-200806-815943,jev,1,domain,vinfast,,,,,,,685.3,426,1.7892e-05,
+20261017-200806-815943,jev,2,label,CarModel,,,,,,,598.6,515,2.163e-05,
+20261017-200806-815943,jev,3,pick,sec_nerio_green,,,,,,,702.8,1568,6.5856e-05,30
+20261017-200806-815943,jev,4,visit,sec_brand_green,sec_nerio_green,CarModel,Nerio Green — mẫu xe (C-SUV) thuộc thương hiệu Green của VinFast.,,,0.21,537.0,621,2.6082e-05,3
+20261017-200806-815943,jev,5,visit,none,sec_brand_green,Brand,"Green — thương hiệu xe điện của VinFast. 20-F: EV solutions for commercial applications focused on optimizing fleet utilization and operational efficiency, featuring models such as Limo Green, Herio Green, Nerio Green, and Minio Green.",sec_nerio_green,BELONGS_TO_BRAND (out),0.42,566.7,728,3.0576e-05,4
+20261017-200806-815943,jev,6,visit,sec_vf_e34,sec_nerio_green,CarModel,Nerio Green — mẫu xe (C-SUV) thuộc thương hiệu Green của VinFast.,sec_nerio_green,backtrack,0.22,681.4,549,2.3058e-05,2
+20261017-200806-815943,jev,7,visit,sec_brand_vf,sec_vf_e34,CarModel,VF e34 — mẫu xe thuộc thương hiệu VF của VinFast.,sec_nerio_green,BASED_ON (out),0.34,663.0,576,2.4192e-05,2
+20261017-200806-815943,jev,8,visit,none,sec_brand_vf,Brand,"VF — thương hiệu xe điện của VinFast. 20-F: Smart, reliable EVs for everyday life, designed to bring safety and technology to mainstream consumers at an appealing cost of ownership and flexible pricing schemes.",sec_vf_e34,BELONGS_TO_BRAND (out),0.42,695.2,1000,4.2e-05,9
+20261017-200806-815943,jev,9,visit,Q56660561_vinfast,sec_vf_e34,CarModel,VF e34 — mẫu xe thuộc thương hiệu VF của VinFast.,sec_vf_e34,backtrack,0.35,695.9,510,2.142e-05,1
+20261017-200806-815943,jev,10,visit,sec_herio_green,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",sec_vf_e34,MANUFACTURES (in),0.24,689.0,5568,0.000233856,109
+20261017-200806-815943,jev,11,visit,Q115802472_vinfast_vf_5,sec_herio_green,CarModel,"Herio Green — mẫu xe của VinFast. 20-F: our A-segment electric SUV, developed based on the VF 5 model, is optimized for cost efficiency.",Q56660561_vinfast,MANUFACTURES (out),0.23,694.3,569,2.3898e-05,2
+20261017-200806-815943,jev,12,visit,none,Q115802472_vinfast_vf_5,CarModel,"VinFast VF 5 — mẫu xe do VinFast sản xuất. 20-F: our A-segment electric SUV that offers dynamic youthful styling, targeting first-time, budget conscious buyers.",sec_herio_green,BASED_ON (out),0.33,602.4,623,2.6166e-05,4
+20261017-200806-815943,jev,13,visit,none,sec_herio_green,CarModel,"Herio Green — mẫu xe của VinFast. 20-F: our A-segment electric SUV, developed based on the VF 5 model, is optimized for cost efficiency.",sec_herio_green,backtrack,0.24,593.8,508,2.1336e-05,1
+20261017-200806-815943,jev,14,visit,none,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",Q56660561_vinfast,backtrack,0.24,610.5,5441,0.000228522,107
+20261017-200806-815943,ollama,1,domain,vinfast,,,,,,,1034.7,325,0.0,
+20261017-200806-815943,ollama,2,label,Brand,,,,,,,933.8,352,0.0,
+20261017-200806-815943,ollama,3,pick,sec_brand_green,,,,,,,965.5,373,0.0,3
+20261017-200806-815943,ollama,4,visit,Q56660561_vinfast,sec_brand_green,Brand,"Green — thương hiệu xe điện của VinFast. 20-F: EV solutions for commercial applications focused on optimizing fleet utilization and operational efficiency, featuring models such as Limo Green, Herio Green, Nerio Green, and Minio Green.",,,0.0,1930.6,645,0.0,5
+20261017-200806-815943,ollama,5,visit,sec_nerio_green,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",sec_brand_green,HAS_BRAND (in),0.0,11260.0,4701,0.0,112
+20261017-200806-815943,ollama,6,visit,sec_vf_e34,sec_nerio_green,CarModel,Nerio Green — mẫu xe (C-SUV) thuộc thương hiệu Green của VinFast.,Q56660561_vinfast,MANUFACTURES (out),0.0,1998.9,391,0.0,1
+20261017-200806-815943,ollama,7,visit,sec_brand_vf,sec_vf_e34,CarModel,VF e34 — mẫu xe thuộc thương hiệu VF của VinFast.,sec_nerio_green,BASED_ON (out),0.0,2573.7,418,0.0,1
+20261017-200806-815943,ollama,8,visit,none,sec_brand_vf,Brand,"VF — thương hiệu xe điện của VinFast. 20-F: Smart, reliable EVs for everyday life, designed to bring safety and technology to mainstream consumers at an appealing cost of ownership and flexible pricing schemes.",sec_vf_e34,BELONGS_TO_BRAND (out),0.0,2716.3,792,0.0,8
+20261017-200806-815943,ollama,9,visit,sec_herio_green,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",Q56660561_vinfast,backtrack,0.0,9894.5,4578,0.0,109
+20261017-200806-815943,ollama,10,visit,Q115802472_vinfast_vf_5,sec_herio_green,CarModel,"Herio Green — mẫu xe của VinFast. 20-F: our A-segment electric SUV, developed based on the VF 5 model, is optimized for cost efficiency.",Q56660561_vinfast,MANUFACTURES (out),0.0,1665.4,466,0.0,2
+20261017-200806-815943,ollama,11,visit,none,Q115802472_vinfast_vf_5,CarModel,"VinFast VF 5 — mẫu xe do VinFast sản xuất. 20-F: our A-segment electric SUV that offers dynamic youthful styling, targeting first-time, budget conscious buyers.",sec_herio_green,BASED_ON (out),0.0,1259.5,501,0.0,4
+20261017-200806-815943,ollama,12,visit,,sec_herio_green,CarModel,"Herio Green — mẫu xe của VinFast. 20-F: our A-segment electric SUV, developed based on the VF 5 model, is optimized for cost efficiency.",sec_herio_green,backtrack,1.0,1897.5,412,0.0,1
+20261017-200806-815943,nvidia,1,domain,vinfast,,,,,,,2493.7,379,0.0,
+20261017-200806-815943,nvidia,2,label,Brand,,,,,,,4519.8,401,0.0,
+20261017-200806-815943,nvidia,3,pick,sec_brand_green,,,,,,,2525.8,423,0.0,3
+20261017-200806-815943,nvidia,4,visit,,sec_brand_green,Brand,"Green — thương hiệu xe điện của VinFast. 20-F: EV solutions for commercial applications focused on optimizing fleet utilization and operational efficiency, featuring models such as Limo Green, Herio Green, Nerio Green, and Minio Green.",,,1.0,11862.7,685,0.0,5

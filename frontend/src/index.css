@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* Phong cách dashboard: font mono, nền xám rất nhạt, viền mảnh 1px,
+   teal làm màu nhấn. Riêng logo "Hopwise" giữ chữ pixel vàng. */
+@theme {
+  --color-brutal-bg: #f5f5f2;
+  --color-brutal-border: #111111;
+  --color-line: #d6d6d1;
+  --color-teal: #3b9ab8;
+  --color-teal-soft: #d9edf3;
+  --color-teal-dark: #2a7891;
+  --color-brutal-accent: #f5c518;
+  --color-brutal-accent-dark: #c98a0b;
+  --font-mono-ui: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --font-pixel: "Silkscreen", monospace;
+}
+
+body {
+  background-color: var(--color-brutal-bg);
+  color: #1a1a1a;
+  font-family: var(--font-mono-ui);
+  font-size: 13px;
+}
+
+/* Logo: chữ pixel vàng viền đen, đổ khối bằng text-shadow. */
+.pixel-title {
+  font-family: var(--font-pixel);
+  color: var(--color-brutal-accent);
+  -webkit-text-stroke: 1.5px #111111;
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 0 var(--color-brutal-accent-dark);
+  letter-spacing: 0.04em;
+}

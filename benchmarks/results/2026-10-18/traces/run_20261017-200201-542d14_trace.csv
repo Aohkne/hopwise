@@ -1,0 +1,15 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-200201-542d14,jev,1,domain,vinfast,,,,,,,613.4,420,1.764e-05,
+20261017-200201-542d14,jev,2,label,CarModel,,,,,,,782.8,509,2.1378e-05,
+20261017-200201-542d14,jev,3,pick,Q111033540_vinfast_tempest,,,,,,,740.5,1562,6.5604e-05,30
+20261017-200201-542d14,jev,4,visit,Q193234_xe_tay_ga,Q111033540_vinfast_tempest,CarModel,VinFast Tempest — mẫu xe do VinFast sản xuất.,,,0.29,599.8,539,2.2638e-05,2
+20261017-200201-542d14,jev,5,visit,none,Q193234_xe_tay_ga,VehicleClass,Xe tay ga — loại xe (theo phân loại của Wikidata).,Q111033540_vinfast_tempest,IS_A (out),0.42,696.9,673,2.8266e-05,7
+20261017-200201-542d14,jev,6,visit,none,Q111033540_vinfast_tempest,CarModel,VinFast Tempest — mẫu xe do VinFast sản xuất.,Q111033540_vinfast_tempest,backtrack,0.3,593.2,503,2.1126e-05,1
+20261017-200201-542d14,ollama,1,domain,vinfast,,,,,,,1075.9,320,0.0,
+20261017-200201-542d14,ollama,2,label,CarModel,,,,,,,933.9,347,0.0,
+20261017-200201-542d14,ollama,3,pick,Q111033540_vinfast_tempest,,,,,,,2428.9,1221,0.0,30
+20261017-200201-542d14,ollama,4,visit,,Q111033540_vinfast_tempest,CarModel,VinFast Tempest — mẫu xe do VinFast sản xuất.,,,1.0,2546.4,427,0.0,2
+20261017-200201-542d14,nvidia,1,domain,vinfast,,,,,,,11443.2,374,0.0,
+20261017-200201-542d14,nvidia,2,label,VehicleClass,,,,,,,33014.3,396,0.0,
+20261017-200201-542d14,nvidia,3,pick,Q850270_concept_car,,,,,,,55891.1,444,0.0,8
+20261017-200201-542d14,nvidia,4,visit,,Q850270_concept_car,VehicleClass,concept car — loại xe (theo phân loại của Wikidata).,,,1.0,13192.0,445,0.0,1

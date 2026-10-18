@@ -1,0 +1,32 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-191644-f9f099,jev,1,domain,football_vn,,,,,,,1178.5,432,1.8144e-05,
+20261017-191644-f9f099,jev,2,label,Player,,,,,,,645.3,443,1.8606e-05,
+20261017-191644-f9f099,jev,3,pick,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,,,,,,,745.8,11979,0.000503118,250
+20261017-191644-f9f099,jev,4,pick,Q7022876_nguyễn_minh_chuyên,,,,,,,923.8,11680,0.00049056,250
+20261017-191644-f9f099,jev,5,pick,Q926057_nguyễn_minh_phương,,,,,,,613.1,2437,0.000102354,47
+20261017-191644-f9f099,jev,6,pick,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,,,,,,,568.7,465,1.953e-05,3
+20261017-191644-f9f099,jev,7,visit,Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,Player,"Nguyễn Minh Châu (cầu thủ bóng đá), sinh 09/01/1985, vị trí tiền vệ, quốc tịch Việt Nam.",,,0.06,734.6,618,2.5956e-05,3
+20261017-191644-f9f099,jev,8,visit,Q3277766_sân_vận_động_lạch_tray,Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng,Club,"Câu lạc bộ bóng đá Hải Phòng, thành lập năm 1952, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Lạch Tray.",Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,PLAYED_FOR (out),0.35,687.5,2677,0.000112434,43
+20261017-191644-f9f099,jev,9,visit,,Q3277766_sân_vận_động_lạch_tray,Place,Sân vận động Lạch Tray — địa điểm.,Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng,HOME_VENUE (out),0.54,549.6,448,1.8816e-05,0
+20261017-191644-f9f099,ollama,1,domain,football_vn,,,,,,,1224.7,330,0.0,
+20261017-191644-f9f099,ollama,2,label,Player,,,,,,,1226.2,310,0.0,
+20261017-191644-f9f099,ollama,3,pick,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,,,,,,,20088.6,9114,0.0,250
+20261017-191644-f9f099,ollama,4,pick,Q7022876_nguyễn_minh_chuyên,,,,,,,20902.5,8968,0.0,250
+20261017-191644-f9f099,ollama,5,pick,Q7487605_shamo_abbey,,,,,,,6327.1,1834,0.0,47
+20261017-191644-f9f099,ollama,6,pick,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,,,,,,,1189.0,341,0.0,3
+20261017-191644-f9f099,ollama,7,visit,Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,Player,"Nguyễn Minh Châu (cầu thủ bóng đá), sinh 09/01/1985, vị trí tiền vệ, quốc tịch Việt Nam.",,,0.0,1336.3,489,0.0,3
+20261017-191644-f9f099,ollama,8,visit,Q3277766_sân_vận_động_lạch_tray,Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng,Club,"Câu lạc bộ bóng đá Hải Phòng, thành lập năm 1952, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Lạch Tray.",Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,PLAYED_FOR (out),0.0,6768.7,2108,0.0,43
+20261017-191644-f9f099,ollama,9,visit,none,Q3277766_sân_vận_động_lạch_tray,Place,Sân vận động Lạch Tray — địa điểm.,Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng,HOME_VENUE (out),0.0,4622.1,359,0.0,0
+20261017-191644-f9f099,ollama,10,visit,none,Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng,Club,"Câu lạc bộ bóng đá Hải Phòng, thành lập năm 1952, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Lạch Tray.",Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng,backtrack,0.0,2427.2,2085,0.0,42
+20261017-191644-f9f099,ollama,11,visit,Q270689_đội_tuyển_bóng_đá_quốc_gia_việt_nam,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,Player,"Nguyễn Minh Châu (cầu thủ bóng đá), sinh 09/01/1985, vị trí tiền vệ, quốc tịch Việt Nam.",Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,backtrack,0.0,1508.0,437,0.0,2
+20261017-191644-f9f099,ollama,12,visit,none,Q270689_đội_tuyển_bóng_đá_quốc_gia_việt_nam,NationalTeam,Đội tuyển bóng đá quốc gia Việt Nam — đội tuyển bóng đá đại diện quốc gia Việt Nam.,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,MEMBER_OF_NATIONAL_TEAM (out),0.0,13119.8,6715,0.0,141
+20261017-191644-f9f099,ollama,13,visit,Q33396_quảng_ninh,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,Player,"Nguyễn Minh Châu (cầu thủ bóng đá), sinh 09/01/1985, vị trí tiền vệ, quốc tịch Việt Nam.",Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,backtrack,0.0,3449.6,399,0.0,1
+20261017-191644-f9f099,ollama,14,visit,none,Q33396_quảng_ninh,Place,Quảng Ninh — địa điểm.,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,BORN_IN (out),0.0,1491.8,596,0.0,6
+20261017-191644-f9f099,nvidia,1,domain,football_vn,,,,,,,4817.2,386,0.0,
+20261017-191644-f9f099,nvidia,2,label,Player,,,,,,,6556.2,357,0.0,
+20261017-191644-f9f099,nvidia,3,pick,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,,,,,,,2436.6,8216,0.0,250
+20261017-191644-f9f099,nvidia,4,pick,Q27049058_nguyễn_minh_hải,,,,,,,24376.6,8021,0.0,250
+20261017-191644-f9f099,nvidia,5,pick,Q7778399_mạc_hồng_quân,,,,,,,16789.2,1752,0.0,47
+20261017-191644-f9f099,nvidia,6,pick,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,,,,,,,5054.0,391,0.0,3
+20261017-191644-f9f099,nvidia,7,visit,Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,Player,"Nguyễn Minh Châu (cầu thủ bóng đá), sinh 09/01/1985, vị trí tiền vệ, quốc tịch Việt Nam.",,,0.0,5573.9,544,0.0,3
+20261017-191644-f9f099,nvidia,8,visit,,Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng,Club,"Câu lạc bộ bóng đá Hải Phòng, thành lập năm 1952, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Lạch Tray.",Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,PLAYED_FOR (out),1.0,8373.4,2015,0.0,43

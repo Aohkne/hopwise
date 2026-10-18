@@ -1,0 +1,31 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-185201-ee3f1e,jev,1,domain,football_vn,,,,,,,1147.3,428,1.7976e-05,
+20261017-185201-ee3f1e,jev,2,label,Club,,,,,,,552.8,439,1.8438e-05,
+20261017-185201-ee3f1e,jev,3,pick,Q15941255_câu_lạc_bộ_bóng_đá_đắk_lắk,,,,,,,707.0,12073,0.000507066,250
+20261017-185201-ee3f1e,jev,4,pick,Q20026059_câu_lạc_bộ_bóng_đá_phú_yên,,,,,,,761.4,11577,0.000486234,250
+20261017-185201-ee3f1e,jev,5,pick,Q2509547_câu_lạc_bộ_bóng_đá_hòa_phát_hà_nội,,,,,,,882.9,11392,0.000478464,250
+20261017-185201-ee3f1e,jev,6,pick,Q632990_câu_lạc_bộ_bóng_đá_shb_đà_nẵng,,,,,,,921.9,11691,0.000491022,250
+20261017-185201-ee3f1e,jev,7,pick,Q894500_câu_lạc_bộ_bóng_đá_bình_định,,,,,,,816.7,11938,0.000501396,250
+20261017-185201-ee3f1e,jev,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,676.0,1851,7.7742e-05,32
+20261017-185201-ee3f1e,jev,9,pick,Q894500_câu_lạc_bộ_bóng_đá_bình_định,,,,,,,805.2,666,2.7972e-05,6
+20261017-185201-ee3f1e,jev,10,visit,,Q894500_câu_lạc_bộ_bóng_đá_bình_định,Club,"Câu lạc bộ bóng đá Bình Định, thành lập năm 2001, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Qui Nhơn.",,,0.97,647.9,1275,5.355e-05,16
+20261017-185201-ee3f1e,ollama,1,domain,football_vn,,,,,,,1167.2,327,0.0,
+20261017-185201-ee3f1e,ollama,2,label,Club,,,,,,,745.1,307,0.0,
+20261017-185201-ee3f1e,ollama,3,pick,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,,,,,,,18414.2,9632,0.0,250
+20261017-185201-ee3f1e,ollama,4,pick,Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa,,,,,,,18930.1,9122,0.0,250
+20261017-185201-ee3f1e,ollama,5,pick,Q2509547_câu_lạc_bộ_bóng_đá_hòa_phát_hà_nội,,,,,,,20551.4,9044,0.0,250
+20261017-185201-ee3f1e,ollama,6,pick,Q4750009_câu_lạc_bộ_bóng_đá_an_giang,,,,,,,21752.9,9271,0.0,250
+20261017-185201-ee3f1e,ollama,7,pick,Q894500_câu_lạc_bộ_bóng_đá_bình_định,,,,,,,21041.9,9462,0.0,250
+20261017-185201-ee3f1e,ollama,8,pick,Q925147_clube_desportivo_dos_olivais_e_moscavide,,,,,,,5689.3,1457,0.0,32
+20261017-185201-ee3f1e,ollama,9,pick,Q894500_câu_lạc_bộ_bóng_đá_bình_định,,,,,,,1385.8,493,0.0,6
+20261017-185201-ee3f1e,ollama,10,visit,,Q894500_câu_lạc_bộ_bóng_đá_bình_định,Club,"Câu lạc bộ bóng đá Bình Định, thành lập năm 2001, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Qui Nhơn.",,,1.0,3747.4,1007,0.0,16
+20261017-185201-ee3f1e,nvidia,1,domain,football_vn,,,,,,,1611.6,382,0.0,
+20261017-185201-ee3f1e,nvidia,2,label,Place,,,,,,,15653.8,353,0.0,
+20261017-185201-ee3f1e,nvidia,3,pick,Q10822664_sân_vận_động_cần_thơ,,,,,,,62430.5,3954,0.0,250
+20261017-185201-ee3f1e,nvidia,4,pick,Q1858_hà_nội,,,,,,,32831.1,3843,0.0,250
+20261017-185201-ee3f1e,nvidia,5,pick,Q36081_quy_nhơn,,,,,,,8834.4,3787,0.0,250
+20261017-185201-ee3f1e,nvidia,6,pick,Q5574748_sân_vận_động_gò_đậu,,,,,,,8607.7,3875,0.0,250
+20261017-185201-ee3f1e,nvidia,7,pick,Q7273047_sân_vận_động_qui_nhơn,,,,,,,3094.3,3569,0.0,228
+20261017-185201-ee3f1e,nvidia,8,pick,Q7273047_sân_vận_động_qui_nhơn,,,,,,,3555.5,363,0.0,5
+20261017-185201-ee3f1e,nvidia,9,visit,Q894500_câu_lạc_bộ_bóng_đá_bình_định,Q7273047_sân_vận_động_qui_nhơn,Place,Sân vận động Qui Nhơn — địa điểm.,,,0.0,11326.4,466,0.0,1
+20261017-185201-ee3f1e,nvidia,10,visit,,Q894500_câu_lạc_bộ_bóng_đá_bình_định,Club,"Câu lạc bộ bóng đá Bình Định, thành lập năm 2001, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Qui Nhơn.",Q7273047_sân_vận_động_qui_nhơn,HOME_VENUE (in),1.0,4356.9,1001,0.0,15

@@ -1,0 +1,17 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-202039-e7070e,jev,1,domain,vinfast,,,,,,,621.2,434,1.8228e-05,
+20261017-202039-e7070e,jev,2,label,Company,,,,,,,656.7,523,2.1966e-05,
+20261017-202039-e7070e,jev,3,pick,sec_pt_vinfast_trading_indonesia,,,,,,,611.1,2512,0.000105504,61
+20261017-202039-e7070e,jev,4,visit,Q252_country_indonesia,sec_pt_vinfast_trading_indonesia,Company,"PT VinFast Trading Indonesia — công ty con của VinFast, đăng ký tại Indonesia.",,,0.08,700.4,560,2.352e-05,2
+20261017-202039-e7070e,jev,5,visit,sec_place_subang_west_java,Q252_country_indonesia,Country,"Indonesia — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",sec_pt_vinfast_trading_indonesia,INCORPORATED_IN (out),0.16,702.8,704,2.9568e-05,5
+20261017-202039-e7070e,jev,6,visit,,sec_place_subang_west_java,Place,"Subang, West Java, Indonesia — nơi VinFast đặt nhà máy.",Q252_country_indonesia,LOCATED_IN (in),0.85,707.1,513,2.1546e-05,1
+20261017-202039-e7070e,ollama,1,domain,vinfast,,,,,,,1842.4,334,0.0,
+20261017-202039-e7070e,ollama,2,label,Company,,,,,,,909.7,361,0.0,
+20261017-202039-e7070e,ollama,3,pick,sec_pt_vinfast_trading_indonesia,,,,,,,3488.2,1902,0.0,61
+20261017-202039-e7070e,ollama,4,visit,Q252_country_indonesia,sec_pt_vinfast_trading_indonesia,Company,"PT VinFast Trading Indonesia — công ty con của VinFast, đăng ký tại Indonesia.",,,0.0,2638.2,451,0.0,2
+20261017-202039-e7070e,ollama,5,visit,sec_place_subang_west_java,Q252_country_indonesia,Country,"Indonesia — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",sec_pt_vinfast_trading_indonesia,INCORPORATED_IN (out),0.0,1501.4,573,0.0,5
+20261017-202039-e7070e,ollama,6,visit,,sec_place_subang_west_java,Place,"Subang, West Java, Indonesia — nơi VinFast đặt nhà máy.",Q252_country_indonesia,LOCATED_IN (in),1.0,1759.2,419,0.0,1
+20261017-202039-e7070e,nvidia,1,domain,vinfast,,,,,,,3379.1,387,0.0,
+20261017-202039-e7070e,nvidia,2,label,Factory,,,,,,,6840.5,409,0.0,
+20261017-202039-e7070e,nvidia,3,pick,sec_factory_subang,,,,,,,3575.6,471,0.0,5
+20261017-202039-e7070e,nvidia,4,visit,,sec_factory_subang,Factory,"Nhà máy VinFast tại Subang, West Java, Indonesia, khánh thành tháng 12/2025, công suất 50,000 xe/năm.",,,1.0,7047.3,510,0.0,2

@@ -1,0 +1,30 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-184111-0d18be,jev,1,domain,football_vn,,,,,,,1167.1,421,1.7682e-05,
+20261017-184111-0d18be,jev,2,label,Player,,,,,,,560.3,432,1.8144e-05,
+20261017-184111-0d18be,jev,3,pick,Q24689101_nguyễn_quang_hải,,,,,,,659.6,11968,0.000502656,250
+20261017-184111-0d18be,jev,4,pick,Q26924291_dương_văn_khoa,,,,,,,709.7,11669,0.000490098,250
+20261017-184111-0d18be,jev,5,pick,Q8077033_âu_văn_hoàn,,,,,,,626.6,2426,0.000101892,47
+20261017-184111-0d18be,jev,6,pick,Q8077033_âu_văn_hoàn,,,,,,,602.2,448,1.8816e-05,3
+20261017-184111-0d18be,jev,7,visit,none,Q8077033_âu_văn_hoàn,Player,"Âu Văn Hoàn, sinh 01/10/1989, vị trí hậu vệ cánh, quốc tịch Việt Nam.",,,0.36,623.3,711,2.9862e-05,5
+20261017-184111-0d18be,ollama,1,domain,football_vn,,,,,,,1107.2,321,0.0,
+20261017-184111-0d18be,ollama,2,label,Player,,,,,,,932.3,301,0.0,
+20261017-184111-0d18be,ollama,3,pick,Q26871048_nguyễn_hồng_việt,,,,,,,17603.7,9105,0.0,250
+20261017-184111-0d18be,ollama,4,pick,Q7022927_nguyễn_quang_hải,,,,,,,19404.2,8959,0.0,250
+20261017-184111-0d18be,ollama,5,pick,Q983685_dương_hồng_sơn,,,,,,,5958.5,1825,0.0,47
+20261017-184111-0d18be,ollama,6,pick,Q7022927_nguyễn_quang_hải,,,,,,,3377.4,327,0.0,3
+20261017-184111-0d18be,ollama,7,visit,none,Q7022927_nguyễn_quang_hải,Player,"Nguyễn Quang Hải, sinh 01/11/1985, vị trí tiền đạo, quốc tịch Việt Nam.",,,0.0,1673.1,653,0.0,7
+20261017-184111-0d18be,nvidia,1,domain,football_vn,,,,,,,2030.8,375,0.0,
+20261017-184111-0d18be,nvidia,2,label,Player,,,,,,,5670.8,346,0.0,
+20261017-184111-0d18be,nvidia,3,pick,Q1028482_fikru_teferra_lemessa,,,,,,,10447.6,8205,0.0,250
+20261017-184111-0d18be,nvidia,4,pick,Q26924291_dương_văn_khoa,,,,,,,23030.2,8010,0.0,250
+20261017-184111-0d18be,nvidia,5,pick,Q7708869_thạch_bảo_khanh,,,,,,,9398.6,1741,0.0,47
+20261017-184111-0d18be,nvidia,6,pick,Q26924291_dương_văn_khoa,,,,,,,27046.2,380,0.0,3
+20261017-184111-0d18be,nvidia,7,visit,Q881_việt_nam,Q26924291_dương_văn_khoa,Player,"Dương Văn Khoa, sinh 06/05/1994, vị trí hậu vệ cánh, quốc tịch Việt Nam.",,,0.1,18318.9,495,0.0,2
+20261017-184111-0d18be,nvidia,8,visit,Q27049058_nguyễn_minh_hải,Q881_việt_nam,Place,Việt Nam — địa điểm.,Q26924291_dương_văn_khoa,BORN_IN (out),0.0,8880.7,3410,0.0,81
+20261017-184111-0d18be,nvidia,9,visit,Q560392_câu_lạc_bộ_bóng_đá_hà_nội,Q27049058_nguyễn_minh_hải,Player,"Nguyễn Minh Hải, sinh 09/01/1994, vị trí hậu vệ, quốc tịch Việt Nam.",Q881_việt_nam,BORN_IN (in),0.05,5689.3,472,0.0,1
+20261017-184111-0d18be,nvidia,10,visit,Q4016772_nguyễn_văn_quyết,Q560392_câu_lạc_bộ_bóng_đá_hà_nội,Club,"Câu lạc bộ bóng đá Hà Nội, thành lập năm 2006, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Hàng Đẫy.",Q27049058_nguyễn_minh_hải,PLAYED_FOR (out),0.0,7184.9,3318,0.0,80
+20261017-184111-0d18be,nvidia,11,visit,none,Q4016772_nguyễn_văn_quyết,Player,"Nguyễn Văn Quyết, sinh 01/07/1991, vị trí tiền vệ, wing half, quốc tịch Việt Nam.",Q560392_câu_lạc_bộ_bóng_đá_hà_nội,PLAYED_FOR (in),0.0,10617.3,581,0.0,5
+20261017-184111-0d18be,nvidia,12,visit,none,Q560392_câu_lạc_bộ_bóng_đá_hà_nội,Club,"Câu lạc bộ bóng đá Hà Nội, thành lập năm 2006, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Hàng Đẫy.",Q560392_câu_lạc_bộ_bóng_đá_hà_nội,backtrack,0.0,17983.7,3279,0.0,79
+20261017-184111-0d18be,nvidia,13,visit,none,Q881_việt_nam,Place,Việt Nam — địa điểm.,Q881_việt_nam,backtrack,0.0,17003.4,3375,0.0,80
+20261017-184111-0d18be,nvidia,14,visit,Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,Q26924291_dương_văn_khoa,Player,"Dương Văn Khoa, sinh 06/05/1994, vị trí hậu vệ cánh, quốc tịch Việt Nam.",Q26924291_dương_văn_khoa,backtrack,0.0,6528.2,478,0.0,1
+20261017-184111-0d18be,nvidia,15,visit,none,Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,Club,"Câu lạc bộ bóng đá Than Quảng Ninh, thành lập năm 1956, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Cẩm Phả.",Q26924291_dương_văn_khoa,PLAYED_FOR (out),0.0,8984.2,1545,0.0,30

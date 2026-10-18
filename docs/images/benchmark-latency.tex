@@ -1,0 +1,36 @@
+\documentclass[border=8pt]{standalone}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18, every axis/.append style={/pgf/number format/assume math mode=true,
+  tick label style={font=\small}, /pgf/number format/use comma, /pgf/number format/1000 sep={.}}}
+\definecolor{jevblue}{HTML}{2F7FBF}
+\definecolor{gemmared}{HTML}{D1495B}
+\definecolor{gptyellow}{HTML}{EDB92E}
+\definecolor{lineGray}{HTML}{6B6B66}
+\definecolor{timeDark}{HTML}{1F3A5F}
+\definecolor{costOrange}{HTML}{D9692B}
+\definecolor{accTeal}{HTML}{2E9E8F}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+  title={Đánh đổi giữa độ chính xác, thời gian và chi phí}, title style={font=\bfseries},
+  ybar, bar width=17pt, width=16cm, height=9.5cm, symbolic x coords={Jev,Gemma 4 12B,gpt-oss-20b}, xtick=data,
+  xticklabel style={font=\small}, enlarge x limits=0.22,
+  ymin=0, ymax=1.18, ytick={0,0.25,0.5,0.75,1}, yticklabels={0,25\%,50\%,75\%,100\%},
+  ylabel={Mức so với model cao nhất ở từng chỉ số},
+  axis lines*=left, ymajorgrids, grid style={gray!25}, clip=false,
+  nodes near coords={\pgfplotspointmeta}, point meta=explicit symbolic,
+  every node near coord/.append style={font=\scriptsize\bfseries, text=black, rotate=0, anchor=south, yshift=1pt},
+  legend columns=-1, area legend,
+  legend style={at={(0.5,-0.13)}, anchor=north, draw=none, font=\small, /tikz/every even column/.append style={column sep=10pt}},
+]
+\addplot+[ybar, fill=accTeal, draw=white] coordinates {(Jev,1.0000) [43\%] (Gemma 4 12B,0.5769) [25\%] (gpt-oss-20b,0.6154) [27\%]};
+\addlegendentry{Độ chính xác (\% số câu đúng)}
+\addplot+[ybar, fill=timeDark, draw=white] coordinates {(Jev,0.0588) [4,9\,s] (Gemma 4 12B,0.5507) [46,0\,s] (gpt-oss-20b,1.0000) [83,5\,s]};
+\addlegendentry{Thời gian trung bình tới kết quả}
+\addplot+[ybar, fill=costOrange, draw=white] coordinates {(Jev,1.0000) [\$0,0012] (Gemma 4 12B,0.0000) [\$0] (gpt-oss-20b,0.0000) [\$0]};
+\addlegendentry{Chi phí trung bình mỗi câu}
+\end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,17 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-201333-7c1a2e,jev,1,domain,vinfast,,,,,,,667.8,421,1.7682e-05,
+20261017-201333-7c1a2e,jev,2,label,Factory,,,,,,,706.4,510,2.142e-05,
+20261017-201333-7c1a2e,jev,3,pick,sec_factory_north_carolina,,,,,,,606.7,556,2.3352e-05,5
+20261017-201333-7c1a2e,jev,4,visit,sec_place_north_carolina,sec_factory_north_carolina,Factory,"Nhà máy VinFast tại North Carolina, United States, dự kiến sản xuất từ 2028.",,,0.47,677.0,541,2.2722e-05,2
+20261017-201333-7c1a2e,jev,5,visit,Q30_country_united_states,sec_place_north_carolina,Place,"North Carolina, United States — nơi VinFast đặt nhà máy.",sec_factory_north_carolina,LOCATED_IN (out),0.33,615.5,478,2.0076e-05,1
+20261017-201333-7c1a2e,jev,6,visit,,Q30_country_united_states,Country,"Hoa Kỳ — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",sec_place_north_carolina,LOCATED_IN (out),0.89,698.5,612,2.5704e-05,4
+20261017-201333-7c1a2e,ollama,1,domain,vinfast,,,,,,,1055.7,322,0.0,
+20261017-201333-7c1a2e,ollama,2,label,Country,,,,,,,967.2,349,0.0,
+20261017-201333-7c1a2e,ollama,3,pick,Q30_country_united_states,,,,,,,1360.9,612,0.0,15
+20261017-201333-7c1a2e,ollama,4,visit,sec_place_north_carolina,Q30_country_united_states,Country,"Hoa Kỳ — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",,,0.0,2494.5,515,0.0,5
+20261017-201333-7c1a2e,ollama,5,visit,sec_factory_north_carolina,sec_place_north_carolina,Place,"North Carolina, United States — nơi VinFast đặt nhà máy.",Q30_country_united_states,LOCATED_IN (in),0.0,1083.7,387,0.0,1
+20261017-201333-7c1a2e,ollama,6,visit,,sec_factory_north_carolina,Factory,"Nhà máy VinFast tại North Carolina, United States, dự kiến sản xuất từ 2028.",sec_place_north_carolina,LOCATED_IN (in),1.0,1262.9,409,0.0,1
+20261017-201333-7c1a2e,nvidia,1,domain,vinfast,,,,,,,57360.7,375,0.0,
+20261017-201333-7c1a2e,nvidia,2,label,Factory,,,,,,,42634.0,397,0.0,
+20261017-201333-7c1a2e,nvidia,3,pick,sec_factory_north_carolina,,,,,,,9606.4,459,0.0,5
+20261017-201333-7c1a2e,nvidia,4,visit,,sec_factory_north_carolina,Factory,"Nhà máy VinFast tại North Carolina, United States, dự kiến sản xuất từ 2028.",,,1.0,7760.3,483,0.0,2

@@ -1,0 +1,15 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-201958-fe7f7c,jev,1,domain,vinfast,,,,,,,715.9,443,1.8606e-05,
+20261017-201958-fe7f7c,jev,2,label,Company,,,,,,,606.0,532,2.2344e-05,
+20261017-201958-fe7f7c,jev,3,pick,sec_vinfast_middle_east_fze,,,,,,,600.7,2521,0.000105882,61
+20261017-201958-fe7f7c,jev,4,visit,Q56660561_vinfast,sec_vinfast_middle_east_fze,Company,"VinFast Middle East FZE — công ty con của VinFast, đăng ký tại United Arab Emirates.",,,0.2,709.2,589,2.4738e-05,2
+20261017-201958-fe7f7c,jev,5,visit,none,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",sec_vinfast_middle_east_fze,SUBSIDIARY_OF (out),0.14,697.3,5758,0.000241836,112
+20261017-201958-fe7f7c,jev,6,visit,none,sec_vinfast_middle_east_fze,Company,"VinFast Middle East FZE — công ty con của VinFast, đăng ký tại United Arab Emirates.",sec_vinfast_middle_east_fze,backtrack,0.19,699.1,526,2.2092e-05,1
+20261017-201958-fe7f7c,ollama,1,domain,vinfast,,,,,,,1472.5,339,0.0,
+20261017-201958-fe7f7c,ollama,2,label,Company,,,,,,,940.3,366,0.0,
+20261017-201958-fe7f7c,ollama,3,pick,sec_vinfast_middle_east_fze,,,,,,,3623.6,1907,0.0,61
+20261017-201958-fe7f7c,ollama,4,visit,,sec_vinfast_middle_east_fze,Company,"VinFast Middle East FZE — công ty con của VinFast, đăng ký tại United Arab Emirates.",,,1.0,4703.1,470,0.0,2
+20261017-201958-fe7f7c,nvidia,1,domain,vinfast,,,,,,,2741.7,393,0.0,
+20261017-201958-fe7f7c,nvidia,2,label,Company,,,,,,,8289.3,415,0.0,
+20261017-201958-fe7f7c,nvidia,3,pick,sec_vinfast_middle_east_fze,,,,,,,8993.2,1911,0.0,61
+20261017-201958-fe7f7c,nvidia,4,visit,none,sec_vinfast_middle_east_fze,Company,"VinFast Middle East FZE — công ty con của VinFast, đăng ký tại United Arab Emirates.",,,0.0,21282.0,524,0.0,2

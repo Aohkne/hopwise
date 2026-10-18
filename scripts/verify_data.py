@@ -41,7 +41,7 @@ def check(path: pathlib.Path) -> dict:
     if dupes:
         fail(f"{len(dupes)} node id trùng: {dupes[:5]}")
     else:
-        print("  ✅ Không có node id trùng")
+        print("   Không có node id trùng")
 
     # 2. toàn vẹn tham chiếu
     idset = set(ids)
@@ -49,7 +49,7 @@ def check(path: pathlib.Path) -> dict:
     if dangling:
         fail(f"{len(dangling)} cạnh trỏ tới node không tồn tại, ví dụ: {dangling[0]}")
     else:
-        print("  ✅ Mọi cạnh đều trỏ tới node tồn tại")
+        print("   Mọi cạnh đều trỏ tới node tồn tại")
 
     # 3. cạnh trùng hoàn toàn
     sig = [(e["from"], e["to"], e["type"], json.dumps(e.get("properties", {}), sort_keys=True)) for e in edges]
@@ -57,7 +57,7 @@ def check(path: pathlib.Path) -> dict:
     if dup_edges:
         print(f"  ⚠️  {dup_edges} cạnh trùng lặp hoàn toàn (nên dedupe)")
     else:
-        print("  ✅ Không có cạnh trùng lặp")
+        print("   Không có cạnh trùng lặp")
 
     # 4. node cô lập
     touched = {e["from"] for e in edges} | {e["to"] for e in edges}
@@ -70,11 +70,11 @@ def check(path: pathlib.Path) -> dict:
     if no_desc:
         fail(f"{len(no_desc)} node thiếu description (cần cho state của Jev): {no_desc[:3]}")
     else:
-        print("  ✅ Mọi node đều có description")
+        print("   Mọi node đều có description")
     if no_src:
         fail(f"{len(no_src)} node thiếu source: {no_src[:3]}")
     else:
-        print("  ✅ Mọi node đều có source truy vết")
+        print("   Mọi node đều có source truy vết")
 
     # 6. độ phủ field
     per_label: dict[str, collections.Counter] = collections.defaultdict(collections.Counter)
@@ -117,16 +117,22 @@ def check_images(docs: list[dict]) -> None:
         if not check_url_alive(url):
             dead.append((nid, url))
     alive = len(sample) - len(dead)
-    print(f"  ✅ Sống: {alive}/{len(sample)} ({alive * 100 // len(sample)}%)")
+    print(f"   Sống: {alive}/{len(sample)} ({alive * 100 // len(sample)}%)")
     for nid, url in dead:
-        fail(f"URL chết: {nid} -> {url}")
+        # Cảnh báo, không fail(): uptime của Wikimedia Commons nằm ngoài
+        # tầm kiểm soát của repo — một ảnh tạm thời không truy cập được
+        # (rate-limit, CDN) không phải lỗi dữ liệu. Nếu tỉ lệ chết quá cao
+        # (>50%) mới coi là bất thường thật sự cần chặn CI.
+        print(f"  ⚠️  URL có thể chết (không chặn CI): {nid} -> {url}")
+    if len(dead) > len(sample) // 2:
+        fail(f"Hơn nửa mẫu ({len(dead)}/{len(sample)}) không truy cập được — có thể là lỗi dữ liệu thật")
 
 
 def main() -> None:
     docs = [check(p) for p in sorted(DATA.glob("*.json"))]
     check_images(docs)
     print("\n" + ("=" * 50))
-    print("KẾT QUẢ: " + ("✅ ĐẠT" if ok else "❌ CÓ LỖI CẦN SỬA"))
+    print("KẾT QUẢ: " + (" ĐẠT" if ok else "❌ CÓ LỖI CẦN SỬA"))
     sys.exit(0 if ok else 1)
 
 

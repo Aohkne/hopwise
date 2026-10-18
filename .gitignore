@@ -9,6 +9,12 @@ __pycache__/
 .venv/
 venv/
 
-# Kết quả benchmark tạm
-results/
+# Node (frontend)
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Kết quả benchmark (CSV) — sinh ra khi chạy
+outputs/
+/results/
 *.log

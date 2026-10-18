@@ -1,0 +1,15 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-201530-d838a2,jev,1,domain,vinfast,,,,,,,1141.3,422,1.7724e-05,
+20261017-201530-d838a2,jev,2,label,Factory,,,,,,,606.9,511,2.1462e-05,
+20261017-201530-d838a2,jev,3,pick,sec_factory_hai_phong,,,,,,,701.8,557,2.3394e-05,5
+20261017-201530-d838a2,jev,4,visit,Q72818_hải_phòng,sec_factory_hai_phong,Factory,"Nhà máy VinFast tại Hai Phong, Vietnam, khánh thành 2019, công suất 300,000 xe/năm.",,,0.36,607.5,555,2.331e-05,2
+20261017-201530-d838a2,jev,5,visit,Q881_country_vietnam,Q72818_hải_phòng,Place,Hải Phòng — nơi đặt trụ sở VinFast.,sec_factory_hai_phong,LOCATED_IN (out),0.06,581.6,799,3.3558e-05,7
+20261017-201530-d838a2,jev,6,visit,,Q881_country_vietnam,Country,"Việt Nam — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",Q72818_hải_phòng,LOCATED_IN (out),0.86,688.0,1126,4.7292e-05,14
+20261017-201530-d838a2,ollama,1,domain,vinfast,,,,,,,1045.9,322,0.0,
+20261017-201530-d838a2,ollama,2,label,Factory,,,,,,,898.7,349,0.0,
+20261017-201530-d838a2,ollama,3,pick,sec_factory_hai_phong,,,,,,,1094.6,434,0.0,5
+20261017-201530-d838a2,ollama,4,visit,,sec_factory_hai_phong,Factory,"Nhà máy VinFast tại Hai Phong, Vietnam, khánh thành 2019, công suất 300,000 xe/năm.",,,1.0,1310.1,443,0.0,2
+20261017-201530-d838a2,nvidia,1,domain,vinfast,,,,,,,41355.8,376,0.0,
+20261017-201530-d838a2,nvidia,2,label,Country,,,,,,,72890.1,398,0.0,
+20261017-201530-d838a2,nvidia,3,pick,Q881_country_vietnam,,,,,,,70647.8,667,0.0,15
+20261017-201530-d838a2,nvidia,4,visit,,Q881_country_vietnam,Country,"Việt Nam — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",,,1.0,18597.1,977,0.0,15

@@ -1,0 +1,23 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-200442-445b34,jev,1,domain,vinfast,,,,,,,698.0,426,1.7892e-05,
+20261017-200442-445b34,jev,2,label,Company,,,,,,,607.1,515,2.163e-05,
+20261017-200442-445b34,jev,3,pick,sec_vinfast_manufacturing_us_llc,,,,,,,628.0,2504,0.000105168,61
+20261017-200442-445b34,jev,4,visit,,sec_vinfast_manufacturing_us_llc,Company,"VinFast Manufacturing US, LLC — công ty con của VinFast, đăng ký tại United States.",,,0.5,685.0,556,2.3352e-05,2
+20261017-200442-445b34,ollama,1,domain,vinfast,,,,,,,1032.4,327,0.0,
+20261017-200442-445b34,ollama,2,label,Company,,,,,,,914.9,354,0.0,
+20261017-200442-445b34,ollama,3,pick,sec_vinfast_manufacturing_us_llc,,,,,,,3659.8,1895,0.0,61
+20261017-200442-445b34,ollama,4,visit,Q30_country_united_states,sec_vinfast_manufacturing_us_llc,Company,"VinFast Manufacturing US, LLC — công ty con của VinFast, đăng ký tại United States.",,,0.0,2478.2,447,0.0,2
+20261017-200442-445b34,ollama,5,visit,sec_vinfast_auto_llc,Q30_country_united_states,Country,"Hoa Kỳ — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",sec_vinfast_manufacturing_us_llc,INCORPORATED_IN (out),0.0,1318.9,487,0.0,4
+20261017-200442-445b34,ollama,6,visit,Q56660561_vinfast,sec_vinfast_auto_llc,Company,"VinFast Auto, LLC — công ty con của VinFast, đăng ký tại United States.",Q30_country_united_states,INCORPORATED_IN (in),0.0,1325.1,414,0.0,1
+20261017-200442-445b34,ollama,7,visit,sec_vingroup_usa_llc,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",sec_vinfast_auto_llc,SUBSIDIARY_OF (out),0.0,8868.2,4698,0.0,111
+20261017-200442-445b34,ollama,8,visit,none,sec_vingroup_usa_llc,Company,"Vingroup USA, LLC — công ty con của VinFast, đăng ký tại United States.",Q56660561_vinfast,SUBSIDIARY_OF (in),0.0,3525.8,365,0.0,0
+20261017-200442-445b34,ollama,9,visit,sec_vinfast_usa_distribution_llc,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",Q56660561_vinfast,backtrack,0.0,8726.7,4663,0.0,110
+20261017-200442-445b34,ollama,10,visit,none,sec_vinfast_usa_distribution_llc,Company,"VinFast USA Distribution, LLC — công ty con của VinFast, đăng ký tại United States.",Q56660561_vinfast,SUBSIDIARY_OF (in),0.0,3932.8,365,0.0,0
+20261017-200442-445b34,ollama,11,visit,none,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",Q56660561_vinfast,backtrack,0.0,10660.7,4628,0.0,109
+20261017-200442-445b34,ollama,12,visit,sec_place_north_carolina,Q30_country_united_states,Country,"Hoa Kỳ — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",Q30_country_united_states,backtrack,0.0,2724.1,389,0.0,1
+20261017-200442-445b34,ollama,13,visit,sec_factory_north_carolina,sec_place_north_carolina,Place,"North Carolina, United States — nơi VinFast đặt nhà máy.",Q30_country_united_states,LOCATED_IN (in),0.0,1230.7,392,0.0,1
+20261017-200442-445b34,ollama,14,visit,,sec_factory_north_carolina,Factory,"Nhà máy VinFast tại North Carolina, United States, dự kiến sản xuất từ 2028.",sec_place_north_carolina,LOCATED_IN (in),1.0,1162.4,367,0.0,0
+20261017-200442-445b34,nvidia,1,domain,vinfast,,,,,,,2033.6,380,0.0,
+20261017-200442-445b34,nvidia,2,label,Country,,,,,,,4567.5,402,0.0,
+20261017-200442-445b34,nvidia,3,pick,Q30_country_united_states,,,,,,,3479.7,671,0.0,15
+20261017-200442-445b34,nvidia,4,visit,,Q30_country_united_states,Country,"Hoa Kỳ — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",,,0.97,5101.9,572,0.0,5

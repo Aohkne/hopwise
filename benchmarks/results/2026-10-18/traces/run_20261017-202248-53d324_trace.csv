@@ -1,0 +1,15 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-202248-53d324,jev,1,domain,vinfast,,,,,,,1695.2,424,1.7808e-05,
+20261017-202248-53d324,jev,2,label,Factory,,,,,,,606.7,513,2.1546e-05,
+20261017-202248-53d324,jev,3,pick,sec_factory_hai_phong,,,,,,,710.1,559,2.3478e-05,5
+20261017-202248-53d324,jev,4,visit,,sec_factory_hai_phong,Factory,"Nhà máy VinFast tại Hai Phong, Vietnam, khánh thành 2019, công suất 300,000 xe/năm.",,,0.72,597.6,557,2.3394e-05,2
+20261017-202248-53d324,ollama,1,domain,vinfast,,,,,,,1512.1,326,0.0,
+20261017-202248-53d324,ollama,2,label,CarModel,,,,,,,1007.4,353,0.0,
+20261017-202248-53d324,ollama,3,pick,Q111784765_vinfast_vf_7,,,,,,,2404.5,1227,0.0,30
+20261017-202248-53d324,ollama,4,visit,sec_factory_thoothukudi,Q111784765_vinfast_vf_7,CarModel,"VinFast VF 7 — mẫu xe do VinFast sản xuất. 20-F: a driver centric C-segment electric SUV, accentuated by its futuristic styling.",,,0.0,2591.1,659,0.0,7
+20261017-202248-53d324,ollama,5,visit,,sec_factory_thoothukudi,Factory,"Nhà máy VinFast tại Thoothukudi, Tamil Nadu, India, khánh thành tháng 8/2025, công suất 50,000 xe/năm.",Q111784765_vinfast_vf_7,PRODUCES (in),1.0,2085.0,559,0.0,4
+20261017-202248-53d324,nvidia,1,domain,vinfast,,,,,,,5854.8,379,0.0,
+20261017-202248-53d324,nvidia,2,label,Factory,,,,,,,4035.9,401,0.0,
+20261017-202248-53d324,nvidia,3,pick,sec_factory_hai_phong,,,,,,,9255.4,463,0.0,5
+20261017-202248-53d324,nvidia,4,visit,Q72818_hải_phòng,sec_factory_hai_phong,Factory,"Nhà máy VinFast tại Hai Phong, Vietnam, khánh thành 2019, công suất 300,000 xe/năm.",,,0.0,7958.2,494,0.0,2
+20261017-202248-53d324,nvidia,5,visit,,Q72818_hải_phòng,Place,Hải Phòng — nơi đặt trụ sở VinFast.,sec_factory_hai_phong,LOCATED_IN (out),1.0,65513.0,678,0.0,7

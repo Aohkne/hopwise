@@ -1,0 +1,40 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-190811-808eaa,jev,1,domain,football_vn,,,,,,,1348.7,434,1.8228e-05,
+20261017-190811-808eaa,jev,2,label,Player,,,,,,,608.5,445,1.869e-05,
+20261017-190811-808eaa,jev,3,pick,Q2307209_rod_dyachenko,,,,,,,699.6,11981,0.000503202,250
+20261017-190811-808eaa,jev,4,pick,Q64009688_robbie_servais,,,,,,,880.8,11682,0.000490644,250
+20261017-190811-808eaa,jev,5,pick,Q7441013_sean_fraser,,,,,,,837.4,2439,0.000102438,47
+20261017-190811-808eaa,jev,6,pick,Q2307209_rod_dyachenko,,,,,,,624.4,439,1.8438e-05,3
+20261017-190811-808eaa,jev,7,visit,Q105413_georgiyevsk,Q2307209_rod_dyachenko,Player,"Rod Dyachenko, sinh 22/09/1983, vị trí tiền vệ, tiền đạo, quốc tịch Hoa Kỳ, Nga.",,,0.38,645.3,960,4.032e-05,10
+20261017-190811-808eaa,jev,8,visit,none,Q105413_georgiyevsk,Place,Georgiyevsk — địa điểm.,Q2307209_rod_dyachenko,BORN_IN (out),0.3,630.5,447,1.8774e-05,0
+20261017-190811-808eaa,jev,9,visit,none,Q2307209_rod_dyachenko,Player,"Rod Dyachenko, sinh 22/09/1983, vị trí tiền vệ, tiền đạo, quốc tịch Hoa Kỳ, Nga.",Q2307209_rod_dyachenko,backtrack,0.39,687.0,933,3.9186e-05,9
+20261017-190811-808eaa,ollama,1,domain,football_vn,,,,,,,1798.4,333,0.0,
+20261017-190811-808eaa,ollama,2,label,Player,,,,,,,895.6,313,0.0,
+20261017-190811-808eaa,ollama,3,pick,Q1134058_cornell_glen,,,,,,,18454.6,9117,0.0,250
+20261017-190811-808eaa,ollama,4,pick,Q2700025_jonathan_quartey,,,,,,,20553.0,8971,0.0,250
+20261017-190811-808eaa,ollama,5,pick,Q9025957_jhonatan_bernardo,,,,,,,4005.5,1837,0.0,47
+20261017-190811-808eaa,ollama,6,pick,Q9025957_jhonatan_bernardo,,,,,,,4523.6,336,0.0,3
+20261017-190811-808eaa,ollama,7,visit,Q174_são_paulo,Q9025957_jhonatan_bernardo,Player,"Jhonatan Bernardo, sinh 07/11/1988, vị trí tiền đạo, quốc tịch Brasil.",,,0.0,2017.7,881,0.0,11
+20261017-190811-808eaa,ollama,8,visit,Q43380276_diogo_pereira,Q174_são_paulo,Place,São Paulo — địa điểm.,Q9025957_jhonatan_bernardo,BORN_IN (out),0.0,1606.4,562,0.0,5
+20261017-190811-808eaa,ollama,9,visit,none,Q43380276_diogo_pereira,Player,"Diogo Pereira, sinh 27/03/1990, vị trí tiền đạo, quốc tịch Brasil.",Q174_são_paulo,BORN_IN (in),0.0,2009.4,432,0.0,1
+20261017-190811-808eaa,ollama,10,visit,Q5131128_cleiton_kanu,Q174_são_paulo,Place,São Paulo — địa điểm.,Q174_são_paulo,backtrack,0.0,1518.4,524,0.0,4
+20261017-190811-808eaa,ollama,11,visit,none,Q5131128_cleiton_kanu,Player,"Cleiton Kanu, sinh 17/05/1985, vị trí tiền đạo, quốc tịch Brasil.",Q174_são_paulo,BORN_IN (in),0.0,1895.5,837,0.0,10
+20261017-190811-808eaa,ollama,12,visit,Q61959587_gustavo_sant_ana_santos,Q174_são_paulo,Place,São Paulo — địa điểm.,Q174_são_paulo,backtrack,0.0,1378.5,485,0.0,3
+20261017-190811-808eaa,ollama,13,visit,none,Q61959587_gustavo_sant_ana_santos,Player,"Gustavo Sant'Ana Santos, sinh 23/02/1995, vị trí hậu vệ, quốc tịch Brasil.",Q174_são_paulo,BORN_IN (in),0.0,1255.3,434,0.0,1
+20261017-190811-808eaa,ollama,14,visit,Q2057923_patrick_cầu_thủ_bóng_đá_sinh_1985,Q174_são_paulo,Place,São Paulo — địa điểm.,Q174_são_paulo,backtrack,0.0,1413.7,445,0.0,2
+20261017-190811-808eaa,ollama,15,visit,none,Q2057923_patrick_cầu_thủ_bóng_đá_sinh_1985,Player,"Patrick (cầu thủ bóng đá, sinh 1985), sinh 26/03/1985, vị trí tiền đạo, quốc tịch Brasil.",Q174_são_paulo,BORN_IN (in),0.0,2227.6,961,0.0,13
+20261017-190811-808eaa,ollama,16,visit,Q55362461_joel_vinicius,Q174_são_paulo,Place,São Paulo — địa điểm.,Q174_são_paulo,backtrack,0.0,2465.8,396,0.0,1
+20261017-190811-808eaa,ollama,17,visit,none,Q55362461_joel_vinicius,Player,"Joel Vinicius, sinh 25/11/1994, vị trí tiền đạo, quốc tịch Việt Nam.",Q174_são_paulo,BORN_IN (in),0.0,1274.4,432,0.0,1
+20261017-190811-808eaa,ollama,18,visit,none,Q9025957_jhonatan_bernardo,Player,"Jhonatan Bernardo, sinh 07/11/1988, vị trí tiền đạo, quốc tịch Brasil.",Q9025957_jhonatan_bernardo,backtrack,0.0,2128.6,862,0.0,10
+20261017-190811-808eaa,nvidia,1,domain,football_vn,,,,,,,4189.2,385,0.0,
+20261017-190811-808eaa,nvidia,2,label,Club,,,,,,,6231.7,356,0.0,
+20261017-190811-808eaa,nvidia,3,pick,Q1092232_cincinnati_kings,,,,,,,7030.1,9056,0.0,250
+20261017-190811-808eaa,nvidia,4,pick,Q16820514_indiana_hoosiers_men_s_soccer,,,,,,,59470.9,8551,0.0,250
+20261017-190811-808eaa,nvidia,5,pick,Q235399_đội_tuyển_bóng_đá_quốc_gia_jamaica,,,,,,,20916.8,8397,0.0,250
+20261017-190811-808eaa,nvidia,6,pick,Q48834603_cincinnati_bearcats_men_s_soccer,,,,,,,5525.2,8661,0.0,250
+20261017-190811-808eaa,nvidia,7,pick,Q6416573_rahian_kermanshah_f_c,,,,,,,7372.8,8864,0.0,250
+20261017-190811-808eaa,nvidia,8,pick,Q925147_clube_desportivo_dos_olivais_e_moscavide,,,,,,,13693.6,1468,0.0,32
+20261017-190811-808eaa,nvidia,9,pick,Q48834603_cincinnati_bearcats_men_s_soccer,,,,,,,5043.5,445,0.0,6
+20261017-190811-808eaa,nvidia,10,visit,Q19893993_joevannie_peart,Q48834603_cincinnati_bearcats_men_s_soccer,Club,"Cincinnati Bearcats men's soccer, thành lập năm 1973, thi đấu tại NCAA Division I men's soccer, sân nhà Gettler Stadium.",,,0.0,5702.0,489,0.0,2
+20261017-190811-808eaa,nvidia,11,visit,none,Q19893993_joevannie_peart,Player,"Joevannie Peart, sinh 14/05/1984, vị trí tiền đạo, quốc tịch Việt Nam.",Q48834603_cincinnati_bearcats_men_s_soccer,PLAYED_FOR (in),0.0,13288.9,664,0.0,6
+20261017-190811-808eaa,nvidia,12,visit,none,Q48834603_cincinnati_bearcats_men_s_soccer,Club,"Cincinnati Bearcats men's soccer, thành lập năm 1973, thi đấu tại NCAA Division I men's soccer, sân nhà Gettler Stadium.",Q48834603_cincinnati_bearcats_men_s_soccer,backtrack,0.0,8571.5,452,0.0,1

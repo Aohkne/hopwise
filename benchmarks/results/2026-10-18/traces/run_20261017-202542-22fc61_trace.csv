@@ -1,0 +1,16 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-202542-22fc61,jev,1,domain,vinfast,,,,,,,1134.0,432,1.8144e-05,
+20261017-202542-22fc61,jev,2,label,Company,,,,,,,565.6,521,2.1882e-05,
+20261017-202542-22fc61,jev,3,pick,sec_vingroup_usa_llc,,,,,,,678.7,2510,0.00010542,61
+20261017-202542-22fc61,jev,4,visit,Q30_country_united_states,sec_vingroup_usa_llc,Company,"Vingroup USA, LLC — công ty con của VinFast, đăng ký tại United States.",,,0.15,698.4,561,2.3562e-05,2
+20261017-202542-22fc61,jev,5,visit,sec_place_north_carolina,Q30_country_united_states,Country,"Hoa Kỳ — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",sec_vingroup_usa_llc,INCORPORATED_IN (out),0.37,603.0,614,2.5788e-05,4
+20261017-202542-22fc61,jev,6,visit,sec_factory_north_carolina,sec_place_north_carolina,Place,"North Carolina, United States — nơi VinFast đặt nhà máy.",Q30_country_united_states,LOCATED_IN (in),0.45,586.9,491,2.0622e-05,1
+20261017-202542-22fc61,jev,7,visit,,sec_factory_north_carolina,Factory,"Nhà máy VinFast tại North Carolina, United States, dự kiến sản xuất từ 2028.",sec_place_north_carolina,LOCATED_IN (in),0.61,596.7,520,2.184e-05,1
+20261017-202542-22fc61,ollama,1,domain,vinfast,,,,,,,997.8,333,0.0,
+20261017-202542-22fc61,ollama,2,label,Factory,,,,,,,920.3,360,0.0,
+20261017-202542-22fc61,ollama,3,pick,sec_factory_north_carolina,,,,,,,1085.3,445,0.0,5
+20261017-202542-22fc61,ollama,4,visit,,sec_factory_north_carolina,Factory,"Nhà máy VinFast tại North Carolina, United States, dự kiến sản xuất từ 2028.",,,1.0,1919.7,445,0.0,2
+20261017-202542-22fc61,nvidia,1,domain,vinfast,,,,,,,18410.9,385,0.0,
+20261017-202542-22fc61,nvidia,2,label,Factory,,,,,,,17482.4,407,0.0,
+20261017-202542-22fc61,nvidia,3,pick,sec_factory_north_carolina,,,,,,,15387.4,469,0.0,5
+20261017-202542-22fc61,nvidia,4,visit,none,sec_factory_north_carolina,Factory,"Nhà máy VinFast tại North Carolina, United States, dự kiến sản xuất từ 2028.",,,0.0,83437.1,493,0.0,2

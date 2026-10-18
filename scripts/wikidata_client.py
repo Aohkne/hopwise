@@ -93,11 +93,24 @@ def slug(qid: str, name: str) -> str:
     return f"{qid}_{base}" if base else qid
 
 
-def check_url_alive(url: str, timeout: int = 20) -> bool:
-    """HEAD/GET nhẹ để xác nhận link ảnh không chết. Dùng khi verify."""
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT}, method="HEAD")
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return 200 <= resp.status < 400
-    except Exception:
-        return False
+def check_url_alive(url: str, timeout: int = 20, retries: int = 3) -> bool:
+    """Kiểm tra link ảnh còn sống. Có retry + fallback GET vì CDN Wikimedia
+    đôi khi chặn/giới hạn HEAD request từ IP dùng chung (VD CI), gây dương
+    tính giả — một lần fail không có nghĩa link thật sự chết.
+    """
+    for attempt in range(retries):
+        for method in ("HEAD", "GET"):
+            try:
+                req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT}, method=method)
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
+                    return 200 <= resp.status < 400
+            except urllib.error.HTTPError as err:
+                if err.code == 405 and method == "HEAD":
+                    continue  # server không hỗ trợ HEAD -> thử GET ngay
+                if err.code not in (429, 503):
+                    return False  # 404/403... link thật sự hỏng, không cần retry
+            except Exception:
+                pass
+        if attempt < retries - 1:
+            time.sleep(2 ** attempt)
+    return False
