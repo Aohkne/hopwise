@@ -67,7 +67,7 @@ export async function getNeighbors(nodeId: string): Promise<Neighbor[]> {
 
 // ---- Benchmark --------------------------------------------------------
 
-export type ModelKey = "jev" | "llm";
+export type ModelKey = "jev" | "ollama" | "nvidia";
 export type RunStatus = "running" | "found" | "not_found" | "timeout" | "stopped" | "error";
 
 export interface TraceStep {
@@ -94,6 +94,8 @@ export interface ModelResult {
   status: RunStatus;
   answer_node_id: string | null;
   answer_text: string | null;
+  /** So với ground truth: true/false khi model tìm ra đáp án; null = không chấm. */
+  correct?: boolean | null;
   error: string | null;
   elapsed_ms: number;
   tokens: number;
@@ -109,7 +111,9 @@ export interface BenchmarkRun {
   question: string;
   started_at: string;
   status?: "running" | "done";
-  llm_model?: string;
+  /** Câu ground truth (nếu chạy từ bộ câu hỏi mẫu) và các node đáp án đúng. */
+  case_id?: string | null;
+  expected_answers?: string[] | null;
   models: Record<ModelKey, ModelResult>;
 }
 
@@ -119,21 +123,34 @@ async function json<T>(res: Response, what: string): Promise<T> {
 }
 
 export interface ModelsInfo {
-  /** LLM bật trong BASELINE_MODELS. */
-  llm: string[];
   /** Phiên bản Jev theo cấu hình (JEV_MODEL). */
   jev: string;
+  /** Gemma chạy local bằng Ollama (OLLAMA_MODEL); version = null nếu Ollama chưa bật / chưa pull. */
+  ollama: { model: string | null; version: string | null };
+  /** gpt-oss qua NVIDIA NIM (NVIDIA_MODEL). */
+  nvidia: { model: string | null };
+}
+
+export interface CaseSummary {
+  id: string;
+  domain: string;
+  question: string;
+  hops: number;
+}
+
+export async function listCases(): Promise<CaseSummary[]> {
+  return json(await fetch(`${BASE_URL}/benchmark/cases`), "listCases");
 }
 
 export async function listModels(): Promise<ModelsInfo> {
   return json(await fetch(`${BASE_URL}/benchmark/models`), "listModels");
 }
 
-export async function startRun(question: string, llmModel: string): Promise<BenchmarkRun> {
+export async function startRun(question: string, caseId?: string | null): Promise<BenchmarkRun> {
   const res = await fetch(`${BASE_URL}/benchmark/runs`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ question, llm_model: llmModel }),
+    body: JSON.stringify({ question, ...(caseId ? { case_id: caseId } : {}) }),
   });
   return json(res, "startRun");
 }

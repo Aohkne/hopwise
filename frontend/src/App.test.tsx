@@ -6,7 +6,7 @@ import { mockFetchRoutes } from "./test/fetchMock";
 beforeEach(() => {
   mockFetchRoutes([
     [/graph\/domains/, () => ({ nodes: [], edges: [] })],
-    [/benchmark\/models/, () => ({ llm: ["google/gemini-3.8-flash"], jev: "typesafe/jev-1.13" })],
+    [/benchmark\/models/, () => ({ jev: "typesafe/jev-1.13", ollama: { model: "gemma4:12b", version: null }, nvidia: { model: "openai/gpt-oss-20b" } })],
     [/benchmark\/history/, () => []],
   ]);
 });

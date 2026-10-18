@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ModelResult, TraceStep } from "../../api/client";
 import { Panel } from "../ui/Panel";
-import { formatMs, STATUS_CLASS, STATUS_TEXT } from "./status";
+import { correctness, formatMs, STATUS_CLASS, STATUS_TEXT } from "./status";
 import { TraceGraph } from "./TraceGraph";
 
 interface Props {
@@ -9,15 +9,13 @@ interface Props {
   result: ModelResult | null;
   /** Phiên bản model hiển thị cạnh tên (VD "typesafe/jev-1.13-20260917"). */
   version?: string | null;
-  /** Dropdown chọn model — chỉ hàng LLM có. */
-  modelSelect?: ReactNode;
 }
 
 type RightTab = "status" | "nodes";
 
 /** 1 hàng model: trái là graph đã đi qua, phải là tab Status / Node đã đi qua.
  * Bấm node bên graph -> chuyển sang tab Node và viền dòng tương ứng. */
-export function ModelRow({ title, result, version, modelSelect }: Props) {
+export function ModelRow({ title, result, version }: Props) {
   const [tab, setTab] = useState<RightTab>("status");
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const itemRefs = useRef(new Map<string, HTMLLIElement>());
@@ -37,6 +35,7 @@ export function ModelRow({ title, result, version, modelSelect }: Props) {
   }
 
   const status = result?.status;
+  const verdict = correctness(result?.correct);
 
   return (
     <Panel
@@ -53,9 +52,17 @@ export function ModelRow({ title, result, version, modelSelect }: Props) {
               {STATUS_TEXT[status]}
             </span>
           )}
+          {verdict && (
+            <span
+              title="so với ground truth"
+              className={`rounded-sm border px-1.5 py-0.5 font-bold normal-case ${verdict.className}`}
+            >
+              {verdict.text}
+            </span>
+          )}
         </span>
       }
-      meta={modelSelect ?? result?.model_name ?? "chưa chạy"}
+      meta={result?.model_name ?? "chưa chạy"}
     >
       <div className="grid md:grid-cols-[minmax(0,1fr)_380px]">
         <div className="h-72 border-b border-line md:border-r md:border-b-0">
@@ -95,6 +102,7 @@ export function ModelRow({ title, result, version, modelSelect }: Props) {
                 {(
                   [
                     ["đáp án", result?.answer_text ?? "—"],
+                    ["ground truth", verdict ? verdict.text : "—"],
                     ["phiên bản", result?.model_version ?? version ?? "—"],
                     ["thời gian", result ? formatMs(result.elapsed_ms) : "—"],
                     ["số lần gọi", result ? steps.length || result.calls || 0 : "—"],

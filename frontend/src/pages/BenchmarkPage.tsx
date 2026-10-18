@@ -1,11 +1,13 @@
-import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   getRun,
+  listCases,
   listHistory,
   listModels,
   startRun,
   stopRun,
   type BenchmarkRun,
+  type CaseSummary,
   type ModelKey,
   type ModelsInfo,
 } from "../api/client";
@@ -18,13 +20,16 @@ import { StatStrip, type Stat } from "../components/ui/StatStrip";
 const POLL_MS = 1000;
 const ROWS: [ModelKey, string][] = [
   ["jev", "JEV"],
-  ["llm", "LLM"],
+  ["ollama", "OLLAMA · LOCAL"],
+  ["nvidia", "NVIDIA · API"],
 ];
 
 type View = "run" | "history";
 
 function runStats(run: BenchmarkRun | null, historyCount: number): Stat[] {
   const results = run ? Object.values(run.models) : [];
+  const graded = results.filter((r) => r.correct != null);
+  const right = graded.filter((r) => r.correct).length;
   const found = results.filter((r) => r.status === "found");
   const fastest = found.length ? Math.min(...found.map((r) => r.elapsed_ms)) : null;
   const calls = results.reduce((n, r) => n + (r.steps?.length ?? r.calls ?? 0), 0);
@@ -33,6 +38,7 @@ function runStats(run: BenchmarkRun | null, historyCount: number): Stat[] {
   return [
     { label: "RUNS", value: historyCount },
     { label: "FOUND", value: run ? `${found.length}/${results.length}` : "—" },
+    { label: "CORRECT", value: graded.length ? `${right}/${graded.length}` : "—" },
     { label: "FASTEST", value: formatMs(fastest) },
     { label: "CALLS", value: run ? calls : "—" },
     { label: "TOKENS", value: run ? tokens.toLocaleString("en-US") : "—" },
@@ -40,22 +46,17 @@ function runStats(run: BenchmarkRun | null, historyCount: number): Stat[] {
   ];
 }
 
-/** Phiên bản hiển thị: ưu tiên bản thật model đã trả lời trong lượt chạy, nếu
- * chưa chạy thì theo cấu hình (Jev) / LLM đang chọn. */
-function versionOf(key: ModelKey, run: BenchmarkRun | null, info: ModelsInfo | null,
-                   llmModel?: string): string | null {
+/** Phiên bản hiển thị: ưu tiên bản thật model đã trả lời trong lượt chạy, nếu chưa
+ * chạy thì theo cấu hình (Jev, NVIDIA) hoặc hỏi Ollama (Gemma local). */
+function versionOf(key: ModelKey, run: BenchmarkRun | null, info: ModelsInfo | null): string | null {
   const r = run?.models[key];
   if (r?.model_version) return r.model_version;
-  if (key === "llm") return r?.model_name ?? llmModel ?? null;
-  return info?.[key] ?? r?.model_name ?? null;
+  const configured =
+    key === "jev" ? info?.jev : key === "ollama" ? (info?.ollama?.version ?? info?.ollama?.model) : info?.nvidia?.model;
+  return configured ?? r?.model_name ?? null;
 }
 
-function ModelRows({ run, info, llmModel, modelSelect }: {
-  run: BenchmarkRun | null;
-  info: ModelsInfo | null;
-  llmModel?: string;
-  modelSelect?: ReactNode;
-}) {
+function ModelRows({ run, info }: { run: BenchmarkRun | null; info: ModelsInfo | null }) {
   return (
     <div className="flex flex-col gap-3">
       {ROWS.map(([key, title]) => (
@@ -63,8 +64,7 @@ function ModelRows({ run, info, llmModel, modelSelect }: {
           key={`${run?.id ?? "empty"}-${key}`}
           title={title}
           result={run?.models[key] ?? null}
-          version={versionOf(key, run, info, llmModel)}
-          modelSelect={key === "llm" ? modelSelect : undefined}
+          version={versionOf(key, run, info)}
         />
       ))}
     </div>
@@ -75,9 +75,10 @@ export function BenchmarkPage() {
   const [view, setView] = useState<View>("run");
   const [question, setQuestion] = useState("");
   const [info, setInfo] = useState<ModelsInfo | null>(null);
-  const [llmModel, setLlmModel] = useState("");
   const [run, setRun] = useState<BenchmarkRun | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [cases, setCases] = useState<CaseSummary[]>([]);
+  const [caseId, setCaseId] = useState("");
   const [history, setHistory] = useState<BenchmarkRun[]>([]);
   const [historyRun, setHistoryRun] = useState<BenchmarkRun | null>(null);
 
@@ -91,11 +92,11 @@ export function BenchmarkPage() {
 
   useEffect(() => {
     listModels()
-      .then((models) => {
-        setInfo(models);
-        setLlmModel((current) => current || models?.llm?.[0] || "");
-      })
+      .then(setInfo)
       .catch((e: Error) => setError(e.message));
+    listCases()
+      .then((c) => setCases(c ?? []))
+      .catch(() => setCases([]));
     refreshHistory();
   }, [refreshHistory]);
 
@@ -116,7 +117,7 @@ export function BenchmarkPage() {
   async function onStart() {
     setError(null);
     try {
-      setRun(await startRun(question, llmModel));
+      setRun(await startRun(question, caseId || null));
     } catch (e) {
       setError((e as Error).message);
     }
@@ -137,22 +138,6 @@ export function BenchmarkPage() {
   const stats = useMemo(
     () => runStats(view === "run" ? run : historyRun, history.length),
     [view, run, historyRun, history.length]
-  );
-
-  const llmSelect = (
-    <select
-      aria-label="Model LLM"
-      value={llmModel}
-      disabled={running}
-      onChange={(e) => setLlmModel(e.target.value)}
-      className="rounded-sm border border-line bg-white px-1.5 py-0.5 text-[11px] normal-case"
-    >
-      {(info?.llm ?? []).map((m) => (
-        <option key={m} value={m}>
-          {m}
-        </option>
-      ))}
-    </select>
   );
 
   return (
@@ -190,6 +175,29 @@ export function BenchmarkPage() {
         <>
           <Panel title="QUERY" meta="2 model chạy song song · tối đa 5 phút mỗi model">
             <div className="flex flex-wrap items-end gap-3 p-3">
+              <div className="min-w-[200px]">
+                <label className="mb-1 block text-[11px] text-neutral-500" htmlFor="benchmark-case">
+                  Câu hỏi mẫu (ground truth)
+                </label>
+                <select
+                  id="benchmark-case"
+                  value={caseId}
+                  disabled={running || cases.length === 0}
+                  onChange={(e) => {
+                    const picked = cases.find((c) => c.id === e.target.value);
+                    setCaseId(picked?.id ?? "");
+                    if (picked) setQuestion(picked.question);
+                  }}
+                  className="w-full max-w-[320px] rounded-sm border border-line bg-white px-2 py-2 text-xs"
+                >
+                  <option value="">{cases.length ? "— gõ câu hỏi riêng —" : "chưa có bộ câu hỏi"}</option>
+                  {cases.map((c) => (
+                    <option key={c.id} value={c.id}>
+                      {c.id} · {c.hops} bước · {c.question}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <div className="min-w-[280px] flex-1">
                 <label className="mb-1 block text-[11px] text-neutral-500" htmlFor="benchmark-query">
                   Câu hỏi
@@ -200,7 +208,10 @@ export function BenchmarkPage() {
                   placeholder="VD: Xe VF8 của công ty nào?"
                   value={question}
                   disabled={running}
-                  onChange={(e) => setQuestion(e.target.value)}
+                  onChange={(e) => {
+                    setQuestion(e.target.value);
+                    setCaseId(""); // sửa câu hỏi thì không còn là câu ground truth
+                  }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" && question.trim() && !running) void onStart();
                   }}
@@ -211,13 +222,13 @@ export function BenchmarkPage() {
                   Dừng
                 </Button>
               ) : (
-                <Button onClick={() => void onStart()} disabled={!question.trim() || !llmModel}>
+                <Button onClick={() => void onStart()} disabled={!question.trim()}>
                   Chạy
                 </Button>
               )}
             </div>
           </Panel>
-          <ModelRows run={run} info={info} llmModel={llmModel} modelSelect={llmSelect} />
+          <ModelRows run={run} info={info} />
         </>
       ) : (
         <div className="grid gap-3 lg:grid-cols-[320px_minmax(0,1fr)]">
@@ -244,7 +255,7 @@ export function BenchmarkPage() {
                               key={key}
                               className={`rounded-sm border px-1 text-[10px] ${STATUS_CLASS[r.status]}`}
                             >
-                              {key} {STATUS_TEXT[r.status]}
+                              {key} {STATUS_TEXT[r.status]}{r.correct == null ? "" : r.correct ? " ✓" : " ✗"}
                             </span>
                           ) : null;
                         })}
