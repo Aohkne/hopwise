@@ -1,0 +1,28 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-183448-73d189,jev,1,domain,football_vn,,,,,,,1307.4,421,1.7682e-05,
+20261017-183448-73d189,jev,2,label,Player,,,,,,,604.4,432,1.8144e-05,
+20261017-183448-73d189,jev,3,pick,Q10790004_mai_đức_chung,,,,,,,720.7,11968,0.000502656,250
+20261017-183448-73d189,jev,4,pick,Q27049059_nguyễn_thành_chung,,,,,,,795.0,11669,0.000490098,250
+20261017-183448-73d189,jev,5,pick,Q926057_nguyễn_minh_phương,,,,,,,615.4,2426,0.000101892,47
+20261017-183448-73d189,jev,6,pick,Q27049059_nguyễn_thành_chung,,,,,,,614.9,434,1.8228e-05,3
+20261017-183448-73d189,jev,7,visit,Q881_việt_nam,Q27049059_nguyễn_thành_chung,Player,"Nguyễn Thành Chung, sinh 08/09/1997, vị trí tiền vệ, quốc tịch Việt Nam.",,,0.15,598.5,547,2.2974e-05,2
+20261017-183448-73d189,jev,8,visit,none,Q881_việt_nam,Place,Việt Nam — địa điểm.,Q27049059_nguyễn_thành_chung,BORN_IN (out),0.34,694.4,4589,0.000192738,81
+20261017-183448-73d189,jev,9,visit,none,Q27049059_nguyễn_thành_chung,Player,"Nguyễn Thành Chung, sinh 08/09/1997, vị trí tiền vệ, quốc tịch Việt Nam.",Q27049059_nguyễn_thành_chung,backtrack,0.18,702.3,523,2.1966e-05,1
+20261017-183448-73d189,ollama,1,domain,football_vn,,,,,,,2879.4,322,0.0,
+20261017-183448-73d189,ollama,2,label,Place,,,,,,,882.8,302,0.0,
+20261017-183448-73d189,ollama,3,pick,Q1077294_hà_tây,,,,,,,7695.3,4231,0.0,250
+20261017-183448-73d189,ollama,4,pick,Q1858_hà_nội,,,,,,,7646.3,4127,0.0,250
+20261017-183448-73d189,ollama,5,pick,Q36907_nam_định,,,,,,,7796.3,4031,0.0,250
+20261017-183448-73d189,ollama,6,pick,Q5088017_châu_thành,,,,,,,7801.2,4154,0.0,250
+20261017-183448-73d189,ollama,7,pick,Q881_việt_nam,,,,,,,7177.2,3802,0.0,228
+20261017-183448-73d189,ollama,8,pick,Q1858_hà_nội,,,,,,,1223.7,288,0.0,5
+20261017-183448-73d189,ollama,9,visit,none,Q1858_hà_nội,Place,Hà Nội — địa điểm.,,,0.0,2343.6,1065,0.0,18
+20261017-183448-73d189,nvidia,1,domain,football_vn,,,,,,,2554.0,375,0.0,
+20261017-183448-73d189,nvidia,2,label,Player,,,,,,,5046.9,346,0.0,
+20261017-183448-73d189,nvidia,3,pick,Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá,,,,,,,28267.0,8205,0.0,250
+20261017-183448-73d189,nvidia,4,pick,Q27049059_nguyễn_thành_chung,,,,,,,4391.0,8010,0.0,250
+20261017-183448-73d189,nvidia,5,pick,Q7708869_thạch_bảo_khanh,,,,,,,9625.9,1741,0.0,47
+20261017-183448-73d189,nvidia,6,pick,Q27049059_nguyễn_thành_chung,,,,,,,3312.8,380,0.0,3
+20261017-183448-73d189,nvidia,7,visit,Q881_việt_nam,Q27049059_nguyễn_thành_chung,Player,"Nguyễn Thành Chung, sinh 08/09/1997, vị trí tiền vệ, quốc tịch Việt Nam.",,,0.0,9320.5,489,0.0,2
+20261017-183448-73d189,nvidia,8,visit,none,Q881_việt_nam,Place,Việt Nam — địa điểm.,Q27049059_nguyễn_thành_chung,BORN_IN (out),0.1,11482.5,3414,0.0,81
+20261017-183448-73d189,nvidia,9,visit,none,Q27049059_nguyễn_thành_chung,Player,"Nguyễn Thành Chung, sinh 08/09/1997, vị trí tiền vệ, quốc tịch Việt Nam.",Q27049059_nguyễn_thành_chung,backtrack,0.0,9473.5,472,0.0,1

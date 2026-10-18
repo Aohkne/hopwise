@@ -1,0 +1,13 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-201055-13f14c,jev,1,domain,vinfast,,,,,,,1128.9,422,1.7724e-05,
+20261017-201055-13f14c,jev,2,label,Factory,,,,,,,575.1,511,2.1462e-05,
+20261017-201055-13f14c,jev,3,pick,sec_factory_north_carolina,,,,,,,631.5,557,2.3394e-05,5
+20261017-201055-13f14c,jev,4,visit,,sec_factory_north_carolina,Factory,"Nhà máy VinFast tại North Carolina, United States, dự kiến sản xuất từ 2028.",,,0.9,806.3,542,2.2764e-05,2
+20261017-201055-13f14c,ollama,1,domain,vinfast,,,,,,,1347.4,322,0.0,
+20261017-201055-13f14c,ollama,2,label,Factory,,,,,,,943.3,349,0.0,
+20261017-201055-13f14c,ollama,3,pick,sec_factory_north_carolina,,,,,,,1199.9,434,0.0,5
+20261017-201055-13f14c,ollama,4,visit,,sec_factory_north_carolina,Factory,"Nhà máy VinFast tại North Carolina, United States, dự kiến sản xuất từ 2028.",,,1.0,1339.7,434,0.0,2
+20261017-201055-13f14c,nvidia,1,domain,vinfast,,,,,,,56300.0,376,0.0,
+20261017-201055-13f14c,nvidia,2,label,Factory,,,,,,,2565.7,398,0.0,
+20261017-201055-13f14c,nvidia,3,pick,sec_factory_north_carolina,,,,,,,3829.4,460,0.0,5
+20261017-201055-13f14c,nvidia,4,visit,,sec_factory_north_carolina,Factory,"Nhà máy VinFast tại North Carolina, United States, dự kiến sản xuất từ 2028.",,,1.0,10217.2,484,0.0,2

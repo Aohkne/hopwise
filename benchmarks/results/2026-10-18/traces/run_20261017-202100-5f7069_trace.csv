@@ -1,0 +1,16 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-202100-5f7069,jev,1,domain,vinfast,,,,,,,633.4,434,1.8228e-05,
+20261017-202100-5f7069,jev,2,label,Company,,,,,,,610.8,523,2.1966e-05,
+20261017-202100-5f7069,jev,3,pick,sec_vinfast_auto_llc,,,,,,,603.8,2512,0.000105504,61
+20261017-202100-5f7069,jev,4,visit,Q30_country_united_states,sec_vinfast_auto_llc,Company,"VinFast Auto, LLC — công ty con của VinFast, đăng ký tại United States.",,,0.13,706.9,563,2.3646e-05,2
+20261017-202100-5f7069,jev,5,visit,sec_place_north_carolina,Q30_country_united_states,Country,"Hoa Kỳ — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",sec_vinfast_auto_llc,INCORPORATED_IN (out),0.21,600.4,616,2.5872e-05,4
+20261017-202100-5f7069,jev,6,visit,,sec_place_north_carolina,Place,"North Carolina, United States — nơi VinFast đặt nhà máy.",Q30_country_united_states,LOCATED_IN (in),0.67,601.2,493,2.0706e-05,1
+20261017-202100-5f7069,ollama,1,domain,vinfast,,,,,,,1926.6,334,0.0,
+20261017-202100-5f7069,ollama,2,label,Company,,,,,,,911.3,361,0.0,
+20261017-202100-5f7069,ollama,3,pick,sec_vinfast_auto_llc,,,,,,,3536.0,1902,0.0,61
+20261017-202100-5f7069,ollama,4,visit,Q30_country_united_states,sec_vinfast_auto_llc,Company,"VinFast Auto, LLC — công ty con của VinFast, đăng ký tại United States.",,,0.0,3188.2,453,0.0,2
+20261017-202100-5f7069,ollama,5,visit,,Q30_country_united_states,Country,"Hoa Kỳ — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",sec_vinfast_auto_llc,INCORPORATED_IN (out),1.0,1922.7,495,0.0,4
+20261017-202100-5f7069,nvidia,1,domain,vinfast,,,,,,,5523.4,387,0.0,
+20261017-202100-5f7069,nvidia,2,label,Factory,,,,,,,6242.5,409,0.0,
+20261017-202100-5f7069,nvidia,3,pick,sec_factory_north_carolina,,,,,,,15872.6,471,0.0,5
+20261017-202100-5f7069,nvidia,4,visit,,sec_factory_north_carolina,Factory,"Nhà máy VinFast tại North Carolina, United States, dự kiến sản xuất từ 2028.",,,1.0,15769.9,495,0.0,2

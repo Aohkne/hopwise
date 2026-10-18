@@ -1,0 +1,16 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-200534-7726a7,jev,1,domain,vinfast,,,,,,,653.7,424,1.7808e-05,
+20261017-200534-7726a7,jev,2,label,CarModel,,,,,,,596.7,513,2.1546e-05,
+20261017-200534-7726a7,jev,3,pick,Q120668902_vinfast_vf_3,,,,,,,574.8,1566,6.5772e-05,30
+20261017-200534-7726a7,jev,4,visit,sec_factory_ha_tinh,Q120668902_vinfast_vf_3,CarModel,VinFast VF 3 — mẫu xe do VinFast sản xuất. 20-F: a contemporary and compact mini car EV.,,,0.09,623.8,679,2.8518e-05,4
+20261017-200534-7726a7,jev,5,visit,,sec_factory_ha_tinh,Factory,"Nhà máy VinFast tại Ha Tinh, Vietnam, khánh thành tháng 6/2025, công suất 200,000 xe/năm.",Q120668902_vinfast_vf_3,PRODUCES (in),0.55,600.9,676,2.8392e-05,4
+20261017-200534-7726a7,ollama,1,domain,vinfast,,,,,,,1585.5,325,0.0,
+20261017-200534-7726a7,ollama,2,label,CarModel,,,,,,,907.3,352,0.0,
+20261017-200534-7726a7,ollama,3,pick,Q120668902_vinfast_vf_3,,,,,,,3492.9,1226,0.0,30
+20261017-200534-7726a7,ollama,4,visit,sec_factory_ha_tinh,Q120668902_vinfast_vf_3,CarModel,VinFast VF 3 — mẫu xe do VinFast sản xuất. 20-F: a contemporary and compact mini car EV.,,,0.0,2199.7,555,0.0,4
+20261017-200534-7726a7,ollama,5,visit,,sec_factory_ha_tinh,Factory,"Nhà máy VinFast tại Ha Tinh, Vietnam, khánh thành tháng 6/2025, công suất 200,000 xe/năm.",Q120668902_vinfast_vf_3,PRODUCES (in),1.0,2080.9,555,0.0,4
+20261017-200534-7726a7,nvidia,1,domain,vinfast,,,,,,,5938.6,378,0.0,
+20261017-200534-7726a7,nvidia,2,label,CarModel,,,,,,,3943.9,400,0.0,
+20261017-200534-7726a7,nvidia,3,pick,Q120668902_vinfast_vf_3,,,,,,,13036.2,1223,0.0,30
+20261017-200534-7726a7,nvidia,4,visit,sec_factory_ha_tinh,Q120668902_vinfast_vf_3,CarModel,VinFast VF 3 — mẫu xe do VinFast sản xuất. 20-F: a contemporary and compact mini car EV.,,,0.0,7792.4,595,0.0,4
+20261017-200534-7726a7,nvidia,5,visit,,sec_factory_ha_tinh,Factory,"Nhà máy VinFast tại Ha Tinh, Vietnam, khánh thành tháng 6/2025, công suất 200,000 xe/năm.",Q120668902_vinfast_vf_3,PRODUCES (in),1.0,14079.6,594,0.0,4

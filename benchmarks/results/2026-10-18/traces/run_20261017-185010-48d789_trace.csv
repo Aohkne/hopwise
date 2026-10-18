@@ -1,0 +1,26 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-185010-48d789,jev,1,domain,football_vn,,,,,,,1131.5,432,1.8144e-05,
+20261017-185010-48d789,jev,2,label,Club,,,,,,,694.2,443,1.8606e-05,
+20261017-185010-48d789,jev,3,pick,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,,,,,,,782.9,12077,0.000507234,250
+20261017-185010-48d789,jev,4,pick,Q20894528_câu_lạc_bộ_bóng_đá_công_an_hà_nội,,,,,,,747.0,11581,0.000486402,250
+20261017-185010-48d789,jev,5,pick,Q2509547_câu_lạc_bộ_bóng_đá_hòa_phát_hà_nội,,,,,,,792.2,11396,0.000478632,250
+20261017-185010-48d789,jev,6,pick,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,,,,,,,780.7,11695,0.00049119,250
+20261017-185010-48d789,jev,7,pick,Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,,,,,,,734.6,11942,0.000501564,250
+20261017-185010-48d789,jev,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,632.0,1855,7.791e-05,32
+20261017-185010-48d789,jev,9,pick,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,,,,,,,601.2,711,2.9862e-05,6
+20261017-185010-48d789,jev,10,visit,Q1817188_sân_vận_động_hàng_đẫy,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,Club,"Câu lạc bộ bóng đá Thể Công – Viettel, thành lập năm 1954, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Hàng Đẫy.",,,0.25,731.9,2266,9.5172e-05,35
+20261017-185010-48d789,jev,11,visit,,Q1817188_sân_vận_động_hàng_đẫy,Place,Sân vận động Hàng Đẫy — địa điểm.,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,HOME_VENUE (out),0.54,597.5,796,3.3432e-05,5
+20261017-185010-48d789,ollama,1,domain,football_vn,,,,,,,1759.2,330,0.0,
+20261017-185010-48d789,ollama,2,label,Place,,,,,,,773.0,310,0.0,
+20261017-185010-48d789,ollama,3,pick,Q1077294_hà_tây,,,,,,,7672.5,4239,0.0,250
+20261017-185010-48d789,ollama,4,pick,Q1817188_sân_vận_động_hàng_đẫy,,,,,,,9222.6,4135,0.0,250
+20261017-185010-48d789,ollama,5,pick,Q36587_nghệ_an,,,,,,,9070.3,4039,0.0,250
+20261017-185010-48d789,ollama,6,pick,Q5930497_sân_vận_động_long_an,,,,,,,9416.0,4162,0.0,250
+20261017-185010-48d789,ollama,7,pick,Q7023325_sân_vận_động_19_tháng_8,,,,,,,9665.7,3810,0.0,228
+20261017-185010-48d789,ollama,8,pick,Q1817188_sân_vận_động_hàng_đẫy,,,,,,,2576.9,314,0.0,5
+20261017-185010-48d789,ollama,9,visit,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,Q1817188_sân_vận_động_hàng_đẫy,Place,Sân vận động Hàng Đẫy — địa điểm.,,,0.0,1474.0,678,0.0,6
+20261017-185010-48d789,ollama,10,visit,none,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,Club,"Câu lạc bộ bóng đá Thể Công – Viettel, thành lập năm 1954, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Hàng Đẫy.",Q1817188_sân_vận_động_hàng_đẫy,HOME_VENUE (in),0.0,5072.5,1762,0.0,34
+20261017-185010-48d789,ollama,11,visit,none,Q1817188_sân_vận_động_hàng_đẫy,Place,Sân vận động Hàng Đẫy — địa điểm.,Q1817188_sân_vận_động_hàng_đẫy,backtrack,0.0,1746.4,621,0.0,5
+20261017-185010-48d789,nvidia,1,domain,football_vn,,,,,,,1861.0,385,0.0,
+20261017-185010-48d789,nvidia,2,label,Club,,,,,,,5011.8,356,0.0,
+20261017-185010-48d789,nvidia,3,pick,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,,,,,,,26600.4,9056,0.0,250

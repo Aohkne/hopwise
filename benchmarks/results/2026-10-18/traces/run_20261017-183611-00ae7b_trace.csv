@@ -1,0 +1,13 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-183611-00ae7b,jev,1,domain,vinfast,,,,,,,1065.5,418,1.7556e-05,
+20261017-183611-00ae7b,jev,2,label,Company,,,,,,,733.9,507,2.1294e-05,
+20261017-183611-00ae7b,jev,3,pick,Q56660561_vinfast,,,,,,,752.7,2496,0.000104832,61
+20261017-183611-00ae7b,jev,4,visit,,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",,,0.93,780.9,5778,0.000242676,113
+20261017-183611-00ae7b,ollama,1,domain,vinfast,,,,,,,1372.0,320,0.0,
+20261017-183611-00ae7b,ollama,2,label,Company,,,,,,,922.2,347,0.0,
+20261017-183611-00ae7b,ollama,3,pick,Q56660561_vinfast,,,,,,,3559.9,1888,0.0,61
+20261017-183611-00ae7b,ollama,4,visit,,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",,,1.0,8902.5,4760,0.0,113
+20261017-183611-00ae7b,nvidia,1,domain,vinfast,,,,,,,3912.2,373,0.0,
+20261017-183611-00ae7b,nvidia,2,label,Company,,,,,,,3264.0,395,0.0,
+20261017-183611-00ae7b,nvidia,3,pick,Q56660561_vinfast,,,,,,,5800.4,1891,0.0,61
+20261017-183611-00ae7b,nvidia,4,visit,,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",,,1.0,9950.8,4486,0.0,113

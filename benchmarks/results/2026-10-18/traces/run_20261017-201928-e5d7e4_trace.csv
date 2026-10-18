@@ -1,0 +1,17 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-201928-e5d7e4,jev,1,domain,vinfast,,,,,,,603.8,424,1.7808e-05,
+20261017-201928-e5d7e4,jev,2,label,Factory,,,,,,,602.6,513,2.1546e-05,
+20261017-201928-e5d7e4,jev,3,pick,sec_factory_subang,,,,,,,711.5,559,2.3478e-05,5
+20261017-201928-e5d7e4,jev,4,visit,sec_place_subang_west_java,sec_factory_subang,Factory,"Nhà máy VinFast tại Subang, West Java, Indonesia, khánh thành tháng 12/2025, công suất 50,000 xe/năm.",,,0.44,603.4,564,2.3688e-05,2
+20261017-201928-e5d7e4,jev,5,visit,Q252_country_indonesia,sec_place_subang_west_java,Place,"Subang, West Java, Indonesia — nơi VinFast đặt nhà máy.",sec_factory_subang,LOCATED_IN (out),0.28,767.8,481,2.0202e-05,1
+20261017-201928-e5d7e4,jev,6,visit,,Q252_country_indonesia,Country,"Indonesia — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",sec_place_subang_west_java,LOCATED_IN (out),0.91,571.0,700,2.94e-05,5
+20261017-201928-e5d7e4,ollama,1,domain,vinfast,,,,,,,1467.9,325,0.0,
+20261017-201928-e5d7e4,ollama,2,label,Factory,,,,,,,939.5,352,0.0,
+20261017-201928-e5d7e4,ollama,3,pick,sec_factory_subang,,,,,,,1157.6,437,0.0,5
+20261017-201928-e5d7e4,ollama,4,visit,sec_place_subang_west_java,sec_factory_subang,Factory,"Nhà máy VinFast tại Subang, West Java, Indonesia, khánh thành tháng 12/2025, công suất 50,000 xe/năm.",,,0.0,1827.1,457,0.0,2
+20261017-201928-e5d7e4,ollama,5,visit,Q252_country_indonesia,sec_place_subang_west_java,Place,"Subang, West Java, Indonesia — nơi VinFast đặt nhà máy.",sec_factory_subang,LOCATED_IN (out),0.0,1082.8,388,0.0,1
+20261017-201928-e5d7e4,ollama,6,visit,,Q252_country_indonesia,Country,"Indonesia — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",sec_place_subang_west_java,LOCATED_IN (out),1.0,1500.7,568,0.0,5
+20261017-201928-e5d7e4,nvidia,1,domain,vinfast,,,,,,,2922.8,378,0.0,
+20261017-201928-e5d7e4,nvidia,2,label,Country,,,,,,,7880.2,400,0.0,
+20261017-201928-e5d7e4,nvidia,3,pick,Q252_country_indonesia,,,,,,,4577.9,669,0.0,15
+20261017-201928-e5d7e4,nvidia,4,visit,,Q252_country_indonesia,Country,"Indonesia — quốc gia nơi VinFast có công ty con, nhà máy hoặc bán xe.",,,1.0,14542.5,641,0.0,6

@@ -1,0 +1,31 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-184842-5727db,jev,1,domain,football_vn,,,,,,,1179.0,432,1.8144e-05,
+20261017-184842-5727db,jev,2,label,Club,,,,,,,558.6,443,1.8606e-05,
+20261017-184842-5727db,jev,3,pick,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,,,,,,,719.7,12077,0.000507234,250
+20261017-184842-5727db,jev,4,pick,Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa,,,,,,,718.8,11581,0.000486402,250
+20261017-184842-5727db,jev,5,pick,Q2664160_câu_lạc_bộ_bóng_đá_navibank_sài_gòn,,,,,,,816.8,11396,0.000478632,250
+20261017-184842-5727db,jev,6,pick,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,,,,,,,818.0,11695,0.00049119,250
+20261017-184842-5727db,jev,7,pick,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,,,,,,,1380.7,11942,0.000501564,250
+20261017-184842-5727db,jev,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,772.0,1855,7.791e-05,32
+20261017-184842-5727db,jev,9,pick,Q2664160_câu_lạc_bộ_bóng_đá_navibank_sài_gòn,,,,,,,613.0,719,3.0198e-05,6
+20261017-184842-5727db,jev,10,visit,Q2051647_sân_vận_động_thống_nhất,Q2664160_câu_lạc_bộ_bóng_đá_navibank_sài_gòn,Club,"Câu lạc bộ bóng đá Navibank Sài Gòn, thành lập năm 2009, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Thống Nhất.",,,0.24,678.6,1834,7.7028e-05,27
+20261017-184842-5727db,jev,11,visit,,Q2051647_sân_vận_động_thống_nhất,Place,Sân vận động Thống Nhất — địa điểm.,Q2664160_câu_lạc_bộ_bóng_đá_navibank_sài_gòn,HOME_VENUE (out),0.7,799.8,791,3.3222e-05,5
+20261017-184842-5727db,ollama,1,domain,football_vn,,,,,,,3964.4,330,0.0,
+20261017-184842-5727db,ollama,2,label,Place,,,,,,,785.9,310,0.0,
+20261017-184842-5727db,ollama,3,pick,Q10822664_sân_vận_động_cần_thơ,,,,,,,7798.4,4239,0.0,250
+20261017-184842-5727db,ollama,4,pick,Q1854_thành_phố_hồ_chí_minh,,,,,,,11221.5,4135,0.0,250
+20261017-184842-5727db,ollama,5,pick,Q36866_bình_dương,,,,,,,11243.9,4039,0.0,250
+20261017-184842-5727db,ollama,6,pick,Q5930497_sân_vận_động_long_an,,,,,,,9133.6,4162,0.0,250
+20261017-184842-5727db,ollama,7,pick,Q7023325_sân_vận_động_19_tháng_8,,,,,,,7864.4,3810,0.0,228
+20261017-184842-5727db,ollama,8,pick,Q1854_thành_phố_hồ_chí_minh,,,,,,,1085.5,315,0.0,5
+20261017-184842-5727db,ollama,9,visit,none,Q1854_thành_phố_hồ_chí_minh,Place,Thành phố Hồ Chí Minh — địa điểm.,,,0.0,1259.8,506,0.0,4
+20261017-184842-5727db,nvidia,1,domain,football_vn,,,,,,,5039.0,386,0.0,
+20261017-184842-5727db,nvidia,2,label,Club,,,,,,,4191.2,357,0.0,
+20261017-184842-5727db,nvidia,3,pick,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,,,,,,,6022.4,9057,0.0,250
+20261017-184842-5727db,nvidia,4,pick,Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa,,,,,,,21538.9,8552,0.0,250
+20261017-184842-5727db,nvidia,5,pick,Q2664160_câu_lạc_bộ_bóng_đá_navibank_sài_gòn,,,,,,,11056.5,8398,0.0,250
+20261017-184842-5727db,nvidia,6,pick,Q3590247_đội_tuyển_bóng_đá_u_17_quốc_gia_jamaica,,,,,,,6960.4,8662,0.0,250
+20261017-184842-5727db,nvidia,7,pick,Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,,,,,,,16282.5,8865,0.0,250
+20261017-184842-5727db,nvidia,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,6084.2,1469,0.0,32
+20261017-184842-5727db,nvidia,9,pick,Q2664160_câu_lạc_bộ_bóng_đá_navibank_sài_gòn,,,,,,,4094.8,569,0.0,6
+20261017-184842-5727db,nvidia,10,visit,,Q2664160_câu_lạc_bộ_bóng_đá_navibank_sài_gòn,Club,"Câu lạc bộ bóng đá Navibank Sài Gòn, thành lập năm 2009, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Thống Nhất.",,,1.0,6938.8,1414,0.0,27

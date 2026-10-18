@@ -1,0 +1,31 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-191449-848691,jev,1,domain,football_vn,,,,,,,1150.0,434,1.8228e-05,
+20261017-191449-848691,jev,2,label,Player,,,,,,,702.3,445,1.869e-05,
+20261017-191449-848691,jev,3,pick,Q24006368_dương_văn_pho,,,,,,,828.4,11981,0.000503202,250
+20261017-191449-848691,jev,4,pick,Q26924291_dương_văn_khoa,,,,,,,738.5,11682,0.000490644,250
+20261017-191449-848691,jev,5,pick,Q983685_dương_hồng_sơn,,,,,,,577.8,2439,0.000102438,47
+20261017-191449-848691,jev,6,pick,Q24006368_dương_văn_pho,,,,,,,630.1,460,1.932e-05,3
+20261017-191449-848691,jev,7,visit,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Q24006368_dương_văn_pho,Player,"Dương Văn Pho, sinh 17/03/1984, vị trí hậu vệ, quốc tịch Việt Nam.",,,0.06,756.0,563,2.3646e-05,2
+20261017-191449-848691,jev,8,visit,Q7204458_sân_vận_động_pleiku,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Club,"Câu lạc bộ bóng đá Hoàng Anh Gia Lai, thành lập năm 2001, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Pleiku.",Q24006368_dương_văn_pho,PLAYED_FOR (out),0.38,629.8,5306,0.000222852,93
+20261017-191449-848691,jev,9,visit,none,Q7204458_sân_vận_động_pleiku,Place,Sân vận động Pleiku — địa điểm.,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,HOME_VENUE (out),0.49,562.0,448,1.8816e-05,0
+20261017-191449-848691,jev,10,visit,none,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Club,"Câu lạc bộ bóng đá Hoàng Anh Gia Lai, thành lập năm 2001, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Pleiku.",Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,backtrack,0.36,604.1,5276,0.000221592,92
+20261017-191449-848691,jev,11,visit,none,Q24006368_dương_văn_pho,Player,"Dương Văn Pho, sinh 17/03/1984, vị trí hậu vệ, quốc tịch Việt Nam.",Q24006368_dương_văn_pho,backtrack,0.05,589.2,494,2.0748e-05,1
+20261017-191449-848691,ollama,1,domain,football_vn,,,,,,,1054.5,330,0.0,
+20261017-191449-848691,ollama,2,label,Club,,,,,,,1052.7,310,0.0,
+20261017-191449-848691,ollama,3,pick,Q125643750_ngô_đăng_khoa,,,,,,,19800.9,9635,0.0,250
+20261017-191449-848691,ollama,4,pick,Q20026059_câu_lạc_bộ_bóng_đá_phú_yên,,,,,,,19997.9,9125,0.0,250
+20261017-191449-848691,ollama,5,pick,Q2509547_câu_lạc_bộ_bóng_đá_hòa_phát_hà_nội,,,,,,,21173.1,9047,0.0,250
+20261017-191449-848691,ollama,6,pick,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,,,,,,,22804.7,9274,0.0,250
+20261017-191449-848691,ollama,7,pick,Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,,,,,,,21536.0,9465,0.0,250
+20261017-191449-848691,ollama,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,3378.2,1460,0.0,32
+20261017-191449-848691,ollama,9,pick,Q20026059_câu_lạc_bộ_bóng_đá_phú_yên,,,,,,,1968.1,483,0.0,6
+20261017-191449-848691,ollama,10,visit,none,Q20026059_câu_lạc_bộ_bóng_đá_phú_yên,Club,"Câu lạc bộ bóng đá Phú Yên, thi đấu tại Giải bóng đá hạng nhất quốc gia.",,,0.0,1900.6,402,0.0,1
+20261017-191449-848691,nvidia,1,domain,football_vn,,,,,,,3714.2,386,0.0,
+20261017-191449-848691,nvidia,2,label,Player,,,,,,,6285.5,357,0.0,
+20261017-191449-848691,nvidia,3,pick,Q24006368_dương_văn_pho,,,,,,,5005.6,8216,0.0,250
+20261017-191449-848691,nvidia,4,pick,Q26924291_dương_văn_khoa,,,,,,,8604.7,8021,0.0,250
+20261017-191449-848691,nvidia,5,pick,Q983685_dương_hồng_sơn,,,,,,,7176.3,1752,0.0,47
+20261017-191449-848691,nvidia,6,pick,Q24006368_dương_văn_pho,,,,,,,1625.6,386,0.0,3
+20261017-191449-848691,nvidia,7,visit,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Q24006368_dương_văn_pho,Player,"Dương Văn Pho, sinh 17/03/1984, vị trí hậu vệ, quốc tịch Việt Nam.",,,0.0,6031.7,501,0.0,2
+20261017-191449-848691,nvidia,8,visit,Q7204458_sân_vận_động_pleiku,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Club,"Câu lạc bộ bóng đá Hoàng Anh Gia Lai, thành lập năm 2001, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Pleiku.",Q24006368_dương_văn_pho,PLAYED_FOR (out),0.1,5897.2,3900,0.0,93
+20261017-191449-848691,nvidia,9,visit,,Q7204458_sân_vận_động_pleiku,Place,Sân vận động Pleiku — địa điểm.,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,HOME_VENUE (out),0.8,9387.9,414,0.0,0

@@ -1,0 +1,30 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-191810-849272,jev,1,domain,football_vn,,,,,,,1273.4,434,1.8228e-05,
+20261017-191810-849272,jev,2,label,Player,,,,,,,668.5,445,1.869e-05,
+20261017-191810-849272,jev,3,pick,Q25999788_hà_đức_chinh,,,,,,,750.9,11981,0.000503202,250
+20261017-191810-849272,jev,4,pick,Q26924291_dương_văn_khoa,,,,,,,752.6,11682,0.000490644,250
+20261017-191810-849272,jev,5,pick,Q7778399_mạc_hồng_quân,,,,,,,607.8,2439,0.000102438,47
+20261017-191810-849272,jev,6,pick,Q25999788_hà_đức_chinh,,,,,,,622.7,462,1.9404e-05,3
+20261017-191810-849272,jev,7,visit,Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,Q25999788_hà_đức_chinh,Player,"Hà Đức Chinh, sinh 22/09/1997, vị trí tiền đạo, wing half, quốc tịch Việt Nam.",,,0.06,677.3,569,2.3898e-05,2
+20261017-191810-849272,jev,8,visit,Q23779725_giải_bóng_đá_cúp_quốc_gia_2016,Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,Club,"Câu lạc bộ bóng đá Than Quảng Ninh, thành lập năm 1956, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Cẩm Phả.",Q25999788_hà_đức_chinh,PLAYED_FOR (out),0.32,677.3,2028,8.5176e-05,30
+20261017-191810-849272,jev,9,visit,none,Q23779725_giải_bóng_đá_cúp_quốc_gia_2016,Competition,Giải bóng đá Cúp Quốc gia 2016 — giải đấu bóng đá năm 2016.,Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,WON (out),0.33,813.4,466,1.9572e-05,0
+20261017-191810-849272,jev,10,visit,none,Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,Club,"Câu lạc bộ bóng đá Than Quảng Ninh, thành lập năm 1956, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Cẩm Phả.",Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,backtrack,0.32,696.3,1984,8.3328e-05,29
+20261017-191810-849272,jev,11,visit,none,Q25999788_hà_đức_chinh,Player,"Hà Đức Chinh, sinh 22/09/1997, vị trí tiền đạo, wing half, quốc tịch Việt Nam.",Q25999788_hà_đức_chinh,backtrack,0.06,642.4,497,2.0874e-05,1
+20261017-191810-849272,ollama,1,domain,football_vn,,,,,,,1076.9,331,0.0,
+20261017-191810-849272,ollama,2,label,Club,,,,,,,934.5,311,0.0,
+20261017-191810-849272,ollama,3,pick,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,,,,,,,20256.4,9636,0.0,250
+20261017-191810-849272,ollama,4,pick,Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa,,,,,,,21213.4,9126,0.0,250
+20261017-191810-849272,ollama,5,pick,Q2509547_câu_lạc_bộ_bóng_đá_hòa_phát_hà_nội,,,,,,,20431.8,9048,0.0,250
+20261017-191810-849272,ollama,6,pick,Q560102_câu_lạc_bộ_bóng_đá_hà_nội,,,,,,,21095.0,9275,0.0,250
+20261017-191810-849272,ollama,7,pick,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,,,,,,,21419.1,9466,0.0,250
+20261017-191810-849272,ollama,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,4814.0,1461,0.0,32
+20261017-191810-849272,ollama,9,pick,Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa,,,,,,,3134.4,530,0.0,6
+20261017-191810-849272,ollama,10,visit,none,Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa,Club,"Câu lạc bộ bóng đá Sanna Khánh Hòa, thành lập năm 2013, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động 19 tháng 8.",,,0.0,3186.0,1024,0.0,16
+20261017-191810-849272,nvidia,1,domain,football_vn,,,,,,,1951.1,387,0.0,
+20261017-191810-849272,nvidia,2,label,Player,,,,,,,4372.3,358,0.0,
+20261017-191810-849272,nvidia,3,pick,Q25999788_hà_đức_chinh,,,,,,,4398.2,8217,0.0,250
+20261017-191810-849272,nvidia,4,pick,Q26924291_dương_văn_khoa,,,,,,,11265.8,8022,0.0,250
+20261017-191810-849272,nvidia,5,pick,Q7708869_thạch_bảo_khanh,,,,,,,14308.4,1753,0.0,47
+20261017-191810-849272,nvidia,6,pick,Q25999788_hà_đức_chinh,,,,,,,7324.6,392,0.0,3
+20261017-191810-849272,nvidia,7,visit,Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,Q25999788_hà_đức_chinh,Player,"Hà Đức Chinh, sinh 22/09/1997, vị trí tiền đạo, wing half, quốc tịch Việt Nam.",,,0.0,7204.4,509,0.0,2
+20261017-191810-849272,nvidia,8,visit,,Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,Club,"Câu lạc bộ bóng đá Than Quảng Ninh, thành lập năm 1956, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Cẩm Phả.",Q25999788_hà_đức_chinh,PLAYED_FOR (out),0.95,4877.1,1557,0.0,30

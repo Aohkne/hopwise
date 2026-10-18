@@ -1,0 +1,30 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-192228-01ec98,jev,1,domain,football_vn,,,,,,,1069.8,437,1.8354e-05,
+20261017-192228-01ec98,jev,2,label,Place,,,,,,,775.7,448,1.8816e-05,
+20261017-192228-01ec98,jev,3,pick,Q151374_sân_vận_động_olympic,,,,,,,682.7,6245,0.00026229,250
+20261017-192228-01ec98,jev,4,pick,Q20548442_q20548442,,,,,,,715.3,6125,0.00025725,250
+20261017-192228-01ec98,jev,5,pick,Q2888622_yongin_football_center,,,,,,,716.9,6066,0.000254772,250
+20261017-192228-01ec98,jev,6,pick,Q493545_sân_vận_động_bóng_đá_incheon,,,,,,,718.3,6160,0.00025872,250
+20261017-192228-01ec98,jev,7,pick,Q884_hàn_quốc,,,,,,,697.3,5647,0.000237174,228
+20261017-192228-01ec98,jev,8,pick,Q493545_sân_vận_động_bóng_đá_incheon,,,,,,,629.7,436,1.8312e-05,5
+20261017-192228-01ec98,jev,9,visit,Q482562_incheon_united_fc,Q493545_sân_vận_động_bóng_đá_incheon,Place,Sân vận động bóng đá Incheon — địa điểm.,,,0.03,595.8,508,2.1336e-05,1
+20261017-192228-01ec98,jev,10,visit,Q19561293_lương_xuân_trường,Q482562_incheon_united_fc,Club,"Incheon United FC, thành lập năm 2004, thi đấu tại K League 1, sân nhà Sân vận động bóng đá Incheon.",Q493545_sân_vận_động_bóng_đá_incheon,HOME_VENUE (in),0.07,691.5,531,2.2302e-05,1
+20261017-192228-01ec98,jev,11,visit,none,Q19561293_lương_xuân_trường,Player,"Lương Xuân Trường, sinh 28/04/1995, vị trí tiền vệ, quốc tịch Việt Nam.",Q482562_incheon_united_fc,PLAYED_FOR (in),0.45,693.8,689,2.8938e-05,5
+20261017-192228-01ec98,ollama,1,domain,football_vn,,,,,,,3527.9,335,0.0,
+20261017-192228-01ec98,ollama,2,label,Player,,,,,,,973.9,315,0.0,
+20261017-192228-01ec98,ollama,3,pick,Q16079973_han_seung_yeop,,,,,,,18664.2,9119,0.0,250
+20261017-192228-01ec98,ollama,4,pick,Q28057351_woo_sang_ho,,,,,,,21094.1,8973,0.0,250
+20261017-192228-01ec98,ollama,5,pick,Q9697059_carlos_fangueiro,,,,,,,5366.1,1839,0.0,47
+20261017-192228-01ec98,ollama,6,pick,Q28057351_woo_sang_ho,,,,,,,4855.7,345,0.0,3
+20261017-192228-01ec98,ollama,7,visit,none,Q28057351_woo_sang_ho,Player,"Woo Sang-ho, sinh 07/12/1992, vị trí tiền vệ, quốc tịch Hàn Quốc.",,,0.0,1670.1,743,0.0,9
+20261017-192228-01ec98,nvidia,1,domain,football_vn,,,,,,,4987.8,389,0.0,
+20261017-192228-01ec98,nvidia,2,label,Place,,,,,,,4438.6,360,0.0,
+20261017-192228-01ec98,nvidia,3,pick,Q1058494_estádio_do_bessa,,,,,,,22158.7,3961,0.0,250
+20261017-192228-01ec98,nvidia,4,pick,Q1583616_sân_vận_động_darius_và_girėnas,,,,,,,9831.8,3850,0.0,250
+20261017-192228-01ec98,nvidia,5,pick,Q28074430_edmond_hasanbelliu,,,,,,,49080.5,3794,0.0,250
+20261017-192228-01ec98,nvidia,6,pick,Q493545_sân_vận_động_bóng_đá_incheon,,,,,,,2424.3,3882,0.0,250
+20261017-192228-01ec98,nvidia,7,pick,Q884_hàn_quốc,,,,,,,2085.0,3576,0.0,228
+20261017-192228-01ec98,nvidia,8,pick,Q493545_sân_vận_động_bóng_đá_incheon,,,,,,,5492.3,371,0.0,5
+20261017-192228-01ec98,nvidia,9,visit,Q482562_incheon_united_fc,Q493545_sân_vận_động_bóng_đá_incheon,Place,Sân vận động bóng đá Incheon — địa điểm.,,,0.0,8151.9,462,0.0,1
+20261017-192228-01ec98,nvidia,10,visit,Q19561293_lương_xuân_trường,Q482562_incheon_united_fc,Club,"Incheon United FC, thành lập năm 2004, thi đấu tại K League 1, sân nhà Sân vận động bóng đá Incheon.",Q493545_sân_vận_động_bóng_đá_incheon,HOME_VENUE (in),0.0,7654.0,476,0.0,1
+20261017-192228-01ec98,nvidia,11,visit,none,Q19561293_lương_xuân_trường,Player,"Lương Xuân Trường, sinh 28/04/1995, vị trí tiền vệ, quốc tịch Việt Nam.",Q482562_incheon_united_fc,PLAYED_FOR (in),0.0,15229.8,592,0.0,5

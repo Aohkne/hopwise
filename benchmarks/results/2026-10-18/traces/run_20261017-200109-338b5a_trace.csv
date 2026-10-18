@@ -1,0 +1,13 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-200109-338b5a,jev,1,domain,vinfast,,,,,,,1249.3,417,1.7514e-05,
+20261017-200109-338b5a,jev,2,label,Person,,,,,,,559.5,506,2.1252e-05,
+20261017-200109-338b5a,jev,3,pick,sec_pham_nhat_vuong,,,,,,,599.3,654,2.7468e-05,10
+20261017-200109-338b5a,jev,4,visit,,sec_pham_nhat_vuong,Person,"Pham Nhat Vuong, 57 tuổi — Managing Director and CEO của VinFast.",,,0.95,689.9,661,2.7762e-05,4
+20261017-200109-338b5a,ollama,1,domain,vinfast,,,,,,,1184.3,318,0.0,
+20261017-200109-338b5a,ollama,2,label,Person,,,,,,,955.6,345,0.0,
+20261017-200109-338b5a,ollama,3,pick,sec_pham_nhat_vuong,,,,,,,1104.1,483,0.0,10
+20261017-200109-338b5a,ollama,4,visit,,sec_pham_nhat_vuong,Person,"Pham Nhat Vuong, 57 tuổi — Managing Director and CEO của VinFast.",,,1.0,2045.6,526,0.0,4
+20261017-200109-338b5a,nvidia,1,domain,vinfast,,,,,,,22984.8,371,0.0,
+20261017-200109-338b5a,nvidia,2,label,Person,,,,,,,8074.8,393,0.0,
+20261017-200109-338b5a,nvidia,3,pick,sec_pham_nhat_vuong,,,,,,,6433.4,525,0.0,10
+20261017-200109-338b5a,nvidia,4,visit,,sec_pham_nhat_vuong,Person,"Pham Nhat Vuong, 57 tuổi — Managing Director and CEO của VinFast.",,,1.0,13897.4,573,0.0,4

@@ -1,0 +1,32 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-192008-4fc688,jev,1,domain,football_vn,,,,,,,1326.4,439,1.8438e-05,
+20261017-192008-4fc688,jev,2,label,Player,,,,,,,650.6,450,1.89e-05,
+20261017-192008-4fc688,jev,3,pick,Q19571738_trần_đình_hoàng,,,,,,,798.0,11986,0.000503412,250
+20261017-192008-4fc688,jev,4,pick,Q28970219_trần_đình_trọng,,,,,,,717.5,11687,0.000490854,250
+20261017-192008-4fc688,jev,5,pick,Q7833294_trần_đình_đồng,,,,,,,716.6,2444,0.000102648,47
+20261017-192008-4fc688,jev,6,pick,Q28970219_trần_đình_trọng,,,,,,,621.2,468,1.9656e-05,3
+20261017-192008-4fc688,jev,7,visit,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,Q28970219_trần_đình_trọng,Player,"Trần Đình Trọng, sinh 25/04/1997, vị trí hậu vệ trung tâm, quốc tịch Việt Nam.",,,0.07,567.5,575,2.415e-05,2
+20261017-192008-4fc688,jev,8,visit,Q18758327_giải_bóng_đá_hạng_nhất_quốc_gia_việt_nam,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,Club,"Câu lạc bộ bóng đá Sài Gòn, thành lập năm 2011, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Thống Nhất.",Q28970219_trần_đình_trọng,PLAYED_FOR (out),0.35,571.6,2023,8.4966e-05,30
+20261017-192008-4fc688,jev,9,visit,none,Q18758327_giải_bóng_đá_hạng_nhất_quốc_gia_việt_nam,Competition,Giải bóng đá hạng nhất quốc gia Việt Nam 2015 — giải đấu bóng đá năm 2015.,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,WON (out),0.31,633.3,475,1.995e-05,0
+20261017-192008-4fc688,jev,10,visit,none,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,Club,"Câu lạc bộ bóng đá Sài Gòn, thành lập năm 2011, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Thống Nhất.",Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,backtrack,0.32,679.2,1975,8.295e-05,29
+20261017-192008-4fc688,jev,11,visit,none,Q28970219_trần_đình_trọng,Player,"Trần Đình Trọng, sinh 25/04/1997, vị trí hậu vệ trung tâm, quốc tịch Việt Nam.",Q28970219_trần_đình_trọng,backtrack,0.06,687.7,504,2.1168e-05,1
+20261017-192008-4fc688,ollama,1,domain,football_vn,,,,,,,1202.2,331,0.0,
+20261017-192008-4fc688,ollama,2,label,Club,,,,,,,978.5,311,0.0,
+20261017-192008-4fc688,ollama,3,pick,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,,,,,,,19870.1,9636,0.0,250
+20261017-192008-4fc688,ollama,4,pick,Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa,,,,,,,21509.3,9126,0.0,250
+20261017-192008-4fc688,ollama,5,pick,Q2509547_câu_lạc_bộ_bóng_đá_hòa_phát_hà_nội,,,,,,,21191.7,9048,0.0,250
+20261017-192008-4fc688,ollama,6,pick,Q560102_câu_lạc_bộ_bóng_đá_hà_nội,,,,,,,20977.3,9275,0.0,250
+20261017-192008-4fc688,ollama,7,pick,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,,,,,,,22197.3,9466,0.0,250
+20261017-192008-4fc688,ollama,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,7215.4,1461,0.0,32
+20261017-192008-4fc688,ollama,9,pick,Q560102_câu_lạc_bộ_bóng_đá_hà_nội,,,,,,,3378.1,530,0.0,6
+20261017-192008-4fc688,ollama,10,visit,none,Q560102_câu_lạc_bộ_bóng_đá_hà_nội,Club,"Câu lạc bộ bóng đá Hà Nội, thành lập năm 1956, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Hàng Đẫy.",,,0.0,3735.9,1539,0.0,29
+20261017-192008-4fc688,nvidia,1,domain,football_vn,,,,,,,2136.3,389,0.0,
+20261017-192008-4fc688,nvidia,2,label,Club,,,,,,,8187.6,360,0.0,
+20261017-192008-4fc688,nvidia,3,pick,Q10751871_câu_lạc_bộ_bóng_đá_quảng_nam,,,,,,,8664.7,9060,0.0,250
+20261017-192008-4fc688,nvidia,4,pick,Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa,,,,,,,14134.8,8555,0.0,250
+20261017-192008-4fc688,nvidia,5,pick,Q2509547_câu_lạc_bộ_bóng_đá_hòa_phát_hà_nội,,,,,,,26531.4,8401,0.0,250
+20261017-192008-4fc688,nvidia,6,pick,Q560102_câu_lạc_bộ_bóng_đá_hà_nội,,,,,,,39519.4,8665,0.0,250
+20261017-192008-4fc688,nvidia,7,pick,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,,,,,,,13619.5,8868,0.0,250
+20261017-192008-4fc688,nvidia,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,9315.0,1472,0.0,32
+20261017-192008-4fc688,nvidia,9,pick,Q10751871_câu_lạc_bộ_bóng_đá_quảng_nam,,,,,,,5216.5,601,0.0,6
+20261017-192008-4fc688,nvidia,10,visit,none,Q10751871_câu_lạc_bộ_bóng_đá_quảng_nam,Club,"Câu lạc bộ bóng đá Quảng Nam, thành lập năm 1997, thi đấu tại Giải bóng đá hạng nhất quốc gia, sân nhà Sân vận động Tam Kỳ.",,,0.0,11760.1,952,0.0,14

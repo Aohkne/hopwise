@@ -1,0 +1,18 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-200619-750b6c,jev,1,domain,vinfast,,,,,,,678.8,433,1.8186e-05,
+20261017-200619-750b6c,jev,2,label,Company,,,,,,,696.5,522,2.1924e-05,
+20261017-200619-750b6c,jev,3,pick,sec_vingroup_investment_vietnam_jsc,,,,,,,606.3,2511,0.000105462,61
+20261017-200619-750b6c,jev,4,visit,Q56660561_vinfast,sec_vingroup_investment_vietnam_jsc,Company,"Vingroup Investment Vietnam JSC — công ty con của VinFast, đăng ký tại Vietnam.",,,0.11,702.0,602,2.5284e-05,3
+20261017-200619-750b6c,jev,5,visit,,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",sec_vingroup_investment_vietnam_jsc,SUBSIDIARY_OF (out),0.67,695.8,5750,0.0002415,112
+20261017-200619-750b6c,ollama,1,domain,vinfast,,,,,,,1160.8,334,0.0,
+20261017-200619-750b6c,ollama,2,label,Company,,,,,,,907.3,361,0.0,
+20261017-200619-750b6c,ollama,3,pick,sec_vingroup_investment_vietnam_jsc,,,,,,,3541.5,1902,0.0,61
+20261017-200619-750b6c,ollama,4,visit,Q56660561_vinfast,sec_vingroup_investment_vietnam_jsc,Company,"Vingroup Investment Vietnam JSC — công ty con của VinFast, đăng ký tại Vietnam.",,,0.0,1555.1,485,0.0,3
+20261017-200619-750b6c,ollama,5,visit,Q10831597_vingroup,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",sec_vingroup_investment_vietnam_jsc,SUBSIDIARY_OF (out),0.0,9786.0,4740,0.0,112
+20261017-200619-750b6c,ollama,6,visit,none,Q10831597_vingroup,Organization,Tập đoàn Vingroup — công ty mẹ của VinFast.,Q56660561_vinfast,SUBSIDIARY_OF (out),0.0,3300.5,635,0.0,10
+20261017-200619-750b6c,ollama,7,visit,,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",Q56660561_vinfast,backtrack,1.0,10655.9,4684,0.0,110
+20261017-200619-750b6c,nvidia,1,domain,vinfast,,,,,,,6667.6,385,0.0,
+20261017-200619-750b6c,nvidia,2,label,Company,,,,,,,19535.6,407,0.0,
+20261017-200619-750b6c,nvidia,3,pick,sec_vingroup_investment_vietnam_jsc,,,,,,,26750.5,1903,0.0,61
+20261017-200619-750b6c,nvidia,4,visit,Q56660561_vinfast,sec_vingroup_investment_vietnam_jsc,Company,"Vingroup Investment Vietnam JSC — công ty con của VinFast, đăng ký tại Vietnam.",,,0.0,16456.7,535,0.0,3
+20261017-200619-750b6c,nvidia,5,visit,,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",sec_vingroup_investment_vietnam_jsc,SUBSIDIARY_OF (out),1.0,17580.2,4466,0.0,112

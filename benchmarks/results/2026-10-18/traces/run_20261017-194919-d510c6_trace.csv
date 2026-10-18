@@ -1,0 +1,43 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-194919-d510c6,jev,1,domain,football_vn,,,,,,,1098.7,439,1.8438e-05,
+20261017-194919-d510c6,jev,2,label,Club,,,,,,,693.1,450,1.89e-05,
+20261017-194919-d510c6,jev,3,pick,Q1028545_associação_desportiva_recreativa_e_cultu,,,,,,,783.1,12084,0.000507528,250
+20261017-194919-d510c6,jev,4,pick,Q219703_boavista_f_c,,,,,,,681.9,11588,0.000486696,250
+20261017-194919-d510c6,jev,5,pick,Q2955908_f_c_tirsense,,,,,,,751.9,11403,0.000478926,250
+20261017-194919-d510c6,jev,6,pick,Q5423714_fc_porto_b,,,,,,,714.6,11702,0.000491484,250
+20261017-194919-d510c6,jev,7,pick,Q846008_associação_naval_1º_de_maio,,,,,,,720.7,11949,0.000501858,250
+20261017-194919-d510c6,jev,8,pick,Q926438_gil_vicente_f_c,,,,,,,612.3,1862,7.8204e-05,32
+20261017-194919-d510c6,jev,9,pick,Q5423714_fc_porto_b,,,,,,,715.9,610,2.562e-05,6
+20261017-194919-d510c6,jev,10,visit,Q7023058_nguyễn_việt_thắng,Q5423714_fc_porto_b,Club,"FC Porto B, thành lập năm 1999, thi đấu tại Liga Portugal 2, sân nhà Estádio Municipal Jorge Sampaio.",,,0.07,587.9,556,2.3352e-05,2
+20261017-194919-d510c6,jev,11,visit,none,Q7023058_nguyễn_việt_thắng,Player,"Nguyễn Việt Thắng, sinh 13/09/1981, vị trí tiền đạo, quốc tịch Việt Nam.",Q5423714_fc_porto_b,PLAYED_FOR (in),0.33,592.3,1064,4.4688e-05,10
+20261017-194919-d510c6,jev,12,visit,none,Q5423714_fc_porto_b,Club,"FC Porto B, thành lập năm 1999, thi đấu tại Liga Portugal 2, sân nhà Estádio Municipal Jorge Sampaio.",Q5423714_fc_porto_b,backtrack,0.06,678.0,506,2.1252e-05,1
+20261017-194919-d510c6,ollama,1,domain,football_vn,,,,,,,2457.2,337,0.0,
+20261017-194919-d510c6,ollama,2,label,Club,,,,,,,912.6,317,0.0,
+20261017-194919-d510c6,ollama,3,pick,Q1028545_associação_desportiva_recreativa_e_cultu,,,,,,,18717.5,9642,0.0,250
+20261017-194919-d510c6,ollama,4,pick,Q16370537_fc_imereti_khoni,,,,,,,17911.5,9132,0.0,250
+20261017-194919-d510c6,ollama,5,pick,Q289367_a_c_marinhense,,,,,,,17965.2,9054,0.0,250
+20261017-194919-d510c6,ollama,6,pick,Q5423714_fc_porto_b,,,,,,,21352.5,9281,0.0,250
+20261017-194919-d510c6,ollama,7,pick,Q75684_s_c_braga,,,,,,,21171.1,9472,0.0,250
+20261017-194919-d510c6,ollama,8,pick,Q925147_clube_desportivo_dos_olivais_e_moscavide,,,,,,,5389.7,1467,0.0,32
+20261017-194919-d510c6,ollama,9,pick,Q5423714_fc_porto_b,,,,,,,1331.7,453,0.0,6
+20261017-194919-d510c6,ollama,10,visit,Q7023058_nguyễn_việt_thắng,Q5423714_fc_porto_b,Club,"FC Porto B, thành lập năm 1999, thi đấu tại Liga Portugal 2, sân nhà Estádio Municipal Jorge Sampaio.",,,0.0,1863.8,448,0.0,2
+20261017-194919-d510c6,ollama,11,visit,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Q7023058_nguyễn_việt_thắng,Player,"Nguyễn Việt Thắng, sinh 13/09/1981, vị trí tiền đạo, quốc tịch Việt Nam.",Q5423714_fc_porto_b,PLAYED_FOR (in),0.0,2972.9,840,0.0,10
+20261017-194919-d510c6,ollama,12,visit,Q1075842_choketawee_promrut,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Club,"Câu lạc bộ bóng đá Hoàng Anh Gia Lai, thành lập năm 2001, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Pleiku.",Q7023058_nguyễn_việt_thắng,PLAYED_FOR (out),0.0,8095.0,4208,0.0,93
+20261017-194919-d510c6,ollama,13,visit,Q204587_phang_nga,Q1075842_choketawee_promrut,Player,"Choketawee Promrut, sinh 16/03/1975, vị trí hậu vệ, hậu vệ quét, quốc tịch Thái Lan.",Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,PLAYED_FOR (in),0.0,4053.5,904,0.0,13
+20261017-194919-d510c6,ollama,14,visit,none,Q204587_phang_nga,Place,Phang Nga — địa điểm.,Q1075842_choketawee_promrut,BORN_IN (out),0.0,1252.7,361,0.0,0
+20261017-194919-d510c6,ollama,15,visit,none,Q1075842_choketawee_promrut,Player,"Choketawee Promrut, sinh 16/03/1975, vị trí hậu vệ, hậu vệ quét, quốc tịch Thái Lan.",Q1075842_choketawee_promrut,backtrack,0.0,1852.4,885,0.0,12
+20261017-194919-d510c6,ollama,16,visit,Q5116022_chukiat_noosarung,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Club,"Câu lạc bộ bóng đá Hoàng Anh Gia Lai, thành lập năm 2001, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Pleiku.",Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,backtrack,0.0,9013.7,4161,0.0,92
+20261017-194919-d510c6,ollama,17,visit,Q997062_chaiyaphum,Q5116022_chukiat_noosarung,Player,"Chukiat Noosarung, sinh 25/06/1971, vị trí hậu vệ, quốc tịch Thái Lan.",Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,PLAYED_FOR (in),0.0,1763.7,568,0.0,5
+20261017-194919-d510c6,ollama,18,visit,,Q997062_chaiyaphum,Place,Chaiyaphum — địa điểm.,Q5116022_chukiat_noosarung,BORN_IN (out),1.0,1851.5,363,0.0,0
+20261017-194919-d510c6,nvidia,1,domain,football_vn,,,,,,,37001.3,391,0.0,
+20261017-194919-d510c6,nvidia,2,label,Club,,,,,,,7664.3,362,0.0,
+20261017-194919-d510c6,nvidia,3,pick,Q1022923_gimnasia_y_esgrima_de_jujuy,,,,,,,26782.5,9062,0.0,250
+20261017-194919-d510c6,nvidia,4,pick,Q16007952_borneo_f_c_samarinda,,,,,,,34394.9,8557,0.0,250
+20261017-194919-d510c6,nvidia,5,pick,Q235399_đội_tuyển_bóng_đá_quốc_gia_jamaica,,,,,,,32733.2,8403,0.0,250
+20261017-194919-d510c6,nvidia,6,pick,Q5423714_fc_porto_b,,,,,,,7724.1,8667,0.0,250
+20261017-194919-d510c6,nvidia,7,pick,Q688300_s_c_beira_mar,,,,,,,62915.5,8870,0.0,250
+20261017-194919-d510c6,nvidia,8,pick,Q925147_clube_desportivo_dos_olivais_e_moscavide,,,,,,,40496.7,1474,0.0,32
+20261017-194919-d510c6,nvidia,9,pick,Q5423714_fc_porto_b,,,,,,,7486.9,510,0.0,6
+20261017-194919-d510c6,nvidia,10,visit,Q7023058_nguyễn_việt_thắng,Q5423714_fc_porto_b,Club,"FC Porto B, thành lập năm 1999, thi đấu tại Liga Portugal 2, sân nhà Estádio Municipal Jorge Sampaio.",,,0.0,9790.7,497,0.0,2
+20261017-194919-d510c6,nvidia,11,visit,none,Q7023058_nguyễn_việt_thắng,Player,"Nguyễn Việt Thắng, sinh 13/09/1981, vị trí tiền đạo, quốc tịch Việt Nam.",Q5423714_fc_porto_b,PLAYED_FOR (in),0.0,13084.3,898,0.0,10
+20261017-194919-d510c6,nvidia,12,visit,Q15110461_estádio_municipal_jorge_sampaio,Q5423714_fc_porto_b,Club,"FC Porto B, thành lập năm 1999, thi đấu tại Liga Portugal 2, sân nhà Estádio Municipal Jorge Sampaio.",Q5423714_fc_porto_b,backtrack,0.0,11524.3,461,0.0,1

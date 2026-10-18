@@ -1,0 +1,27 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-191049-0d4203,jev,1,domain,football_vn,,,,,,,1165.8,445,1.869e-05,
+20261017-191049-0d4203,jev,2,label,Competition,,,,,,,671.7,456,1.9152e-05,
+20261017-191049-0d4203,jev,3,pick,Q2953884_giải_bóng_đá_vô_địch_quốc_gia_việt_nam_2,,,,,,,1659.9,2293,9.6306e-05,48
+20261017-191049-0d4203,jev,4,visit,Q560392_câu_lạc_bộ_bóng_đá_hà_nội,Q2953884_giải_bóng_đá_vô_địch_quốc_gia_việt_nam_2,Competition,Giải bóng đá vô địch quốc gia Việt Nam 2010 — giải đấu bóng đá năm 2010.,,,0.05,691.8,548,2.3016e-05,1
+20261017-191049-0d4203,jev,5,visit,Q1817188_sân_vận_động_hàng_đẫy,Q560392_câu_lạc_bộ_bóng_đá_hà_nội,Club,"Câu lạc bộ bóng đá Hà Nội, thành lập năm 2006, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Hàng Đẫy.",Q2953884_giải_bóng_đá_vô_địch_quốc_gia_việt_nam_2,WON (in),0.38,663.1,4540,0.00019068,80
+20261017-191049-0d4203,jev,6,visit,,Q1817188_sân_vận_động_hàng_đẫy,Place,Sân vận động Hàng Đẫy — địa điểm.,Q560392_câu_lạc_bộ_bóng_đá_hà_nội,HOME_VENUE (out),0.5,587.5,814,3.4188e-05,5
+20261017-191049-0d4203,ollama,1,domain,football_vn,,,,,,,1201.7,338,0.0,
+20261017-191049-0d4203,ollama,2,label,Club,,,,,,,899.2,318,0.0,
+20261017-191049-0d4203,ollama,3,pick,Q10751877_câu_lạc_bộ_bóng_đá_thanh_hóa_cũ,,,,,,,18723.7,9643,0.0,250
+20261017-191049-0d4203,ollama,4,pick,Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa,,,,,,,18685.8,9133,0.0,250
+20261017-191049-0d4203,ollama,5,pick,Q2509547_câu_lạc_bộ_bóng_đá_hòa_phát_hà_nội,,,,,,,18805.1,9055,0.0,250
+20261017-191049-0d4203,ollama,6,pick,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,,,,,,,21338.7,9282,0.0,250
+20261017-191049-0d4203,ollama,7,pick,Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh,,,,,,,21104.8,9473,0.0,250
+20261017-191049-0d4203,ollama,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,5716.7,1468,0.0,32
+20261017-191049-0d4203,ollama,9,pick,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,,,,,,,2996.0,541,0.0,6
+20261017-191049-0d4203,ollama,10,visit,none,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,Club,"Câu lạc bộ bóng đá Thể Công – Viettel, thành lập năm 1954, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Hàng Đẫy.",,,0.0,4369.5,1795,0.0,35
+20261017-191049-0d4203,nvidia,1,domain,football_vn,,,,,,,2666.6,394,0.0,
+20261017-191049-0d4203,nvidia,2,label,Club,,,,,,,1630.7,365,0.0,
+20261017-191049-0d4203,nvidia,3,pick,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,,,,,,,38690.3,9065,0.0,250
+20261017-191049-0d4203,nvidia,4,pick,Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng,,,,,,,6627.0,8560,0.0,250
+20261017-191049-0d4203,nvidia,5,pick,Q2509547_câu_lạc_bộ_bóng_đá_hòa_phát_hà_nội,,,,,,,3894.4,8406,0.0,250
+20261017-191049-0d4203,nvidia,6,pick,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,,,,,,,7374.4,8670,0.0,250
+20261017-191049-0d4203,nvidia,7,pick,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,,,,,,,8189.7,8873,0.0,250
+20261017-191049-0d4203,nvidia,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,6043.5,1477,0.0,32
+20261017-191049-0d4203,nvidia,9,pick,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,,,,,,,17924.8,608,0.0,6
+20261017-191049-0d4203,nvidia,10,visit,,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,Club,"Câu lạc bộ bóng đá Becamex Bình Dương, thành lập năm 1976, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Gò Đậu.",,,1.0,4556.4,3710,0.0,90

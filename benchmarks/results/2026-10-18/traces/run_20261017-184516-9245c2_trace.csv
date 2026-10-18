@@ -1,0 +1,32 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-184516-9245c2,jev,1,domain,football_vn,,,,,,,1125.5,429,1.8018e-05,
+20261017-184516-9245c2,jev,2,label,Club,,,,,,,706.2,440,1.848e-05,
+20261017-184516-9245c2,jev,3,pick,Q1461967_várda_se,,,,,,,781.7,12074,0.000507108,250
+20261017-184516-9245c2,jev,4,pick,Q205732_debreceni_vsc,,,,,,,802.3,11578,0.000486276,250
+20261017-184516-9245c2,jev,5,pick,Q326811_fehérvár_fc,,,,,,,733.5,11393,0.000478506,250
+20261017-184516-9245c2,jev,6,pick,Q588439_lombard_pápa_tfc,,,,,,,819.2,11692,0.000491064,250
+20261017-184516-9245c2,jev,7,pick,Q723276_integrál_dac,,,,,,,750.0,11939,0.000501438,250
+20261017-184516-9245c2,jev,8,pick,Q975267_szeged_csanád_grosics_akadémia,,,,,,,754.4,1852,7.7784e-05,32
+20261017-184516-9245c2,jev,9,pick,Q723276_integrál_dac,,,,,,,571.5,606,2.5452e-05,6
+20261017-184516-9245c2,jev,10,visit,Q19893993_joevannie_peart,Q723276_integrál_dac,Club,"Integrál-DAC, thành lập năm 1912, thi đấu tại Nemzeti Bajnokság II.",,,0.06,597.7,511,2.1462e-05,1
+20261017-184516-9245c2,jev,11,visit,Q588439_lombard_pápa_tfc,Q19893993_joevannie_peart,Player,"Joevannie Peart, sinh 14/05/1984, vị trí tiền đạo, quốc tịch Việt Nam.",Q723276_integrál_dac,PLAYED_FOR (in),0.37,581.9,776,3.2592e-05,6
+20261017-184516-9245c2,jev,12,visit,none,Q588439_lombard_pápa_tfc,Club,"Lombard-Pápa TFC, thành lập năm 1995, thi đấu tại Giải bóng đá vô địch quốc gia Hungary, sân nhà Stadion Várkerti.",Q19893993_joevannie_peart,PLAYED_FOR (out),0.07,592.3,503,2.1126e-05,1
+20261017-184516-9245c2,jev,13,visit,none,Q19893993_joevannie_peart,Player,"Joevannie Peart, sinh 14/05/1984, vị trí tiền đạo, quốc tịch Việt Nam.",Q19893993_joevannie_peart,backtrack,0.36,714.6,715,3.003e-05,5
+20261017-184516-9245c2,ollama,1,domain,football_vn,,,,,,,1036.7,327,0.0,
+20261017-184516-9245c2,ollama,2,label,Player,,,,,,,884.5,307,0.0,
+20261017-184516-9245c2,ollama,3,pick,Q12084408_yevhen_bokhashvili,,,,,,,18082.8,9111,0.0,250
+20261017-184516-9245c2,ollama,4,pick,Q2749356_alexsandro_oliveira_duarte,,,,,,,20538.3,8965,0.0,250
+20261017-184516-9245c2,ollama,5,pick,Q7881178_umaru_rahman,,,,,,,6390.7,1831,0.0,47
+20261017-184516-9245c2,ollama,6,pick,Q12084408_yevhen_bokhashvili,,,,,,,1335.1,334,0.0,3
+20261017-184516-9245c2,ollama,7,visit,none,Q12084408_yevhen_bokhashvili,Player,"Yevhen Bokhashvili, sinh 05/01/1993, vị trí tiền đạo, quốc tịch Ukraina.",,,0.0,2342.7,1088,0.0,18
+20261017-184516-9245c2,nvidia,1,domain,football_vn,,,,,,,3189.5,381,0.0,
+20261017-184516-9245c2,nvidia,2,label,Club,,,,,,,3555.0,352,0.0,
+20261017-184516-9245c2,nvidia,3,pick,Q1022923_gimnasia_y_esgrima_de_jujuy,,,,,,,48998.8,9052,0.0,250
+20261017-184516-9245c2,nvidia,4,pick,Q16007952_borneo_f_c_samarinda,,,,,,,19700.8,8547,0.0,250
+20261017-184516-9245c2,nvidia,5,pick,Q238593_d_c_united,,,,,,,31465.8,8393,0.0,250
+20261017-184516-9245c2,nvidia,6,pick,Q3590665_đội_tuyển_bóng_đá_u_17_quốc_gia_ghana,,,,,,,41635.7,8657,0.0,250
+20261017-184516-9245c2,nvidia,7,pick,Q723276_integrál_dac,,,,,,,14300.1,8860,0.0,250
+20261017-184516-9245c2,nvidia,8,pick,Q975267_szeged_csanád_grosics_akadémia,,,,,,,13778.1,1464,0.0,32
+20261017-184516-9245c2,nvidia,9,pick,Q723276_integrál_dac,,,,,,,5685.5,491,0.0,6
+20261017-184516-9245c2,nvidia,10,visit,Q19893993_joevannie_peart,Q723276_integrál_dac,Club,"Integrál-DAC, thành lập năm 1912, thi đấu tại Nemzeti Bajnokság II.",,,0.0,6605.4,460,0.0,1
+20261017-184516-9245c2,nvidia,11,visit,none,Q19893993_joevannie_peart,Player,"Joevannie Peart, sinh 14/05/1984, vị trí tiền đạo, quốc tịch Việt Nam.",Q723276_integrál_dac,PLAYED_FOR (in),0.0,16467.3,665,0.0,6

@@ -1,0 +1,19 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-203820-c00caf,jev,1,domain,vinfast,,,,,,,1191.6,427,1.7934e-05,
+20261017-203820-c00caf,jev,2,label,CarModel,,,,,,,606.5,516,2.1672e-05,
+20261017-203820-c00caf,jev,3,pick,Q115152621_vinfast_vf_6,,,,,,,599.9,1569,6.5898e-05,30
+20261017-203820-c00caf,jev,4,visit,sec_factory_thoothukudi,Q115152621_vinfast_vf_6,CarModel,VinFast VF 6 — mẫu xe do VinFast sản xuất. 20-F: a B-segment electric SUV for the family-oriented driver.,,,0.09,593.0,884,3.7128e-05,9
+20261017-203820-c00caf,jev,5,visit,,sec_factory_thoothukudi,Factory,"Nhà máy VinFast tại Thoothukudi, Tamil Nadu, India, khánh thành tháng 8/2025, công suất 50,000 xe/năm.",Q115152621_vinfast_vf_6,PRODUCES (in),0.54,701.5,691,2.9022e-05,4
+20261017-203820-c00caf,ollama,1,domain,vinfast,,,,,,,993.0,328,0.0,
+20261017-203820-c00caf,ollama,2,label,CarModel,,,,,,,922.5,355,0.0,
+20261017-203820-c00caf,ollama,3,pick,Q115152621_vinfast_vf_6,,,,,,,2400.7,1229,0.0,30
+20261017-203820-c00caf,ollama,4,visit,sec_factory_thoothukudi,Q115152621_vinfast_vf_6,CarModel,VinFast VF 6 — mẫu xe do VinFast sản xuất. 20-F: a B-segment electric SUV for the family-oriented driver.,,,0.0,4321.4,717,0.0,9
+20261017-203820-c00caf,ollama,5,visit,sec_place_thoothukudi_tamil_nadu,sec_factory_thoothukudi,Factory,"Nhà máy VinFast tại Thoothukudi, Tamil Nadu, India, khánh thành tháng 8/2025, công suất 50,000 xe/năm.",Q115152621_vinfast_vf_6,PRODUCES (in),0.0,2157.0,563,0.0,4
+20261017-203820-c00caf,ollama,6,visit,,sec_place_thoothukudi_tamil_nadu,Place,"Thoothukudi, Tamil Nadu, India — nơi VinFast đặt nhà máy.",sec_factory_thoothukudi,LOCATED_IN (out),1.0,2514.2,394,0.0,1
+20261017-203820-c00caf,nvidia,1,domain,vinfast,,,,,,,6494.1,381,0.0,
+20261017-203820-c00caf,nvidia,2,label,CarModel,,,,,,,15556.7,403,0.0,
+20261017-203820-c00caf,nvidia,3,pick,Q115152621_vinfast_vf_6,,,,,,,4798.9,1226,0.0,30
+20261017-203820-c00caf,nvidia,4,visit,sec_factory_thoothukudi,Q115152621_vinfast_vf_6,CarModel,VinFast VF 6 — mẫu xe do VinFast sản xuất. 20-F: a B-segment electric SUV for the family-oriented driver.,,,0.0,18822.7,760,0.0,9
+20261017-203820-c00caf,nvidia,5,visit,Q56660561_vinfast,sec_factory_thoothukudi,Factory,"Nhà máy VinFast tại Thoothukudi, Tamil Nadu, India, khánh thành tháng 8/2025, công suất 50,000 xe/năm.",Q115152621_vinfast_vf_6,PRODUCES (in),0.2,24034.3,608,0.0,4
+20261017-203820-c00caf,nvidia,6,visit,sec_factory_hai_phong,Q56660561_vinfast,Company,"VinFast — hãng xe của Việt Nam, thành lập 06/2017, trụ sở tại Hải Phòng, niêm yết trên Nasdaq với mã VFS.",sec_factory_thoothukudi,OPERATES (in),0.0,12251.2,4406,0.0,111
+20261017-203820-c00caf,nvidia,7,visit,,sec_factory_hai_phong,Factory,"Nhà máy VinFast tại Hai Phong, Vietnam, khánh thành 2019, công suất 300,000 xe/năm.",Q56660561_vinfast,OPERATES (out),0.99,9705.8,450,0.0,1

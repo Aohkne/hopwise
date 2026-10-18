@@ -1,0 +1,20 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-185754-c1eac5,jev,1,domain,football_vn,,,,,,,1118.7,430,1.806e-05,
+20261017-185754-c1eac5,jev,2,label,Club,,,,,,,719.0,441,1.8522e-05,
+20261017-185754-c1eac5,jev,3,pick,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,,,,,,,776.8,12075,0.00050715,250
+20261017-185754-c1eac5,jev,4,pick,Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa,,,,,,,820.1,11579,0.000486318,250
+20261017-185754-c1eac5,jev,5,pick,Q2664160_câu_lạc_bộ_bóng_đá_navibank_sài_gòn,,,,,,,713.9,11394,0.000478548,250
+20261017-185754-c1eac5,jev,6,pick,Q560392_câu_lạc_bộ_bóng_đá_hà_nội,,,,,,,833.0,11693,0.000491106,250
+20261017-185754-c1eac5,jev,7,pick,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,,,,,,,804.7,11940,0.00050148,250
+20261017-185754-c1eac5,jev,8,pick,Q949702_câu_lạc_bộ_bóng_đá_công_an_thành_phố_hồ_,,,,,,,718.1,1853,7.7826e-05,32
+20261017-185754-c1eac5,jev,9,pick,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,,,,,,,590.0,712,2.9904e-05,6
+20261017-185754-c1eac5,jev,10,visit,Q18758327_giải_bóng_đá_hạng_nhất_quốc_gia_việt_nam,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,Club,"Câu lạc bộ bóng đá Sài Gòn, thành lập năm 2011, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Thống Nhất.",,,0.19,722.6,2071,8.6982e-05,31
+20261017-185754-c1eac5,jev,11,visit,,Q18758327_giải_bóng_đá_hạng_nhất_quốc_gia_việt_nam,Competition,Giải bóng đá hạng nhất quốc gia Việt Nam 2015 — giải đấu bóng đá năm 2015.,Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn,WON (out),0.56,764.8,466,1.9572e-05,0
+20261017-185754-c1eac5,ollama,1,domain,football_vn,,,,,,,3834.0,327,0.0,
+20261017-185754-c1eac5,ollama,2,label,Competition,,,,,,,768.7,307,0.0,
+20261017-185754-c1eac5,ollama,3,pick,Q10761783_giải_bóng_đá_hạng_nhất_quốc_gia_việt_nam,,,,,,,3196.7,1709,0.0,48
+20261017-185754-c1eac5,ollama,4,visit,none,Q10761783_giải_bóng_đá_hạng_nhất_quốc_gia_việt_nam,Competition,Giải bóng đá hạng nhất quốc gia Việt Nam 2009 — giải đấu bóng đá năm 2009.,,,0.0,4854.3,426,0.0,1
+20261017-185754-c1eac5,nvidia,1,domain,football_vn,,,,,,,1805.4,383,0.0,
+20261017-185754-c1eac5,nvidia,2,label,Competition,,,,,,,4965.4,354,0.0,
+20261017-185754-c1eac5,nvidia,3,pick,Q14514609_cúp_bóng_đá_việt_nam_2013,,,,,,,19999.3,1607,0.0,48
+20261017-185754-c1eac5,nvidia,4,visit,none,Q14514609_cúp_bóng_đá_việt_nam_2013,Competition,Cúp bóng đá Việt Nam 2013 — giải đấu bóng đá năm 2013.,,,0.0,16017.4,480,0.0,1

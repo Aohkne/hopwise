@@ -1,0 +1,144 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-194052-bacef9,jev,1,domain,football_vn,,,,,,,1170.6,434,1.8228e-05,
+20261017-194052-bacef9,jev,2,label,Club,,,,,,,606.7,445,1.869e-05,
+20261017-194052-bacef9,jev,3,pick,Q1340514_portmore_united_f_c,,,,,,,780.4,12079,0.000507318,250
+20261017-194052-bacef9,jev,4,pick,Q2093362_muscat_club,,,,,,,713.9,11583,0.000486486,250
+20261017-194052-bacef9,jev,5,pick,Q2829395_al_orouba_sc,,,,,,,716.0,11398,0.000478716,250
+20261017-194052-bacef9,jev,6,pick,Q6048161_international_allies_f_c,,,,,,,720.5,11697,0.000491274,250
+20261017-194052-bacef9,jev,7,pick,Q772725_fc_dynamo_brest,,,,,,,776.7,11944,0.000501648,250
+20261017-194052-bacef9,jev,8,pick,Q960312_express_f_c,,,,,,,595.2,1857,7.7994e-05,32
+20261017-194052-bacef9,jev,9,pick,Q2829395_al_orouba_sc,,,,,,,572.0,587,2.4654e-05,6
+20261017-194052-bacef9,jev,10,visit,Q16058090_hamed_adesope,Q2829395_al_orouba_sc,Club,"Al-Orouba SC, thành lập năm 1970, thi đấu tại Oman Professional League, sân nhà Sur Sports Complex.",,,0.07,688.3,542,2.2764e-05,2
+20261017-194052-bacef9,jev,11,visit,,Q16058090_hamed_adesope,Player,"Hamed Adesope, sinh 22/10/1982, vị trí hậu vệ, quốc tịch Việt Nam.",Q2829395_al_orouba_sc,PLAYED_FOR (in),0.5,538.3,854,3.5868e-05,8
+20261017-194052-bacef9,ollama,1,domain,football_vn,,,,,,,1053.3,333,0.0,
+20261017-194052-bacef9,ollama,2,label,Player,,,,,,,971.9,313,0.0,
+20261017-194052-bacef9,ollama,3,pick,Q11735696_karim_kamanzi,,,,,,,19589.4,9117,0.0,250
+20261017-194052-bacef9,ollama,4,pick,Q2757533_teslim_fatusi,,,,,,,21205.9,8971,0.0,250
+20261017-194052-bacef9,ollama,5,pick,Q963320_patiyo_tambwe,,,,,,,5204.2,1837,0.0,47
+20261017-194052-bacef9,ollama,6,pick,Q2757533_teslim_fatusi,,,,,,,1471.5,344,0.0,3
+20261017-194052-bacef9,ollama,7,visit,Q994119_surulere,Q2757533_teslim_fatusi,Player,"Teslim Fatusi, sinh 17/09/1977, vị trí wing half, quốc tịch Nigeria.",,,0.0,2567.6,1126,0.0,18
+20261017-194052-bacef9,ollama,8,visit,none,Q994119_surulere,Place,Surulere — địa điểm.,Q2757533_teslim_fatusi,BORN_IN (out),0.0,3552.6,358,0.0,0
+20261017-194052-bacef9,ollama,9,visit,Q3115652_stationery_stores_f_c,Q2757533_teslim_fatusi,Player,"Teslim Fatusi, sinh 17/09/1977, vị trí wing half, quốc tịch Nigeria.",Q2757533_teslim_fatusi,backtrack,0.0,2265.9,1106,0.0,17
+20261017-194052-bacef9,ollama,10,visit,Q673598_onikan_stadium,Q3115652_stationery_stores_f_c,Club,"Stationery Stores F.C., thành lập năm 1958, thi đấu tại Nigeria National League, sân nhà Onikan Stadium.",Q2757533_teslim_fatusi,PLAYED_FOR (out),0.0,1365.8,397,0.0,1
+20261017-194052-bacef9,ollama,11,visit,Q1294346_bridge_f_c,Q673598_onikan_stadium,Place,Onikan Stadium — địa điểm.,Q3115652_stationery_stores_f_c,HOME_VENUE (out),0.0,1553.9,397,0.0,1
+20261017-194052-bacef9,ollama,12,visit,Q1951978_muisi_ajao,Q1294346_bridge_f_c,Club,"Bridge F.C., thành lập năm 1975, thi đấu tại Nigeria Premier Football League, sân nhà Onikan Stadium.",Q673598_onikan_stadium,HOME_VENUE (in),0.0,1132.5,419,0.0,1
+20261017-194052-bacef9,ollama,13,visit,Q8673_lagos,Q1951978_muisi_ajao,Player,"Muisi Ajao, sinh 02/12/1978, vị trí hậu vệ, quốc tịch Nigeria.",Q1294346_bridge_f_c,PLAYED_FOR (in),0.0,1850.9,788,0.0,11
+20261017-194052-bacef9,ollama,14,visit,Q6285852_joseph_nwafor,Q8673_lagos,Place,Lagos — địa điểm.,Q1951978_muisi_ajao,BORN_IN (out),0.0,2052.1,760,0.0,10
+20261017-194052-bacef9,ollama,15,visit,none,Q6285852_joseph_nwafor,Player,"Joseph Nwafor, sinh 05/05/1983, vị trí tiền đạo, quốc tịch Nigeria.",Q8673_lagos,BORN_IN (in),0.0,2752.8,800,0.0,9
+20261017-194052-bacef9,ollama,16,visit,Q111714_adebowale_ogungbure,Q8673_lagos,Place,Lagos — địa điểm.,Q8673_lagos,backtrack,0.0,1557.9,721,0.0,9
+20261017-194052-bacef9,ollama,17,visit,none,Q111714_adebowale_ogungbure,Player,"Adebowale Ogungbure, sinh 13/07/1981, vị trí tiền vệ, quốc tịch Nigeria, Đức.",Q8673_lagos,BORN_IN (in),0.0,1583.2,713,0.0,8
+20261017-194052-bacef9,ollama,18,visit,Q6107684_sam_ayorinde,Q8673_lagos,Place,Lagos — địa điểm.,Q8673_lagos,backtrack,0.0,2492.3,678,0.0,8
+20261017-194052-bacef9,ollama,19,visit,Q1960026_nepa_lagos,Q6107684_sam_ayorinde,Player,"Sam Ayorinde, sinh 20/10/1974, vị trí tiền đạo, quốc tịch Nigeria.",Q8673_lagos,BORN_IN (in),0.0,2743.0,1172,0.0,20
+20261017-194052-bacef9,ollama,20,visit,none,Q1960026_nepa_lagos,Club,NEPA Lagos.,Q6107684_sam_ayorinde,PLAYED_FOR (out),0.0,1242.0,355,0.0,0
+20261017-194052-bacef9,ollama,21,visit,Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,Q6107684_sam_ayorinde,Player,"Sam Ayorinde, sinh 20/10/1974, vị trí tiền đạo, quốc tịch Nigeria.",Q6107684_sam_ayorinde,backtrack,0.0,2603.6,1155,0.0,19
+20261017-194052-bacef9,ollama,22,visit,Q2026903_ganiyu_bolayi_oseni,Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,Club,Đội tuyển bóng đá quốc gia Nigeria.,Q6107684_sam_ayorinde,PLAYED_FOR (out),0.0,1460.8,562,0.0,5
+20261017-194052-bacef9,ollama,23,visit,Q868203_osogbo,Q2026903_ganiyu_bolayi_oseni,Player,"Ganiyu Bolayi Oseni, sinh 19/09/1991, vị trí tiền đạo, quốc tịch Nigeria.",Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,PLAYED_FOR (in),0.0,3051.8,823,0.0,10
+20261017-194052-bacef9,ollama,24,visit,none,Q868203_osogbo,Place,Osogbo — địa điểm.,Q2026903_ganiyu_bolayi_oseni,BORN_IN (out),0.0,1306.8,358,0.0,0
+20261017-194052-bacef9,ollama,25,visit,Q3403195_osun_united_f_c,Q2026903_ganiyu_bolayi_oseni,Player,"Ganiyu Bolayi Oseni, sinh 19/09/1991, vị trí tiền đạo, quốc tịch Nigeria.",Q2026903_ganiyu_bolayi_oseni,backtrack,0.0,1816.8,804,0.0,9
+20261017-194052-bacef9,ollama,26,visit,none,Q3403195_osun_united_f_c,Club,"Osun United F.C., thành lập năm 1996, thi đấu tại Nigeria National League, sân nhà Oshogbo Stadium.",Q2026903_ganiyu_bolayi_oseni,PLAYED_FOR (out),0.0,1368.8,440,0.0,2
+20261017-194052-bacef9,ollama,27,visit,none,Q2026903_ganiyu_bolayi_oseni,Player,"Ganiyu Bolayi Oseni, sinh 19/09/1991, vị trí tiền đạo, quốc tịch Nigeria.",Q2026903_ganiyu_bolayi_oseni,backtrack,0.0,1673.2,762,0.0,8
+20261017-194052-bacef9,ollama,28,visit,Q3356935_osas_idehen,Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,Club,Đội tuyển bóng đá quốc gia Nigeria.,Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,backtrack,0.0,1366.5,519,0.0,4
+20261017-194052-bacef9,ollama,29,visit,Q1051147_enyimba_international_f_c,Q3356935_osas_idehen,Player,"Osas Idehen, sinh 13/05/1990, vị trí tiền đạo, quốc tịch Nigeria.",Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,PLAYED_FOR (in),0.0,1412.6,632,0.0,6
+20261017-194052-bacef9,ollama,30,visit,Q7807033_timothy_anjembe,Q1051147_enyimba_international_f_c,Club,"Enyimba International F.C., thành lập năm 1976, thi đấu tại Nigeria Premier Football League, sân nhà Enyimba International Stadium.",Q3356935_osas_idehen,PLAYED_FOR (out),0.0,2789.1,443,0.0,2
+20261017-194052-bacef9,ollama,31,visit,Q2178141_zamfara_united_f_c,Q7807033_timothy_anjembe,Player,"Timothy Anjembe, sinh 20/09/1987, vị trí tiền đạo, quốc tịch Nigeria.",Q1051147_enyimba_international_f_c,PLAYED_FOR (in),0.0,1741.2,761,0.0,8
+20261017-194052-bacef9,ollama,32,visit,Q1266564_sardauna_memorial_stadium,Q2178141_zamfara_united_f_c,Club,"Zamfara United F.C., thành lập năm 2001, thi đấu tại Nigeria National League, sân nhà Sardauna Memorial Stadium.",Q7807033_timothy_anjembe,PLAYED_FOR (out),0.0,1321.8,403,0.0,1
+20261017-194052-bacef9,ollama,33,visit,none,Q1266564_sardauna_memorial_stadium,Place,Sardauna Memorial Stadium — địa điểm.,Q2178141_zamfara_united_f_c,HOME_VENUE (out),0.0,997.4,360,0.0,0
+20261017-194052-bacef9,ollama,34,visit,Q2425179_gboko,Q7807033_timothy_anjembe,Player,"Timothy Anjembe, sinh 20/09/1987, vị trí tiền đạo, quốc tịch Nigeria.",Q7807033_timothy_anjembe,backtrack,0.0,1496.5,717,0.0,7
+20261017-194052-bacef9,ollama,35,visit,none,Q2425179_gboko,Place,Gboko — địa điểm.,Q7807033_timothy_anjembe,BORN_IN (out),0.0,1054.8,357,0.0,0
+20261017-194052-bacef9,ollama,36,visit,none,Q7807033_timothy_anjembe,Player,"Timothy Anjembe, sinh 20/09/1987, vị trí tiền đạo, quốc tịch Nigeria.",Q7807033_timothy_anjembe,backtrack,0.0,1560.5,699,0.0,6
+20261017-194052-bacef9,ollama,37,visit,Q673930_enyimba_international_stadium,Q1051147_enyimba_international_f_c,Club,"Enyimba International F.C., thành lập năm 1976, thi đấu tại Nigeria Premier Football League, sân nhà Enyimba International Stadium.",Q1051147_enyimba_international_f_c,backtrack,0.0,2899.9,404,0.0,1
+20261017-194052-bacef9,ollama,38,visit,none,Q673930_enyimba_international_stadium,Place,Enyimba International Stadium — địa điểm.,Q1051147_enyimba_international_f_c,HOME_VENUE (out),0.0,1008.5,360,0.0,0
+20261017-194052-bacef9,ollama,39,visit,Q203301_umuahia,Q3356935_osas_idehen,Player,"Osas Idehen, sinh 13/05/1990, vị trí tiền đạo, quốc tịch Nigeria.",Q3356935_osas_idehen,backtrack,0.0,1308.9,587,0.0,5
+20261017-194052-bacef9,ollama,40,visit,none,Q203301_umuahia,Place,Umuahia — địa điểm.,Q3356935_osas_idehen,BORN_IN (out),0.0,1086.0,359,0.0,0
+20261017-194052-bacef9,ollama,41,visit,none,Q3356935_osas_idehen,Player,"Osas Idehen, sinh 13/05/1990, vị trí tiền đạo, quốc tịch Nigeria.",Q3356935_osas_idehen,backtrack,0.0,1263.0,567,0.0,4
+20261017-194052-bacef9,ollama,42,visit,Q1338288_emmanuel_izuagha,Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,Club,Đội tuyển bóng đá quốc gia Nigeria.,Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,backtrack,0.0,2580.2,480,0.0,3
+20261017-194052-bacef9,ollama,43,visit,Q1033_nigeria,Q1338288_emmanuel_izuagha,Player,"Emmanuel Izuagha, sinh 02/02/1980, vị trí hậu vệ trung tâm, quốc tịch Nigeria.",Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,PLAYED_FOR (in),0.0,1716.8,762,0.0,10
+20261017-194052-bacef9,ollama,44,visit,none,Q1033_nigeria,Place,Nigeria — địa điểm.,Q1338288_emmanuel_izuagha,BORN_IN (out),0.0,3064.9,717,0.0,9
+20261017-194052-bacef9,ollama,45,visit,none,Q1338288_emmanuel_izuagha,Player,"Emmanuel Izuagha, sinh 02/02/1980, vị trí hậu vệ trung tâm, quốc tịch Nigeria.",Q1338288_emmanuel_izuagha,backtrack,0.0,1718.7,745,0.0,9
+20261017-194052-bacef9,ollama,46,visit,Q2887409_bassey_akpan,Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,Club,Đội tuyển bóng đá quốc gia Nigeria.,Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,backtrack,0.0,1088.5,439,0.0,2
+20261017-194052-bacef9,ollama,47,visit,Q3321199_eket,Q2887409_bassey_akpan,Player,"Bassey Akpan, sinh 06/01/1984, vị trí thủ môn, quốc tịch Nigeria.",Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,PLAYED_FOR (in),0.0,1566.2,702,0.0,8
+20261017-194052-bacef9,ollama,48,visit,none,Q3321199_eket,Place,Eket — địa điểm.,Q2887409_bassey_akpan,BORN_IN (out),0.0,1105.7,357,0.0,0
+20261017-194052-bacef9,ollama,49,visit,none,Q2887409_bassey_akpan,Player,"Bassey Akpan, sinh 06/01/1984, vị trí thủ môn, quốc tịch Nigeria.",Q2887409_bassey_akpan,backtrack,0.0,1565.0,684,0.0,7
+20261017-194052-bacef9,ollama,50,visit,Q16058090_hamed_adesope,Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,Club,Đội tuyển bóng đá quốc gia Nigeria.,Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,backtrack,0.0,3118.4,400,0.0,1
+20261017-194052-bacef9,ollama,51,visit,Q2829395_al_orouba_sc,Q16058090_hamed_adesope,Player,"Hamed Adesope, sinh 22/10/1982, vị trí hậu vệ, quốc tịch Việt Nam.",Q181930_đội_tuyển_bóng_đá_quốc_gia_nigeria,PLAYED_FOR (in),0.0,1530.5,670,0.0,7
+20261017-194052-bacef9,ollama,52,visit,Q7645240_sur_sports_complex,Q2829395_al_orouba_sc,Club,"Al-Orouba SC, thành lập năm 1970, thi đấu tại Oman Professional League, sân nhà Sur Sports Complex.",Q16058090_hamed_adesope,PLAYED_FOR (out),0.0,2630.9,398,0.0,1
+20261017-194052-bacef9,ollama,53,visit,none,Q7645240_sur_sports_complex,Place,Sur Sports Complex — địa điểm.,Q2829395_al_orouba_sc,HOME_VENUE (out),0.0,1026.5,358,0.0,0
+20261017-194052-bacef9,ollama,54,visit,Q3090612_kwara_united_f_c,Q16058090_hamed_adesope,Player,"Hamed Adesope, sinh 22/10/1982, vị trí hậu vệ, quốc tịch Việt Nam.",Q16058090_hamed_adesope,backtrack,0.0,1273.9,629,0.0,6
+20261017-194052-bacef9,ollama,55,visit,Q1243544_kwara_state_stadium,Q3090612_kwara_united_f_c,Club,"Kwara United F.C., thành lập năm 1997, thi đấu tại Nigeria Premier Football League, sân nhà Kwara State Stadium.",Q16058090_hamed_adesope,PLAYED_FOR (out),0.0,2651.9,401,0.0,1
+20261017-194052-bacef9,ollama,56,visit,none,Q1243544_kwara_state_stadium,Place,Kwara State Stadium — địa điểm.,Q3090612_kwara_united_f_c,HOME_VENUE (out),0.0,961.8,359,0.0,0
+20261017-194052-bacef9,ollama,57,visit,Q1512943_shooting_stars_sc,Q16058090_hamed_adesope,Player,"Hamed Adesope, sinh 22/10/1982, vị trí hậu vệ, quốc tịch Việt Nam.",Q16058090_hamed_adesope,backtrack,0.0,1269.1,586,0.0,5
+20261017-194052-bacef9,ollama,58,visit,none,Q1512943_shooting_stars_sc,Club,"Shooting Stars SC, thành lập năm 1950, thi đấu tại Nigeria Premier Football League, sân nhà Lekan Salami Stadium.",Q16058090_hamed_adesope,PLAYED_FOR (out),0.0,2077.1,400,0.0,1
+20261017-194052-bacef9,ollama,59,visit,Q183298_ibadan,Q16058090_hamed_adesope,Player,"Hamed Adesope, sinh 22/10/1982, vị trí hậu vệ, quốc tịch Việt Nam.",Q16058090_hamed_adesope,backtrack,0.0,1405.5,545,0.0,4
+20261017-194052-bacef9,ollama,60,visit,none,Q183298_ibadan,Place,Ibadan — địa điểm.,Q16058090_hamed_adesope,BORN_IN (out),0.0,978.3,356,0.0,0
+20261017-194052-bacef9,ollama,61,visit,Q1089889_churchill_brothers_s_c,Q16058090_hamed_adesope,Player,"Hamed Adesope, sinh 22/10/1982, vị trí hậu vệ, quốc tịch Việt Nam.",Q16058090_hamed_adesope,backtrack,0.0,1228.6,528,0.0,3
+20261017-194052-bacef9,ollama,62,visit,Q1398213_fatorda_stadium,Q1089889_churchill_brothers_s_c,Club,"Churchill Brothers S.C., thành lập năm 1988, thi đấu tại I-League, sân nhà Fatorda Stadium.",Q16058090_hamed_adesope,PLAYED_FOR (out),0.0,1301.3,397,0.0,1
+20261017-194052-bacef9,ollama,63,visit,none,Q1398213_fatorda_stadium,Place,Fatorda Stadium — địa điểm.,Q1089889_churchill_brothers_s_c,HOME_VENUE (out),0.0,961.9,358,0.0,0
+20261017-194052-bacef9,ollama,64,visit,none,Q16058090_hamed_adesope,Player,"Hamed Adesope, sinh 22/10/1982, vị trí hậu vệ, quốc tịch Việt Nam.",Q16058090_hamed_adesope,backtrack,0.0,1097.9,488,0.0,2
+20261017-194052-bacef9,ollama,65,visit,Q632990_câu_lạc_bộ_bóng_đá_shb_đà_nẵng,Q6107684_sam_ayorinde,Player,"Sam Ayorinde, sinh 20/10/1974, vị trí tiền đạo, quốc tịch Nigeria.",Q6107684_sam_ayorinde,backtrack,0.0,2614.6,1133,0.0,18
+20261017-194052-bacef9,ollama,66,visit,Q18921784_giang_trần_quách_tân,Q632990_câu_lạc_bộ_bóng_đá_shb_đà_nẵng,Club,"Câu lạc bộ bóng đá SHB Đà Nẵng, thành lập năm 1976, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Hòa Xuân.",Q6107684_sam_ayorinde,PLAYED_FOR (out),0.0,6021.9,2891,0.0,62
+20261017-194052-bacef9,ollama,67,visit,Q25282_đà_nẵng,Q18921784_giang_trần_quách_tân,Player,"Giang Trần Quách Tân, sinh 08/03/1992, vị trí wing half, quốc tịch Việt Nam.",Q632990_câu_lạc_bộ_bóng_đá_shb_đà_nẵng,PLAYED_FOR (in),0.0,3058.6,426,0.0,2
+20261017-194052-bacef9,ollama,68,visit,Q7939145_võ_hoàng_quảng,Q25282_đà_nẵng,Place,Đà Nẵng — địa điểm.,Q18921784_giang_trần_quách_tân,BORN_IN (out),0.0,1838.6,723,0.0,9
+20261017-194052-bacef9,ollama,69,visit,Q560392_câu_lạc_bộ_bóng_đá_hà_nội,Q7939145_võ_hoàng_quảng,Player,"Võ Hoàng Quảng, sinh 02/05/1987, vị trí hậu vệ, quốc tịch Việt Nam.",Q25282_đà_nẵng,BORN_IN (in),0.0,3099.0,496,0.0,3
+20261017-194052-bacef9,ollama,70,visit,Q4016772_nguyễn_văn_quyết,Q560392_câu_lạc_bộ_bóng_đá_hà_nội,Club,"Câu lạc bộ bóng đá Hà Nội, thành lập năm 2006, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Hàng Đẫy.",Q7939145_võ_hoàng_quảng,PLAYED_FOR (out),0.0,6561.8,3570,0.0,80
+20261017-194052-bacef9,ollama,71,visit,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,Q4016772_nguyễn_văn_quyết,Player,"Nguyễn Văn Quyết, sinh 01/07/1991, vị trí tiền vệ, wing half, quốc tịch Việt Nam.",Q560392_câu_lạc_bộ_bóng_đá_hà_nội,PLAYED_FOR (in),0.0,4852.2,548,0.0,5
+20261017-194052-bacef9,ollama,72,visit,Q7487605_shamo_abbey,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,Club,"Câu lạc bộ bóng đá Thể Công – Viettel, thành lập năm 1954, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Hàng Đẫy.",Q4016772_nguyễn_văn_quyết,PLAYED_FOR (out),0.0,3389.8,1705,0.0,33
+20261017-194052-bacef9,ollama,73,visit,Q995578_salaga,Q7487605_shamo_abbey,Player,"Shamo Abbey, sinh 03/09/1980, vị trí tiền đạo, quốc tịch Ghana.",Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,PLAYED_FOR (in),0.0,4515.5,783,0.0,10
+20261017-194052-bacef9,ollama,74,visit,none,Q995578_salaga,Place,Salaga — địa điểm.,Q7487605_shamo_abbey,BORN_IN (out),0.0,1073.0,357,0.0,0
+20261017-194052-bacef9,ollama,75,visit,Q3350125_okwawu_united,Q7487605_shamo_abbey,Player,"Shamo Abbey, sinh 03/09/1980, vị trí tiền đạo, quốc tịch Ghana.",Q7487605_shamo_abbey,backtrack,0.0,1601.7,765,0.0,9
+20261017-194052-bacef9,ollama,76,visit,none,Q3350125_okwawu_united,Club,Okwawu United.,Q7487605_shamo_abbey,PLAYED_FOR (out),0.0,1866.2,357,0.0,0
+20261017-194052-bacef9,ollama,77,visit,none,Q7487605_shamo_abbey,Player,"Shamo Abbey, sinh 03/09/1980, vị trí tiền đạo, quốc tịch Ghana.",Q7487605_shamo_abbey,backtrack,0.0,1736.5,747,0.0,8
+20261017-194052-bacef9,ollama,78,visit,Q1105571_attila_katona,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,Club,"Câu lạc bộ bóng đá Thể Công – Viettel, thành lập năm 1954, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Hàng Đẫy.",Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,backtrack,0.0,4490.0,1666,0.0,32
+20261017-194052-bacef9,ollama,79,visit,Q855763_bőcs_ksc,Q1105571_attila_katona,Player,"Attila Katona, sinh 16/06/1981, vị trí hậu vệ, quốc tịch Hungary.",Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,PLAYED_FOR (in),0.0,3734.5,652,0.0,7
+20261017-194052-bacef9,ollama,80,visit,none,Q855763_bőcs_ksc,Club,"Bőcs KSC, thành lập năm 1948.",Q1105571_attila_katona,PLAYED_FOR (out),0.0,1508.6,366,0.0,0
+20261017-194052-bacef9,ollama,81,visit,Q787320_bfc_siófok,Q1105571_attila_katona,Player,"Attila Katona, sinh 16/06/1981, vị trí hậu vệ, quốc tịch Hungary.",Q1105571_attila_katona,backtrack,0.0,1376.1,625,0.0,6
+20261017-194052-bacef9,ollama,82,visit,none,Q787320_bfc_siófok,Club,"BFC Siófok, thành lập năm 1921, thi đấu tại Giải bóng đá vô địch quốc gia Hungary, sân nhà Révész Street Stadium.",Q1105571_attila_katona,PLAYED_FOR (out),0.0,1988.7,487,0.0,3
+20261017-194052-bacef9,ollama,83,visit,Q910588_egri_fc,Q1105571_attila_katona,Player,"Attila Katona, sinh 16/06/1981, vị trí hậu vệ, quốc tịch Hungary.",Q1105571_attila_katona,backtrack,0.0,3187.4,578,0.0,5
+20261017-194052-bacef9,ollama,84,visit,Q1419961_joël_tchami,Q910588_egri_fc,Club,"Egri FC, thành lập năm 1907, thi đấu tại Giải bóng đá vô địch quốc gia Hungary, sân nhà Szentmarjay Tibor Városi Stadion.",Q1105571_attila_katona,PLAYED_FOR (out),0.0,1150.5,449,0.0,2
+20261017-194052-bacef9,ollama,85,visit,Q667828_bafang,Q1419961_joël_tchami,Player,"Joël Tchami, sinh 25/03/1982, vị trí tiền đạo, quốc tịch Cameroon.",Q910588_egri_fc,PLAYED_FOR (in),0.0,2265.7,1027,0.0,15
+20261017-194052-bacef9,ollama,86,visit,none,Q667828_bafang,Place,Bafang — địa điểm.,Q1419961_joël_tchami,BORN_IN (out),0.0,1255.6,358,0.0,0
+20261017-194052-bacef9,ollama,87,visit,none,Q1419961_joël_tchami,Player,"Joël Tchami, sinh 25/03/1982, vị trí tiền đạo, quốc tịch Cameroon.",Q1419961_joël_tchami,backtrack,0.0,2013.8,1007,0.0,14
+20261017-194052-bacef9,ollama,88,visit,Q966164_szentmarjay_tibor_városi_stadion,Q910588_egri_fc,Club,"Egri FC, thành lập năm 1907, thi đấu tại Giải bóng đá vô địch quốc gia Hungary, sân nhà Szentmarjay Tibor Városi Stadion.",Q910588_egri_fc,backtrack,0.0,2839.0,410,0.0,1
+20261017-194052-bacef9,ollama,89,visit,none,Q966164_szentmarjay_tibor_városi_stadion,Place,Szentmarjay Tibor Városi Stadion — địa điểm.,Q910588_egri_fc,HOME_VENUE (out),0.0,1005.0,363,0.0,0
+20261017-194052-bacef9,ollama,90,visit,Q767400_diósgyőri_vtk,Q1105571_attila_katona,Player,"Attila Katona, sinh 16/06/1981, vị trí hậu vệ, quốc tịch Hungary.",Q1105571_attila_katona,backtrack,0.0,1313.0,530,0.0,4
+20261017-194052-bacef9,ollama,91,visit,Q901017_dvtk_stadion,Q767400_diósgyőri_vtk,Club,"Diósgyőri VTK, thành lập năm 1910, thi đấu tại Nemzeti Bajnokság II, sân nhà DVTK Stadion.",Q1105571_attila_katona,PLAYED_FOR (out),0.0,1131.2,405,0.0,1
+20261017-194052-bacef9,ollama,92,visit,none,Q901017_dvtk_stadion,Place,DVTK Stadion — địa điểm.,Q767400_diósgyőri_vtk,HOME_VENUE (out),0.0,987.0,359,0.0,0
+20261017-194052-bacef9,ollama,93,visit,Q205732_debreceni_vsc,Q1105571_attila_katona,Player,"Attila Katona, sinh 16/06/1981, vị trí hậu vệ, quốc tịch Hungary.",Q1105571_attila_katona,backtrack,0.0,1167.2,483,0.0,3
+20261017-194052-bacef9,ollama,94,visit,Q736187_stadion_oláh_gábor_út,Q205732_debreceni_vsc,Club,"Debreceni VSC, thành lập năm 1902, thi đấu tại Giải bóng đá vô địch quốc gia Hungary, sân nhà Stadion Oláh Gábor Út.",Q1105571_attila_katona,PLAYED_FOR (out),0.0,1710.8,410,0.0,1
+20261017-194052-bacef9,ollama,95,visit,none,Q736187_stadion_oláh_gábor_út,Place,Stadion Oláh Gábor Út — địa điểm.,Q205732_debreceni_vsc,HOME_VENUE (out),0.0,954.7,362,0.0,0
+20261017-194052-bacef9,ollama,96,visit,Q167109_eger,Q1105571_attila_katona,Player,"Attila Katona, sinh 16/06/1981, vị trí hậu vệ, quốc tịch Hungary.",Q1105571_attila_katona,backtrack,0.0,1184.9,434,0.0,2
+20261017-194052-bacef9,ollama,97,visit,none,Q167109_eger,Place,Eger — địa điểm.,Q1105571_attila_katona,BORN_IN (out),0.0,1036.3,357,0.0,0
+20261017-194052-bacef9,ollama,98,visit,Q372665_fc_veszprém,Q1105571_attila_katona,Player,"Attila Katona, sinh 16/06/1981, vị trí hậu vệ, quốc tịch Hungary.",Q1105571_attila_katona,backtrack,0.0,1105.0,416,0.0,1
+20261017-194052-bacef9,ollama,99,visit,none,Q372665_fc_veszprém,Club,"FC Veszprém, thành lập năm 1912, thi đấu tại Nemzeti Bajnokság II.",Q1105571_attila_katona,PLAYED_FOR (out),0.0,1128.5,377,0.0,0
+20261017-194052-bacef9,ollama,100,visit,Q7180369_phạm_minh_đức,Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,Club,"Câu lạc bộ bóng đá Thể Công – Viettel, thành lập năm 1954, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Hàng Đẫy.",Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,backtrack,0.0,3085.4,1626,0.0,31
+20261017-194052-bacef9,ollama,101,visit,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Q7180369_phạm_minh_đức,Player,"Phạm Minh Đức, sinh 05/05/1976, vị trí hậu vệ, quốc tịch Việt Nam.",Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel,PLAYED_FOR (in),0.0,5814.5,647,0.0,6
+20261017-194052-bacef9,ollama,102,visit,Q1387184_phan_thanh_bình,Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,Club,"Câu lạc bộ bóng đá Hoàng Anh Gia Lai, thành lập năm 2001, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Pleiku.",Q7180369_phạm_minh_đức,PLAYED_FOR (out),0.0,7724.1,4121,0.0,91
+20261017-194052-bacef9,ollama,103,visit,Q342558_câu_lạc_bộ_bóng_đá_đồng_tâm_long_an,Q1387184_phan_thanh_bình,Player,"Phan Thanh Bình, sinh 01/11/1986, vị trí tiền đạo, quốc tịch Việt Nam.",Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai,PLAYED_FOR (in),0.0,3819.4,654,0.0,7
+20261017-194052-bacef9,ollama,104,visit,Q5484048_francisco_vital,Q342558_câu_lạc_bộ_bóng_đá_đồng_tâm_long_an,Club,"Câu lạc bộ bóng đá Đồng Tâm Long An, thành lập năm 2000, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Long An.",Q1387184_phan_thanh_bình,PLAYED_FOR (out),0.0,3609.8,1815,0.0,36
+20261017-194052-bacef9,ollama,105,visit,Q83247_braga,Q5484048_francisco_vital,Player,"Francisco Vital, sinh 27/06/1954, vị trí tiền đạo, quốc tịch Bồ Đào Nha.",Q342558_câu_lạc_bộ_bóng_đá_đồng_tâm_long_an,PLAYED_FOR (in),0.0,4686.0,1376,0.0,23
+20261017-194052-bacef9,ollama,106,visit,none,Q83247_braga,Place,Braga — địa điểm.,Q5484048_francisco_vital,BORN_IN (out),0.0,3471.3,356,0.0,0
+20261017-194052-bacef9,ollama,107,visit,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,Q5484048_francisco_vital,Player,"Francisco Vital, sinh 27/06/1954, vị trí tiền đạo, quốc tịch Bồ Đào Nha.",Q5484048_francisco_vital,backtrack,0.0,2822.9,1358,0.0,22
+20261017-194052-bacef9,ollama,108,visit,Q21642860_nguyễn_xuân_luân,Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,Club,"Câu lạc bộ bóng đá Becamex Bình Dương, thành lập năm 1976, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Gò Đậu.",Q5484048_francisco_vital,PLAYED_FOR (out),0.0,7800.8,3741,0.0,84
+20261017-194052-bacef9,ollama,109,visit,Q1116951_câu_lạc_bộ_bóng_đá_xi_măng_the_vissai_ni,Q21642860_nguyễn_xuân_luân,Player,"Nguyễn Xuân Luân, sinh 11/09/1987, vị trí hậu vệ, quốc tịch Việt Nam.",Q813571_câu_lạc_bộ_bóng_đá_becamex_bình_dương,PLAYED_FOR (in),0.0,2199.1,565,0.0,4
+20261017-194052-bacef9,ollama,110,visit,Q2628375_ibrahim_abdul_razak,Q1116951_câu_lạc_bộ_bóng_đá_xi_măng_the_vissai_ni,Club,"Câu lạc bộ bóng đá Xi măng The Vissai Ninh Bình, thành lập năm 2007, thi đấu tại Giải bóng đá vô địch quốc gia Việt Nam, sân nhà Sân vận động Ninh Bình.",Q21642860_nguyễn_xuân_luân,PLAYED_FOR (out),0.0,3429.5,1717,0.0,33
+20261017-194052-bacef9,ollama,111,visit,Q603633_liberty_professionals_f_c,Q2628375_ibrahim_abdul_razak,Player,"Ibrahim Abdul Razak, sinh 18/04/1983, vị trí tiền vệ, quốc tịch Ghana.",Q1116951_câu_lạc_bộ_bóng_đá_xi_măng_the_vissai_ni,PLAYED_FOR (in),0.0,4091.6,1058,0.0,18
+20261017-194052-bacef9,ollama,112,visit,Q2700025_jonathan_quartey,Q603633_liberty_professionals_f_c,Club,"Liberty Professionals F.C., thành lập năm 1996, thi đấu tại Ghana Premier League.",Q2628375_ibrahim_abdul_razak,PLAYED_FOR (out),0.0,2533.7,492,0.0,3
+20261017-194052-bacef9,ollama,113,visit,Q3761_accra,Q2700025_jonathan_quartey,Player,"Jonathan Quartey, sinh 15/04/1988, vị trí hậu vệ, quốc tịch Ghana.",Q603633_liberty_professionals_f_c,PLAYED_FOR (in),0.0,1886.2,821,0.0,12
+20261017-194052-bacef9,ollama,114,visit,Q4668555_aboubakar_mahadi,Q3761_accra,Place,Accra — địa điểm.,Q2700025_jonathan_quartey,BORN_IN (out),0.0,1816.9,473,0.0,3
+20261017-194052-bacef9,ollama,115,visit,none,Q4668555_aboubakar_mahadi,Player,"Aboubakar Mahadi, sinh 29/11/1993, vị trí tiền đạo, quốc tịch Ghana.",Q3761_accra,BORN_IN (in),0.0,3050.5,679,0.0,7
+20261017-194052-bacef9,ollama,116,visit,Q706568_yaw_preko,Q3761_accra,Place,Accra — địa điểm.,Q3761_accra,backtrack,0.0,1232.6,433,0.0,2
+20261017-194052-bacef9,ollama,117,visit,Q339560_accra_hearts_of_oak_sc,Q706568_yaw_preko,Player,"Yaw Preko, sinh 08/09/1974, vị trí tiền đạo, quốc tịch Ghana.",Q3761_accra,BORN_IN (in),0.0,1806.2,761,0.0,10
+20261017-194052-bacef9,nvidia,1,domain,football_vn,,,,,,,4007.1,387,0.0,
+20261017-194052-bacef9,nvidia,2,label,Club,,,,,,,10327.1,358,0.0,
+20261017-194052-bacef9,nvidia,3,pick,Q11161007_mumias_sugar_f_c,,,,,,,40567.2,9058,0.0,250
+20261017-194052-bacef9,nvidia,4,pick,Q2165863_phuket_f_c,,,,,,,42751.2,8553,0.0,250
+20261017-194052-bacef9,nvidia,5,pick,Q2829395_al_orouba_sc,,,,,,,12448.0,8399,0.0,250
+20261017-194052-bacef9,nvidia,6,pick,Q4132655_sheikh_russel_kc,,,,,,,34419.7,8663,0.0,250
+20261017-194052-bacef9,nvidia,7,pick,Q7646985_suruhanjaya_perkhidmatan_awam_fc,,,,,,,22044.1,8866,0.0,250
+20261017-194052-bacef9,nvidia,8,pick,Q925147_clube_desportivo_dos_olivais_e_moscavide,,,,,,,9633.4,1470,0.0,32
+20261017-194052-bacef9,nvidia,9,pick,Q2829395_al_orouba_sc,,,,,,,3472.6,505,0.0,6
+20261017-194052-bacef9,nvidia,10,visit,Q16058090_hamed_adesope,Q2829395_al_orouba_sc,Club,"Al-Orouba SC, thành lập năm 1970, thi đấu tại Oman Professional League, sân nhà Sur Sports Complex.",,,0.0,7845.4,487,0.0,2
+20261017-194052-bacef9,nvidia,11,visit,Q183298_ibadan,Q16058090_hamed_adesope,Player,"Hamed Adesope, sinh 22/10/1982, vị trí hậu vệ, quốc tịch Việt Nam.",Q2829395_al_orouba_sc,PLAYED_FOR (in),0.1,7241.8,732,0.0,8
+20261017-194052-bacef9,nvidia,12,visit,none,Q183298_ibadan,Place,Ibadan — địa điểm.,Q16058090_hamed_adesope,BORN_IN (out),0.0,9092.7,411,0.0,0
+20261017-194052-bacef9,nvidia,13,visit,none,Q16058090_hamed_adesope,Player,"Hamed Adesope, sinh 22/10/1982, vị trí hậu vệ, quốc tịch Việt Nam.",Q16058090_hamed_adesope,backtrack,0.1,13367.0,715,0.0,7
+20261017-194052-bacef9,nvidia,14,visit,Q7645240_sur_sports_complex,Q2829395_al_orouba_sc,Club,"Al-Orouba SC, thành lập năm 1970, thi đấu tại Oman Professional League, sân nhà Sur Sports Complex.",Q2829395_al_orouba_sc,backtrack,0.0,4990.2,450,0.0,1
+20261017-194052-bacef9,nvidia,15,visit,none,Q7645240_sur_sports_complex,Place,Sur Sports Complex — địa điểm.,Q2829395_al_orouba_sc,HOME_VENUE (out),0.0,13795.7,412,0.0,0

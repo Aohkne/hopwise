@@ -1,0 +1,13 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-201237-cc378d,jev,1,domain,vinfast,,,,,,,620.0,420,1.764e-05,
+20261017-201237-cc378d,jev,2,label,Factory,,,,,,,688.9,509,2.1378e-05,
+20261017-201237-cc378d,jev,3,pick,sec_factory_subang,,,,,,,587.6,555,2.331e-05,5
+20261017-201237-cc378d,jev,4,visit,,sec_factory_subang,Factory,"Nhà máy VinFast tại Subang, West Java, Indonesia, khánh thành tháng 12/2025, công suất 50,000 xe/năm.",,,0.93,602.4,560,2.352e-05,2
+20261017-201237-cc378d,ollama,1,domain,vinfast,,,,,,,2612.3,321,0.0,
+20261017-201237-cc378d,ollama,2,label,Factory,,,,,,,902.1,348,0.0,
+20261017-201237-cc378d,ollama,3,pick,sec_factory_subang,,,,,,,1081.1,433,0.0,5
+20261017-201237-cc378d,ollama,4,visit,,sec_factory_subang,Factory,"Nhà máy VinFast tại Subang, West Java, Indonesia, khánh thành tháng 12/2025, công suất 50,000 xe/năm.",,,1.0,1287.7,453,0.0,2
+20261017-201237-cc378d,nvidia,1,domain,vinfast,,,,,,,36716.5,374,0.0,
+20261017-201237-cc378d,nvidia,2,label,Factory,,,,,,,10222.6,396,0.0,
+20261017-201237-cc378d,nvidia,3,pick,sec_factory_subang,,,,,,,1621.5,458,0.0,5
+20261017-201237-cc378d,nvidia,4,visit,,sec_factory_subang,Factory,"Nhà máy VinFast tại Subang, West Java, Indonesia, khánh thành tháng 12/2025, công suất 50,000 xe/năm.",,,1.0,6686.8,497,0.0,2

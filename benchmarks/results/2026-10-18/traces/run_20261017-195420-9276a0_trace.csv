@@ -1,0 +1,26 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-195420-9276a0,jev,1,domain,football_vn,,,,,,,1182.6,435,1.827e-05,
+20261017-195420-9276a0,jev,2,label,Club,,,,,,,790.2,446,1.8732e-05,
+20261017-195420-9276a0,jev,3,pick,Q1542713_minnesota_thunder,,,,,,,811.4,12080,0.00050736,250
+20261017-195420-9276a0,jev,4,pick,Q161554_chemnitzer_fc,,,,,,,792.0,11584,0.000486528,250
+20261017-195420-9276a0,jev,5,pick,Q309095_new_england_revolution,,,,,,,821.1,11399,0.000478758,250
+20261017-195420-9276a0,jev,6,pick,Q48834603_cincinnati_bearcats_men_s_soccer,,,,,,,786.1,11698,0.000491316,250
+20261017-195420-9276a0,jev,7,pick,Q876568_mvv_maastricht,,,,,,,747.8,11945,0.00050169,250
+20261017-195420-9276a0,jev,8,pick,Q972741_fort_lauderdale_strikers,,,,,,,593.7,1858,7.8036e-05,32
+20261017-195420-9276a0,jev,9,pick,Q48834603_cincinnati_bearcats_men_s_soccer,,,,,,,634.7,580,2.436e-05,6
+20261017-195420-9276a0,jev,10,visit,Q19893993_joevannie_peart,Q48834603_cincinnati_bearcats_men_s_soccer,Club,"Cincinnati Bearcats men's soccer, thành lập năm 1973, thi đấu tại NCAA Division I men's soccer, sân nhà Gettler Stadium.",,,0.06,602.5,551,2.3142e-05,2
+20261017-195420-9276a0,jev,11,visit,Q50816_mississauga,Q19893993_joevannie_peart,Player,"Joevannie Peart, sinh 14/05/1984, vị trí tiền đạo, quốc tịch Việt Nam.",Q48834603_cincinnati_bearcats_men_s_soccer,PLAYED_FOR (in),0.42,555.5,775,3.255e-05,6
+20261017-195420-9276a0,jev,12,visit,,Q50816_mississauga,Place,Mississauga — địa điểm.,Q19893993_joevannie_peart,BORN_IN (out),0.53,639.2,446,1.8732e-05,0
+20261017-195420-9276a0,ollama,1,domain,football_vn,,,,,,,1137.4,333,0.0,
+20261017-195420-9276a0,ollama,2,label,Player,,,,,,,985.6,313,0.0,
+20261017-195420-9276a0,ollama,3,pick,Q1712258_julien_nsengiyumva,,,,,,,17704.2,9117,0.0,250
+20261017-195420-9276a0,ollama,4,pick,Q2757533_teslim_fatusi,,,,,,,18979.7,8971,0.0,250
+20261017-195420-9276a0,ollama,5,pick,Q8022099_willis_plaza,,,,,,,8280.2,1837,0.0,47
+20261017-195420-9276a0,ollama,6,pick,Q2757533_teslim_fatusi,,,,,,,3463.2,342,0.0,3
+20261017-195420-9276a0,ollama,7,visit,Q994119_surulere,Q2757533_teslim_fatusi,Player,"Teslim Fatusi, sinh 17/09/1977, vị trí wing half, quốc tịch Nigeria.",,,0.0,2461.0,1126,0.0,18
+20261017-195420-9276a0,ollama,8,visit,none,Q994119_surulere,Place,Surulere — địa điểm.,Q2757533_teslim_fatusi,BORN_IN (out),0.0,1225.7,358,0.0,0
+20261017-195420-9276a0,ollama,9,visit,none,Q2757533_teslim_fatusi,Player,"Teslim Fatusi, sinh 17/09/1977, vị trí wing half, quốc tịch Nigeria.",Q2757533_teslim_fatusi,backtrack,0.0,2203.4,1106,0.0,17
+20261017-195420-9276a0,nvidia,1,domain,football_vn,,,,,,,2764.1,388,0.0,
+20261017-195420-9276a0,nvidia,2,label,Club,,,,,,,3316.5,359,0.0,
+20261017-195420-9276a0,nvidia,3,pick,Q1022923_gimnasia_y_esgrima_de_jujuy,,,,,,,16283.0,9059,0.0,250
+20261017-195420-9276a0,nvidia,4,pick,Q162394_1_fc_schweinfurt_05,,,,,,,26824.1,8554,0.0,250

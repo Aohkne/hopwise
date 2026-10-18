@@ -1,0 +1,40 @@
+run_id,model,step,phase,decision,node_id,node_label,node_caption,from_node_id,via_edge,answer_score,latency_ms,tokens,cost,candidates
+20261017-190657-dab80c,jev,1,domain,football_vn,,,,,,,1083.7,432,1.8144e-05,
+20261017-190657-dab80c,jev,2,label,Club,,,,,,,690.4,443,1.8606e-05,
+20261017-190657-dab80c,jev,3,pick,Q125643750_ngô_đăng_khoa,,,,,,,885.0,12077,0.000507234,250
+20261017-190657-dab80c,jev,4,pick,Q168364_gwangju_fc,,,,,,,2154.0,11581,0.000486402,250
+20261017-190657-dab80c,jev,5,pick,Q3455793_suwon_fc,,,,,,,766.8,11396,0.000478632,250
+20261017-190657-dab80c,jev,6,pick,Q482562_incheon_united_fc,,,,,,,747.8,11695,0.00049119,250
+20261017-190657-dab80c,jev,7,pick,Q9213551_yongin_city_fc,,,,,,,822.9,11942,0.000501564,250
+20261017-190657-dab80c,jev,8,pick,Q925648_giang_tô_tô_ninh,,,,,,,656.1,1855,7.791e-05,32
+20261017-190657-dab80c,jev,9,pick,Q482562_incheon_united_fc,,,,,,,585.3,595,2.499e-05,6
+20261017-190657-dab80c,jev,10,visit,Q19561293_lương_xuân_trường,Q482562_incheon_united_fc,Club,"Incheon United FC, thành lập năm 2004, thi đấu tại K League 1, sân nhà Sân vận động bóng đá Incheon.",,,0.05,561.8,558,2.3436e-05,2
+20261017-190657-dab80c,jev,11,visit,Q33389_tuyên_quang,Q19561293_lương_xuân_trường,Player,"Lương Xuân Trường, sinh 28/04/1995, vị trí tiền vệ, quốc tịch Việt Nam.",Q482562_incheon_united_fc,PLAYED_FOR (in),0.42,627.6,684,2.8728e-05,5
+20261017-190657-dab80c,jev,12,visit,none,Q33389_tuyên_quang,Place,Tuyên Quang — địa điểm.,Q19561293_lương_xuân_trường,BORN_IN (out),0.43,697.6,444,1.8648e-05,0
+20261017-190657-dab80c,jev,13,visit,none,Q19561293_lương_xuân_trường,Player,"Lương Xuân Trường, sinh 28/04/1995, vị trí tiền vệ, quốc tịch Việt Nam.",Q19561293_lương_xuân_trường,backtrack,0.41,582.7,658,2.7636e-05,4
+20261017-190657-dab80c,jev,14,visit,none,Q482562_incheon_united_fc,Club,"Incheon United FC, thành lập năm 2004, thi đấu tại K League 1, sân nhà Sân vận động bóng đá Incheon.",Q482562_incheon_united_fc,backtrack,0.04,546.6,503,2.1126e-05,1
+20261017-190657-dab80c,ollama,1,domain,football_vn,,,,,,,1045.2,330,0.0,
+20261017-190657-dab80c,ollama,2,label,Player,,,,,,,931.9,310,0.0,
+20261017-190657-dab80c,ollama,3,pick,Q17306190_leonel_felice,,,,,,,19619.3,9114,0.0,250
+20261017-190657-dab80c,ollama,4,pick,Q28057351_woo_sang_ho,,,,,,,20911.5,8968,0.0,250
+20261017-190657-dab80c,ollama,5,pick,Q877013_felix_luz,,,,,,,6261.1,1834,0.0,47
+20261017-190657-dab80c,ollama,6,pick,Q28057351_woo_sang_ho,,,,,,,4449.3,332,0.0,3
+20261017-190657-dab80c,ollama,7,visit,Q483044_daegu_fc,Q28057351_woo_sang_ho,Player,"Woo Sang-ho, sinh 07/12/1992, vị trí tiền vệ, quốc tịch Hàn Quốc.",,,0.0,1641.0,738,0.0,9
+20261017-190657-dab80c,ollama,8,visit,Q16079973_han_seung_yeop,Q483044_daegu_fc,Club,"Daegu FC, thành lập năm 2003, thi đấu tại K League 2, sân nhà DGB Daegu Bank Park.",Q28057351_woo_sang_ho,PLAYED_FOR (out),0.0,2586.6,440,0.0,2
+20261017-190657-dab80c,ollama,9,visit,Q884_hàn_quốc,Q16079973_han_seung_yeop,Player,"Han Seung-yeop, sinh 04/11/1990, vị trí tiền đạo, quốc tịch Hàn Quốc.",Q483044_daegu_fc,PLAYED_FOR (in),0.0,1512.1,527,0.0,4
+20261017-190657-dab80c,ollama,10,visit,Q16885642_sim_woon_sub,Q884_hàn_quốc,Place,Hàn Quốc — địa điểm.,Q16079973_han_seung_yeop,BORN_IN (out),0.0,2513.9,432,0.0,2
+20261017-190657-dab80c,ollama,11,visit,none,Q16885642_sim_woon_sub,Player,"Sim Woon-sub, sinh 24/02/1990, vị trí tiền vệ, quốc tịch Hàn Quốc.",Q884_hàn_quốc,BORN_IN (in),0.0,1683.6,625,0.0,5
+20261017-190657-dab80c,ollama,12,visit,Q55616003_kim_jin_seo,Q884_hàn_quốc,Place,Hàn Quốc — địa điểm.,Q884_hàn_quốc,backtrack,0.0,2252.6,391,0.0,1
+20261017-190657-dab80c,ollama,13,visit,none,Q55616003_kim_jin_seo,Player,"Kim Jin-seo, sinh 19/12/1994, vị trí hậu vệ trung tâm.",Q884_hàn_quốc,BORN_IN (in),0.0,1242.1,426,0.0,1
+20261017-190657-dab80c,ollama,14,visit,none,Q16079973_han_seung_yeop,Player,"Han Seung-yeop, sinh 04/11/1990, vị trí tiền đạo, quốc tịch Hàn Quốc.",Q16079973_han_seung_yeop,backtrack,0.0,1418.6,509,0.0,3
+20261017-190657-dab80c,ollama,15,visit,none,Q483044_daegu_fc,Club,"Daegu FC, thành lập năm 2003, thi đấu tại K League 2, sân nhà DGB Daegu Bank Park.",Q483044_daegu_fc,backtrack,0.0,1425.0,399,0.0,1
+20261017-190657-dab80c,ollama,16,visit,Q37951_sapporo,Q28057351_woo_sang_ho,Player,"Woo Sang-ho, sinh 07/12/1992, vị trí tiền vệ, quốc tịch Hàn Quốc.",Q28057351_woo_sang_ho,backtrack,0.0,1748.0,696,0.0,8
+20261017-190657-dab80c,ollama,17,visit,none,Q37951_sapporo,Place,Sapporo — địa điểm.,Q28057351_woo_sang_ho,BORN_IN (out),0.0,1099.1,354,0.0,0
+20261017-190657-dab80c,ollama,18,visit,none,Q28057351_woo_sang_ho,Player,"Woo Sang-ho, sinh 07/12/1992, vị trí tiền vệ, quốc tịch Hàn Quốc.",Q28057351_woo_sang_ho,backtrack,0.0,1756.1,678,0.0,7
+20261017-190657-dab80c,nvidia,1,domain,football_vn,,,,,,,3339.9,384,0.0,
+20261017-190657-dab80c,nvidia,2,label,Player,,,,,,,3123.4,355,0.0,
+20261017-190657-dab80c,nvidia,3,pick,Q1028482_fikru_teferra_lemessa,,,,,,,4864.5,8214,0.0,250
+20261017-190657-dab80c,nvidia,4,pick,Q28057351_woo_sang_ho,,,,,,,7183.9,8019,0.0,250
+20261017-190657-dab80c,nvidia,5,pick,Q8067995_zdravko_dragićević,,,,,,,16697.0,1750,0.0,47
+20261017-190657-dab80c,nvidia,6,pick,Q28057351_woo_sang_ho,,,,,,,8102.8,386,0.0,3
+20261017-190657-dab80c,nvidia,7,visit,none,Q28057351_woo_sang_ho,Player,"Woo Sang-ho, sinh 07/12/1992, vị trí tiền vệ, quốc tịch Hàn Quốc.",,,0.1,19917.2,774,0.0,9
