@@ -32,5 +32,5 @@ async def call_jev(request: ModelRequest) -> ModelResponse:
 @router.post("/llm", response_model=ModelResponse)
 async def call_llm(request: ModelRequest) -> ModelResponse:
     if not request.model:
-        raise HTTPException(status_code=422, detail="Thiếu `model` (ví dụ 'openai/gpt-6-sol')")
+        raise HTTPException(status_code=422, detail="Thiếu `model` (ví dụ 'nvidia/openai/gpt-oss-20b' hoặc 'ollama/gemma4:12b')")
     return await _call(LLMClient(request.model), request)

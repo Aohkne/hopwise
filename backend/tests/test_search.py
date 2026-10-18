@@ -4,6 +4,7 @@ không cần Neo4j, không đụng server đang chạy."""
 from __future__ import annotations
 
 import asyncio
+import json
 
 from fastapi.testclient import TestClient
 
@@ -247,16 +248,16 @@ def test_error_in_one_model_is_isolated() -> None:
         async def decide(self, state, questions):
             raise ConnectionError("API không kết nối được")
 
-    run = {"question": "?", "models": {"llm": _new_result()}}
-    asyncio.run(benchmark._run_one(run, "llm", Broken(), FakeGraph(), timeout=5))
-    assert run["models"]["llm"]["status"] == "error"
-    assert "không kết nối được" in run["models"]["llm"]["error"]
+    run = {"question": "?", "models": {"nvidia": _new_result()}}
+    asyncio.run(benchmark._run_one(run, "nvidia", Broken(), FakeGraph(), timeout=5))
+    assert run["models"]["nvidia"]["status"] == "error"
+    assert "không kết nối được" in run["models"]["nvidia"]["error"]
 
 
 def test_full_run_writes_csv_and_history_roundtrips(tmp_path) -> None:
     async def scenario():
-        clients = {"jev": SmartClient(), "llm": SmartClient()}
-        run = benchmark.start_run("Xe VF8 của công ty nào?", "fake-llm", clients, FakeGraph(),
+        clients = {k: SmartClient() for k in benchmark.MODEL_KEYS}
+        run = benchmark.start_run("Xe VF8 của công ty nào?", clients, FakeGraph(),
                                   timeout=5, outputs_dir=tmp_path)
         while run["status"] != "done":
             await asyncio.sleep(0.01)
@@ -269,7 +270,7 @@ def test_full_run_writes_csv_and_history_roundtrips(tmp_path) -> None:
 
     history = benchmark.list_history(tmp_path)
     assert history[0]["id"] == run["id"]
-    assert history[0]["models"]["llm"]["model_name"] == "fake-llm"
+    assert history[0]["models"]["nvidia"]["model_name"] == "fake-smart"
     assert history[0]["models"]["jev"]["model_version"] == "fake-smart-v1"
     loaded = benchmark.load_run(run["id"], tmp_path)
     assert loaded["models"]["jev"]["answer_node_id"] == "vinfast"
@@ -279,8 +280,8 @@ def test_full_run_writes_csv_and_history_roundtrips(tmp_path) -> None:
 
 def test_stop_cancels_running_models(tmp_path) -> None:
     async def scenario():
-        clients = {k: SmartClient(delay=1.0) for k in ("jev", "llm")}
-        run = benchmark.start_run("?", "fake-llm", clients, FakeGraph(), timeout=30,
+        clients = {k: SmartClient(delay=1.0) for k in benchmark.MODEL_KEYS}
+        run = benchmark.start_run("?", clients, FakeGraph(), timeout=30,
                                   outputs_dir=tmp_path)
         await asyncio.sleep(0.05)
         assert benchmark.stop_run(run["id"])
@@ -294,29 +295,37 @@ def test_stop_cancels_running_models(tmp_path) -> None:
 
 def test_api_runs_and_history(tmp_path, monkeypatch) -> None:
     class S:
-        baseline_models = "fake-llm,other-llm"
+        ollama_model = "gemma4:12b"
+        nvidia_model = "openai/gpt-oss-20b"
         jev_model = "typesafe/jev-1.13"
         bench_timeout_seconds = 5
         outputs_dir = tmp_path
+        cases_dir = tmp_path / "cases"
 
     monkeypatch.setattr(benchmark_router, "get_settings", lambda: S)
     monkeypatch.setattr(benchmark_router, "make_clients",
-                        lambda llm: {"jev": SmartClient(), "llm": SmartClient()})
+                        lambda: {k: SmartClient() for k in benchmark.MODEL_KEYS})
     monkeypatch.setattr(benchmark_router, "make_graph", FakeGraph)
+
+    async def fake_version():
+        return "gemma4:12b · 11.9B · Q4_K_M"
+
+    monkeypatch.setattr(benchmark_router, "ollama_version", fake_version)
 
     with TestClient(app) as client:
         assert client.get("/api/v1/benchmark/models").json() == {
-            "llm": ["fake-llm", "other-llm"], "jev": "typesafe/jev-1.13"}
+            "jev": "typesafe/jev-1.13",
+            "ollama": {"model": "gemma4:12b", "version": "gemma4:12b · 11.9B · Q4_K_M"},
+            "nvidia": {"model": "openai/gpt-oss-20b"}}
         assert client.post("/api/v1/benchmark/runs", json={"question": " "}).status_code == 422
 
         run = client.post("/api/v1/benchmark/runs", json={"question": "Xe VF8 của công ty nào?"}).json()
-        assert run["llm_model"] == "fake-llm"
         for _ in range(200):
             state = client.get(f"/api/v1/benchmark/runs/{run['id']}").json()
             if state["status"] == "done":
                 break
         assert state["status"] == "done"
-        assert state["models"]["llm"]["answer_text"] == "VinFast"
+        assert state["models"]["nvidia"]["answer_text"] == "VinFast"
 
         history = client.get("/api/v1/benchmark/history").json()
         assert history[0]["id"] == run["id"]
@@ -337,7 +346,7 @@ def test_old_runs_csv_header_is_migrated(tmp_path) -> None:
     history = {r["id"]: r for r in benchmark.list_history(tmp_path)}
     assert history["old"]["models"]["jev"]["answer_text"] == "A"
     assert history["old"]["models"]["jev"]["model_version"] is None
-    assert history["new"]["models"]["llm"]["model_version"] == "llm-v2"
+    assert history["new"]["models"]["nvidia"]["model_version"] == "nvidia-v2"
 
 
 def test_history_ignores_rows_of_removed_models(tmp_path) -> None:
@@ -348,4 +357,90 @@ def test_history_ignores_rows_of_removed_models(tmp_path) -> None:
     benchmark.write_csv(run, tmp_path)
     with (tmp_path / "runs.csv").open("a", encoding="utf-8") as f:
         f.write("r1,2026-02-01T00:00:00+00:00,q,kev,kev-latest,v,found,a,A,1,1,1,0,d,l,\n")
-    assert set(benchmark.list_history(tmp_path)[0]["models"]) == {"jev", "llm"}
+    assert set(benchmark.list_history(tmp_path)[0]["models"]) == set(benchmark.MODEL_KEYS)
+
+
+# --- ground truth: case_id, expected_answers, correct ---------------------------------
+
+def _run_case(tmp_path, answers: list[str] | None):
+    case = {"id": "vinfast-001", "answers": answers} if answers is not None else None
+
+    async def scenario():
+        clients = {k: SmartClient() for k in benchmark.MODEL_KEYS}
+        run = benchmark.start_run("Xe VF8 của công ty nào?", clients, FakeGraph(),
+                                  timeout=5, outputs_dir=tmp_path, case=case)
+        while run["status"] != "done":
+            await asyncio.sleep(0.01)
+        return run
+
+    return asyncio.run(scenario())
+
+
+def test_grade_only_judges_runs_that_found_an_answer() -> None:
+    found = {"status": "found", "answer_node_id": "vinfast"}
+    assert benchmark.grade(["vinfast", "vinfast_alt"], found) is True
+    assert benchmark.grade(["vingroup"], found) is False
+    assert benchmark.grade(["vinfast"], {"status": "not_found", "answer_node_id": None}) is None
+    assert benchmark.grade(["vinfast"], {"status": "timeout", "answer_node_id": None}) is None
+    assert benchmark.grade(None, found) is None  # câu gõ tay không có đáp án
+
+
+def test_run_with_case_grades_every_model_and_writes_csv(tmp_path) -> None:
+    run = _run_case(tmp_path, ["vinfast", "vinfast_alt"])
+    assert run["case_id"] == "vinfast-001"
+    assert {r["correct"] for r in run["models"].values()} == {True}
+
+    header, *rows = (tmp_path / "runs.csv").read_text(encoding="utf-8").splitlines()
+    assert "case_id" in header and "expected_answers" in header and "correct" in header
+    assert all("vinfast-001" in r and "vinfast|vinfast_alt" in r and ",true," in r for r in rows)
+
+    history = benchmark.list_history(tmp_path)[0]
+    assert history["case_id"] == "vinfast-001"
+    assert history["expected_answers"] == ["vinfast", "vinfast_alt"]
+    assert history["models"]["jev"]["correct"] is True
+
+
+def test_wrong_answer_is_false_and_manual_question_is_ungraded(tmp_path) -> None:
+    wrong = _run_case(tmp_path, ["vingroup"])
+    assert {r["correct"] for r in wrong["models"].values()} == {False}
+    assert benchmark.list_history(tmp_path)[0]["models"]["nvidia"]["correct"] is False
+
+    manual = _run_case(tmp_path / "manual", None)
+    assert {r["correct"] for r in manual["models"].values()} == {None}
+    only = benchmark.list_history(tmp_path / "manual")[0]
+    assert only["case_id"] is None and only["models"]["jev"]["correct"] is None
+
+
+def test_api_starts_a_ground_truth_case(tmp_path, monkeypatch) -> None:
+    cases_dir = tmp_path / "cases"
+    cases_dir.mkdir()
+    (cases_dir / "vinfast.json").write_text(json.dumps({"domain": "vinfast", "cases": [
+        {"id": "vinfast-001", "question": "Xe VF8 của công ty nào?", "answers": ["vinfast"], "hops": 1}]}),
+        encoding="utf-8")
+
+    class S:
+        ollama_model = "gemma4:12b"
+        nvidia_model = "openai/gpt-oss-20b"
+        jev_model = "j"
+        bench_timeout_seconds = 5
+        outputs_dir = tmp_path
+        cases_dir = tmp_path / "cases"
+
+    monkeypatch.setattr(benchmark_router, "get_settings", lambda: S)
+    monkeypatch.setattr(benchmark_router, "make_clients",
+                        lambda: {k: SmartClient() for k in benchmark.MODEL_KEYS})
+    monkeypatch.setattr(benchmark_router, "make_graph", FakeGraph)
+
+    with TestClient(app) as client:
+        listed = client.get("/api/v1/benchmark/cases").json()
+        assert listed == [{"id": "vinfast-001", "domain": "vinfast",
+                           "question": "Xe VF8 của công ty nào?", "hops": 1}]  # không lộ đáp án
+        assert client.post("/api/v1/benchmark/runs", json={"case_id": "nope"}).status_code == 422
+
+        run = client.post("/api/v1/benchmark/runs", json={"case_id": "vinfast-001"}).json()
+        assert run["question"] == "Xe VF8 của công ty nào?" and run["case_id"] == "vinfast-001"
+        for _ in range(200):
+            state = client.get(f"/api/v1/benchmark/runs/{run['id']}").json()
+            if state["status"] == "done":
+                break
+        assert {r["correct"] for r in state["models"].values()} == {True}

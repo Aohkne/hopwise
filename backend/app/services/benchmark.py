@@ -20,11 +20,11 @@ from typing import Any
 
 from app.services.search import Graph, find_answer
 
-MODEL_KEYS = ("jev", "llm")
+MODEL_KEYS = ("jev", "ollama", "nvidia")
 
 RUN_COLUMNS = [
-    "run_id", "started_at", "question", "model", "model_name", "model_version", "status",
-    "answer_node_id", "answer_text", "elapsed_ms", "calls", "tokens", "cost",
+    "run_id", "started_at", "question", "case_id", "expected_answers", "model", "model_name",
+    "model_version", "status", "answer_node_id", "answer_text", "correct", "elapsed_ms", "calls", "tokens", "cost",
     "domain", "label", "error",
 ]
 TRACE_COLUMNS = [
@@ -44,7 +44,7 @@ _ORCHESTRATORS: set[asyncio.Task] = set()
 def _empty_result(key: str, model_name: str) -> dict:
     return {
         "model": key, "model_name": model_name, "model_version": None, "status": "running",
-        "answer_node_id": None, "answer_text": None, "error": None,
+        "answer_node_id": None, "answer_text": None, "correct": None, "error": None,
         "elapsed_ms": 0.0, "tokens": 0, "cost": 0.0,
         "domain": None, "label": None, "steps": [],
     }
@@ -69,6 +69,15 @@ async def _run_one(run: dict, key: str, client: Any, graph: Graph, timeout: floa
         result["error"] = str(err) or type(err).__name__
     finally:
         result["elapsed_ms"] = round((time.perf_counter() - started) * 1000, 1)
+        result["correct"] = grade(run.get("expected_answers"), result)
+
+
+def grade(expected: list[str] | None, result: dict) -> bool | None:
+    """Đúng/sai so với ground truth. None = không chấm (câu gõ tay) hoặc model không đưa ra
+    đáp án (không tìm ra, quá giờ, dừng, lỗi) — những lượt đó không phải "sai"."""
+    if not expected or result["status"] != "found":
+        return None
+    return result["answer_node_id"] in expected
 
 
 async def _orchestrate(run: dict, clients: dict[str, Any], graph: Graph, timeout: float,
@@ -84,14 +93,16 @@ async def _orchestrate(run: dict, clients: dict[str, Any], graph: Graph, timeout
     write_csv(run, outputs_dir)
 
 
-def start_run(question: str, llm_model: str, clients: dict[str, Any], graph: Graph,
-              timeout: float, outputs_dir: Path) -> dict:
+def start_run(question: str, clients: dict[str, Any], graph: Graph,
+              timeout: float, outputs_dir: Path, case: dict | None = None) -> dict:
+    """`case`: test case ground truth (id, answers...) — có thì mỗi model được chấm đúng/sai."""
     run_id = datetime.now(UTC).strftime("%Y%m%d-%H%M%S-") + uuid.uuid4().hex[:6]
-    names = {"jev": clients["jev"].model_name, "llm": llm_model}
+    names = {key: clients[key].model_name for key in MODEL_KEYS}
     run = {
         "id": run_id,
         "question": question,
-        "llm_model": llm_model,
+        "case_id": case["id"] if case else None,
+        "expected_answers": list(case["answers"]) if case else None,
         "started_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "status": "running",
         "models": {key: _empty_result(key, names[key]) for key in MODEL_KEYS},
@@ -129,9 +140,12 @@ def write_csv(run: dict, outputs_dir: Path) -> None:
             r = run["models"][key]
             writer.writerow({
                 "run_id": run["id"], "started_at": run["started_at"], "question": run["question"],
+                "case_id": run.get("case_id") or "",
+                "expected_answers": "|".join(run.get("expected_answers") or []),
                 "model": key, "model_name": r["model_name"],
                 "model_version": r.get("model_version") or "", "status": r["status"],
                 "answer_node_id": r["answer_node_id"] or "", "answer_text": r["answer_text"] or "",
+                "correct": "" if r.get("correct") is None else str(r["correct"]).lower(),
                 "elapsed_ms": r["elapsed_ms"], "calls": len(r["steps"]), "tokens": r["tokens"],
                 "cost": r["cost"], "domain": r["domain"] or "", "label": r["label"] or "",
                 "error": r["error"] or "",
@@ -183,6 +197,8 @@ def list_history(outputs_dir: Path) -> list[dict]:
                 continue  # dòng của model đã bỏ (VD Kev trong các lượt chạy cũ)
             run = grouped.setdefault(row["run_id"], {
                 "id": row["run_id"], "question": row["question"],
+                "case_id": row.get("case_id") or None,
+                "expected_answers": row["expected_answers"].split("|") if row.get("expected_answers") else None,
                 "started_at": row["started_at"], "models": {},
             })
             run["models"][row["model"]] = {
@@ -190,6 +206,7 @@ def list_history(outputs_dir: Path) -> list[dict]:
                 "model_version": row.get("model_version") or None, "status": row["status"],
                 "answer_node_id": row["answer_node_id"] or None,
                 "answer_text": row["answer_text"] or None, "error": row["error"] or None,
+                "correct": {"true": True, "false": False}.get(row.get("correct") or ""),
                 "elapsed_ms": _num(row["elapsed_ms"]) or 0.0, "tokens": _num(row["tokens"], int) or 0,
                 "cost": _num(row["cost"]) or 0.0, "domain": row["domain"] or None,
                 "label": row["label"] or None, "calls": _num(row["calls"], int) or 0,

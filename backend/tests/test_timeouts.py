@@ -23,7 +23,7 @@ def test_call_timeout_has_no_read_limit_but_short_connect() -> None:
 
 @pytest.mark.parametrize("module, client", [
     (jev, lambda: jev.JevClient()),
-    (llm, lambda: llm.LLMClient("google/gemini-test")),
+    (llm, lambda: llm.LLMClient("nvidia/openai/gpt-oss-20b")),
 ])
 def test_every_client_uses_call_timeout(monkeypatch, module, client) -> None:
     seen = {}
@@ -35,7 +35,7 @@ def test_every_client_uses_call_timeout(monkeypatch, module, client) -> None:
     settings = SimpleNamespace(
         openrouter_api_key="k", openrouter_base_url="http://x", openrouter_decisions_path="/d",
         jev_model="j",
-        google_api_key="k", openai_api_key="", deepseek_api_key="",
+        nvidia_api_key="k", nvidia_base_url="http://x/v1", ollama_base_url="http://x",
     )
     monkeypatch.setattr(module, "get_settings", lambda: settings)
     monkeypatch.setattr(httpx, "AsyncClient", fake_async_client)
