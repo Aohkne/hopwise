@@ -1,0 +1,899 @@
+{
+  "domain": "football_vn",
+  "graph": {
+    "file": "data/football_vn.json",
+    "crawled_at": "2026-09-28T00:37:54+00:00",
+    "nodes": 3134,
+    "edges": 4758
+  },
+  "generated_at": "2026-10-17T16:51:26+00:00",
+  "seed": 42,
+  "cases": [
+    {
+      "id": "football-001",
+      "question": "Cầu thủ Nguyễn Thành Chung sinh ra ở đâu?",
+      "answers": [
+        "Q881_việt_nam"
+      ],
+      "answer_text": "Việt Nam",
+      "hops": 1,
+      "tags": [
+        "hub-node"
+      ],
+      "template": "f_born",
+      "anchors": [
+        "Q27049059_nguyễn_thành_chung"
+      ],
+      "reference_path": [
+        {
+          "node": "Q27049059_nguyễn_thành_chung",
+          "edge": null
+        },
+        {
+          "node": "Q881_việt_nam",
+          "edge": "BORN_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-002",
+      "question": "Cầu thủ Lương Hoàng Nam sinh ra ở đâu?",
+      "answers": [
+        "Q36690_đắk_lắk"
+      ],
+      "answer_text": "Đắk Lắk",
+      "hops": 1,
+      "tags": [],
+      "template": "f_born",
+      "anchors": [
+        "Q24450639_lương_hoàng_nam"
+      ],
+      "reference_path": [
+        {
+          "node": "Q24450639_lương_hoàng_nam",
+          "edge": null
+        },
+        {
+          "node": "Q36690_đắk_lắk",
+          "edge": "BORN_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-003",
+      "question": "Cầu thủ nào sinh ra ở Ninh Bình?",
+      "answers": [
+        "Q10840144_đinh_tiến_thành"
+      ],
+      "answer_text": "Đinh Tiến Thành",
+      "hops": 1,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_born_here",
+      "anchors": [
+        "Q33929_ninh_bình"
+      ],
+      "reference_path": [
+        {
+          "node": "Q33929_ninh_bình",
+          "edge": null
+        },
+        {
+          "node": "Q10840144_đinh_tiến_thành",
+          "edge": "BORN_IN (in)"
+        }
+      ]
+    },
+    {
+      "id": "football-004",
+      "question": "Cầu thủ Kim Jin-seo từng thi đấu cho câu lạc bộ nào?",
+      "answers": [
+        "Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai"
+      ],
+      "answer_text": "Câu lạc bộ bóng đá Hoàng Anh Gia Lai",
+      "hops": 1,
+      "tags": [
+        "hub-node"
+      ],
+      "template": "f_club_of",
+      "anchors": [
+        "Q55616003_kim_jin_seo"
+      ],
+      "reference_path": [
+        {
+          "node": "Q55616003_kim_jin_seo",
+          "edge": null
+        },
+        {
+          "node": "Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai",
+          "edge": "PLAYED_FOR (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-005",
+      "question": "Cầu thủ nào từng thi đấu cho câu lạc bộ Integrál-DAC?",
+      "answers": [
+        "Q19893993_joevannie_peart"
+      ],
+      "answer_text": "Joevannie Peart",
+      "hops": 1,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_player_of",
+      "anchors": [
+        "Q723276_integrál_dac"
+      ],
+      "reference_path": [
+        {
+          "node": "Q723276_integrál_dac",
+          "edge": null
+        },
+        {
+          "node": "Q19893993_joevannie_peart",
+          "edge": "PLAYED_FOR (in)"
+        }
+      ]
+    },
+    {
+      "id": "football-006",
+      "question": "Sân nhà của Câu lạc bộ bóng đá Navibank Sài Gòn là sân nào?",
+      "answers": [
+        "Q2051647_sân_vận_động_thống_nhất"
+      ],
+      "answer_text": "Sân vận động Thống Nhất",
+      "hops": 1,
+      "tags": [],
+      "template": "f_venue",
+      "anchors": [
+        "Q2664160_câu_lạc_bộ_bóng_đá_navibank_sài_gòn"
+      ],
+      "reference_path": [
+        {
+          "node": "Q2664160_câu_lạc_bộ_bóng_đá_navibank_sài_gòn",
+          "edge": null
+        },
+        {
+          "node": "Q2051647_sân_vận_động_thống_nhất",
+          "edge": "HOME_VENUE (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-007",
+      "question": "Sân nhà của Câu lạc bộ bóng đá Thể Công – Viettel là sân nào?",
+      "answers": [
+        "Q1817188_sân_vận_động_hàng_đẫy"
+      ],
+      "answer_text": "Sân vận động Hàng Đẫy",
+      "hops": 1,
+      "tags": [],
+      "template": "f_venue",
+      "anchors": [
+        "Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel"
+      ],
+      "reference_path": [
+        {
+          "node": "Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel",
+          "edge": null
+        },
+        {
+          "node": "Q1817188_sân_vận_động_hàng_đẫy",
+          "edge": "HOME_VENUE (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-008",
+      "question": "Câu lạc bộ nào có sân nhà là Sân vận động Qui Nhơn?",
+      "answers": [
+        "Q894500_câu_lạc_bộ_bóng_đá_bình_định"
+      ],
+      "answer_text": "Câu lạc bộ bóng đá Bình Định",
+      "hops": 1,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_venue_of",
+      "anchors": [
+        "Q7273047_sân_vận_động_qui_nhơn"
+      ],
+      "reference_path": [
+        {
+          "node": "Q7273047_sân_vận_động_qui_nhơn",
+          "edge": null
+        },
+        {
+          "node": "Q894500_câu_lạc_bộ_bóng_đá_bình_định",
+          "edge": "HOME_VENUE (in)"
+        }
+      ]
+    },
+    {
+      "id": "football-009",
+      "question": "Câu lạc bộ nào đã vô địch Cúp bóng đá Việt Nam 2009?",
+      "answers": [
+        "Q632990_câu_lạc_bộ_bóng_đá_shb_đà_nẵng"
+      ],
+      "answer_text": "Câu lạc bộ bóng đá SHB Đà Nẵng",
+      "hops": 1,
+      "tags": [
+        "incoming-edge",
+        "hub-node"
+      ],
+      "template": "f_winner",
+      "anchors": [
+        "Q10752119_cúp_bóng_đá_việt_nam_2009"
+      ],
+      "reference_path": [
+        {
+          "node": "Q10752119_cúp_bóng_đá_việt_nam_2009",
+          "edge": null
+        },
+        {
+          "node": "Q632990_câu_lạc_bộ_bóng_đá_shb_đà_nẵng",
+          "edge": "WON (in)"
+        }
+      ]
+    },
+    {
+      "id": "football-010",
+      "question": "Câu lạc bộ bóng đá Sài Gòn đã vô địch giải đấu nào?",
+      "answers": [
+        "Q18758327_giải_bóng_đá_hạng_nhất_quốc_gia_việt_nam"
+      ],
+      "answer_text": "Giải bóng đá hạng nhất quốc gia Việt Nam 2015",
+      "hops": 1,
+      "tags": [],
+      "template": "f_won",
+      "anchors": [
+        "Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn"
+      ],
+      "reference_path": [
+        {
+          "node": "Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn",
+          "edge": null
+        },
+        {
+          "node": "Q18758327_giải_bóng_đá_hạng_nhất_quốc_gia_việt_nam",
+          "edge": "WON (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-011",
+      "question": "Cầu thủ sinh ra ở Praha từng thi đấu cho câu lạc bộ nào?",
+      "answers": [
+        "Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel"
+      ],
+      "answer_text": "Câu lạc bộ bóng đá Thể Công – Viettel",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_born_club",
+      "anchors": [
+        "Q1085_praha"
+      ],
+      "reference_path": [
+        {
+          "node": "Q1085_praha",
+          "edge": null
+        },
+        {
+          "node": "Q61986629_lương_nguyên_bảo",
+          "edge": "BORN_IN (in)"
+        },
+        {
+          "node": "Q406796_câu_lạc_bộ_bóng_đá_thể_công_viettel",
+          "edge": "PLAYED_FOR (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-012",
+      "question": "Cầu thủ sinh ra ở Sénégal từng thi đấu cho câu lạc bộ nào?",
+      "answers": [
+        "Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa"
+      ],
+      "answer_text": "Câu lạc bộ bóng đá Sanna Khánh Hòa",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_born_club",
+      "anchors": [
+        "Q1041_sénégal"
+      ],
+      "reference_path": [
+        {
+          "node": "Q1041_sénégal",
+          "edge": null
+        },
+        {
+          "node": "Q33129811_diao_sadio",
+          "edge": "BORN_IN (in)"
+        },
+        {
+          "node": "Q16259792_câu_lạc_bộ_bóng_đá_sanna_khánh_hòa",
+          "edge": "PLAYED_FOR (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-013",
+      "question": "Cầu thủ từng thi đấu cho câu lạc bộ Incheon United FC sinh ra ở đâu?",
+      "answers": [
+        "Q33389_tuyên_quang"
+      ],
+      "answer_text": "Tuyên Quang",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_club_player_born",
+      "anchors": [
+        "Q482562_incheon_united_fc"
+      ],
+      "reference_path": [
+        {
+          "node": "Q482562_incheon_united_fc",
+          "edge": null
+        },
+        {
+          "node": "Q19561293_lương_xuân_trường",
+          "edge": "PLAYED_FOR (in)"
+        },
+        {
+          "node": "Q33389_tuyên_quang",
+          "edge": "BORN_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-014",
+      "question": "Cầu thủ từng thi đấu cho câu lạc bộ Cincinnati Bearcats men's soccer sinh ra ở đâu?",
+      "answers": [
+        "Q50816_mississauga"
+      ],
+      "answer_text": "Mississauga",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_club_player_born",
+      "anchors": [
+        "Q48834603_cincinnati_bearcats_men_s_soccer"
+      ],
+      "reference_path": [
+        {
+          "node": "Q48834603_cincinnati_bearcats_men_s_soccer",
+          "edge": null
+        },
+        {
+          "node": "Q19893993_joevannie_peart",
+          "edge": "PLAYED_FOR (in)"
+        },
+        {
+          "node": "Q50816_mississauga",
+          "edge": "BORN_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-015",
+      "question": "Câu lạc bộ đã vô địch Giải bóng đá vô địch quốc gia Việt Nam 2010 có sân nhà là sân nào?",
+      "answers": [
+        "Q1817188_sân_vận_động_hàng_đẫy"
+      ],
+      "answer_text": "Sân vận động Hàng Đẫy",
+      "hops": 2,
+      "tags": [
+        "incoming-edge",
+        "hub-node"
+      ],
+      "template": "f_comp_club_venue",
+      "anchors": [
+        "Q2953884_giải_bóng_đá_vô_địch_quốc_gia_việt_nam_2"
+      ],
+      "reference_path": [
+        {
+          "node": "Q2953884_giải_bóng_đá_vô_địch_quốc_gia_việt_nam_2",
+          "edge": null
+        },
+        {
+          "node": "Q560392_câu_lạc_bộ_bóng_đá_hà_nội",
+          "edge": "WON (in)"
+        },
+        {
+          "node": "Q1817188_sân_vận_động_hàng_đẫy",
+          "edge": "HOME_VENUE (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-016",
+      "question": "Câu lạc bộ đã vô địch Giải bóng đá vô địch quốc gia Việt Nam 2006 có sân nhà là sân nào?",
+      "answers": [
+        "Q5930497_sân_vận_động_long_an"
+      ],
+      "answer_text": "Sân vận động Long An",
+      "hops": 2,
+      "tags": [
+        "incoming-edge",
+        "hub-node"
+      ],
+      "template": "f_comp_club_venue",
+      "anchors": [
+        "Q2953873_giải_bóng_đá_vô_địch_quốc_gia_việt_nam_2"
+      ],
+      "reference_path": [
+        {
+          "node": "Q2953873_giải_bóng_đá_vô_địch_quốc_gia_việt_nam_2",
+          "edge": null
+        },
+        {
+          "node": "Q342558_câu_lạc_bộ_bóng_đá_đồng_tâm_long_an",
+          "edge": "WON (in)"
+        },
+        {
+          "node": "Q5930497_sân_vận_động_long_an",
+          "edge": "HOME_VENUE (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-017",
+      "question": "Câu lạc bộ mà cầu thủ Dương Văn Pho từng thi đấu có sân nhà là sân nào?",
+      "answers": [
+        "Q7204458_sân_vận_động_pleiku"
+      ],
+      "answer_text": "Sân vận động Pleiku",
+      "hops": 2,
+      "tags": [
+        "hub-node"
+      ],
+      "template": "f_p_club_venue",
+      "anchors": [
+        "Q24006368_dương_văn_pho"
+      ],
+      "reference_path": [
+        {
+          "node": "Q24006368_dương_văn_pho",
+          "edge": null
+        },
+        {
+          "node": "Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai",
+          "edge": "PLAYED_FOR (out)"
+        },
+        {
+          "node": "Q7204458_sân_vận_động_pleiku",
+          "edge": "HOME_VENUE (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-018",
+      "question": "Câu lạc bộ mà cầu thủ Nguyễn Minh Châu từng thi đấu có sân nhà là sân nào?",
+      "answers": [
+        "Q3277766_sân_vận_động_lạch_tray"
+      ],
+      "answer_text": "Sân vận động Lạch Tray",
+      "hops": 2,
+      "tags": [
+        "hub-node"
+      ],
+      "template": "f_p_club_venue",
+      "anchors": [
+        "Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá"
+      ],
+      "reference_path": [
+        {
+          "node": "Q10496987_nguyễn_minh_châu_cầu_thủ_bóng_đá",
+          "edge": null
+        },
+        {
+          "node": "Q2301143_câu_lạc_bộ_bóng_đá_hải_phòng",
+          "edge": "PLAYED_FOR (out)"
+        },
+        {
+          "node": "Q3277766_sân_vận_động_lạch_tray",
+          "edge": "HOME_VENUE (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-019",
+      "question": "Câu lạc bộ mà cầu thủ Hà Đức Chinh từng thi đấu đã vô địch giải đấu nào?",
+      "answers": [
+        "Q23779725_giải_bóng_đá_cúp_quốc_gia_2016"
+      ],
+      "answer_text": "Giải bóng đá Cúp Quốc gia 2016",
+      "hops": 2,
+      "tags": [],
+      "template": "f_p_club_won",
+      "anchors": [
+        "Q25999788_hà_đức_chinh"
+      ],
+      "reference_path": [
+        {
+          "node": "Q25999788_hà_đức_chinh",
+          "edge": null
+        },
+        {
+          "node": "Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh",
+          "edge": "PLAYED_FOR (out)"
+        },
+        {
+          "node": "Q23779725_giải_bóng_đá_cúp_quốc_gia_2016",
+          "edge": "WON (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-020",
+      "question": "Câu lạc bộ mà cầu thủ Trần Đình Trọng từng thi đấu đã vô địch giải đấu nào?",
+      "answers": [
+        "Q18758327_giải_bóng_đá_hạng_nhất_quốc_gia_việt_nam"
+      ],
+      "answer_text": "Giải bóng đá hạng nhất quốc gia Việt Nam 2015",
+      "hops": 2,
+      "tags": [],
+      "template": "f_p_club_won",
+      "anchors": [
+        "Q28970219_trần_đình_trọng"
+      ],
+      "reference_path": [
+        {
+          "node": "Q28970219_trần_đình_trọng",
+          "edge": null
+        },
+        {
+          "node": "Q10751860_câu_lạc_bộ_bóng_đá_sài_gòn",
+          "edge": "PLAYED_FOR (out)"
+        },
+        {
+          "node": "Q18758327_giải_bóng_đá_hạng_nhất_quốc_gia_việt_nam",
+          "edge": "WON (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-021",
+      "question": "Cầu thủ nào từng thi đấu cho câu lạc bộ có sân nhà là Sân vận động bóng đá Incheon?",
+      "answers": [
+        "Q19561293_lương_xuân_trường"
+      ],
+      "answer_text": "Lương Xuân Trường",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_venue_player",
+      "anchors": [
+        "Q493545_sân_vận_động_bóng_đá_incheon"
+      ],
+      "reference_path": [
+        {
+          "node": "Q493545_sân_vận_động_bóng_đá_incheon",
+          "edge": null
+        },
+        {
+          "node": "Q482562_incheon_united_fc",
+          "edge": "HOME_VENUE (in)"
+        },
+        {
+          "node": "Q19561293_lương_xuân_trường",
+          "edge": "PLAYED_FOR (in)"
+        }
+      ]
+    },
+    {
+      "id": "football-022",
+      "question": "Cầu thủ nào từng thi đấu cho câu lạc bộ có sân nhà là Oshawa Civic Auditorium?",
+      "answers": [
+        "Q19893993_joevannie_peart"
+      ],
+      "answer_text": "Joevannie Peart",
+      "hops": 2,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_venue_player",
+      "anchors": [
+        "Q7106581_oshawa_civic_auditorium"
+      ],
+      "reference_path": [
+        {
+          "node": "Q7106581_oshawa_civic_auditorium",
+          "edge": null
+        },
+        {
+          "node": "Q5316563_durham_storm",
+          "edge": "HOME_VENUE (in)"
+        },
+        {
+          "node": "Q19893993_joevannie_peart",
+          "edge": "PLAYED_FOR (in)"
+        }
+      ]
+    },
+    {
+      "id": "football-023",
+      "question": "Cầu thủ sinh ra ở Bà Rịa - Vũng Tàu từng thi đấu cho câu lạc bộ có sân nhà là sân nào?",
+      "answers": [
+        "Q28197235_sân_vận_động_hòa_xuân"
+      ],
+      "answer_text": "Sân vận động Hòa Xuân",
+      "hops": 3,
+      "tags": [
+        "incoming-edge",
+        "hub-node"
+      ],
+      "template": "f_born_club_venue",
+      "anchors": [
+        "Q36874_bà_rịa_vũng_tàu"
+      ],
+      "reference_path": [
+        {
+          "node": "Q36874_bà_rịa_vũng_tàu",
+          "edge": null
+        },
+        {
+          "node": "Q30919679_ngô_viết_phú",
+          "edge": "BORN_IN (in)"
+        },
+        {
+          "node": "Q632990_câu_lạc_bộ_bóng_đá_shb_đà_nẵng",
+          "edge": "PLAYED_FOR (out)"
+        },
+        {
+          "node": "Q28197235_sân_vận_động_hòa_xuân",
+          "edge": "HOME_VENUE (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-024",
+      "question": "Cầu thủ sinh ra ở Tam Kỳ từng thi đấu cho câu lạc bộ có sân nhà là sân nào?",
+      "answers": [
+        "Q7204458_sân_vận_động_pleiku"
+      ],
+      "answer_text": "Sân vận động Pleiku",
+      "hops": 3,
+      "tags": [
+        "incoming-edge",
+        "hub-node"
+      ],
+      "template": "f_born_club_venue",
+      "anchors": [
+        "Q35661_tam_kỳ"
+      ],
+      "reference_path": [
+        {
+          "node": "Q35661_tam_kỳ",
+          "edge": null
+        },
+        {
+          "node": "Q28445504_châu_ngọc_quang",
+          "edge": "BORN_IN (in)"
+        },
+        {
+          "node": "Q1201894_câu_lạc_bộ_bóng_đá_hoàng_anh_gia_lai",
+          "edge": "PLAYED_FOR (out)"
+        },
+        {
+          "node": "Q7204458_sân_vận_động_pleiku",
+          "edge": "HOME_VENUE (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-025",
+      "question": "Cầu thủ sinh ra ở Quảng Trị từng thi đấu cho câu lạc bộ có sân nhà là sân nào?",
+      "answers": [
+        "Q1817188_sân_vận_động_hàng_đẫy"
+      ],
+      "answer_text": "Sân vận động Hàng Đẫy",
+      "hops": 3,
+      "tags": [
+        "incoming-edge",
+        "hub-node"
+      ],
+      "template": "f_born_club_venue",
+      "anchors": [
+        "Q36579_quảng_trị"
+      ],
+      "reference_path": [
+        {
+          "node": "Q36579_quảng_trị",
+          "edge": null
+        },
+        {
+          "node": "Q29310793_hồ_minh_dĩ",
+          "edge": "BORN_IN (in)"
+        },
+        {
+          "node": "Q560392_câu_lạc_bộ_bóng_đá_hà_nội",
+          "edge": "PLAYED_FOR (out)"
+        },
+        {
+          "node": "Q1817188_sân_vận_động_hàng_đẫy",
+          "edge": "HOME_VENUE (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-026",
+      "question": "Cầu thủ sinh ra ở Phú Thọ từng thi đấu cho câu lạc bộ đã vô địch giải đấu nào?",
+      "answers": [
+        "Q23779725_giải_bóng_đá_cúp_quốc_gia_2016"
+      ],
+      "answer_text": "Giải bóng đá Cúp Quốc gia 2016",
+      "hops": 3,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_born_club_won",
+      "anchors": [
+        "Q36610_phú_thọ"
+      ],
+      "reference_path": [
+        {
+          "node": "Q36610_phú_thọ",
+          "edge": null
+        },
+        {
+          "node": "Q25999788_hà_đức_chinh",
+          "edge": "BORN_IN (in)"
+        },
+        {
+          "node": "Q7268855_câu_lạc_bộ_bóng_đá_than_quảng_ninh",
+          "edge": "PLAYED_FOR (out)"
+        },
+        {
+          "node": "Q23779725_giải_bóng_đá_cúp_quốc_gia_2016",
+          "edge": "WON (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-027",
+      "question": "Cầu thủ từng thi đấu cho câu lạc bộ có sân nhà là Sur Sports Complex sinh ra ở đâu?",
+      "answers": [
+        "Q183298_ibadan"
+      ],
+      "answer_text": "Ibadan",
+      "hops": 3,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_venue_player_born",
+      "anchors": [
+        "Q7645240_sur_sports_complex"
+      ],
+      "reference_path": [
+        {
+          "node": "Q7645240_sur_sports_complex",
+          "edge": null
+        },
+        {
+          "node": "Q2829395_al_orouba_sc",
+          "edge": "HOME_VENUE (in)"
+        },
+        {
+          "node": "Q16058090_hamed_adesope",
+          "edge": "PLAYED_FOR (in)"
+        },
+        {
+          "node": "Q183298_ibadan",
+          "edge": "BORN_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-028",
+      "question": "Cầu thủ từng thi đấu cho câu lạc bộ có sân nhà là Stadion SRC Mladost sinh ra ở đâu?",
+      "answers": [
+        "Q1435_zagreb"
+      ],
+      "answer_text": "Zagreb",
+      "hops": 3,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_venue_player_born",
+      "anchors": [
+        "Q281993_stadion_src_mladost"
+      ],
+      "reference_path": [
+        {
+          "node": "Q281993_stadion_src_mladost",
+          "edge": null
+        },
+        {
+          "node": "Q772862_nk_međimurje",
+          "edge": "HOME_VENUE (in)"
+        },
+        {
+          "node": "Q17300049_adrian_valentić",
+          "edge": "PLAYED_FOR (in)"
+        },
+        {
+          "node": "Q1435_zagreb",
+          "edge": "BORN_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-029",
+      "question": "Cầu thủ từng thi đấu cho câu lạc bộ có sân nhà là Estádio Municipal Jorge Sampaio sinh ra ở đâu?",
+      "answers": [
+        "Q26573_long_an"
+      ],
+      "answer_text": "Long An",
+      "hops": 3,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_venue_player_born",
+      "anchors": [
+        "Q15110461_estádio_municipal_jorge_sampaio"
+      ],
+      "reference_path": [
+        {
+          "node": "Q15110461_estádio_municipal_jorge_sampaio",
+          "edge": null
+        },
+        {
+          "node": "Q5423714_fc_porto_b",
+          "edge": "HOME_VENUE (in)"
+        },
+        {
+          "node": "Q7023058_nguyễn_việt_thắng",
+          "edge": "PLAYED_FOR (in)"
+        },
+        {
+          "node": "Q26573_long_an",
+          "edge": "BORN_IN (out)"
+        }
+      ]
+    },
+    {
+      "id": "football-030",
+      "question": "Cầu thủ từng thi đấu cho câu lạc bộ có sân nhà là Gettler Stadium sinh ra ở đâu?",
+      "answers": [
+        "Q50816_mississauga"
+      ],
+      "answer_text": "Mississauga",
+      "hops": 3,
+      "tags": [
+        "incoming-edge"
+      ],
+      "template": "f_venue_player_born",
+      "anchors": [
+        "Q98692071_gettler_stadium"
+      ],
+      "reference_path": [
+        {
+          "node": "Q98692071_gettler_stadium",
+          "edge": null
+        },
+        {
+          "node": "Q48834603_cincinnati_bearcats_men_s_soccer",
+          "edge": "HOME_VENUE (in)"
+        },
+        {
+          "node": "Q19893993_joevannie_peart",
+          "edge": "PLAYED_FOR (in)"
+        },
+        {
+          "node": "Q50816_mississauga",
+          "edge": "BORN_IN (out)"
+        }
+      ]
+    }
+  ]
+}
