@@ -14,7 +14,7 @@ export function NodeDetailCard({ label, properties, onClose }: Props) {
   const image = pickImage(properties);
   const [failedSrc, setFailedSrc] = useState<string | null>(null);
   const showImage = image !== null && failedSrc !== image;
-  const title = String(properties.name ?? properties.name_vi ?? properties.id ?? "");
+  const title = String(properties.name ?? properties.name_vi ?? properties.claim_type ?? properties.id ?? "");
   const rows = pickRows(properties);
 
   return (

@@ -21,6 +21,8 @@ export interface Neighbor {
   target_id: string;
   target_label: string;
   target_description: string | null;
+  /** "out" nếu cạnh đi ra từ node này, "in" nếu đi vào. */
+  direction: "out" | "in";
 }
 
 export interface GraphNode {
@@ -62,6 +64,51 @@ export async function getNode(nodeId: string): Promise<NodeDetail> {
 export async function getNeighbors(nodeId: string): Promise<Neighbor[]> {
   const res = await fetch(`${BASE_URL}/graph/nodes/${encodeURIComponent(nodeId)}/neighbors`);
   if (!res.ok) throw new Error(`getNeighbors(${nodeId}) failed: ${res.status}`);
+  return res.json();
+}
+
+// ---- Upload tài liệu (bản 2.0.0) ---------------------------------------
+
+export interface DocumentReport {
+  entities: number;
+  relationships: number;
+  claims: number;
+  chunks: number;
+  domain: string;
+  /** Record model trả sai định dạng nên bị bỏ, và chunk bị lỗi. */
+  skipped: string[];
+  errors: string[];
+}
+
+export interface DocumentJob {
+  id: string;
+  name: string;
+  domain: string;
+  status: "running" | "done" | "error";
+  done_chunks: number;
+  total_chunks: number;
+  report: DocumentReport | null;
+  error: string | null;
+}
+
+/** Gửi văn bản để LLM trích xuất Entity / Relationship / Claim vào graph; trả job chạy nền. */
+export async function uploadDocument(name: string, text: string, domain?: string): Promise<DocumentJob> {
+  const res = await fetch(`${BASE_URL}/graph/documents`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, text, ...(domain ? { domain } : {}) }),
+  });
+  if (!res.ok) {
+    // 422 mang lý do cụ thể (văn bản trống / quá dài / domain sai) — cho người dùng thấy.
+    const detail = await res.json().then((b: { detail?: unknown }) => b.detail, () => null);
+    throw new Error(typeof detail === "string" ? detail : `uploadDocument failed: ${res.status}`);
+  }
+  return res.json();
+}
+
+export async function getDocumentJob(jobId: string): Promise<DocumentJob> {
+  const res = await fetch(`${BASE_URL}/graph/documents/${encodeURIComponent(jobId)}`);
+  if (!res.ok) throw new Error(`getDocumentJob(${jobId}) failed: ${res.status}`);
   return res.json();
 }
 
