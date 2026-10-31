@@ -175,3 +175,37 @@ def test_unreadable_noul_is_treated_as_no_answer_not_a_crash(monkeypatch) -> Non
     reply = asyncio.run(nvidia.NvidiaClient().decide("s", QUESTIONS))
     assert "answer" not in reply["answers"]  # vòng lặp coi như điểm 0 -> đi tiếp, không đoán
     assert reply["answers"]["next"] == {"type": "choice", "choice": "e0"}
+
+
+def test_complete_returns_plain_text_without_forcing_json(monkeypatch) -> None:
+    """Trích xuất graph cần văn bản thô: Ollama không bị ép JSON mode, NVIDIA nhận max_tokens riêng."""
+    bodies = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        bodies.append(json.loads(request.content))
+        return completion('("entity"<|>VF3<|>PRODUCT<|>xe)')
+
+    monkeypatch.setattr(llm, "_transport", httpx.MockTransport(handler))
+    local = asyncio.run(llm.LLMClient("ollama/gemma4:12b").complete("prompt", max_tokens=8192))
+    cloud = asyncio.run(nvidia.NvidiaClient().complete("prompt", max_tokens=8192))
+
+    assert local["text"] == cloud["text"] == '("entity"<|>VF3<|>PRODUCT<|>xe)'
+    assert local["truncated"] is False and local["usage"]["prompt_tokens"] == 42
+    assert bodies[0]["messages"] == [{"role": "user", "content": "prompt"}]  # prompt tự mang chỉ dẫn
+    assert "response_format" not in bodies[0] and bodies[0]["max_tokens"] == 8192
+    assert bodies[1]["max_tokens"] == 8192  # thay mức mặc định 4096
+
+
+def test_complete_flags_truncated_output_and_retries_like_decide(monkeypatch) -> None:
+    replies = [httpx.Response(503), httpx.Response(200, json={
+        "choices": [{"message": {"content": "cụt"}, "finish_reason": "length"}]})]
+    monkeypatch.setattr(llm, "_transport", httpx.MockTransport(lambda req: replies.pop(0)))
+    reply = asyncio.run(nvidia.NvidiaClient().complete("p"))
+    assert reply["text"] == "cụt" and reply["truncated"] is True
+    assert replies == []  # 503 được thử lại
+
+
+def test_complete_translates_http_errors_like_decide(monkeypatch) -> None:
+    monkeypatch.setattr(llm, "_transport", httpx.MockTransport(lambda req: httpx.Response(401, text="no")))
+    with pytest.raises(RuntimeError, match="kiểm tra NVIDIA_API_KEY"):
+        asyncio.run(nvidia.NvidiaClient().complete("p"))

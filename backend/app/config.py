@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
+from typing import Literal
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -46,6 +47,13 @@ class Settings(BaseSettings):
     bench_chunk: int = Field(250, ge=2, le=254)
     outputs_dir: Path = ROOT_ENV_FILE.parent / "outputs"
     cases_dir: Path = ROOT_ENV_FILE.parent / "benchmarks" / "cases"  # ground truth
+
+    # Trích xuất graph từ văn bản (bản 2.0.0, xem backend/app/harness)
+    extract_provider: Literal["nvidia", "ollama"] = "nvidia"  # model nào đọc văn bản
+    extract_chunk_chars: int = Field(3000, ge=500)  # độ dài tối đa mỗi đoạn gửi model
+    # Đầu ra trích xuất dài hơn câu trả lời quyết định; gpt-oss còn dùng token cho suy luận.
+    extract_max_tokens: int = Field(8192, ge=1024)
+    data_dir: Path = ROOT_ENV_FILE.parent / "data"  # nơi ghi data/<domain>.json
 
 
 @lru_cache

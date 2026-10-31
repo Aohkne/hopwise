@@ -59,29 +59,38 @@ class OllamaClient(LLMClient):
     def model_name(self) -> str:
         return get_settings().ollama_model or "chưa cấu hình"
 
-    async def decide(self, state: str, questions: dict) -> dict:
-        settings = get_settings()
-        if not settings.ollama_model:
+    def _check_configured(self) -> None:
+        if not get_settings().ollama_model:
             raise RuntimeError("Chưa cấu hình OLLAMA_MODEL trong .env (VD gemma4:12b)")
-        try:
-            result = await super().decide(state, questions)
-        except httpx.ConnectError as err:
-            raise RuntimeError(
+
+    def translate_error(self, err: httpx.HTTPError) -> Exception | None:
+        settings = get_settings()
+        if isinstance(err, httpx.ConnectError):
+            return RuntimeError(
                 f"Không kết nối được Ollama ở {settings.ollama_base_url} — bật bằng `ollama serve`"
-            ) from err
-        except httpx.HTTPStatusError as err:
-            if err.response.status_code == 404:
-                raise RuntimeError(
-                    f"Ollama chưa có model '{settings.ollama_model}' — chạy `ollama pull "
-                    f"{settings.ollama_model}` (hoặc `ollama create` nếu là biến thể tự tạo, xem GUIDE.md)"
-                ) from err
-            body = err.response.text[:200]
-            hint = ""
-            if err.response.status_code == 500 and "no user query" in body:
-                # Ollama cắt prompt dài hơn ngữ cảnh (log: "truncating input prompt") rồi mất
-                # luôn tin nhắn người dùng. Đã gặp thật với câu có 250 lựa chọn (~9.000 token).
-                hint = (" — prompt dài hơn ngữ cảnh của Ollama: dùng biến thể 32K "
-                        "(xem GUIDE.md) hoặc giảm BENCH_CHUNK")
-            raise RuntimeError(f"Ollama trả HTTP {err.response.status_code}{hint}: {body}") from err
+            )
+        if not isinstance(err, httpx.HTTPStatusError):
+            return None
+        if err.response.status_code == 404:
+            return RuntimeError(
+                f"Ollama chưa có model '{settings.ollama_model}' — chạy `ollama pull "
+                f"{settings.ollama_model}` (hoặc `ollama create` nếu là biến thể tự tạo, xem GUIDE.md)"
+            )
+        body = err.response.text[:200]
+        hint = ""
+        if err.response.status_code == 500 and "no user query" in body:
+            # Ollama cắt prompt dài hơn ngữ cảnh (log: "truncating input prompt") rồi mất
+            # luôn tin nhắn người dùng. Đã gặp thật với câu có 250 lựa chọn (~9.000 token).
+            hint = (" — prompt dài hơn ngữ cảnh của Ollama: dùng biến thể 32K "
+                    "(xem GUIDE.md) hoặc giảm BENCH_CHUNK")
+        return RuntimeError(f"Ollama trả HTTP {err.response.status_code}{hint}: {body}")
+
+    async def decide(self, state: str, questions: dict) -> dict:
+        self._check_configured()
+        result = await self._translated(super().decide(state, questions))
         result["model_version"] = await ollama_version()
         return result
+
+    async def complete(self, prompt: str, max_tokens: int | None = None) -> dict:
+        self._check_configured()
+        return await self._translated(super().complete(prompt, max_tokens))
