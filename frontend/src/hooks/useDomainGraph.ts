@@ -4,9 +4,9 @@ import { getDomainGraph, type GraphPayload } from "../api/client";
 type Loaded = { domain: string; payload: GraphPayload };
 type Failed = { domain: string; message: string };
 
-/** Tải toàn bộ graph của 1 domain. Loading suy ra từ state (chưa có dữ liệu
+/** Tải toàn bộ graph của 1 domain; đổi `reloadKey` để tải lại (VD sau khi upload tài liệu). Loading suy ra từ state (chưa có dữ liệu
  * của đúng domain đang chọn) nên không cần setState đồng bộ trong effect. */
-export function useDomainGraph(domain: string) {
+export function useDomainGraph(domain: string, reloadKey = 0) {
   const [loaded, setLoaded] = useState<Loaded | null>(null);
   const [failed, setFailed] = useState<Failed | null>(null);
 
@@ -22,7 +22,7 @@ export function useDomainGraph(domain: string) {
     return () => {
       cancelled = true;
     };
-  }, [domain]);
+  }, [domain, reloadKey]);
 
   return {
     payload: loaded?.domain === domain ? loaded.payload : null,

@@ -20,13 +20,22 @@ class NvidiaClient(LLMClient):
     def model_name(self) -> str:
         return get_settings().nvidia_model or "chưa cấu hình"
 
-    async def decide(self, state: str, questions: dict) -> dict:
+    def _check_configured(self) -> None:
         if not get_settings().nvidia_model:
             raise RuntimeError("Chưa cấu hình NVIDIA_MODEL trong .env (VD openai/gpt-oss-20b)")
-        try:
-            return await super().decide(state, questions)
-        except httpx.HTTPStatusError as err:
-            code = err.response.status_code
-            hint = {401: " — kiểm tra NVIDIA_API_KEY", 403: " — key không có quyền với model này",
-                    404: " — sai NVIDIA_MODEL", 429: " — vượt giới hạn tốc độ của NVIDIA"}.get(code, "")
-            raise RuntimeError(f"NVIDIA trả HTTP {code}{hint}: {err.response.text[:200]}") from err
+
+    def translate_error(self, err: httpx.HTTPError) -> Exception | None:
+        if not isinstance(err, httpx.HTTPStatusError):
+            return None
+        code = err.response.status_code
+        hint = {401: " — kiểm tra NVIDIA_API_KEY", 403: " — key không có quyền với model này",
+                404: " — sai NVIDIA_MODEL", 429: " — vượt giới hạn tốc độ của NVIDIA"}.get(code, "")
+        return RuntimeError(f"NVIDIA trả HTTP {code}{hint}: {err.response.text[:200]}")
+
+    async def decide(self, state: str, questions: dict) -> dict:
+        self._check_configured()
+        return await self._translated(super().decide(state, questions))
+
+    async def complete(self, prompt: str, max_tokens: int | None = None) -> dict:
+        self._check_configured()
+        return await self._translated(super().complete(prompt, max_tokens))

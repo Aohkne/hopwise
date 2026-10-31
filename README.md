@@ -30,7 +30,8 @@
 |---|---|
 | Bộ dữ liệu Knowledge Graph crawl từ nguồn thật (Wikidata, SEC EDGAR) |  Có sẵn trong `data/` |
 | Biểu đồ benchmark Jev so với các LLM khác (vẽ bằng TikZ, xuất ảnh) |  Có — xem [Kết quả benchmark](#kết-quả-benchmark) |
-| Hướng dẫn xây một Knowledge Graph — cách các node quan hệ với nhau |  Chưa có trong bản này — xem [TODO.md](TODO.md) |
+| Bản 2.0.0 — dựng graph từ văn bản: LLM trích xuất Entity / Relationship / Claim, mỗi fact truy vết được về đoạn nguồn |  Có — xem [GUIDE.md](GUIDE.md#trích-xuất-graph-từ-văn-bản-bản-200) |
+| Nghiên cứu cách xây Knowledge Graph (Entity, Qualifier, Relationship vs Claim, prompt 3 lớp) |  Có — [`docs/research/`](docs/research/) |
 
 ## Kết quả benchmark
 
@@ -55,13 +56,15 @@ Knowledge Graph trong Neo4j, tối đa **5 phút mỗi câu**, chạy 1 lần m�
 ## Cấu trúc dự án
 
 ```
-data/                   Knowledge Graph đã crawl (Wikidata, SEC EDGAR)
+data/                   Knowledge Graph: crawl (Wikidata, SEC EDGAR) và trích xuất từ văn bản (`vinfast_policy.json`)
 scripts/                Script crawl và kiểm tra dữ liệu
 skills/typesafe-ai/     Tài liệu tham khảo để build với TypeSafe/Jev
 frontend/               React + Vite + Tailwind: trang Graph (toàn bộ graph) và Benchmark (3 model, lịch sử)
-backend/                FastAPI: benchmark Jev / Gemma (Ollama) / gpt-oss (NVIDIA) trên Neo4j, chạy hàng loạt `run_cases.py`
+backend/                FastAPI: benchmark Jev / Gemma (Ollama) / gpt-oss (NVIDIA) trên Neo4j, chạy hàng loạt `run_cases.py`;
+                        `app/harness/` + `extract_graph.py`: văn bản -> graph (bản 2.0.0)
 benchmarks/             Bộ câu hỏi ground truth (sinh từ graph), kết quả, script vẽ biểu đồ TikZ và làm GIF
 docs/images/            Biểu đồ và GIF dùng trong README
+docs/research/          Tài liệu nghiên cứu xây Knowledge Graph từ văn bản + văn bản mẫu (không phải code chạy)
 docker-compose.yml      Neo4j (chạy bằng `docker compose up -d`)
 .github/workflows/      CI: verify data, test backend, test frontend
 .env.example            Mẫu biến môi trường (OpenRouter, TypeSafe, Neo4j)
@@ -73,6 +76,7 @@ docker-compose.yml      Neo4j (chạy bằng `docker compose up -d`)
 |---|---|
 | [GUIDE.md](GUIDE.md) | Cách chạy script và chạy toàn bộ project |
 | [VERSION.md](VERSION.md) | Lộ trình các phiên bản |
+| [docs/research/](docs/research/) | Nghiên cứu nền tảng của bản 2.0.0 |
 | [TODO.md](TODO.md) | Những phần đã lên kế hoạch nhưng chưa có code |
 
 ## License

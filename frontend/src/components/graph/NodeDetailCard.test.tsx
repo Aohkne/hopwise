@@ -56,3 +56,28 @@ describe("NodeDetailCard", () => {
     expect(rows).toEqual([["dob", "x"], ["title", "t"]]);
   });
 });
+
+describe("NodeDetailCard — Claim", () => {
+  it("shows the claim's status, dates, condition and source quote", () => {
+    render(
+      <NodeDetailCard
+        label="Claim"
+        properties={{
+          claim_type: "DISCOUNT",
+          status: "TRUE",
+          start_date: "2026-01-15",
+          end_date: "2026-01-20",
+          condition: "mua xe",
+          source_text: "VF3 giảm 30% từ 15 đến 20/01",
+          description: "VF3 được giảm 30%",
+        }}
+        onClose={() => {}}
+      />
+    );
+    expect(screen.getByText("DISCOUNT", { selector: "span" })).toBeInTheDocument(); // tiêu đề
+    for (const text of ["TRUE", "2026-01-15", "2026-01-20", "mua xe", "VF3 giảm 30% từ 15 đến 20/01"]) {
+      expect(screen.getByText(text)).toBeInTheDocument();
+    }
+    expect(screen.getByText("VF3 được giảm 30%")).toBeInTheDocument();
+  });
+});

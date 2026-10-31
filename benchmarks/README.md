@@ -71,3 +71,11 @@ Các node trùng nhau qua cạnh `SAME_AS` (VD ông Phạm Nhật Vượng có n
   của VinFast) nên câu này dễ đoán.
 - Chỉ **một node đáp án** mỗi câu; chưa có câu hỏi dạng liệt kê hay hỏi thuộc tính (tuổi,
   công suất).
+
+## Lưu ý từ bản 2.0.0
+
+Domain `vinfast_policy` (graph sinh từ văn bản, xem [GUIDE.md](../GUIDE.md)) **không nằm trong bộ 60
+câu**: câu hỏi và đáp án vẫn sinh từ `data/football_vn.json` và `data/vinfast.json`. Tuy nhiên khi
+domain này đã nạp vào Neo4j, bước "chọn domain" của model có thêm một lựa chọn thứ ba, nên chạy
+lại 60 câu có thể cho kết quả khác chút so với `results/2026-10-18/` (chạy khi Neo4j chưa nạp
+`vinfast_policy`). Muốn so sánh công bằng với kết quả cũ, chạy benchmark trước khi nạp domain mới.

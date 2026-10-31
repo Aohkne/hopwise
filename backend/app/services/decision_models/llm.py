@@ -26,21 +26,26 @@ from app.services.decision_models import CALL_TIMEOUT
 
 PROVIDERS = ("ollama", "nvidia")
 
-def request_extras(provider: str) -> dict:
+def request_extras(provider: str, json_mode: bool = True, max_tokens: int | None = None) -> dict:
     """Tham số riêng của từng nơi.
 
     NVIDIA: đúng ví dụ chính thức của build.nvidia.com (temperature 1, top_p 1,
     max_tokens 4096) và không ép JSON mode — gpt-oss có bước suy luận riêng
     (`reasoning_content`) và NIM không đảm bảo hỗ trợ response_format.
     Ollama: ép JSON mode và đặt mức suy luận (OLLAMA_REASONING_EFFORT) cho model local.
+
+    `json_mode=False` (trích xuất graph, đầu ra là text không phải JSON) bỏ phần ép JSON của
+    Ollama; `max_tokens` thay mức mặc định khi cần câu trả lời dài.
     """
     if provider == "nvidia":
-        return {"temperature": 1, "top_p": 1, "max_tokens": 4096}
+        return {"temperature": 1, "top_p": 1, "max_tokens": max_tokens or 4096}
     if provider == "ollama":
-        extras: dict = {"response_format": {"type": "json_object"}}
+        extras: dict = {"response_format": {"type": "json_object"}} if json_mode else {}
         effort = get_settings().ollama_reasoning_effort
         if effort:
             extras["reasoning_effort"] = effort
+        if max_tokens:
+            extras["max_tokens"] = max_tokens
         return extras
     return {}
 
@@ -142,19 +147,23 @@ class LLMClient:
     def model_name(self) -> str:
         return self.model
 
-    async def decide(self, state: str, questions: dict) -> dict:
-        base_url, api_key, name = resolve(self.model)
-        provider = self.model.partition("/")[0]
-        user_prompt = json.dumps({"state": state, "questions": questions}, ensure_ascii=False)
-        body = {
-            "model": name,
-            "messages": [
-                {"role": "system", "content": _SYSTEM_PROMPT},
-                {"role": "user", "content": user_prompt},
-            ],
-            **request_extras(provider),
-        }
+    def translate_error(self, err: httpx.HTTPError) -> Exception | None:
+        """Lỗi HTTP -> thông báo dễ hiểu của từng nơi (None = giữ nguyên lỗi gốc)."""
+        return None
 
+    async def _translated(self, call):
+        """Chạy `call` (coroutine), đổi lỗi HTTP thành thông báo của `translate_error`."""
+        try:
+            return await call
+        except httpx.HTTPError as err:
+            translated = self.translate_error(err)
+            if translated is None:
+                raise
+            raise translated from err
+
+    async def _post_chat(self, provider: str, body: dict) -> tuple[dict, float]:
+        """POST /chat/completions kèm thử lại lỗi tạm thời -> (json, latency_ms)."""
+        base_url, api_key, _ = resolve(self.model)
         # Ollama chạy local: lỗi 5xx là lỗi cố định (VD prompt vượt ngữ cảnh), gọi lại chỉ tốn
         # thêm vài phút. Chỉ API từ xa mới có lỗi tạm thời đáng thử lại.
         retryable = RETRY_STATUSES if provider != "ollama" else set()
@@ -180,7 +189,43 @@ class LLMClient:
                 await asyncio.sleep(_backoff * 2**attempt)
         latency_ms = (time.perf_counter() - start) * 1000
         resp.raise_for_status()
-        data = resp.json()
+        return resp.json(), latency_ms
+
+    async def complete(self, prompt: str, max_tokens: int | None = None) -> dict:
+        """Gửi 1 prompt, nhận văn bản thô (không ép JSON) — dùng cho trích xuất graph.
+
+        Trả `{"text", "usage", "latency_ms", "truncated"}`; `truncated` = model dừng vì hết
+        `max_tokens`, văn bản có thể cụt cuối.
+        """
+        _, _, name = resolve(self.model)
+        provider = self.model.partition("/")[0]
+        body = {
+            "model": name,
+            "messages": [{"role": "user", "content": prompt}],
+            **request_extras(provider, json_mode=False, max_tokens=max_tokens),
+        }
+        data, latency_ms = await self._post_chat(provider, body)
+        choice = data["choices"][0]
+        return {
+            "text": choice["message"].get("content") or "",
+            "usage": data.get("usage") or {},
+            "latency_ms": latency_ms,
+            "truncated": choice.get("finish_reason") == "length",
+        }
+
+    async def decide(self, state: str, questions: dict) -> dict:
+        _, _, name = resolve(self.model)
+        provider = self.model.partition("/")[0]
+        user_prompt = json.dumps({"state": state, "questions": questions}, ensure_ascii=False)
+        body = {
+            "model": name,
+            "messages": [
+                {"role": "system", "content": _SYSTEM_PROMPT},
+                {"role": "user", "content": user_prompt},
+            ],
+            **request_extras(provider),
+        }
+        data, latency_ms = await self._post_chat(provider, body)
         choice = data["choices"][0]
         raw = choice["message"].get("content") or ""
 

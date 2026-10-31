@@ -12,7 +12,7 @@
   thông thường (System 2) trên cùng bài toán traversal.
 - CI/CD
 
-## 2.0.0 — Nối node bằng fact
+## 2.0.0 — Nối node bằng fact (đang phát triển)
 
 - Xây dựng cơ chế tạo cạnh giữa hai node dựa trên **một fact cụ thể**,
   thay vì chỉ nối theo quan hệ cấu trúc thô như ở bản 1.0.0 — mỗi cạnh có thể

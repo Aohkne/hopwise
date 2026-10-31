@@ -2,6 +2,8 @@ const PREFERRED_KEYS = [
   "name_en", "dob", "position", "nationality", "birth_place", "height_cm",
   "founded_year", "founded", "headquarters", "industry", "title", "age",
   "launch_year", "website", "wikidata_id",
+  // Claim (bản 2.0.0): fact có trạng thái, thời gian, điều kiện và đoạn trích nguồn
+  "claim_type", "status", "start_date", "end_date", "condition", "source_text",
 ];
 
 export function pickImage(props: Record<string, unknown>): string | null {

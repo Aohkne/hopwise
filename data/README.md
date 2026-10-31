@@ -1,9 +1,9 @@
 # Dữ liệu nguồn cho Knowledge Graph
 
-Hai domain tiếng Việt dùng để benchmark khả năng ra quyết định traversal của
+Hai domain crawl (`football_vn`, `vinfast`) và một domain trích xuất từ văn bản (`vinfast_policy`, bản 2.0.0) dùng để benchmark khả năng ra quyết định traversal của
 **Jev (TypeSafe System One)** so với các LLM khác, trên graph Neo4j.
 
-Toàn bộ dữ liệu được **crawl từ API công khai**, không có giá trị nào viết tay.
+Dữ liệu của `football_vn` và `vinfast` được **crawl từ API công khai**, không có giá trị nào viết tay (xem `vinfast_policy` bên dưới cho dữ liệu sinh từ văn bản).
 Mỗi node đều mang `source`, `source_url`, `crawled_at` để truy vết ngược.
 
 Crawl lần gần nhất: **17/10/2026** (vinfast.json).
@@ -102,6 +102,48 @@ chỉ có loại xe và ảnh), nên phần lớn graph lấy từ 20-F — ngu�
 - **Từ văn xuôi** (thương hiệu, thị trường, nhà máy, `BASED_ON`): trích bằng mẫu câu cố
   định, **nguyên văn câu gốc lưu ở thuộc tính `evidence`** để đối chiếu. Mẫu câu không khớp
   (20-F đổi cách viết) thì crawler **dừng với lỗi**, không tự điền.
+
+## `vinfast_policy.json` — Chính sách bán hàng VinFast (trích xuất từ văn bản, bản 2.0.0)
+
+**Nguồn:** không crawl. Graph sinh từ văn bản bằng LLM (gpt-oss-20b qua NVIDIA NIM) theo prompt 3 lớp
+[`extract_graph.md`](../backend/app/harness/prompts/templates/extract_graph.md); cách chạy ở
+[GUIDE.md](../GUIDE.md#trích-xuất-graph-từ-văn-bản-bản-200). Hiện gồm hai tài liệu mẫu trong
+[`docs/research/samples/data/`](../docs/research/samples/data/): đoạn tin `sample.txt` và *Thông báo Chính
+sách thúc đẩy bán hàng Ô tô điện VinFast* (mã 20260926).
+
+| Loại | Cách tạo | Ghi chú |
+|---|---|---|
+| `Organization`, `Product`, `Geo`, `Event`, `Person`, `Program` (node) | Entity có tên riêng trong văn bản | `Entity` nếu model trả loại ngoài danh sách |
+| `RELATED_TO` (cạnh) | Relationship nối 2 entity | `description`, `weight` (= độ mạnh 1–10 / 10), `text_unit_ids` |
+| `Claim` (node) | Fact có điều kiện / thời gian / trạng thái | `status` (TRUE / FALSE / SUSPECTED), `start_date`, `end_date`, `condition`, `source_text`, `claim_type` |
+| `HAS_CLAIM`, `ABOUT` (cạnh) | `Entity -HAS_CLAIM-> Claim -ABOUT-> Entity` | `ABOUT` bỏ qua khi claim không có khách thể |
+
+**Khác dữ liệu crawl:**
+- Claim là *node* chứ không phải cạnh: loader dùng `MERGE (a)-[r:TYPE]->(b)`, sẽ gộp mọi cạnh cùng loại
+  giữa một cặp node, làm mất các fact như nhiều đợt giảm giá cho cùng một xe.
+- `id` entity = `ent_` + tên chuẩn hóa (VD `ent_vf3`), id claim = `claim_` + hash nội dung. Cùng tên
+  entity ở hai tài liệu là cùng node; chạy lại cùng tài liệu không tạo trùng.
+- **Truy vết:** mọi node/cạnh có `source_docs` (tên file) và `text_unit_ids`; file có `text_units`
+  (`chunk_id -> đoạn văn gốc`). Claim có thêm `source_text`, đoạn trích nguyên văn model dẫn.
+- Ngày mơ hồ ("cuối năm 2026") giữ nguyên dạng text, chỉ ngày cụ thể mới ở dạng ISO-8601.
+- Không có `source_url`, `crawled_at`; thay bằng `extracted_at` ở cấp file. `image_url` không do model
+  trích xuất: khi upload, entity có tên trùng một mẫu xe ở `data/vinfast.json` (VD "VF 8" ↔ "VinFast VF 8")
+  được gắn `image_url` (bản thu nhỏ 640px) và `image_source` (id node Wikidata) — xem `app/harness/enrich.py`.
+  Chỉ khớp đúng tên; entity không khớp thì không có ảnh.
+
+**Hạn chế đã biết:**
+- Chất lượng phụ thuộc model. Lần chạy hiện có (2 tài liệu): 60 entity, 45 relationship, 24 claim cho
+  thông báo chính sách, trong khi bản trích xuất mẫu do người điền (`docs/research/samples/output/`)
+  có 45 / 40 / 59. Nguyên nhân chính: **1 trong 6 đoạn bị cắt cụt** vì gpt-oss dùng hết
+  `EXTRACT_MAX_TOKENS` (8192) cho bước suy luận nên đoạn đó không ra claim nào, và 4 record sai định
+  dạng bị bỏ (báo cáo của CLI liệt kê từng record). Tăng `EXTRACT_MAX_TOKENS` hoặc giảm
+  `EXTRACT_CHUNK_CHARS` rồi chạy lại.
+- Relationship chỉ có mô tả, chưa có loại: mọi cạnh là `RELATED_TO`.
+- Entity chưa được liên kết với node Wikidata của domain `vinfast` (VD "VF 3" ở hai nơi là hai node khác nhau).
+- Còn 9 node không có cạnh (entity được nhắc nhưng model không nối).
+- Gộp entity chỉ dựa trên tên đã chuẩn hóa (chữ thường, bỏ khoảng trắng thừa); "VF 3" và "VF3" là hai node.
+  Model đôi khi viết **sai chính tả** tên (đã gặp: `ĐẠI LÝ VINFATSH HÀ NỘI`, `PHẦM NHẬT VƯỢNG`), khi đó cùng một
+  thực thể thành node thứ hai. Cần bước gộp theo độ giống nhau hoặc LLM (xem TODO) và nên rà lại sau mỗi lần upload.
 
 ## Hạn chế đã biết
 
