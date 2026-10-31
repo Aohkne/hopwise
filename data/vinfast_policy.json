@@ -1,0 +1,2624 @@
+{
+  "domain": "vinfast_policy",
+  "title": "Tri thức trích xuất từ văn bản (vinfast_policy)",
+  "extracted_at": "2026-10-31T09:49:54+00:00",
+  "sources": [
+    {
+      "name": "sample.txt",
+      "type": "document"
+    },
+    {
+      "name": "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md",
+      "type": "document"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ent_vinfast",
+      "label": "Organization",
+      "properties": {
+        "name": "VINFAST",
+        "description": "VinFast là hãng sản xuất ô tô điện tại Việt Nam",
+        "entity_type": "ORGANIZATION",
+        "source": "document",
+        "source_docs": [
+          "sample.txt",
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "sample_c001",
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001",
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003",
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004",
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c006"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf3",
+      "label": "Product",
+      "properties": {
+        "name": "VF3",
+        "description": "Mô hình VF 3 – xe ô tô điện của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "sample.txt",
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "sample_c001",
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_chương_trình_ưu_đãi_mùa_xuân",
+      "label": "Program",
+      "properties": {
+        "name": "CHƯƠNG TRÌNH ƯU ĐÃI MÙA XUÂN",
+        "description": "Chương trình ưu đãi mùa xuân của VinFast",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_đại_lý_vinfast_hà_nội",
+      "label": "Geo",
+      "properties": {
+        "name": "ĐẠI LÝ VINFAST HÀ NỘI",
+        "description": "Đại lý VinFast Hà Nội là điểm đại lý của VinFast tại Hà Nội",
+        "entity_type": "GEO",
+        "source": "document",
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_đại_lý_vinfast_tp_hcm",
+      "label": "Geo",
+      "properties": {
+        "name": "ĐẠI LÝ VINFAST TP.HCM",
+        "description": "Đại lý VinFast TP.HCM là điểm đại lý của VinFast tại Thành phố Hồ Chí Minh",
+        "entity_type": "GEO",
+        "source": "document",
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_indonesia",
+      "label": "Geo",
+      "properties": {
+        "name": "INDONESIA",
+        "description": "Indonesia là quốc gia Đông Nam Á",
+        "entity_type": "GEO",
+        "source": "document",
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_phạm_nhật_vượng",
+      "label": "Person",
+      "properties": {
+        "name": "PHẠM NHẬT VƯỢNG",
+        "description": "Phạm Nhật Vượng là Tổng giám đốc của VinFast",
+        "entity_type": "PERSON",
+        "source": "document",
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "id": "claim_62de1144c5cc",
+      "label": "Claim",
+      "properties": {
+        "description": "VinFast sẽ ra mắt mẫu xe VF3 vào tháng 3/2026",
+        "claim_type": "LAUNCH",
+        "status": "TRUE",
+        "start_date": "Tháng 3/2026",
+        "source_text": "VinFast, tập đoàn ô tô Việt Nam, sẽ ra mắt mẫu xe VF3 vào tháng 3/2026",
+        "source": "document",
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "id": "claim_15003f5ddbd4",
+      "label": "Claim",
+      "properties": {
+        "description": "Khách hàng mua xe VF3 trong thời gian từ ngày 15/01/2026 đến ngày 20/01/2026 được hưởng ưu đãi giảm giá 30% so với giá niêm yết",
+        "claim_type": "DISCOUNT",
+        "status": "TRUE",
+        "start_date": "2026-01-15",
+        "end_date": "2026-01-20",
+        "condition": "mua xe",
+        "source_text": "Khách hàng mua xe VF3 trong thời gian từ ngày 15/01/2026 đến ngày 20/01/2026 sẽ được hưởng ưu đãi giảm giá 30% so với giá niêm yết",
+        "source": "document",
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "id": "claim_e06c08ca75fd",
+      "label": "Claim",
+      "properties": {
+        "description": "VinFast dự kiến xuất khẩu VF3 sang Indonesia",
+        "claim_type": "EXPORT",
+        "status": "SUSPECTED",
+        "source_text": "Tổng giám đốc VinFast Phạm Nhật Vượng cho biết công ty dự kiến xuất khẩu VF3 sang Indonesia",
+        "source": "document",
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "id": "claim_65fd8d2cce6d",
+      "label": "Claim",
+      "properties": {
+        "description": "Một số chuyên gia nghi ngờ kế hoạch này có thể bị hoãn đến cuối năm 2026",
+        "claim_type": "EXPORT_DELAY",
+        "status": "SUSPECTED",
+        "end_date": "cuối năm 2026",
+        "condition": "có thể",
+        "source_text": "Tuy nhiên, một số chuyên gia nghi ngờ kế hoạch này có thể bị hoãn đến cuối năm 2026",
+        "source": "document",
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_vinfast_gsm",
+      "label": "Organization",
+      "properties": {
+        "name": "VINFAST/GSM",
+        "description": "VinFast/GSM là nhà phân phối chính thức của VinFast",
+        "entity_type": "ORGANIZATION",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_vn_post",
+      "label": "Organization",
+      "properties": {
+        "name": "VN_POST",
+        "description": "đơn vị hoạt động của Tổng Công ty Bưu điện Việt Nam",
+        "entity_type": "ORGANIZATION",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001",
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_quan_doi_ndh_vn",
+      "label": "Organization",
+      "properties": {
+        "name": "QUAN_DOI_NDH_VN",
+        "description": "Quân đội nhân dân Việt Nam",
+        "entity_type": "ORGANIZATION",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_cong_an_ndh_vn",
+      "label": "Organization",
+      "properties": {
+        "name": "CONG_AN_NDH_VN",
+        "description": "Công an nhân dân Việt Nam",
+        "entity_type": "ORGANIZATION",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_vì_tương_lai_xanh_2",
+      "label": "Program",
+      "properties": {
+        "name": "VÌ_TƯƠNG_LAI_XANH_2",
+        "description": "Chính sách thúc đẩy bán hàng ô tô điện VinFast tại Việt Nam – “Vì Tương Lai Xanh 2”",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_trương_than_vinfast",
+      "label": "Program",
+      "properties": {
+        "name": "TRƯƠNG_THAN_VINFAST",
+        "description": "Chương trình Tri ân Khách hàng xe xăng VinFast chuyển đổi xanh",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_vinclub_policy",
+      "label": "Program",
+      "properties": {
+        "name": "VINCLUB_POLICY",
+        "description": "Chính sách khách hàng thân thiết VinClub tại thị trường Việt Nam",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_vietnam",
+      "label": "Geo",
+      "properties": {
+        "name": "VIETNAM",
+        "description": "Quốc gia Việt Nam",
+        "entity_type": "GEO",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf2",
+      "label": "Product",
+      "properties": {
+        "name": "VF2",
+        "description": "Mô hình VF 2 – xe ô tô điện của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_minio_green",
+      "label": "Product",
+      "properties": {
+        "name": "MINIO_GREEN",
+        "description": "Dòng xe giảm 3% MSRP trong chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001",
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf7",
+      "label": "Product",
+      "properties": {
+        "name": "VF7",
+        "description": "Mô hình VF 7 – xe ô tô điện của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf9",
+      "label": "Product",
+      "properties": {
+        "name": "VF9",
+        "description": "Mô hình VF 9 – xe ô tô điện của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf8_the_henh_moi",
+      "label": "Product",
+      "properties": {
+        "name": "VF8_THE_HENH_MOI",
+        "description": "Mô hình VF 8 – thế hệ mới của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_lac_hong_900_lx",
+      "label": "Product",
+      "properties": {
+        "name": "LAC_HONG_900_LX",
+        "description": "Mô hình Lạc Hồng 900 LX – xe ô tô điện của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_ec_van",
+      "label": "Product",
+      "properties": {
+        "name": "EC_VAN",
+        "description": "Mô hình EC Van – xe ô tô điện của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf_wild",
+      "label": "Product",
+      "properties": {
+        "name": "VF_WILD",
+        "description": "Mô hình VF Wild – xe ô tô điện của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf_3_eco_plus",
+      "label": "Product",
+      "properties": {
+        "name": "VF 3 Eco/Plus",
+        "description": "Dòng xe có ưu đãi miễn phí màu sơn nâng cao cho VIN 2025 trở về trước",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_limo_green",
+      "label": "Product",
+      "properties": {
+        "name": "Limo Green",
+        "description": "Dòng xe giảm giá 35.000.000 VNĐ/ xe trong chương trình ưu đãi một số dòng xe",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf_mpv_7",
+      "label": "Product",
+      "properties": {
+        "name": "VF MPV 7",
+        "description": "Dòng xe giảm giá 20.000.000 VNĐ/ xe trong chương trình ưu đãi một số dòng xe và được hỗ trợ lãi suất",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_ec_van_tiêu_chuẩn",
+      "label": "Product",
+      "properties": {
+        "name": "EC Van Tiêu chuẩn",
+        "description": "Dòng xe giảm giá 20.000.000 VNĐ/ xe trong chương trình ưu đãi một số dòng xe",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf_5",
+      "label": "Product",
+      "properties": {
+        "name": "VF 5",
+        "description": "Dòng xe giảm 3% MSRP trong chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_herio_green",
+      "label": "Product",
+      "properties": {
+        "name": "Herio Green",
+        "description": "Dòng xe giảm 3% MSRP trong chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf_7",
+      "label": "Product",
+      "properties": {
+        "name": "VF 7",
+        "description": "Dòng xe giữ ưu đãi nếu xuất hóa đơn không muộn hơn ngày 30/09/2026 trong chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf_8",
+      "label": "Product",
+      "properties": {
+        "name": "VF 8",
+        "description": "Dòng xe giữ ưu đãi nếu xuất hóa đơn không muộn hơn ngày 30/09/2026 trong chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf_9",
+      "label": "Product",
+      "properties": {
+        "name": "VF 9",
+        "description": "Dòng xe giữ ưu đãi nếu xuất hóa đơn không muộn hơn ngày 30/09/2026 trong chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_chương_trình_ưu_đãi_một_số_dòng_xe",
+      "label": "Program",
+      "properties": {
+        "name": "Chương trình ưu đãi một số dòng xe",
+        "description": "Chương trình ưu đãi dành cho các dòng xe như VF 3 Eco/Plus, Limo Green, VF MPV 7, EC Van Tiêu chuẩn",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_chương_trình_hỗ_trợ_lãi_suất",
+      "label": "Program",
+      "properties": {
+        "name": "Chương trình hỗ trợ lãi suất",
+        "description": "Chương trình hỗ trợ lãi suất cho Limo Green và VF MPV 7 trong thời gian từ 04/08/2026 đến 18/09/2026",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_chương_trình_mùa_hè_rực_rỡ_vinfascination",
+      "label": "Program",
+      "properties": {
+        "name": "Chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "description": "Chương trình hỗ trợ voucher VinPearl và giảm giá cho các dòng xe trong tháng 06/2026",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_thu_xăng_đổi_điện",
+      "label": "Program",
+      "properties": {
+        "name": "Thu xăng đổi điện",
+        "description": "Chương trình khuyến mại không áp dụng cùng với chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_vinpearl",
+      "label": "Product",
+      "properties": {
+        "name": "VinPearl",
+        "description": "Voucher có thể quy đổi thành tiền mặt trong chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf_wild_comfort",
+      "label": "Product",
+      "properties": {
+        "name": "VF WILD COMFORT",
+        "description": "VF Wild Comfort là mẫu xe của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003"
+        ]
+      }
+    },
+    {
+      "id": "ent_ưu_đãi_cọc_tiên_phong",
+      "label": "Program",
+      "properties": {
+        "name": "ƯU ĐÃI CỌC TIÊN PHONG",
+        "description": "Ưu đãi cọc Tiên phong là chương trình ưu đãi đặt cọc giảm phí cho khách hàng của VinFast",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003"
+        ]
+      }
+    },
+    {
+      "id": "ent_chính_sách_ưu_đãi",
+      "label": "Program",
+      "properties": {
+        "name": "CHÍNH SÁCH ƯU ĐÃI",
+        "description": "Chính sách ưu đãi là chính sách giá và bán hàng của VinFast khi khách hàng đặt cọc hoặc khi xuất hóa đơn",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003"
+        ]
+      }
+    },
+    {
+      "id": "ent_fadil",
+      "label": "Product",
+      "properties": {
+        "name": "FADIL",
+        "description": "Fadil là dòng xe xăng của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "ent_lux_a2_0",
+      "label": "Product",
+      "properties": {
+        "name": "LUX A2.0",
+        "description": "Lux A2.0 là dòng xe xăng của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "ent_lux_sa2_0",
+      "label": "Product",
+      "properties": {
+        "name": "LUX SA2.0",
+        "description": "Lux SA2.0 là dòng xe xăng của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "ent_xe_ô_tô_điện_vinfast",
+      "label": "Product",
+      "properties": {
+        "name": "XE Ô TÔ ĐIỆN VINFAST",
+        "description": "Xe ô tô điện VinFast là dòng xe điện hiện tại của VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "ent_voucher",
+      "label": "Product",
+      "properties": {
+        "name": "VOUCHER",
+        "description": "Voucher để giảm giá mua xe điện VinFast",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "ent_chương_trình_tri_ân_khách_hàng_xe_xăn_vinfast_chuyển_đổi_xanh",
+      "label": "Program",
+      "properties": {
+        "name": "CHƯƠNG TRÌNH TRI ÂN KHÁCH HÀNG XE XĂN VINFAST CHUYỂN ĐỔI XANH",
+        "description": "Chương trình khuyến mãi tặng voucher cho khách hàng xe xăng VinFast chuyển đổi sang xe điện",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "ent_chương_trình_mua_xe_0_đông",
+      "label": "Program",
+      "properties": {
+        "name": "CHƯƠNG TRÌNH MUA XE 0 ĐÔNG",
+        "description": "Chương trình cho vay 100% giá trị xe khi mua dựa trên điều kiện 0 đồng",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "ent_chính_sách_vì_tương_lai_xanh_2",
+      "label": "Program",
+      "properties": {
+        "name": "CHÍNH SÁCH VÌ TƯƠNG LAI XANH 2",
+        "description": "Chính sách không áp dụng đồng thời với voucher trong chương trình Tri ân",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "ent_chính_sách_mua_xe_0_đông",
+      "label": "Program",
+      "properties": {
+        "name": "CHÍNH SÁCH MUA XE 0 ĐÔNG",
+        "description": "Chính sách cho vay 100% giá trị xe khi mua 0 đồng",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "ent_quân_đội_nhân_dân_viêt_nam",
+      "label": "Organization",
+      "properties": {
+        "name": "QUÂN ĐỘI NHÂN DÂN VIÊT NAM",
+        "description": "đội quân quốc phòng của Việt Nam",
+        "entity_type": "ORGANIZATION",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_công_an_nhân_dân_viêt_nam",
+      "label": "Organization",
+      "properties": {
+        "name": "CÔNG AN NHÂN DÂN VIÊT NAM",
+        "description": "cơ quan an ninh của Việt Nam",
+        "entity_type": "ORGANIZATION",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_tổng_công_ty_bùy_điện_việt_nam",
+      "label": "Organization",
+      "properties": {
+        "name": "TỔNG CÔNG TY BÙY ĐIỆN VIỆT NAM",
+        "description": "công ty bưu chính quốc gia",
+        "entity_type": "ORGANIZATION",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_vinclub",
+      "label": "Program",
+      "properties": {
+        "name": "VINCLUB",
+        "description": "chính sách ưu đãi VinClub",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_chính_sách_bán_buôn",
+      "label": "Program",
+      "properties": {
+        "name": "CHÍNH SÁCH BÁN BUÔN",
+        "description": "chính sách bán buôn",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_chính_sách_ưu_đãi_cho_cbnv_đại_lý_phân_phối",
+      "label": "Program",
+      "properties": {
+        "name": "CHÍNH SÁCH ƯU ĐÃI CHO CBNV ĐẠI LÝ PHÂN PHỐI",
+        "description": "chính sách ưu đãi CBNV Đại lý phân phối",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_cbnv",
+      "label": "Person",
+      "properties": {
+        "name": "CBNV",
+        "description": "cán bộ bưu chính (CBNV)",
+        "entity_type": "PERSON",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_cbld",
+      "label": "Person",
+      "properties": {
+        "name": "CBLD",
+        "description": "Cán bộ Bưu chính lợi dụng (CBLĐ)",
+        "entity_type": "PERSON",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_chính_sách_ưu_đãi_quán_đội",
+      "label": "Program",
+      "properties": {
+        "name": "CHÍNH SÁCH ƯU ĐÃI QUÁN ĐỘI",
+        "description": "chính sách ưu đãi quân đội và công an",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_chính_sách_ưu_đãi_cho_cbnv",
+      "label": "Program",
+      "properties": {
+        "name": "CHÍNH SÁCH ƯU ĐÃI CHO CBNV",
+        "description": "chính sách ưu đãi CBNV",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_chính_sách_ưu_đãi_tiên_phơng_vf_8",
+      "label": "Program",
+      "properties": {
+        "name": "CHÍNH SÁCH ƯU ĐÃI TIÊN PHƠNG VF 8",
+        "description": "chính sách ưu đãi tiên phong VF 8",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_vf_8_thế_hệ_mới",
+      "label": "Product",
+      "properties": {
+        "name": "VF 8 THẾ HỆ MỚI",
+        "description": "phần tử xe",
+        "entity_type": "PRODUCT",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "ent_chương_trình_ưu_đãi_51_triệu_đồng_tiên_phong",
+      "label": "Program",
+      "properties": {
+        "name": "CHƯƠNG TRÌNH ƯU ĐÃI 51 TRIỆU ĐỒNG TIÊN PHONG",
+        "description": "Chương trình ưu đãi 51 triệu đồng Tiên phong của VinFast",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c006"
+        ]
+      }
+    },
+    {
+      "id": "ent_chính_sách_giá_chính_sách_bán_hàng",
+      "label": "Program",
+      "properties": {
+        "name": "CHÍNH SÁCH GIÁ & CHÍNH SÁCH BÁN HÀNG",
+        "description": "Chính sách giá và chính sách bán hàng tại thời điểm cọc hoặc xuất hóa đơn",
+        "entity_type": "PROGRAM",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c006"
+        ]
+      }
+    },
+    {
+      "id": "claim_ca4868842e81",
+      "label": "Claim",
+      "properties": {
+        "description": "Ưu đãi 3% MSRP",
+        "claim_type": "DISCOUNT",
+        "status": "TRUE",
+        "start_date": "2026-09-19",
+        "end_date": "2026-12-19",
+        "condition": "tại thời điểm đặt cọc hoặc xuất hóa đơn",
+        "source_text": "Các dòng VF 2, VF 3 & Minio Green: Ưu đãi 3% MSRP",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "claim_d14d9b32f533",
+      "label": "Claim",
+      "properties": {
+        "description": "Ưu đãi 3% MSRP",
+        "claim_type": "DISCOUNT",
+        "status": "TRUE",
+        "start_date": "2026-09-19",
+        "end_date": "2026-12-19",
+        "condition": "tại thời điểm đặt cọc hoặc xuất hóa đơn",
+        "source_text": "Các dòng VF 2, VF 3 & Minio Green: Ưu đãi 3% MSRP",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "claim_f4850b93570d",
+      "label": "Claim",
+      "properties": {
+        "description": "Ưu đãi 5% MSRP",
+        "claim_type": "DISCOUNT",
+        "status": "TRUE",
+        "start_date": "2026-09-19",
+        "end_date": "2026-12-19",
+        "condition": "tại thời điểm đặt cọc hoặc xuất hóa đơn",
+        "source_text": "Các dòng VF 7, VF 9, VF 8 Thế hệ mới, Lạc Hồng 900 LX, EC Van & VF Wild: Ưu đãi 5% MSRP",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "claim_511d2b494421",
+      "label": "Claim",
+      "properties": {
+        "description": "Ưu đãi 6% MSRP",
+        "claim_type": "DISCOUNT",
+        "status": "TRUE",
+        "start_date": "2026-09-19",
+        "end_date": "2026-12-19",
+        "condition": "khách hàng đặc biệt",
+        "source_text": "Các dòng VF 2, VF 3 & Minio Green: Ưu đãi 6% MSRP",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "claim_b4926e12ac67",
+      "label": "Claim",
+      "properties": {
+        "description": "Ưu đãi 7% MSRP",
+        "claim_type": "DISCOUNT",
+        "status": "TRUE",
+        "start_date": "2026-09-19",
+        "end_date": "2026-12-19",
+        "condition": "khách hàng đặc biệt",
+        "source_text": "Các dòng VF 7, VF 9, VF 8 Thế hệ mới, Lạc Hồng 900 LX, EC Van & VF Wild: Ưu đãi 7% MSRP",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "claim_aee69dc719a4",
+      "label": "Claim",
+      "properties": {
+        "description": "Đặt cọc từ ngày 01/07/2026 đến 18/09/2026 nếu xuất hóa đơn không muộn hơn 30/09/2026",
+        "claim_type": "CONDITION",
+        "status": "TRUE",
+        "start_date": "2026-07-01",
+        "end_date": "2026-09-18",
+        "condition": "Nếu xuất hóa đơn không muộn hơn ngày 30/09/2026",
+        "source_text": "Khách hàng đặt cọc từ ngày 01/07/2026 đến ngày 18/09/2026 nếu xuất hóa đơn không muộn hơn ngày 30/09/2026 được lựa chọn",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "claim_49616356bfb6",
+      "label": "Claim",
+      "properties": {
+        "description": "Không áp dụng cùng lúc với chương trình Tri ân khách hàng xăng",
+        "claim_type": "EXCLUSION",
+        "status": "TRUE",
+        "source_text": "Chính sách này không được áp dụng đồng thời với: Chương trình Tri ân Khách hàng xe xăng VinFast chuyển đổi xanh",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "claim_e0c0fceab77a",
+      "label": "Claim",
+      "properties": {
+        "description": "Không áp dụng cùng lúc với chương trình VinClub",
+        "claim_type": "EXCLUSION",
+        "status": "TRUE",
+        "source_text": "Chính sách này không được áp dụng đồng thời với: Chính sách Khách hàng thân thiết VinClub",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "id": "claim_52e556fbd724",
+      "label": "Claim",
+      "properties": {
+        "description": "Đặt cọc 10.000.000 VNĐ cho VF Wild Comfort trong thời gian từ 15/07/2026 đến 17/07/2026",
+        "claim_type": "DEPOSIT",
+        "status": "TRUE",
+        "start_date": "2026-07-15",
+        "end_date": "2026-07-17",
+        "source_text": "Chính sách cọc tiên phong VF Wild Comfort",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003"
+        ]
+      }
+    },
+    {
+      "id": "claim_9ae7b76bcf01",
+      "label": "Claim",
+      "properties": {
+        "description": "Ưu đãi cọc Tiên phong giảm 8.000.000 VNĐ khi đặt cọc cho VF Wild Comfort",
+        "claim_type": "DISCOUNT",
+        "status": "TRUE",
+        "start_date": "2026-07-15",
+        "end_date": "2026-07-17",
+        "condition": "đối với đơn đặt cọc VF Wild Comfort",
+        "source_text": "Chính sách cọc tiên phong VF Wild Comfort",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003"
+        ]
+      }
+    },
+    {
+      "id": "claim_c2ccd6569137",
+      "label": "Claim",
+      "properties": {
+        "description": "Đơn đặt cọc có hiệu lực đến hết ngày 28/02/2027, với điều kiện hoàn trả cọc nếu VinFast không giao xe trước thời hạn",
+        "claim_type": "VALIDITY",
+        "status": "TRUE",
+        "end_date": "2027-02-28",
+        "condition": "Nếu VinFast không giao xe trước thời hạn do bất khả kháng, VinFast sẽ hoàn trả cọc cho khách hàng",
+        "source_text": "Chính sách cọc tiên phong VF Wild Comfort",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003"
+        ]
+      }
+    },
+    {
+      "id": "claim_a88b9c5358e7",
+      "label": "Claim",
+      "properties": {
+        "description": "Voucher giá trị áp dụng khi mua xe điện VinFast, sử dụng tối đa một voucher, giá trị không áp dụng đồng thời với Chính sách Vì tương lai xanh 2. VOUCHER có giá trị sử dụng khi Khách hàng hoặc người thân, hoặc công ty do các cá nhân này sở hữu điểm mua xe điện VinFast mới, đến hết 31/12/2026",
+        "claim_type": "USE",
+        "status": "TRUE",
+        "end_date": "2026-12-31",
+        "condition": "mua xe điện VinFast",
+        "source_text": "text",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "claim_28d686915af7",
+      "label": "Claim",
+      "properties": {
+        "description": "Voucher giá trị 30.000.000 VNĐ cho Fadil",
+        "claim_type": "VALUE",
+        "status": "TRUE",
+        "condition": "mua xe xăng Fadil",
+        "source_text": "text",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "claim_a0aafe5bfd81",
+      "label": "Claim",
+      "properties": {
+        "description": "Voucher giá trị 60.000.000 VNĐ cho Lux A2.0",
+        "claim_type": "VALUE",
+        "status": "TRUE",
+        "condition": "mua xe xăng Lux A2.0",
+        "source_text": "text",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "claim_c74a72a16d1e",
+      "label": "Claim",
+      "properties": {
+        "description": "Voucher giá trị 80.000.000 VNĐ cho Lux SA2.0",
+        "claim_type": "VALUE",
+        "status": "TRUE",
+        "condition": "mua xe xăng Lux SA2.0",
+        "source_text": "text",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "claim_942e9aee3995",
+      "label": "Claim",
+      "properties": {
+        "description": "Mỗi xe điện VinFast mới được dùng tối đa một voucher",
+        "claim_type": "LIMIT",
+        "status": "TRUE",
+        "condition": "mua xe điện VinFast",
+        "source_text": "text",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "claim_57cf20c048dd",
+      "label": "Claim",
+      "properties": {
+        "description": "Chính sách Mua xe 0 ĐÔNG không được áp dụng đồng thời với chương trình Tri ân khi sử dụng voucher",
+        "claim_type": "EXCLUSION",
+        "status": "TRUE",
+        "condition": "không áp dụng đồng thời",
+        "source_text": "text",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "id": "claim_1a7b91970ba2",
+      "label": "Claim",
+      "properties": {
+        "description": "Giảm 5% MSRP gồm VAT cho Quân đội nhân dân và Công an nhân dân Việt Nam",
+        "claim_type": "DISCOUNT",
+        "status": "TRUE",
+        "start_date": "2026-02-04",
+        "end_date": "2026-09-18",
+        "condition": "đáp ứng điều kiện độ tuổi, là nhân viên Quân đội hoặc Công an",
+        "source_text": "Đối tượng áp dụng: Sĩ quan, quân nhân chuyên nghiệp, hạ sĩ quan, chiến sĩ thuộc Quân đội Nhân dân Việt Nam và Công an Nhân dân Việt Nam và người thân (vợ chồng/con cái/ tứ thân phụ mẫu) đang công tác trong biên chế chính thức, Giấy tờ xác định: thẻ sĩ quan/ thẻ quân nhân/ thẻ Công an Nhân dân, Mức ưu đãi: 5% MSRP gồm VAT, Thời gian áp dụng: từ 04/02/2026 đến 18/09/2026",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "claim_b67c83285b48",
+      "label": "Claim",
+      "properties": {
+        "description": "Giảm 3% MSRP cho CBNV, giảm 5% MSRP cho CBLĐ",
+        "claim_type": "DISCOUNT",
+        "status": "TRUE",
+        "start_date": "2026-07-12",
+        "end_date": "2026-09-18",
+        "condition": "có hợp đồng lao động từ 12 tháng trở lên và làm việc liên tục tối thiểu 6 tháng tại thời điểm mua xe",
+        "source_text": "Chính sách ưu đãi cho CBNV của Tổng Công ty Bưu điện Việt Nam – VN Post, Mức giảm giá: CBNV là 3% MSRP; CBLĐ là 5% MSRP, Thời gian áp dụng: từ 12/07/2026 đến 18/09/2026",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "claim_81f1bf6825a9",
+      "label": "Claim",
+      "properties": {
+        "description": "Không áp dụng đồng thời với chính sách VinClub, chính sách bán buôn, chính sách CBNV Đại lý phân phối",
+        "claim_type": "EXCLUSION",
+        "status": "TRUE",
+        "condition": "đồng thời",
+        "source_text": "Khai báo mệnh đề trong chính sách",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "id": "claim_83eda27e2b0f",
+      "label": "Claim",
+      "properties": {
+        "description": "Số tiền cọc 15.000.000 VNĐ",
+        "claim_type": "AMOUNT",
+        "status": "TRUE",
+        "source_text": "\"Số tiền cọc 15.000.000 VNĐ\"",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c006"
+        ]
+      }
+    },
+    {
+      "id": "claim_cb30c1f11656",
+      "label": "Claim",
+      "properties": {
+        "description": "Không hoàn/hủy",
+        "claim_type": "REFUND",
+        "status": "TRUE",
+        "source_text": "\"Không hoàn/hủy\"",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c006"
+        ]
+      }
+    },
+    {
+      "id": "claim_1733c3bf8e25",
+      "label": "Claim",
+      "properties": {
+        "description": "Chỉ có thể chuyển nhượng tối đa 1 lần cho vợ/chồng, con cái, tứ thân phụ mẫu, hoặc công ty do khách hàng hoặc các cá nhân này sở hữu phần vốn góp lớn nhất.",
+        "claim_type": "TRANSFER",
+        "status": "TRUE",
+        "source_text": "\"Chỉ có thể chuyển nhượng tối đa 1 lần cho vợ/chồng, con cái, tứ thân phụ mẫu, hoặc công ty do khách hàng hoặc các cá nhân này sở hữu phần vốn góp lớn nhất\"",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c006"
+        ]
+      }
+    },
+    {
+      "id": "claim_7fbd699dd7a2",
+      "label": "Claim",
+      "properties": {
+        "description": "Hiệu lực booking đến hết ngày 31/12/2026.",
+        "claim_type": "EFFECTIVE",
+        "status": "TRUE",
+        "end_date": "2026-12-31",
+        "source_text": "\"Hiệu lực booking đến hết ngày 31/12/2026\"",
+        "source": "document",
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c006"
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "ent_vinfast",
+      "to": "ent_vf3",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast cung cấp mẫu xe VF 3",
+        "weight": 0.8,
+        "source_docs": [
+          "sample.txt",
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "sample_c001",
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vf3",
+      "to": "ent_chương_trình_ưu_đãi_mùa_xuân",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VF3 tham gia chương trình ưu đãi mùa xuân",
+        "weight": 0.8,
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_chương_trình_ưu_đãi_mùa_xuân",
+      "to": "ent_đại_lý_vinfast_hà_nội",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Chương trình ưu đãi mùa xuân áp dụng tại đại lý VinFast Hà Nội",
+        "weight": 0.7,
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_chương_trình_ưu_đãi_mùa_xuân",
+      "to": "ent_đại_lý_vinfast_tp_hcm",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Chương trình ưu đãi mùa xuân áp dụng tại đại lý VinFast TP.HCM",
+        "weight": 0.7,
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_phạm_nhật_vượng",
+      "to": "ent_vinfast",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Phạm Nhật Vượng là Tổng giám đốc của VinFast",
+        "weight": 0.9,
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_indonesia",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast dự kiến xuất khẩu VF3 sang Indonesia",
+        "weight": 0.7,
+        "source_docs": [
+          "sample.txt"
+        ],
+        "text_unit_ids": [
+          "sample_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vf3",
+      "to": "claim_62de1144c5cc",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "ent_vf3",
+      "to": "claim_15003f5ddbd4",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_15003f5ddbd4",
+      "to": "ent_chương_trình_ưu_đãi_mùa_xuân",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "claim_e06c08ca75fd",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_e06c08ca75fd",
+      "to": "ent_indonesia",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "claim_65fd8d2cce6d",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_vf2",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast cung cấp mẫu xe VF 2",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_minio_green",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast cung cấp mẫu xe Minio Green",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_vf7",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast cung cấp mẫu xe VF 7",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_vf9",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast cung cấp mẫu xe VF 9",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_vf8_the_henh_moi",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast cung cấp mẫu xe VF 8 Thế hệ mới",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_lac_hong_900_lx",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast cung cấp mẫu xe Lạc Hồng 900 LX",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_ec_van",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast cung cấp mẫu xe EC Van",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_vf_wild",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast cung cấp mẫu xe VF Wild",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast_gsm",
+      "to": "ent_vinfast",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast/GSM là nhà phân phối của VinFast",
+        "weight": 0.7,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_vì_tương_lai_xanh_2",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast triển khai chính sách “Vì Tương Lai Xanh 2”",
+        "weight": 0.9,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vì_tương_lai_xanh_2",
+      "to": "ent_vf2",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Chính sách áp dụng đối với mẫu VF 2",
+        "weight": 0.6,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vì_tương_lai_xanh_2",
+      "to": "ent_trương_than_vinfast",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Chính sách không áp dụng đồng thời với chương trình Tri ân khách hàng",
+        "weight": 0.4,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vì_tương_lai_xanh_2",
+      "to": "ent_vinclub_policy",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Chính sách không áp dụng đồng thời với chương trình VinClub",
+        "weight": 0.4,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001"
+        ]
+      }
+    },
+    {
+      "from": "ent_vf_3_eco_plus",
+      "to": "ent_chương_trình_ưu_đãi_một_số_dòng_xe",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VF 3 Eco/Plus được tham gia chương trình ưu đãi một số dòng xe",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "from": "ent_limo_green",
+      "to": "ent_chương_trình_ưu_đãi_một_số_dòng_xe",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Limo Green được tham gia chương trình ưu đãi một số dòng xe",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "from": "ent_vf_mpv_7",
+      "to": "ent_chương_trình_ưu_đãi_một_số_dòng_xe",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VF MPV 7 được tham gia chương trình ưu đãi một số dòng xe",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "from": "ent_ec_van_tiêu_chuẩn",
+      "to": "ent_chương_trình_ưu_đãi_một_số_dòng_xe",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "EC Van Tiêu chuẩn được tham gia chương trình ưu đãi một số dòng xe",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "from": "ent_limo_green",
+      "to": "ent_chương_trình_hỗ_trợ_lãi_suất",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Limo Green được hỗ trợ lãi suất trong chương trình hỗ trợ lãi suất",
+        "weight": 0.9,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "from": "ent_vf_mpv_7",
+      "to": "ent_chương_trình_hỗ_trợ_lãi_suất",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VF MPV 7 được hỗ trợ lãi suất trong chương trình hỗ trợ lãi suất",
+        "weight": 0.9,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "from": "ent_limo_green",
+      "to": "ent_chương_trình_mùa_hè_rực_rỡ_vinfascination",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Limo Green được tham gia chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "from": "ent_herio_green",
+      "to": "ent_chương_trình_mùa_hè_rực_rỡ_vinfascination",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Herio Green được tham gia chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "from": "ent_minio_green",
+      "to": "ent_chương_trình_mùa_hè_rực_rỡ_vinfascination",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Minio Green được tham gia chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "from": "ent_vf_5",
+      "to": "ent_chương_trình_mùa_hè_rực_rỡ_vinfascination",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VF 5 được tham gia chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "from": "ent_vf_7",
+      "to": "ent_chương_trình_mùa_hè_rực_rỡ_vinfascination",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VF 7 được tham gia chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "from": "ent_vf_8",
+      "to": "ent_chương_trình_mùa_hè_rực_rỡ_vinfascination",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VF 8 được tham gia chương trình Mùa Hè Rực Rỡ - Vinfascination",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_vf_wild_comfort",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast sản xuất mẫu xe VF Wild Comfort",
+        "weight": 0.9,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_ưu_đãi_cọc_tiên_phong",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast cung cấp chương trình ưu đãi cọc Tiên phong",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003"
+        ]
+      }
+    },
+    {
+      "from": "ent_vf_wild_comfort",
+      "to": "ent_ưu_đãi_cọc_tiên_phong",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VF Wild Comfort được áp dụng ưu đãi cọc Tiên phong",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_chính_sách_ưu_đãi",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast áp dụng chính sách ưu đãi cho khách hàng",
+        "weight": 0.7,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003"
+        ]
+      }
+    },
+    {
+      "from": "ent_vf_wild_comfort",
+      "to": "ent_chính_sách_ưu_đãi",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VF Wild Comfort áp dụng chính sách ưu đãi khi khách hàng đặt cọc hoặc xuất hóa đơn",
+        "weight": 0.7,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_chương_trình_tri_ân_khách_hàng_xe_xăn_vinfast_chuyển_đổi_xanh",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast tổ chức chương trình Tri ân khách hàng xe xăng",
+        "weight": 0.9,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_chương_trình_mua_xe_0_đông",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast tổ chức chương trình Mua xe 0 đồng",
+        "weight": 0.9,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "from": "ent_chương_trình_tri_ân_khách_hàng_xe_xăn_vinfast_chuyển_đổi_xanh",
+      "to": "ent_voucher",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Chương trình Tri ân cung cấp voucher",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "from": "ent_voucher",
+      "to": "ent_chương_trình_tri_ân_khách_hàng_xe_xăn_vinfast_chuyển_đổi_xanh",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Voucher thuộc chương trình Tri ân",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "from": "ent_voucher",
+      "to": "ent_xe_ô_tô_điện_vinfast",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "Voucher dùng để mua xe điện VinFast",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004"
+        ]
+      }
+    },
+    {
+      "from": "ent_chính_sách_ưu_đãi_quán_đội",
+      "to": "ent_quân_đội_nhân_dân_viêt_nam",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "chính sách ưu đãi dành cho Quân đội nhân dân Việt Nam",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "from": "ent_chính_sách_ưu_đãi_quán_đội",
+      "to": "ent_công_an_nhân_dân_viêt_nam",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "chính sách ưu đãi dành cho Công an nhân dân Việt Nam",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "from": "ent_chính_sách_ưu_đãi_cho_cbnv",
+      "to": "ent_cbnv",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "chính sách ưu đãi dành cho CBNV",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "from": "ent_chính_sách_ưu_đãi_cho_cbnv",
+      "to": "ent_cbld",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "chính sách ưu đãi dành cho CBLĐ",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "from": "ent_chính_sách_ưu_đãi_cho_cbnv",
+      "to": "ent_vinclub",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "chính sách ưu đãi CBNV không áp dụng đồng thời với VinClub",
+        "weight": 0.5,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "from": "ent_chính_sách_ưu_đãi_tiên_phơng_vf_8",
+      "to": "ent_vf_8_thế_hệ_mới",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "chính sách ưu đãi dành cho VF 8 Thế hệ mới",
+        "weight": 0.9,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "from": "ent_tổng_công_ty_bùy_điện_việt_nam",
+      "to": "ent_vn_post",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "đơn vị hoạt động của Tổng Công ty Bưu điện Việt Nam",
+        "weight": 0.6,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_chương_trình_ưu_đãi_51_triệu_đồng_tiên_phong",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast cung cấp chương trình ưu đãi 51 triệu đồng Tiên phong",
+        "weight": 0.8,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c006"
+        ]
+      }
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "ent_chính_sách_giá_chính_sách_bán_hàng",
+      "type": "RELATED_TO",
+      "properties": {
+        "description": "VinFast áp dụng chính sách giá và bán hàng vào thời điểm cọc và xuất hóa đơn",
+        "weight": 0.7,
+        "source_docs": [
+          "thong-bao-chinh-sach-thuc-day-ban-hang-o-to-dien-thang-09.2026.md"
+        ],
+        "text_unit_ids": [
+          "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c006"
+        ]
+      }
+    },
+    {
+      "from": "ent_vf2",
+      "to": "claim_ca4868842e81",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_ca4868842e81",
+      "to": "ent_vì_tương_lai_xanh_2",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_vf3",
+      "to": "claim_d14d9b32f533",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_d14d9b32f533",
+      "to": "ent_vì_tương_lai_xanh_2",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_vf7",
+      "to": "claim_f4850b93570d",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_f4850b93570d",
+      "to": "ent_vì_tương_lai_xanh_2",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_vf2",
+      "to": "claim_511d2b494421",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_511d2b494421",
+      "to": "ent_vì_tương_lai_xanh_2",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_vf7",
+      "to": "claim_b4926e12ac67",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_b4926e12ac67",
+      "to": "ent_vì_tương_lai_xanh_2",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_vì_tương_lai_xanh_2",
+      "to": "claim_aee69dc719a4",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "ent_vì_tương_lai_xanh_2",
+      "to": "claim_49616356bfb6",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_49616356bfb6",
+      "to": "ent_trương_than_vinfast",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_vì_tương_lai_xanh_2",
+      "to": "claim_e0c0fceab77a",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_e0c0fceab77a",
+      "to": "ent_vinclub_policy",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_vf_wild_comfort",
+      "to": "claim_52e556fbd724",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "ent_vf_wild_comfort",
+      "to": "claim_9ae7b76bcf01",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_9ae7b76bcf01",
+      "to": "ent_ưu_đãi_cọc_tiên_phong",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "claim_c2ccd6569137",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_c2ccd6569137",
+      "to": "ent_vf_wild_comfort",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_voucher",
+      "to": "claim_a88b9c5358e7",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_a88b9c5358e7",
+      "to": "ent_xe_ô_tô_điện_vinfast",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_voucher",
+      "to": "claim_28d686915af7",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_28d686915af7",
+      "to": "ent_fadil",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_voucher",
+      "to": "claim_a0aafe5bfd81",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_a0aafe5bfd81",
+      "to": "ent_lux_a2_0",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_voucher",
+      "to": "claim_c74a72a16d1e",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_c74a72a16d1e",
+      "to": "ent_lux_sa2_0",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_voucher",
+      "to": "claim_942e9aee3995",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_942e9aee3995",
+      "to": "ent_xe_ô_tô_điện_vinfast",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_chính_sách_mua_xe_0_đông",
+      "to": "claim_57cf20c048dd",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_57cf20c048dd",
+      "to": "ent_chương_trình_tri_ân_khách_hàng_xe_xăn_vinfast_chuyển_đổi_xanh",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_chính_sách_ưu_đãi_quán_đội",
+      "to": "claim_1a7b91970ba2",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_1a7b91970ba2",
+      "to": "ent_quân_đội_nhân_dân_viêt_nam",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_chính_sách_ưu_đãi_cho_cbnv",
+      "to": "claim_b67c83285b48",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_b67c83285b48",
+      "to": "ent_cbnv",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_chính_sách_ưu_đãi_cho_cbnv",
+      "to": "claim_81f1bf6825a9",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "claim_81f1bf6825a9",
+      "to": "ent_vinclub",
+      "type": "ABOUT",
+      "properties": {}
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "claim_83eda27e2b0f",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "claim_cb30c1f11656",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "claim_1733c3bf8e25",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    },
+    {
+      "from": "ent_vinfast",
+      "to": "claim_7fbd699dd7a2",
+      "type": "HAS_CLAIM",
+      "properties": {}
+    }
+  ],
+  "text_units": {
+    "sample_c001": "VinFast, tập đoàn ô tô Việt Nam, sẽ ra mắt mẫu xe VF3 vào tháng 3/2026.\nKhách hàng mua xe VF3 trong thời gian từ ngày 15/01/2026 đến ngày 20/01/2026\nsẽ được hưởng ưu đãi giảm giá 30% so với giá niêm yết.\nChương trình ưu đãi mùa xuân này chỉ áp dụng tại các đại lý VinFast Hà Nội và TP.HCM.\nTổng giám đốc VinFast Phạm Nhật Vượng cho biết công ty dự kiến xuất khẩu VF3 sang Indonesia.\nTuy nhiên, một số chuyên gia nghi ngờ kế hoạch này có thể bị hoãn đến cuối năm 2026.",
+    "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c001": "**==&gt; picture [133 x 34] intentionally omitted &lt;==**\n\n## Thông báo Chính sách thúc đẩy bán hàng Ô tô điện VinFast tại Việt Nam\n\n## *Mã văn bản: 20260926\\_ThongbaoCSthucdaybanhangotodienVinFasttaiVN*\n\n**Công ty TNHH Kinh doanh Thương mại và Dịch vụ VinFast xin thông báo Chính sách thúc đẩy bán hàng Ô tô điện VinFast tại Việt Nam đến Quý khách hàng.**\n\n## Nội dung Chính sách:\n\nChính sách sau được áp dụng cho các xe ô tô điện VinFast được mua trực tiếp từ VinFast/GSM hoặc Đại lý phân phối của VinFast/GSM tại thị trường.\n\n## Nguyên tắc áp dụng các chính sách:\n\nKhách hàng đặt cọc từ ngày 01/07/2026 đến ngày 18/09/2026 nếu xuất hóa đơn không muộn hơn ngày 30/09/2026 được lựa chọn: (1) các chính sách tại thời điểm đặt cọc; hoặc (2) các chính sách tại thời điểm xuất hóa đơn.\n\n**1. Chính sách “Vì Tương Lai Xanh 2”:**\n\n- a. Đối với các đối tượng:\n- Khách hàng đang sở hữu xe ô tô xăng/ xe máy xăng/ xe máy điện VinFast/ ô tô điện VinFast.\n- Mức ưu đãi được áp dụng như sau:\n- Các dòng VF 2, VF 3 &amp; Minio Green: Ưu đãi 3% MSRP.\n- Các dòng VF 7, VF 9, VF 8 Thế hệ mới, Lạc Hồng 900 LX, EC Van &amp; VF Wild: Ưu đãi 5% MSRP.\n- Các dòng xe còn lại: Ưu đãi 9% MSRP.\n- b. Đối với các đối tượng đặc biệt:\n- Khách hàng phục vụ trong ngành công an và quân đội, bao gồm: Sĩ quan, quân nhân chuyên nghiệp, hạ sĩ quan, chiến sĩ thuộc Quân đội nhân dân Việt Nam và Công an nhân dân\n- Việt Nam và người thân (vợ chồng/con cái/ tứ thân phụ mẫu) đang công tác trong biên chế chính thức. Giấy tờ xác định đối tượng hưởng ưu đãi là thẻ ngành: Thẻ sĩ quan/ thẻ quân nhân/ thẻ Công an nhân dân.\n- Khách hàng là nhân sự của Tổng công ty Bưu điện Việt Nam – VN Post.\n- Mức ưu đãi được áp dụng như sau:\n- Các dòng VF 2, VF 3 &amp; Minio Green: Ưu đãi 6% MSRP.\n- Các dòng VF 7, VF 9, VF 8 Thế hệ mới, Lạc Hồng 900 LX, EC Van &amp; VF Wild: Ưu đãi 7% MSRP.\n- Các dòng xe còn lại: Ưu đãi 9% MSRP.\n- c. Thời gian áp dụng: Từ ngày 19/09/2026 đến hết ngày 19/12/2026.\n- d. Điều kiện áp dụng:\n- Áp dụng cho chủ sở hữu xe hoặc vợ chồng/ con cái/ tứ thân phụ mẫu/ công ty do họ sở hữu số cổ phần/ phần góp lớn nhất.\n- Xe mới có thể được đứng tên bởi chính chủ sở hữu xe hoặc vợ chồng, con cái, tứ thân phụ mẫu; hoặc công ty do họ sở hữu số cổ phần/ phần vốn góp lớn nhất. Trường hợp chủ sở hữu xe là pháp nhân, xe mới có thể được đứng tên pháp nhân đó hoặc cá nhân sở hữu cổ phần/ phần vốn góp lớn nhất.\n- Mỗi xe chỉ được sử dụng 01 lần để hưởng ưu đãi chuyển đổi sang xe điện VinFast cho toàn bộ chương trình Vì Tương Lai Xanh 2 &amp; Thu xăng đổi điện VinFast đã triển khai.\n- Với Khách hàng sở hữu xe ô tô xăng hoặc xe máy xăng, Khách hàng cam kết chuyển đổi sang xe điện VinFast.\n- Chính sách này không được áp dụng đồng thời với:\n- Chương trình Tri ân Khách hàng xe xăng VinFast chuyển đổi xanh tại mục 7 của văn bản này.\n- Chính sách Khách hàng thân thiết VinClub tại thị trường Việt Nam.\n\n## 2. Chính sách ưu đãi một số dòng xe:",
+    "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c002": "| h ưu đãi một số dòng xe:   |                                                      |                                                                     |\n|----------------------------|------------------------------------------------------|---------------------------------------------------------------------|\n| Dòng xe                    | Ưu đãi                                               | Thời gian áp dụng{br}(Theo ngày xuất hóa đơn)                       |\n| VF 3 Eco/Plus              | Miễn phí màu sơn nâng cao cho VIN 2025 trở về trước. | Từ ngày 25/03/2026 đến khi có thông báo mới theo ngày xuất hóa đơn. |\n| Limo Green                 | Giảm giá 35.000.000 VNĐ/ xe.                         | Từ ngày 07/07/2026 đến hết ngày 18/09/2026.                         |\n| VF MPV 7                   | Giảm giá 20.000.000 VNĐ/ xe.                         | Từ ngày 07/07/2026 đến hết ngày 31/08/2026.                         |\n|                            | Tặng Camera 360 & công lắp đặt.                      | Từ ngày 04/08/2026 đến hết ngày 03/09/2026.                         |\n| EC Van Tiêu chuẩn          | Giảm giá 20.000.000 VNĐ/ xe.                         | Từ ngày 21/07/2026 đến hết ngày 18/09/2026.                         |\n\n## 3. Chương trình hỗ trợ lãi suất:\n\n- Đối tượng áp dụng: Limo Green và VF MPV 7 bán lẻ trong thời gian áp dụng chương trình.\n- Thời gian áp dụng:\n- Limo Green: Từ ngày 04/08/2026 đến hết ngày 18/09/2026.\n- VF MPV 7: Từ ngày 04/08/2026 đến hết ngày 03/09/2026.\n- Ưu đãi: Ân hạn nợ gốc 3 tháng và hỗ trợ toàn bộ lãi suất trong 1 năm đầu.\n- Không áp dụng ưu đãi này với ưu đãi giảm giá 35.000.000 VNĐ/ xe của Limo Green và 20.000.000 VNĐ/ xe của VF MPV 7 tại mục 2 của chính sách này.\n\n## 4. Chương trình Mùa Hè Rực Rỡ - Vinfascination:\n\n- Tặng voucher VinPearl, có thể quy đổi sang tiền mặt cho Khách hàng xuất hóa đơn trong tháng 06/2026.\n- Giá trị:\n- 3% MSRP với VF 5, Herio Green, Limo Green, VF MPV7, Minio Green.\n- 2% MSRP với các dòng xe còn lại.\n- Ưu đãi chương trình Mùa Hè Rực Rỡ - Vinfascination không áp dụng cùng ưu đãi chương trình Thu xăng đổi điện.\n- Ghi chú: Khách hàng đặt cọc VF 7/ VF 8/ VF 9 trong tháng 06/2026 được giữ ưu đãi nếu xuất hóa đơn không muộn hơn ngày 30/09/2026.\n\n## 5. Chính sách cọc Tiên phong VF 2:",
+    "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c003": "| Hạng mục              | Nội dung                                                                                                                                                                                   |\n|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Số tiền cọc           | 10.000.000 VNĐ.                                                                                                                                                                            |\n| Ưu đãi cọc Tiên phong | 8.000.000 VNĐ.                                                                                                                                                                             |\n| Điều kiện cọc         | Không hoàn/hủy. Chỉ có thể chuyển nhượng tối đa 01 lần cho vợ/chồng, con cái, tứ thân phụ mẫu, hoặc Công ty do Khách hàng hoặc{br}các cá nhân này sở hữu phần vốn góp lớn nhất.            |\n| Hiệu lực đơn đặt cọc  | Đến hết ngày 28/02/2027.{br}Nếu vì lý do bất khả kháng VinFast không thể giao xe trước thời hạn VinFast hoàn trả cọc cho Khách hàng.                                                       |\n| Thời hạn nhận xe      | Chậm nhất ngày 28/02/2027.                                                                                                                                                                 |\n| Chính sách ưu đãi     | Khách hàng được lựa chọn ưu đãi 8.000.000 VNĐ Tiên phong + Chính sách giá & Chính sách bán hàng tại thời điểm cọc hoặc Chính{br}sách giá & Chính sách bán hàng tại thời điểm xuất hóa đơn. |\n| Thời gian nhận cọc    | Từ ngày 15/07/2026 đến hết ngày 17/07/2026.                                                                                                                                                |\n\n## 6. Chính sách cọc tiên phong VF Wild Comfort:",
+    "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c004": "| Hạng mục             | Nội dung                                                                                                                                                                        |\n|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Số tiền cọc          | 15.000.000 VNĐ.                                                                                                                                                                 |\n| Điều kiện cọc        | Không hoàn/hủy. Chỉ có thể chuyển nhượng tối đa 01 lần cho vợ/chồng, con cái, tứ thân phụ mẫu, hoặc Công ty do Khách hàng hoặc{br}các cá nhân này sở hữu phần vốn góp lớn nhất. |\n| Hiệu lực đơn đặt cọc | Đến hết tháng 06/2027.                                                                                                                                                          |\n| Chính sách ưu đãi    | Khách hàng được ưu đãi 61.000.000 VNĐ Tiên phong và áp dụng đồng thời với các Chính sách bán hàng khác theo thời điểm xuất{br}hóa đơn.                                          |\n| Thời gian nhận cọc   | Từ ngày 25/09/2026 đến hết ngày 30/09/2026.                                                                                                                                     |\n\n## 7. Chương trình Tri ân Khách hàng xe xăng VinFast chuyển đổi Xanh:\n\n- Khách hàng là chủ sở hữu đầu tiên của xe xăng VinFast được tặng voucher (định danh theo thông tin khách hàng) để sử dụng khi mua các xe ô tô điện VinFast. Giá trị theo\n- từng dòng xe như sau:\n\n| Dòng xe        | Fadil          | Lux A2.0       | Lux SA2.0      |\n|----------------|----------------|----------------|----------------|\n| Giá trị ưu đãi | 30.000.000 VNĐ | 60.000.000 VNĐ | 80.000.000 VNĐ |\n\n- Voucher được phép dùng để quy đổi thành giảm giá khi mua xe điện VinFast mới. Mỗi xe điện VinFast mới được dùng tối đa một voucher.\n- Với Khách hàng mua nhiều xe xăng VinFast, tặng tối đa 2 voucher theo mức giá trị lớn nhất tương ứng với dòng xe xăng mà Khách hàng từng mua.\n- Voucher có giá trị sử dụng khi Khách hàng hoặc người thân (bao gồm tứ thân phụ mẫu, vợ/chồng, con cái, anh chị em ruột, anh chị em ruột bên vợ/chồng), hoặc công ty do các cá nhân này sở hữu đứng tên mua xe điện VinFast mới.\n- Voucher có giá trị sử dụng đến hết 31/12/2026 và không được áp dụng đồng thời với Chính sách Vì tương lai xanh 2 tại mục 1 của văn bản này.\n\n## 8. Chính sách “Mua xe 0 Đồng”:\n\n- Ưu đãi: Khách hàng mua xe không cần vốn đối ứng, được cho vay lên tới 100% giá trị xe.\n- Phạm vi áp dụng: Tất cả các dòng xe.\n- Thời gian áp dụng: Từ ngày 04/01/2026 đến ngày 31/12/2026 theo ngày xuất hóa đơn.\n\n## 9. Chính sách ưu đãi cho Khách hàng phục vụ trong nghành Công an và Quân đội:",
+    "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c005": "- Đối tượng áp dụng: Sĩ quan, quân nhân chuyên nghiệp, hạ sĩ quan, chiến sĩ thuộc Quân đội Nhân dân Việt Nam và Công an Nhân dân Việt Nam và người thân (vợ chồng/con cái/ tứ thân phụ mẫu) đang công tác trong biên chế chính thức. Giấy tờ xác định đối tượng hưởng ưu đãi là thẻ ngành: Thẻ sĩ quan/ thẻ quân nhân/ thẻ Công an Nhân dân.\n- Mức ưu đãi: 5% MSRP gồm VAT.\n- Thời gian áp dụng: Từ ngày 04/02/2026 đến hết ngày 18/09/2026.\n- Không áp dụng đồng thời với ưu đãi Chính sách VinClub, Chính sách bán buôn, Chính sách ưu đãi cho CBNV Đại lý phân phối.\n- Để hưởng ưu đãi, Khách hàng kí cam kết: (i) sẽ cung cấp Đăng ký xe ra tên chính chủ trong vòng 60 ngày sau ngày xuất hóa đơn và (ii) không chuyển nhượng trong vòng 06 tháng.\n\n## 10. Chính sách ưu đãi cho Khách hàng là CBNV của Tổng Công ty Bưu điện Việt Nam – VN Post:\n\n- Mức giảm giá: CBNV là 3% MSRP; CBLĐ là 5% MSRP.\n- Điều kiện:\n- Là người lao động &amp; người thân (vợ chồng/con cái/ tứ thân phụ mẫu) thuộc Tổng Công ty bưu điện Việt Nam hoặc các đơn vị trực thuộc, có hợp đồng lao động không xác định thời hạn hoặc xác định thời hạn từ 12 tháng trở lên, có thời gian làm việc liên tục tối thiểu 6 tháng tại thời điểm mua xe, có xác nhận của VN Post về tình trạng nhân nhân sự còn hiệu lực.\n- CBLĐ được xác định là Chức danh từ Kế toán trưởng/Phó Giám đốc hoặc tương đương trở lên.\n- Không áp dụng đồng thời với ưu đãi Chính sách VinClub, Chính sách bán buôn, Chính sách CBNV Tập đoàn Vingroup, Chính sách CBNV Đại lý phân phối và Chính sách Công an Quân đội.\n- Chính sách áp dụng cho cá nhân đứng tên mua xe, không chuyển nhượng trong vòng 06 tháng.\n- Thời gian áp dụng: Từ ngày 12/07/2026 đến hết ngày 18/09/2026.\n\n## 11. Chính sách ưu đãi tiên phong VF 8 Thế hệ mới:\n\n- Ưu đãi: Giảm giá 51.000.000 VNĐ (đã bao gồm VAT) cho Khách hàng đặt cọc VF 8 Thế hệ mới trong giai đoạn từ ngày 27/05/2026 đến hết ngày 03/06/2026.\n- Điều kiện nhận cọc:",
+    "thong_bao_chinh_sach_thuc_day_ban_hang_o_to_dien_thang_09_2026_c006": "| iều kiện nhận cọc:   |                                                                                                                                                                                            |\n|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Hạng mục             | Nội dung                                                                                                                                                                                   |\n| Số tiền cọc          | 15.000.000 VNĐ                                                                                                                                                                             |\n| Điều kiện cọc        | Không hoàn/hủy. Chỉ có thể chuyển nhượng tối đa 1 lần cho vợ/chồng, con cái, tứ thân phụ mẫu, hoặc công ty do Khách hàng hoặc{br}các cá nhân này sở hữu phần vốn góp lớn nhất.             |\n| Hiệu lực booking     | Đến hết ngày 31/12/2026.{br}Nếu vì lý do bất khả kháng VinFast không thể giao xe trước thời hạn VinFast hoàn trả cọc cho Khách hàng.                                                       |\n| Thời hạn nhận xe     | Chậm nhất ngày 31/12/2026.                                                                                                                                                                 |\n| Chính sách ưu đãi    | Khách hàng được lựa chọn ưu đãi 51 triệu đồng Tiên phong + Chính sách giá & Chính sách bán hàng tại thời điểm cọc hoặc Chính sách{br}giá & Chính sách bán hàng tại thời điểm xuất hóa đơn. |\n\n**Vui lòng liên hệ Showroom và Nhà Phân Phối để có thêm thông tin chi tiết.**\n\n**Hotline: 1900 23 23 89**"
+  },
+  "stats": {
+    "nodes": 91,
+    "edges": 98,
+    "by_label": {
+      "Organization": 8,
+      "Product": 26,
+      "Program": 22,
+      "Geo": 4,
+      "Person": 3,
+      "Claim": 28
+    },
+    "by_edge_type": {
+      "RELATED_TO": 50,
+      "HAS_CLAIM": 28,
+      "ABOUT": 20
+    }
+  }
+}
