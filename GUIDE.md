@@ -60,6 +60,43 @@ npm run dev
 Mở `http://localhost:5173` — request tới `/api/*` được Vite proxy sang
 backend ở `:8000` (xem `frontend/vite.config.ts`).
 
+## Trích xuất graph từ văn bản (bản 2.0.0)
+
+Bản 2.0.0 dựng graph từ **văn bản** thay vì crawl: LLM đọc từng đoạn, trích xuất Entity /
+Relationship / Claim theo prompt 3 lớp ([`extract_graph.md`](backend/app/harness/prompts/templates/extract_graph.md),
+nghiên cứu nền ở [`docs/research/`](docs/research/)), rồi ghi vào `data/vinfast_policy.json`.
+
+| Trong văn bản | Trong graph |
+|---|---|
+| Thực thể có tên riêng (tổ chức, sản phẩm, địa điểm, sự kiện, người, chương trình) | Node `Organization` / `Product` / `Geo` / `Event` / `Person` / `Program` |
+| Quan hệ nối 2 thực thể | Cạnh `RELATED_TO` {`description`, `weight`, `text_unit_ids`} |
+| Fact có điều kiện / thời gian / trạng thái đúng-sai | Node `Claim` {`status`, `start_date`, `end_date`, `condition`, `source_text`} nối `Entity -HAS_CLAIM-> Claim -ABOUT-> Entity` |
+
+Mọi node/cạnh mang `text_unit_ids` (đoạn văn đã sinh ra nó); file JSON có `text_units` chứa chính
+các đoạn đó, nên từ bất kỳ fact nào cũng truy được về nguồn.
+
+**Cần:** `NVIDIA_API_KEY` trong `.env` (mặc định `EXTRACT_PROVIDER=nvidia`, gpt-oss-20b), hoặc
+`EXTRACT_PROVIDER=ollama` để dùng Gemma local (xem phần Benchmark bên dưới để cấu hình Ollama).
+
+```bash
+cd backend
+uv run python extract_graph.py ../docs/research/samples/data/sample.txt --no-load   # chỉ ghi JSON
+uv run python extract_graph.py văn_bản.md                                           # ghi JSON + nạp Neo4j
+```
+
+- Chạy nhiều tài liệu vào cùng một domain thì graph được **gộp** (cùng tên entity là cùng node).
+  `--domain` đổi domain (mặc định `vinfast_policy`), `--provider nvidia|ollama` đổi model.
+- Output thô của model được lưu ở `outputs/extract/`. Dựng lại graph từ output có sẵn mà không gọi
+  LLM: `--from-raw outputs/extract/vinfast_policy_sample_raw.json` (hoặc một file output viết theo
+  định dạng tuple, như các mẫu trong `docs/research/samples/output/`).
+- Cuối lệnh in báo cáo: số entity / relationship / claim, đoạn bị lỗi hoặc bị cắt cụt, record model
+  trả sai định dạng nên bị bỏ.
+- Một tài liệu dài mất vài phút (gpt-oss suy luận trước khi trả lời, ~1–3 phút mỗi đoạn 3.000 ký tự).
+
+**Trên giao diện:** trang Graph → nút **Upload tài liệu** → chọn file `.txt` / `.md`. Backend chạy
+job nền (`POST /api/v1/graph/documents`), trang hiện tiến độ rồi tự chuyển sang domain
+`vinfast_policy` và tải lại graph. Cần backend + Neo4j đang chạy.
+
 ## Benchmark
 
 Tab **Benchmark**: nhập câu hỏi (VD "Xe VF8 của công ty nào?") rồi bấm **Chạy**.
@@ -166,7 +203,7 @@ thời gian đo.
 
 ```bash
 # backend
-cd backend && uv run pytest -q && uv run ruff check .
+cd backend && uv run python -m pytest -q && uv run ruff check .
 
 # frontend
 cd frontend && npm run test && npm run lint && npm run build

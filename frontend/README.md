@@ -1,9 +1,7 @@
 # Frontend
 
-React + Tailwind + Iconify, phong cách neo-brutalism (border + box-shadow,
-bo góc 8px). Khung đã dựng xong (chạy được, build được, test pass); các
-trang vẫn chỉ hiển thị placeholder vì backend chưa có logic thật — xem
-[TODO.md](../TODO.md) ở thư mục gốc.
+React 19 + Vite + Tailwind 4 + Iconify. Hai trang: **Graph** (vẽ toàn bộ graph của một domain,
+upload tài liệu) và **Benchmark** (3 model chạy song song, lịch sử).
 
 ## Chạy
 
@@ -26,15 +24,19 @@ npm run build
 ```
 src/
   main.tsx, App.tsx
-  api/client.ts            Gọi backend qua /api (xem vite.config.ts proxy)
+  api/client.ts              Gọi backend qua /api (xem vite.config.ts proxy)
+  hooks/
+    useDomainGraph.ts          Tải graph của domain (đổi reloadKey để tải lại)
+    useDocumentUpload.ts       Gửi file lên, poll job trích xuất tới khi xong
   components/
-    ui/                       Card, Button — primitive neo-brutalism
-    graph/GraphView.tsx        TODO — hiển thị Knowledge Graph thật
+    graph/                     GraphView (react-force-graph-2d), NodeDetailCard (ảnh + thuộc tính, cả Claim)
+    benchmark/                 ModelRow, TraceGraph, status
+    layout/, ui/               Navbar, Button, Panel, StatStrip
   pages/
-    Dashboard.tsx              TODO — chọn domain + chạy benchmark
-    BenchmarkResult.tsx         TODO — bảng/biểu đồ so sánh kết quả
-  lib/theme.ts              Token neo-brutalism dạng JS (khớp src/index.css)
+    GraphPage.tsx              Chọn domain, thống kê, nút Upload tài liệu
+    BenchmarkPage.tsx          Câu hỏi -> 3 model, tab Lịch sử
 ```
 
-Token neo-brutalism (`--radius-brutal`, `--shadow-brutal`...) định nghĩa ở
-`src/index.css` qua Tailwind v4 `@theme`.
+**Upload tài liệu:** chọn file `.txt` / `.md`; backend trích xuất Entity / Relationship / Claim và
+thêm vào domain `vinfast_policy`. Xong thì trang chuyển sang domain đó và tải lại graph. Bấm node
+`Claim` để xem trạng thái, ngày, điều kiện và đoạn trích nguồn.
