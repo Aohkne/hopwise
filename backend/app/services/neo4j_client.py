@@ -121,7 +121,8 @@ def get_domain_graph(domain: str) -> dict:
         nodes = session.run(
             """
             MATCH (n) WHERE $d IN n.domains
-            RETURN n.id AS id, labels(n)[0] AS label, n.description AS caption
+            RETURN n.id AS id, labels(n)[0] AS label,
+                   coalesce(n.name, n.name_vi, n.description) AS caption
             """,
             d=domain,
         )

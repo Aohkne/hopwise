@@ -14,6 +14,7 @@ from typing import Any
 
 from app.config import get_settings
 from app.harness.build_graph import build_document, doc_id_of, merge_documents
+from app.harness.enrich import attach_images
 from app.harness.extract import ExtractionResult, chunk_text, extract_from_raw, extract_text
 from app.services import graph_loader
 
@@ -85,10 +86,11 @@ async def ingest_document(
     path = settings.data_dir / f"{domain}.json"
     new = build_document(result.extraction, result.text_units, domain=domain, doc_name=name,
                          title=f"Tri thức trích xuất từ văn bản ({domain})")
+    images = attach_images(new, settings.data_dir / "vinfast.json")
     merged = merge_documents(read_domain(path), new)
     write_domain(merged, path)
 
-    report = {**result.report, "domain": domain, "doc": name, "file": str(path),
+    report = {**result.report, "domain": domain, "images": images, "doc": name, "file": str(path),
               "graph": merged["stats"]}
     if load:
         # Driver Neo4j chạy đồng bộ: đưa sang thread để không chặn event loop (API đang phục vụ).

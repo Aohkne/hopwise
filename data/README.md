@@ -126,7 +126,10 @@ sách thúc đẩy bán hàng Ô tô điện VinFast* (mã 20260926).
 - **Truy vết:** mọi node/cạnh có `source_docs` (tên file) và `text_unit_ids`; file có `text_units`
   (`chunk_id -> đoạn văn gốc`). Claim có thêm `source_text`, đoạn trích nguyên văn model dẫn.
 - Ngày mơ hồ ("cuối năm 2026") giữ nguyên dạng text, chỉ ngày cụ thể mới ở dạng ISO-8601.
-- Không có `image_url`, `source_url`, `crawled_at`; thay bằng `extracted_at` ở cấp file.
+- Không có `source_url`, `crawled_at`; thay bằng `extracted_at` ở cấp file. `image_url` không do model
+  trích xuất: khi upload, entity có tên trùng một mẫu xe ở `data/vinfast.json` (VD "VF 8" ↔ "VinFast VF 8")
+  được gắn `image_url` (bản thu nhỏ 640px) và `image_source` (id node Wikidata) — xem `app/harness/enrich.py`.
+  Chỉ khớp đúng tên; entity không khớp thì không có ảnh.
 
 **Hạn chế đã biết:**
 - Chất lượng phụ thuộc model. Lần chạy hiện có (2 tài liệu): 60 entity, 45 relationship, 24 claim cho
