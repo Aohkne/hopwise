@@ -53,6 +53,13 @@ describe("GraphPage", () => {
     expect(screen.getByText(/failed: 500/)).toBeInTheDocument();
   });
 
+  it("treats a domain with no data (404) as an empty graph with a hint, not an error", async () => {
+    mockFetch(async () => new Response(JSON.stringify({ detail: "Domain 'x' không có dữ liệu" }), { status: 404 }));
+    render(<GraphPage />);
+    expect(await screen.findByText("Chưa có dữ liệu")).toBeInTheDocument();
+    expect(screen.queryByText("Không tải được graph")).not.toBeInTheDocument();
+  });
+
   describe("upload tài liệu", () => {
     const done = {
       id: "j1", name: "tb.md", domain: "vinfast_policy", status: "done", done_chunks: 2, total_chunks: 2,
@@ -96,6 +103,33 @@ describe("GraphPage", () => {
         expect(fetchMock).toHaveBeenCalledWith("/api/v1/graph/domains/vinfast_policy")
       );
       expect(screen.getByRole("button", { name: /Upload tài liệu/ })).toBeEnabled();
+    });
+
+    it("accepts a file dropped on the page and shows the drop overlay while dragging", async () => {
+      const fetchMock = mockBackend(() => new Response(JSON.stringify(done)));
+      const { container } = render(<GraphPage />);
+      await screen.findByText("3 node · 2 cạnh · 2 loại");
+      const page = container.firstElementChild!;
+      const file = new File(["VF3 giảm 30%"], "tb.md", { type: "text/markdown" });
+      const dataTransfer = { types: ["Files"], files: [file] };
+
+      fireEvent.dragOver(page, { dataTransfer });
+      expect(screen.getByTestId("drop-overlay")).toBeInTheDocument();
+      fireEvent.drop(page, { dataTransfer });
+      expect(screen.queryByTestId("drop-overlay")).not.toBeInTheDocument();
+
+      await waitFor(() => {
+        const post = fetchMock.mock.calls.find(([, init]) => init?.method === "POST")!;
+        expect(JSON.parse(post[1]!.body as string)).toMatchObject({ name: "tb.md", text: "VF3 giảm 30%" });
+      });
+    });
+
+    it("ignores drags that carry no file", async () => {
+      mockBackend(() => new Response(JSON.stringify(done)));
+      const { container } = render(<GraphPage />);
+      await screen.findByText("3 node · 2 cạnh · 2 loại");
+      fireEvent.dragOver(container.firstElementChild!, { dataTransfer: { types: ["text/plain"], files: [] } });
+      expect(screen.queryByTestId("drop-overlay")).not.toBeInTheDocument();
     });
 
     it("shows the reason when the backend rejects the file", async () => {

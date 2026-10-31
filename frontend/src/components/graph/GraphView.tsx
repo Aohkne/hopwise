@@ -106,28 +106,37 @@ export function GraphView({ domain, payload, error }: GraphViewProps) {
     return () => ro.disconnect();
   }, []);
 
-  // id của mọi node kề với node đang hover, để làm nổi bật + làm mờ phần còn lại
+  // Node đang được làm nổi: node hover, nếu không thì node đã bấm (card chi tiết đang mở).
+  const spotlightId = hoverNode?.id ?? focusedId;
+
+  // id của mọi node kề với node được làm nổi, để tô đậm + làm mờ phần còn lại
   const hoverConnected = useMemo(() => {
-    if (!hoverNode) return null;
+    if (!spotlightId) return null;
     const set = new Set<string>();
     for (const e of graphData.links) {
       const [s, t] = endpoints(e);
-      if (s === hoverNode.id) set.add(t);
-      else if (t === hoverNode.id) set.add(s);
+      if (s === spotlightId) set.add(t);
+      else if (t === spotlightId) set.add(s);
     }
     return set;
-  }, [hoverNode, graphData]);
+  }, [spotlightId, graphData]);
 
   const isLinkActive = useCallback(
     (e: GEdge) => {
-      if (!hoverNode) return false;
+      if (!spotlightId) return false;
       const [s, t] = endpoints(e);
-      return s === hoverNode.id || t === hoverNode.id;
+      return s === spotlightId || t === spotlightId;
     },
-    [hoverNode]
+    [spotlightId]
   );
 
-  const focus = useCallback(async (nodeId: string) => {
+  const focus = useCallback(async (node: GNode) => {
+    const nodeId = node.id;
+    // Camera đẩy vào node được bấm để các node kề hiện rõ nhãn.
+    if (node.x !== undefined && node.y !== undefined) {
+      fgRef.current?.centerAt(node.x, node.y, 700);
+      fgRef.current?.zoom(4, 700);
+    }
     try {
       const detail = await getNode(nodeId);
       setFocused({ id: nodeId, label: detail.label, props: detail.properties });
@@ -155,6 +164,14 @@ export function GraphView({ domain, payload, error }: GraphViewProps) {
       bodyClassName="relative"
     >
       {error && <p className="p-3 text-xs text-red-700">{error}</p>}
+      {current && current.nodes.length === 0 && (
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-1 text-center">
+          <p className="text-sm font-bold">Chưa có dữ liệu</p>
+          <p className="text-xs text-neutral-500">
+            Kéo thả tài liệu .txt / .md vào đây, hoặc bấm “Upload tài liệu”.
+          </p>
+        </div>
+      )}
 
       <div
         ref={wrapRef}
@@ -177,16 +194,16 @@ export function GraphView({ domain, payload, error }: GraphViewProps) {
               setHoverNode((node as GNode | null) ?? null);
               if (wrapRef.current) wrapRef.current.style.cursor = node ? "pointer" : "default";
             }}
-            onNodeClick={(node) => void focus(node.id as string)}
+            onNodeClick={(node) => void focus(node as GNode)}
             linkColor={(l) => (isLinkActive(l as GEdge) ? "#3b9ab8" : "rgba(17,17,17,0.14)")}
             linkWidth={(l) => (isLinkActive(l as GEdge) ? 2 : 0.6)}
             linkDirectionalArrowLength={(l) => (isLinkActive(l as GEdge) ? 5 : 0)}
             linkDirectionalArrowRelPos={1}
             nodeCanvasObject={(node, ctx, scale) => {
               const n = node as GNode;
-              const isHover = hoverNode?.id === n.id;
+              const isHover = spotlightId === n.id;
               const isNeighbor = hoverConnected?.has(n.id) ?? false;
-              const dimmed = !!hoverNode && !isHover && !isNeighbor;
+              const dimmed = !!spotlightId && !isHover && !isNeighbor;
 
               const r = 3 + Math.min(Math.sqrt(n.degree), 9) + (isHover ? 2 : 0);
               const x = n.x ?? 0;

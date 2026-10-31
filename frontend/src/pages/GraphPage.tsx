@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState, type DragEvent } from "react";
 import { GraphView } from "../components/graph/GraphView";
 import { Button } from "../components/ui/Button";
 import { StatStrip, type Stat } from "../components/ui/StatStrip";
@@ -29,6 +29,10 @@ export function GraphPage() {
   }, []);
   const upload = useDocumentUpload(UPLOAD_DOMAIN, onUploaded);
 
+  // Kéo thả file vào trang = chọn file bằng nút Upload.
+  const [dragging, setDragging] = useState(false);
+  const hasFiles = (e: DragEvent<HTMLElement>) => e.dataTransfer.types.includes("Files");
+
   const stats = useMemo<Stat[]>(() => {
     const dash = "—";
     if (!payload) {
@@ -54,7 +58,32 @@ export function GraphPage() {
   }, [payload]);
 
   return (
-    <div className="flex h-[calc(100vh-57px)] w-full flex-col gap-3 p-4">
+    <div
+      className="relative flex h-[calc(100vh-57px)] w-full flex-col gap-3 p-4"
+      onDragOver={(e) => {
+        if (!hasFiles(e)) return;
+        e.preventDefault();
+        setDragging(true);
+      }}
+      onDragLeave={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setDragging(false);
+      }}
+      onDrop={(e) => {
+        if (!hasFiles(e)) return;
+        e.preventDefault();
+        setDragging(false);
+        const file = e.dataTransfer.files[0];
+        if (file && !upload.busy) void upload.upload(file);
+      }}
+    >
+      {dragging && (
+        <div
+          data-testid="drop-overlay"
+          className="pointer-events-none absolute inset-2 z-50 flex items-center justify-center border-2 border-dashed border-teal-dark bg-white/80 text-sm font-bold"
+        >
+          Thả tài liệu để thêm vào graph
+        </div>
+      )}
       <div className="flex flex-wrap items-center gap-3">
         <h1 className="text-lg font-bold tracking-wide">
           GRAPH <span className="font-normal text-neutral-400">// knowledge cortex</span>

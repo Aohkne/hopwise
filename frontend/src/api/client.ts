@@ -44,6 +44,8 @@ export interface GraphPayload {
 
 export async function getDomainGraph(domain: string): Promise<GraphPayload> {
   const res = await fetch(`${BASE_URL}/graph/domains/${encodeURIComponent(domain)}`);
+  // 404 = domain chưa có dữ liệu (VD chưa upload tài liệu nào): coi là graph rỗng, không phải lỗi.
+  if (res.status === 404) return { nodes: [], edges: [] };
   if (!res.ok) throw new Error(`getDomainGraph(${domain}) failed: ${res.status}`);
   return res.json();
 }
