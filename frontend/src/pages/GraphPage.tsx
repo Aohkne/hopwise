@@ -79,7 +79,7 @@ export function GraphPage() {
       {dragging && (
         <div
           data-testid="drop-overlay"
-          className="pointer-events-none absolute inset-2 z-50 flex items-center justify-center border-2 border-dashed border-teal-dark bg-white/80 text-sm font-bold"
+          className="pointer-events-none absolute inset-2 z-50 flex items-start justify-center pt-24 border-2 border-dashed border-teal-dark bg-white/80 text-sm font-bold"
         >
           Thả tài liệu để thêm vào graph
         </div>

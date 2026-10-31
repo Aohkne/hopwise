@@ -135,7 +135,7 @@ export function GraphView({ domain, payload, error }: GraphViewProps) {
     // Camera đẩy vào node được bấm để các node kề hiện rõ nhãn.
     if (node.x !== undefined && node.y !== undefined) {
       fgRef.current?.centerAt(node.x, node.y, 700);
-      fgRef.current?.zoom(4, 700);
+      fgRef.current?.zoom(3, 700);
     }
     try {
       const detail = await getNode(nodeId);
@@ -222,7 +222,7 @@ export function GraphView({ domain, payload, error }: GraphViewProps) {
               const showLabel = isHover || isNeighbor || n.id === focusedId || scale > 2.2;
               if (!dimmed && showLabel) {
                 const label = n.caption.length > 28 ? n.caption.slice(0, 27) + "…" : n.caption;
-                const fontSize = Math.max(9, 11 / scale);
+                const fontSize = 11 / scale; // cỡ chữ cố định trên màn hình, không phình to khi zoom
                 ctx.font = `${isHover ? 700 : 500} ${fontSize}px "JetBrains Mono", monospace`;
                 const textW = ctx.measureText(label).width;
                 const padX = 4;
