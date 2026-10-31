@@ -47,9 +47,50 @@ bên trong vẫn chưa triển khai, liệt kê dưới đây.
 
 ## Bản 2.0.0
 
-- [ ] Cơ chế tạo cạnh giữa hai node dựa trên **một fact cụ thể**, có thể
-  truy vết lại nguồn — thay cho cách nối theo quan hệ cấu trúc thô hiện tại
-  (`PLAYED_FOR`, `BOARD_MEMBER_OF`...).
+Mục tiêu: cơ chế tạo cạnh giữa hai node dựa trên **một fact cụ thể**, có thể
+truy vết lại nguồn — thay cho cách nối theo quan hệ cấu trúc thô của bản 1.0.0
+(`PLAYED_FOR`, `BOARD_MEMBER_OF`...). Graph được sinh từ **văn bản** (không crawl
+thêm): LLM trích xuất Entity / Relationship / Claim theo prompt 3 lớp. Nghiên cứu
+nền tảng nằm ở [`docs/research/`](docs/research/).
+
+Quyết định thiết kế: Entity → node; Relationship → cạnh `RELATED_TO`; Claim →
+node `Claim` nối bằng `HAS_CLAIM` / `ABOUT` (nhờ vậy loader `MERGE` không gộp
+nhiều fact giữa cùng một cặp node); dữ liệu ghi vào domain riêng `vinfast_policy`
+nên không ảnh hưởng 60 câu ground truth của bản 1.0.0.
+
+### Backend
+
+- [ ] **Nghiên cứu → docs**: chuyển `hope-wise_done/` vào `docs/research/` (có
+  README đánh dấu nghiên cứu); `prompt.md` thành
+  `backend/app/harness/prompts/templates/extract_graph.md`.
+- [ ] **Prompt**: `backend/app/harness/prompts/extract_graph.py` đọc template `.md`
+  và dựng prompt từ văn bản đầu vào.
+- [ ] **LLM trả text**: `LLMClient.complete()` (không ép JSON), chọn provider bằng
+  `EXTRACT_PROVIDER` (mặc định NVIDIA gpt-oss-20b, hoặc Ollama).
+- [ ] **Trích xuất**: parse tuple `<|>` / `##`, chia chunk, gộp/dedupe
+  entity-relationship-claim bằng code (`harness/parse.py`, `extract.py`).
+- [ ] **Dựng graph**: ánh xạ sang schema `data/*.json` kèm provenance
+  (`text_unit_ids`, `source_text`) và `text_units` để truy vết (`harness/build_graph.py`).
+- [ ] **CLI**: `backend/extract_graph.py` (văn bản → `data/vinfast_policy.json` → Neo4j).
+- [ ] **API upload**: `POST /api/v1/graph/documents` + `GET .../documents/{id}` (job nền).
+- [ ] **Search**: mô tả cạnh vào lựa chọn của model, mô tả domain `vinfast_policy`.
+- [ ] **Test** (mock LLM) và dữ liệu `data/vinfast_policy.json` đầu tiên.
+
+### Frontend
+
+- [ ] Domain `vinfast_policy` trong trang Graph; bật nút **Upload tài liệu**.
+- [ ] Card chi tiết node hiển thị thuộc tính của `Claim` (trạng thái, ngày, điều kiện, nguồn).
+
+### Tài liệu
+
+- [ ] Cập nhật `README.md`, `GUIDE.md`, `data/README.md`, `backend/README.md`, `frontend/README.md`.
+
+### Để sau bản 2.0.0
+
+- [ ] Prompt merge + dedupe bằng LLM (hiện gộp bằng code).
+- [ ] Loại quan hệ có tên cho `RELATED_TO` (prompt hiện chỉ trả mô tả).
+- [ ] Liên kết entity của `vinfast_policy` với node Wikidata trong domain `vinfast` (`anchor` / `aliases`).
+- [ ] Chạy lại benchmark trên graph có `vinfast_policy`.
 
 ## Khác
 
