@@ -139,6 +139,8 @@ sách thúc đẩy bán hàng Ô tô điện VinFast* (mã 20260926).
 - Entity chưa được liên kết với node Wikidata của domain `vinfast` (VD "VF 3" ở hai nơi là hai node khác nhau).
 - Còn 9 node không có cạnh (entity được nhắc nhưng model không nối).
 - Gộp entity chỉ dựa trên tên đã chuẩn hóa (chữ thường, bỏ khoảng trắng thừa); "VF 3" và "VF3" là hai node.
+  Model đôi khi viết **sai chính tả** tên (đã gặp: `ĐẠI LÝ VINFATSH HÀ NỘI`, `PHẦM NHẬT VƯỢNG`), khi đó cùng một
+  thực thể thành node thứ hai. Cần bước gộp theo độ giống nhau hoặc LLM (xem TODO) và nên rà lại sau mỗi lần upload.
 
 ## Hạn chế đã biết
 

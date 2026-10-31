@@ -88,7 +88,7 @@ nên không ảnh hưởng 60 câu ground truth của bản 1.0.0.
 ### Để sau bản 2.0.0
 
 - [ ] Tránh chunk bị cắt cụt: tự chia đôi và trích xuất lại chunk hết `max_tokens` (hiện chỉ báo cáo).
-- [ ] Prompt merge + dedupe bằng LLM (hiện gộp bằng code).
+- [ ] Prompt merge + dedupe bằng LLM (hiện gộp bằng code, chỉ khớp tên chuẩn hóa nên không bắt được tên viết sai chính tả hoặc "VF 3" / "VF3").
 - [ ] Loại quan hệ có tên cho `RELATED_TO` (prompt hiện chỉ trả mô tả).
 - [ ] Liên kết entity của `vinfast_policy` với node Wikidata trong domain `vinfast` (`anchor` / `aliases`).
 - [ ] Chạy lại benchmark trên graph có `vinfast_policy`.
