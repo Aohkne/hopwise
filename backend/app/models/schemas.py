@@ -63,3 +63,11 @@ class ModelResponse(BaseModel):
     answers: dict[str, Any]
     usage: dict[str, Any] = {}
     latency_ms: float
+
+
+class DocumentRequest(BaseModel):
+    """Tài liệu văn bản để trích xuất vào graph (POST /graph/documents)."""
+
+    name: str  # tên file, dùng làm nguồn (`source_docs`) của mọi node/cạnh trích xuất được
+    text: str
+    domain: str | None = None  # mặc định vinfast_policy, xem harness.pipeline.DEFAULT_DOMAIN

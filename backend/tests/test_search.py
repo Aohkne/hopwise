@@ -444,3 +444,51 @@ def test_api_starts_a_ground_truth_case(tmp_path, monkeypatch) -> None:
             if state["status"] == "done":
                 break
         assert {r["correct"] for r in state["models"].values()} == {True}
+
+
+def test_edge_description_is_shown_to_the_model_only_when_the_edge_has_one() -> None:
+    from app.services.search import _edge_options
+
+    plain = {"edge_type": "MANUFACTURES", "edge_props": {}, "target_id": "vf8", "target_label": "CarModel",
+             "target_description": "VF 8 — mẫu xe", "direction": "out"}
+    fact = {"edge_type": "RELATED_TO", "edge_props": {"description": "VF3 tham gia chương trình"},
+            "target_id": "p", "target_label": "Program", "target_description": "Ưu đãi mùa xuân",
+            "direction": "in"}
+    _, criteria = _edge_options([plain, fact])
+    assert criteria["e0"] == "MANUFACTURES → CarModel: VF 8 — mẫu xe"  # không đổi so với bản 1.0.0
+    assert criteria["e1"] == "RELATED_TO ← Program: Ưu đãi mùa xuân [VF3 tham gia chương trình]"
+
+
+def test_walks_from_an_entity_through_a_claim_node_to_the_answer() -> None:
+    """Claim là node trung gian (Entity -HAS_CLAIM-> Claim -ABOUT-> Entity), không có `name`:
+    answer_text lấy từ description."""
+    nodes = {
+        "vf3": {"id": "vf3", "label": "Product", "properties": {"name": "VF3", "description": "VF3 — xe"}},
+        "claim": {"id": "claim", "label": "Claim", "properties": {"description": "VF3 giảm 30% từ 15/01"}},
+    }
+    edges = [{"edge_type": "HAS_CLAIM", "edge_props": {}, "target_id": "claim", "target_label": "Claim",
+              "target_description": "VF3 giảm 30% từ 15/01", "direction": "out"}]
+
+    class ClaimGraph:
+        def domains(self): return ["vinfast_policy"]
+        def labels(self, domain): return [{"label": "Product", "count": 1}]
+        def nodes(self, domain, label): return [{"id": "vf3", "label": "Product", "description": "VF3 — xe"}]
+        def node(self, node_id): return nodes.get(node_id)
+        def neighbors(self, node_id):
+            return edges if node_id == "vf3" else [
+                {**edges[0], "target_id": "vf3", "target_label": "Product", "direction": "in"}]
+
+    class Client:
+        model_name = "fake"
+
+        async def decide(self, state, questions):
+            on_claim = "(Claim)" in state
+            return {"answers": {
+                qid: {"type": "noul", "noul": 0.9 if on_claim else 0.1} if q["type"] == "noul"
+                else {"type": "choice", "choice": _pick(q["criteria"], "Claim")}
+                for qid, q in questions.items()}, "usage": {}}
+
+    result = _new_result()
+    asyncio.run(find_answer(Client(), "VF3 được giảm bao nhiêu?", ClaimGraph(), result))
+    assert result["status"] == "found" and result["answer_node_id"] == "claim"
+    assert result["answer_text"] == "VF3 giảm 30% từ 15/01"

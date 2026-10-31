@@ -35,6 +35,8 @@ DOMAIN_DESCRIPTIONS = {
     "huấn luyện viên, sân vận động, nơi sinh, danh hiệu",
     "vinfast": "VinFast: hãng xe ô tô Việt Nam, hội đồng quản trị, cổ đông, công ty con, nhà máy, "
     "thương hiệu và các mẫu xe, thị trường bán xe, người sáng lập, công ty mẹ Vingroup",
+    "vinfast_policy": "Chính sách bán hàng và ưu đãi ô tô điện VinFast trích xuất từ văn bản: chương "
+    "trình ưu đãi, mức giảm giá, điều kiện áp dụng, thời hạn, mẫu xe, đối tượng khách hàng, đại lý",
 }
 
 
@@ -154,13 +156,18 @@ async def _pick_node(client: Any, result: dict, question: str, candidates: list[
 def _edge_options(page: list[dict]) -> tuple[dict[str, dict], dict[str, str]]:
     """Lô cạnh -> (key -> neighbor, criteria cho câu Choice "next", kèm "none")."""
     options = {f"e{i}": n for i, n in enumerate(page)}
-    criteria = {
-        k: f"{n['edge_type']} {'→' if n.get('direction') == 'out' else '←'} "
-           f"{n['target_label']}: {n['target_description'] or n['target_id']}"
-        for k, n in options.items()
-    }
+    criteria = {k: _edge_text(n) for k, n in options.items()}
     criteria["none"] = "Không còn hướng nào liên quan tới câu hỏi"
     return options, criteria
+
+
+def _edge_text(n: dict) -> str:
+    text = (f"{n['edge_type']} {'→' if n.get('direction') == 'out' else '←'} "
+            f"{n['target_label']}: {n['target_description'] or n['target_id']}")
+    # Cạnh sinh từ văn bản (bản 2.0.0) đều mang loại RELATED_TO; chỉ mô tả của cạnh mới cho
+    # model biết quan hệ là gì. Cạnh cũ không có mô tả nên prompt không đổi.
+    detail = (n.get("edge_props") or {}).get("description")
+    return f"{text} [{detail}]" if detail else text
 
 
 async def find_answer(client: Any, question: str, graph: Graph, result: dict) -> None:

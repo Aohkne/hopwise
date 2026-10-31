@@ -1,10 +1,14 @@
-"""Đọc Knowledge Graph từ Neo4j — đã triển khai, không phải stub."""
+"""Đọc Knowledge Graph từ Neo4j, và nhận tài liệu để trích xuất thêm vào graph (bản 2.0.0)."""
 
 from __future__ import annotations
 
+from pathlib import PurePath
+
 from fastapi import APIRouter, HTTPException
 
-from app.models.schemas import GraphPayload, Neighbor, Node, SearchResult
+from app.harness import jobs
+from app.harness.pipeline import DEFAULT_DOMAIN
+from app.models.schemas import DocumentRequest, GraphPayload, Neighbor, Node, SearchResult
 from app.services import neo4j_client
 
 router = APIRouter(prefix="/graph", tags=["graph"])
@@ -36,3 +40,22 @@ def read_node(node_id: str) -> Node:
 @router.get("/nodes/{node_id}/neighbors", response_model=list[Neighbor])
 def read_neighbors(node_id: str) -> list[Neighbor]:
     return [Neighbor(**row) for row in neo4j_client.get_neighbors(node_id)]
+
+
+@router.post("/documents")
+async def upload_document(request: DocumentRequest) -> dict:
+    """Trích xuất Entity / Relationship / Claim từ văn bản rồi gộp vào graph của `domain`.
+    Trả job ngay (chạy nền); xem tiến độ ở `GET /documents/{id}`."""
+    name = PurePath(request.name).name or "document.txt"  # bỏ đường dẫn, chỉ giữ tên file
+    try:
+        return jobs.start_job(name, request.text, request.domain or DEFAULT_DOMAIN)
+    except ValueError as err:
+        raise HTTPException(status_code=422, detail=str(err)) from err
+
+
+@router.get("/documents/{job_id}")
+def read_document_job(job_id: str) -> dict:
+    job = jobs.JOBS.get(job_id)
+    if job is None:
+        raise HTTPException(status_code=404, detail=f"Không có lượt upload '{job_id}'")
+    return job
